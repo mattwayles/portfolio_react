@@ -1,0 +1,16 @@
+.Links {
+    width: 100%;
+    text-align: center;
+}
+.SocialIcon {
+    margin: 2%;
+}
+.Microsoft, .Comptia {
+    margin: 10px;
+}
+.Microsoft {
+    width: 115px;
+}
+.Comptia {
+    width: 130px;
+}

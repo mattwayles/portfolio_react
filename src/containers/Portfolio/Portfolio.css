@@ -1,0 +1,57 @@
+.Main {
+    margin: 5% auto 1%;
+    width: 80%;
+    box-shadow: 2px 2px 5px #ccc;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.Header {
+    margin: 3%;
+    color: var(--main-color);
+    font-size: 5em;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.2), 0 -5px 35px rgba(255,255,255,0.3);
+}
+
+.FlexRow {
+    display: flex;
+    flex-flow: row;
+    margin: 1% auto;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+.Bold {
+    color: var(--accent-color);
+    font-weight: 600;
+    opacity: 1;
+}
+
+.Project {
+    border: 1px solid var(--main-color);
+    margin: 1% auto;
+    border-radius: 25px;
+    width: 100%;
+    background-color: rgba(233, 240, 243,.5);
+}
+
+.ProjectName {
+    font-weight: 700;
+    font-size: 3em;
+    margin: 1% 1% 2% 2%;
+    color: var(--accent-color);
+}
+
+.ProjectDescription {
+    margin: 14% 4% 1% 2%;
+    font-size: 1.5em;
+    color: var(--main-color);
+}
+
+.Image {
+    height: 10%;
+    border-radius: 5px;
+}

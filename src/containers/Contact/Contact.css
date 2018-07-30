@@ -1,0 +1,54 @@
+.Main {
+    margin: 5% auto 1%;
+    width: 80%;
+    box-shadow: 2px 2px 5px #ccc;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.Header {
+    margin: 3%;
+    color: var(--main-color);
+    font-size: 5em;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.2), 0 -5px 35px rgba(255,255,255,0.3);
+}
+
+.FlexRow {
+    display: flex;
+    flex-flow: row;
+    margin: 3% auto 1%;
+    justify-content: flex-start;
+    padding: 2%;
+}
+
+.FlexColumn {
+    display: flex;
+    flex-flow: column;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+    padding: 2%;
+}
+
+.Text {
+    font-style: italic;
+    font-weight: 500;
+    font-size: 2em;
+    margin-top: 10px;
+    opacity: 0.8;
+    color: #003366;
+    padding-top: 10px;
+    line-height: 50px;
+}
+
+.Image {
+    border-radius: 25px;
+    margin: 0 2%;
+}
+
+.SocialIcon {
+    margin: 0 auto;
+}

@@ -2,20 +2,33 @@ import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Layout from './containers/Layout/Layout';
 import Main from './containers/Main/Main';
-import './App.css';
+import Personal from "./containers/Personal/Personal";
+import Resume from "./containers/Resume/Resume";
+import classes from './App.css';
+import Contact from "./containers/Contact/Contact";
+import Portfolio from "./containers/Portfolio/Portfolio";
 
 class App extends Component {
   render() {
       return (
-      <div className="App">
+      <div>
           <BrowserRouter>
             <Layout>
                 <Switch>
-                    <Route path="/" component={Main} />
+                    <Route path="/" exact component={Main} />
+                    <Route path="/personal" component={Personal} />
+                    <Route path="/resume" component={Resume} />
+                    <Route path="/portfolio" component={Portfolio} />
+                    <Route path="/contact" component={Contact} />
                     <Redirect to="/" />
                 </Switch>
             </Layout>
           </BrowserRouter>
+          <div className={classes.Footer}>
+              <p>
+                  ©2018 - All content is original and developed independently by Matthew Wayles. Reproduction without authorization is prohibited.
+              </p>
+          </div>
       </div>
     );
   }

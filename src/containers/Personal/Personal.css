@@ -1,0 +1,55 @@
+.Main {
+    margin: 5% auto 1%;
+    width: 80%;
+    height: 100%;
+    box-shadow: 2px 2px 5px #ccc;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.Header {
+    margin: 3%;
+    color: var(--main-color);
+    font-size: 5em;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.2), 0 -5px 35px rgba(255,255,255,0.3);
+}
+
+.Grid {
+    margin: 3% auto;
+    width: 90%;
+}
+
+.FlexRow {
+    display: flex;
+    flex-flow: row;
+    height: 300px;
+    margin: 3% auto;
+    justify-content: center;
+}
+
+.bold, .Topic {
+    color: var(--accent-color);
+    font-weight: 700;
+    opacity: 1;
+}
+
+.FirstLetter {
+    color: var(--main-color);
+    font-weight: 700;
+    font-size: 1.7em;
+}
+
+.Topic {
+    font-size: 1.5em;
+}
+
+.Image {
+    width: 40%;
+    height: 300px;
+    line-height: 300px;
+    border-radius: 25px;
+    margin: 0 2%;
+}

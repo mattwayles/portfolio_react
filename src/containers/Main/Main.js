@@ -1,58 +1,63 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { SocialIcon } from 'react-social-icons';
-import headshot from '../../assets/mattwayles.png';
-import mcp480 from '../../assets/certs/mcp_html.png';
-import mcp410 from '../../assets/certs/mcp_win2012.png';
-import mcp680 from '../../assets/certs/mcp_win7.png';
-import aplus from '../../assets/certs/sec+.png';
-import netplus from '../../assets/certs/net+.png';
-import secplus from '../../assets/certs/a+.png';
+import React from 'react';
+import headshot from '../../assets/home/mattwayles.png';
+import more from '../../assets/home/more/more.png';
+import moreHover from '../../assets/home/more/more_hover.png';
+import less from '../../assets/home/more/less.png';
+import lessHover from '../../assets/home/more/less_hover.png';
+
 
 import classes from './Main.css';
-import Button from "../../components/ui/Button/Button";
+import Links from "../../components/Sections/Links/Links";
+import Professional from "../../components/Sections/Professional/Professional";
 
-class Main extends Component {
+class Main extends React.Component {
+    state = {
+        hover: false,
+        moreExpanded: false
+    };
 
-    handleFacebookClick = () => {
-        window.open('http://www.facebook.com/mwayles', '_blank');
+
+    handleMore = () => {
+        this.setState({ moreExpanded: !this.state.moreExpanded });
+    };
+
+    toggleHover = () => {
+        console.log("Hover:" ,this.state.hover);
+        this.setState({ hover: !this.state.hover });
     };
 
     render() {
+        const {hover, moreExpanded } = this.state;
+
         return (
             <main className={classes.Main}>
                 <section className={classes.Intro}>
                     <section className={classes.Headshot}>
-                        <img src={headshot} alt="Image Broken" />
+                        <img src={headshot} alt="Broken" />
                     </section>
                     <section className={classes.NameTag}>
                         <header>Matthew Wayles</header>
                         <h2><em>Engineering with vision</em></h2>
                     </section>
                 </section>
-                <section className={classes.Links}>
-                    <a href="https://www.microsoft.com/en-us/learning/exam-70-480.aspx"><img className={classes.Microsoft} src={mcp480} alt="JavaScript Certified" /></a>
-                    <a href="https://www.microsoft.com/en-us/learning/exam-70-410.aspx"><img className={classes.Microsoft} src={mcp410} alt="Server2012 Certified" /></a>
-                    <a href="https://www.microsoft.com/en-us/learning/exam-70-680.aspx"><img className={classes.Microsoft} src={mcp680} alt="Win7 Certified" /></a>
-                    <a href="https://certification.comptia.org/certifications/security"><img className={classes.Comptia} src={secplus} alt="Security+ Certified" /></a>
-                    <a href="https://certification.comptia.org/certifications/network"><img className={classes.Comptia} src={netplus} alt="Network+ Certified" /></a>
-                    <a href="https://certification.comptia.org/certifications/a"><img className={classes.Comptia} src={aplus} alt="A+ Certified" /></a>
-                    <br /><br /><br />
-                    <SocialIcon style={{margin: '2%'}} url='http://facebook.com/mwayles' />
-                    <SocialIcon style={{margin: '2%'}} url='http://www.github.com/mattwayles' />
-                    <SocialIcon style={{margin: '2%'}} url='https://codepen.io/LiquidIce25/' />
-                    <SocialIcon style={{margin: '2%'}} url='http://www.freecodecamp.com/mattwayles' />
-                    <SocialIcon style={{margin: '2%'}} url='https://www.linkedin.com/in/matthew-wayles-03354369' />
-                </section>
+                <Links />
+                <div className={classes.MoreDiv}>
+                    {moreExpanded ? <img
+                            className={classes.More}
+                            onMouseEnter={this.toggleHover}
+                            onMouseLeave={this.toggleHover}
+                            onClick={this.handleMore}
+                            src={hover? lessHover : less} alt="More..." />
+                        : <img className={classes.More}
+                               onMouseEnter={this.toggleHover}
+                               onMouseLeave={this.toggleHover}
+                               onClick={this.handleMore}
+                               src={hover? moreHover : more} alt="More..." />}
+                </div>
+                {moreExpanded ? <Professional /> : null}
             </main>
         );
     }
 }
 
-const mapStateToProps = state => {
-    return {
-
-    }
-};
-
-export default connect(mapStateToProps)(Main);
+export default (Main);

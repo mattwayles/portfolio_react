@@ -1,0 +1,49 @@
+.Grid {
+    margin: 3% auto;
+    width: 90%;
+}
+
+.FlexRow {
+    display: flex;
+    flex-flow: row;
+    height: 300px;
+    margin: 3% auto;
+    justify-content: center;
+}
+
+.Statement {
+    font-family: 'Sunflower', sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 3em;
+    margin-top: 10px;
+    opacity: 0.8;
+    color: #003366;
+    line-height: 300px;
+}
+
+.Statement {
+    padding-top: 6%;
+    line-height: 50px;
+}
+
+.bold {
+    color: var(--accent-color);
+    font-weight: 700;
+    opacity: 1;
+}
+
+.Image, .CloudImage, .YearsImage {
+    height: 300px;
+    line-height: 300px;
+    border-radius: 25px;
+    margin: 0 2%;
+}
+
+.CloudImage {
+    box-shadow: 5px 5px var(--main-color);
+}
+
+.YearsImage {
+    margin-right: 10%;
+}

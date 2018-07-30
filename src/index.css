@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Sunflower:300');
+
 :root {
   --main-color: #1c4f62;
   --hover-color: #e9f0f3;
-  --accent-color: #61DBFB;
+  --accent-color: #c15435;
   --success-color: #5C9210;
   --fail-color: #c90e0e;
 }
@@ -9,7 +11,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Cabin', sans-serif;
-  background-image: url('./assets/main_background.jpg');
-  background-size: cover;
+  font-family: 'Sunflower', sans-serif;
+  background-image: url('./assets/backgrounds/main_background.jpg');
+  background-size: auto;
 }
