@@ -1,0 +1,43 @@
+.FlexRow {
+    display: flex;
+    flex-flow: row;
+    margin: 1% auto;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+.Bold {
+    color: var(--accent-color);
+    font-weight: 600;
+    opacity: 1;
+}
+
+.Project {
+    border: 1px solid var(--main-color);
+    margin: 1% auto;
+    width: 98%;
+    background-color: rgba(233, 240, 243,.5);
+}
+
+.ProjectDiv {
+    width: 50%;
+}
+
+.ProjectName {
+    font-weight: 700;
+    font-size: 38px;
+    margin: 1% 1% 2% 2%;
+    color: var(--accent-color);
+}
+
+.ProjectDescription {
+    margin: 5% 4% 1% 2%;
+    font-size: 18px;
+    color: var(--main-color);
+}
+
+.Image {
+    width: 100%;
+    padding-top: 15px;
+    border-radius: 5px;
+}

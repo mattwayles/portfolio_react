@@ -2,10 +2,14 @@ import React from 'react';
 import classes from './Resume.css';
 import {Document, Page} from 'react-pdf';
 import resume from './Matthew_Wayles_Resume.pdf';
-import back from '../../assets/resume/pages/back.png'
-import backHover from '../../assets/resume/pages/back_hover.png'
-import next from '../../assets/resume/pages/next.png'
-import nextHover from '../../assets/resume/pages/next_hover.png'
+// import back from '../../assets/resume/pages/back.png'
+// import backHover from '../../assets/resume/pages/back_hover.png'
+// import next from '../../assets/resume/pages/next.png'
+// import nextHover from '../../assets/resume/pages/next_hover.png'
+import back from '../../assets/Placeholder.png';
+import backHover from '../../assets/Placeholder.png';
+import next from '../../assets/Placeholder.png';
+import nextHover from '../../assets/Placeholder.png';
 
 
 class Resume extends React.Component {
@@ -14,6 +18,10 @@ class Resume extends React.Component {
         pageNumber: 1,
         hover: false
     };
+
+    componentWillMount() {
+        window.scroll(0,0);
+    }
 
     onDocumentLoadSuccess = ({ numPages }) => {
         this.setState({ numPages });

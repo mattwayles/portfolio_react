@@ -2,7 +2,7 @@ import React from 'react';
 import fullStack from '../../../assets/home/fullStack.png';
 import crossPlatform from '../../../assets/home/cross_platform.png';
 import cloud from '../../../assets/home/cloud.jpg';
-import years from '../../../assets/home/10years.png';
+import years from '../../../assets/Placeholder.png';
 import classes from './Professional.css';
 
 const professional = () => (

@@ -1,30 +1,58 @@
 import React from 'react';
 import classes from './Portfolio.css';
-import liquidLabJava from '../../assets/portfolio/liquidlab_java.jpg';
+import more from '../../assets/portfolio/more/more.png';
+import JavaProjects from "../../components/Projects/JavaProjects/JavaProjects";
 
 class Portfolio extends React.Component {
+    state = {
+        javaExpanded: false,
+        cSharpExpanded: false,
+        javascriptExpanded: false,
+        autoItExpanded: false
+    };
+
+    handleJavaExpand = () => {
+        this.setState({ javaExpanded: !this.state.javaExpanded })
+    };
+
+    handleCSharpExpand = () => {
+        this.setState({ cSharpExpanded: !this.state.cSharpExpanded })
+    };
+
+    handleJavascriptExpand = () => {
+        this.setState({ javascriptExpanded: !this.state.javascriptExpanded })
+    };
+
+    handleAutoItExpand = () => {
+        this.setState({ autoItExpanded: !this.state.autoItExpanded })
+    };
+
     render() {
-
-
-        //Order into Java, C#, JavaScript, AutoIt
+        const { javaExpanded, cSharpExpanded, javascriptExpanded, autoItExpanded } = this.state;
 
 
         return (
             <main className={classes.Main}>
                 <p className={classes.Header}>Development Portfolio</p>
-                <section className={classes.Project}>
-                <section className={classes.FlexRow}>
-                    <section>
-                        <p className={classes.ProjectName}>LiquidLab (Java)</p>
-                        <p className={classes.ProjectDescription}>Desktop DIY e-liquid calculator written in <span className={classes.Bold}>Java</span>
-                            &nbsp;and <span className={classes.Bold}>JavaFX</span></p>
-                        <ul>
-                            <li>Solo project</li>
-                            <li><a href="https://github.com/mattwayles/LiquidLabJava" rel="noopener noreferrer" target="_blank">Open Source</a></li>
-                        </ul>
-                    </section>
-                    <img className={classes.Image} src={liquidLabJava} alt="LiquidLab" />
-                    </section>
+                <section onClick={this.handleJavaExpand} className={classes.Language}>
+                    &nbsp;Java
+                    <img className={classes.More} src={more} alt="\/" />
+                    {javaExpanded ? <JavaProjects />: null}
+                </section>
+                <section onClick={this.handleCSharpExpand} className={classes.Language}>
+                    &nbsp;C#
+                    <img className={classes.More} src={more} alt="\/" />
+                    {cSharpExpanded ? <JavaProjects />: null}
+                </section>
+                <section onClick={this.handleJavascriptExpand} className={classes.Language}>
+                    &nbsp;JavaScript
+                    <img className={classes.More} src={more} alt="\/" />
+                    {javascriptExpanded ? <JavaProjects />: null}
+                </section>
+                <section onClick={this.handleAutoItExpand} className={classes.Language}>
+                    &nbsp;AutoIt
+                    <img className={classes.More} src={more} alt="\/" />
+                    {autoItExpanded ? <JavaProjects />: null}
                 </section>
             </main>
         );
