@@ -75,15 +75,32 @@
     border-radius: 5px;
 }
 
+@media only screen and (max-width: 1024px) {
+    .Language {
+        margin-top: 3vw;
+        padding: 10px 0;
+        font-size: 4vw;
+    }
+    .ExpandCollapse {
+        margin: 2%;
+
+    }
+}
+
 @media only screen and (max-width: 1023px) {
     .Main {
         width: 100%;
     }
+    .Header {
+        font-size: 7vw;
+    }
     .Language {
-        margin-top: 2vw;
+        margin-top: 4vw;
+        padding: 10px 0;
+        font-size: 4vw;
     }
     .ExpandCollapse {
-        margin: 1% 0;
+        margin: 2%;
 
     }
 }

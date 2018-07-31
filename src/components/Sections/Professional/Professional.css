@@ -1,5 +1,5 @@
 .Grid {
-    margin: 3% auto;
+    margin: 72px auto;
     width: 90%;
 }
 
@@ -20,11 +20,7 @@
     opacity: 0.8;
     color: #003366;
     line-height: 3vw;
-}
-
-.Statement {
     padding-top: 6%;
-    line-height: 50px;
 }
 
 .bold {
@@ -67,7 +63,7 @@
         height: 100px;
     }
     .Statement {
-        line-height: 20px;
+        font-size: 4vw;
+        line-height: 4vw;
     }
-
 }

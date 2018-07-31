@@ -7,7 +7,7 @@ const template = () => (
             <section className={classes.ProjectDiv}>
                 <p className={classes.ProjectName}>templateName</p>
                 <p className={classes.ProjectDescription}>templateDesc</p>
-                <ul className={classes.ProjectDescription}>
+                <ul className={classes.List}>
                     <li>templateList</li>
                     <li><a href="http://templateURL" rel="noopener noreferrer"
                            target="_blank">Open Source</a></li>

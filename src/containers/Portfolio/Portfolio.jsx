@@ -54,7 +54,7 @@ class Portfolio extends React.Component {
                 <section onMouseEnter={(e) => this.handleJavaExpand(e, true)}
                          onMouseLeave={(e) => this.handleJavaExpand(e, false)}
                          onClick={(e) => this.handleJavaExpand(e)} className={classes.Language}>
-                    &nbsp;Java
+                    &emsp;Java
                     {java.expanded ?
                         java.hover ? <img className={classes.ExpandCollapse} src={lessHover} alt="\/" />
                             : <img className={classes.ExpandCollapse} src={less} alt="\/" />
@@ -65,7 +65,7 @@ class Portfolio extends React.Component {
                 <section onMouseEnter={(e) => this.handleCSharpExpand(e, true)}
                          onMouseLeave={(e) => this.handleCSharpExpand(e, false)}
                          onClick={(e) => this.handleCSharpExpand(e)} className={classes.Language}>
-                    &nbsp;C#
+                    &emsp;C#
                     {cSharp.expanded ?
                         cSharp.hover ? <img className={classes.ExpandCollapse} src={lessHover} alt="\/" />
                             : <img className={classes.ExpandCollapse} src={less} alt="\/" />
@@ -76,7 +76,7 @@ class Portfolio extends React.Component {
                 <section onMouseEnter={(e) => this.handleJavascriptExpand(e, true)}
                          onMouseLeave={(e) => this.handleJavascriptExpand(e, false)}
                          onClick={(e) => this.handleJavascriptExpand(e)} className={classes.Language}>
-                    &nbsp;JavaScript
+                    &emsp;JavaScript
                     {javascript.expanded ?
                         javascript.hover ? <img className={classes.ExpandCollapse} src={lessHover} alt="\/" />
                             : <img className={classes.ExpandCollapse} src={less} alt="\/" />
@@ -87,7 +87,7 @@ class Portfolio extends React.Component {
                 <section onMouseEnter={(e) => this.handleAutoItExpand(e, true)}
                          onMouseLeave={(e) => this.handleAutoItExpand(e, false)}
                          onClick={(e) => this.handleAutoItExpand(e)} className={classes.Language}>
-                    &nbsp;AutoIt
+                    &emsp;AutoIt
                     {autoIt.expanded ?
                         autoIt.hover ? <img className={classes.ExpandCollapse} src={lessHover} alt="\/" />
                             : <img className={classes.ExpandCollapse} src={less} alt="\/" />

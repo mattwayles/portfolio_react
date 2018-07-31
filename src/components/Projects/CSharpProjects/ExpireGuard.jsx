@@ -3,12 +3,14 @@ import classes from '../ProjectStyle.css';
 import expireGuardImg from '../../../assets/portfolio/CSharp/expireguard.jpg';
 const expireGuard = () => (
     <section className={classes.Project}>
-        <section className={classes.FlexRow}>
             <section className={classes.ProjectDiv}>
+                <section className={classes.ImageDiv}>
+                    <img className={classes.Image} src={expireGuardImg} alt="ExpireGuard"/>
+                </section>
                 <p className={classes.ProjectName}>ExpireGuard</p>
                 <p className={classes.ProjectDescription}>Certificate Expiration prevention tool written in
                     <span className={classes.Bold}> C#</span> with <span className={classes.Bold}>WPF</span>.</p>
-                <ul className={classes.ProjectDescription}>
+                <ul className={classes.List}>
                     <li>Solo professional Project</li>
                     <li>Supports Windows/UNIX deployment</li>
                     <li>System certificate retrieval and metadata extraction capabilities</li>
@@ -17,10 +19,6 @@ const expireGuard = () => (
                     <li><em>Source is classified U.S. Government property</em></li>
                 </ul>
             </section>
-            <section className={classes.ProjectDiv}>
-                <img className={classes.Image} src={expireGuardImg} alt="ExpireGuard"/>
-            </section>
-        </section>
     </section>
 );
 

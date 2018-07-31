@@ -4,13 +4,15 @@ import origPortfolioImg from '../../../assets/portfolio/JavaScript/mattwayles.jp
 
 const origPortfolio = () => (
     <section className={classes.Project}>
-        <section className={classes.FlexRow}>
             <section className={classes.ProjectDiv}>
+                <section className={classes.ImageDiv}>
+                    <img className={classes.Image} src={origPortfolioImg} alt="Original Portfolio"/>
+                </section>
                 <p className={classes.ProjectName}>Digital Portfolio (Original)</p>
                 <p className={classes.ProjectDescription}>Professional portfolio as a freeCodeCamp project.
                     Written in <span className={classes.Bold}>ECMAScript 6</span> with
                     <span className={classes.Bold}> HTML5</span> and <span className={classes.Bold}> CSS3</span>.</p>
-                <ul className={classes.ProjectDescription}>
+                <ul className={classes.List}>
                     <li>Solo Educational Project</li>
                     <li>Part of FreeCodeCamp Full-Stack Certification</li>
                     <li>Assisted with MS70-480 MCP Certification</li>
@@ -18,10 +20,6 @@ const origPortfolio = () => (
                         View Source</a></li>
                 </ul>
             </section>
-            <section className={classes.ProjectDiv}>
-                <img className={classes.Image} src={origPortfolioImg} alt="Original Portfolio"/>
-            </section>
-        </section>
     </section>
 );
 

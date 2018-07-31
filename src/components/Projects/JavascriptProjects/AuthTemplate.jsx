@@ -4,12 +4,14 @@ import authTemplateImg from '../../../assets/portfolio/JavaScript/authtemplate.j
 
 const authTemplate = () => (
     <section className={classes.Project}>
-        <section className={classes.FlexRow}>
             <section className={classes.ProjectDiv}>
+                <section className={classes.ImageDiv}>
+                    <img className={classes.Image} src={authTemplateImg} alt="Authentication Template"/>
+                </section>
                 <p className={classes.ProjectName}>Authentication Template</p>
                 <p className={classes.ProjectDescription}>Token-based authentication template for React.js applications. Written in
                     <span className={classes.Bold}> React.js</span>.</p>
-                <ul className={classes.ProjectDescription}>
+                <ul className={classes.List}>
                     <li>Solo Recreational Project</li>
                     <li>Utilizes browser token storage and Redux for state management</li>
                     <li>Employs Base64 Authentication</li>
@@ -18,10 +20,6 @@ const authTemplate = () => (
                            target="_blank">Open Source</a></li>
                 </ul>
             </section>
-            <section className={classes.ProjectDiv}>
-                <img className={classes.Image} src={authTemplateImg} alt="Authentication Template"/>
-            </section>
-        </section>
     </section>
 );
 

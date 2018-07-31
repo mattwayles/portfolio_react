@@ -4,12 +4,14 @@ import liquidLabImg from '../../../assets/portfolio/JavaScript/liquidlabreact.jp
 
 const liquidLab = () => (
     <section className={classes.Project}>
-        <section className={classes.FlexRow}>
             <section className={classes.ProjectDiv}>
+                <section className={classes.ImageDiv}>
+                    <img className={classes.Image} src={liquidLabImg} alt="LiquidLab"/>
+                </section>
                 <p className={classes.ProjectName}>LiquidLab</p>
                 <p className={classes.ProjectDescription}>Browser-based DIY e-liquid calculator written in
                     <span className={classes.Bold}> React.js</span>.</p>
-                <ul className={classes.ProjectDescription}>
+                <ul className={classes.List}>
                     <li>Solo Recreational Project</li>
                     <li>Currently Under Construction</li>
                     <li>Uses Authentication Template to store and retrieve user data</li>
@@ -18,10 +20,6 @@ const liquidLab = () => (
                            target="_blank">Open Source</a></li>
                 </ul>
             </section>
-            <section className={classes.ProjectDiv}>
-                <img className={classes.Image} src={liquidLabImg} alt="LiquidLab"/>
-            </section>
-        </section>
     </section>
 );
 
