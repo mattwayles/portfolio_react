@@ -31,15 +31,39 @@
     text-shadow: 1px 1px 1px var(--hover-color);
 }
 
-.ProjectDescription {
+.ProjectDescription, .List {
     margin: 5% 4% 1% 2%;
     font-size: 1.2vw;
     color: var(--main-color);
     text-shadow: none;
 }
 
+.List {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.InnerList {
+    list-style-position: inside;
+    padding-left: 1.5vw;
+}
+
+.InnerList li, .List li {
+    margin-bottom: 5px
+}
+
 .Image {
     width: 100%;
     padding-top: 15px;
     border-radius: 5px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .ProjectName {
+        font-size: 3vw;
+    }
+
+    .ProjectDescription, .List {
+        font-size: 2vw;
+    }
 }
