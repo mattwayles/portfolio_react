@@ -15,11 +15,11 @@
     font-family: 'Sunflower', sans-serif;
     font-style: italic;
     font-weight: 500;
-    font-size: 3em;
+    font-size: 3vw;
     margin-top: 10px;
     opacity: 0.8;
     color: #003366;
-    line-height: 300px;
+    line-height: 3vw;
 }
 
 .Statement {
@@ -44,6 +44,30 @@
     box-shadow: 5px 5px var(--main-color);
 }
 
-.YearsImage {
-    margin-right: 10%;
+@media only screen and (max-width: 1440px) {
+    .FlexRow {
+        height: 150px;
+        margin-top: 6%;
+    }
+    .Image, .CloudImage, .YearsImage {
+        height: 150px;
+        line-height: 150px;
+    }
+    .CloudImage, .YearsImage {
+        margin-top: 4%;
+    }
+}
+
+@media only screen and (max-width: 499px) {
+    .FlexRow {
+        height: 100px;
+        margin-top: 10%;
+    }
+    .Image, .CloudImage, .YearsImage {
+        height: 100px;
+    }
+    .Statement {
+        line-height: 20px;
+    }
+
 }

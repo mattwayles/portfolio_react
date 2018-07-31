@@ -16,7 +16,7 @@
     border: 1px solid var(--main-color);
     margin: 1% auto;
     width: 98%;
-    background-color: rgba(233, 240, 243,.5);
+    background-color: rgba(233, 240, 243,.8);
 }
 
 .ProjectDiv {
@@ -25,15 +25,17 @@
 
 .ProjectName {
     font-weight: 700;
-    font-size: 38px;
+    font-size: 2vw;
     margin: 1% 1% 2% 2%;
     color: var(--accent-color);
+    text-shadow: 1px 1px 1px var(--hover-color);
 }
 
 .ProjectDescription {
     margin: 5% 4% 1% 2%;
-    font-size: 18px;
+    font-size: 1.2vw;
     color: var(--main-color);
+    text-shadow: none;
 }
 
 .Image {
