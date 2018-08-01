@@ -92,3 +92,12 @@
         font-size: 4.5vw;
     }
 }
+
+@supports (-ms-ime-align:auto) {
+    .Intro {
+        padding: 4vw 0;
+    }
+    .NameTag header {
+        margin-top: 2vw;
+    }
+}
