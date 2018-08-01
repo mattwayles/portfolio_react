@@ -1,5 +1,5 @@
 .Main {
-    margin: 5% auto 1%;
+    margin: 72px auto;
     width: 80%;
     height: 100%;
     box-shadow: 2px 2px 5px #ccc;
@@ -13,7 +13,7 @@
 .Header {
     margin: 3%;
     color: var(--main-color);
-    font-size: 5em;
+    font-size: 5vw;
     text-shadow: 2px 4px 3px rgba(0,0,0,0.2), 0 -5px 35px rgba(255,255,255,0.3);
 }
 
@@ -25,8 +25,8 @@
 .FlexRow {
     display: flex;
     flex-flow: row;
-    height: 300px;
-    margin: 3% auto;
+    height: 100%;
+    margin: 1% auto;
     justify-content: center;
 }
 
@@ -39,17 +39,90 @@
 .FirstLetter {
     color: var(--main-color);
     font-weight: 700;
-    font-size: 1.7em;
+    font-size: 1.7vw;
+}
+
+.Text {
+    font-size: 1vw;
 }
 
 .Topic {
-    font-size: 1.5em;
+    font-size: 1.5vw;
 }
 
 .Image {
     width: 40%;
     height: 300px;
-    line-height: 300px;
     border-radius: 25px;
     margin: 0 2%;
+
+}
+
+.TravelImage {
+    width: 40%;
+    height: 300px;
+    border-radius: 25px;
+    margin: 3% 2%;
+}
+
+.ProgrammingImage {
+    width: 40%;
+    height: 300px;
+    border-radius: 25px;
+    margin: 6% 2%;
+}
+
+@media only screen and (max-width: 1024px) {
+    .Main {
+        width: 100%;
+    }
+    .Header {
+        font-size: 8vw;
+    }
+    .FirstLetter {
+        font-size: 2.7vw;
+    }
+
+    .Text {
+        font-size: 2vw;
+    }
+
+    .Topic {
+        font-size: 2.5vw;
+    }
+    .TravelImage, .ProgrammingImage {
+        margin: 10% 3% 3% 0;
+    }
+}
+
+@media only screen and (max-width: 499px) {
+    .Main {
+        width: 100%;
+    }
+    .Header {
+        font-size: 10vw;
+    }
+    .FirstLetter {
+        font-size: 2.7vw;
+    }
+
+    .Text {
+        font-size: 2vw;
+    }
+
+    .Topic {
+        font-size: 2.5vw;
+    }
+    .Image {
+        margin: 5% 0 5% 3%;
+        width: 50%;
+        height: 150px;
+
+    }
+
+    .TravelImage, .ProgrammingImage {
+        margin: 25% 3% 3% 0;
+        width: 50%;
+        height: 150px;
+    }
 }

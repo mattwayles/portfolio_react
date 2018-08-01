@@ -17,7 +17,7 @@ const links = () => (
         <a href="https://certification.comptia.org/certifications/security"><img className={classes.Comptia} src={secplus} alt="Security+ Certified" /></a>
         <a href="https://certification.comptia.org/certifications/network"><img className={classes.Comptia} src={netplus} alt="Network+ Certified" /></a>
         <a href="https://certification.comptia.org/certifications/a"><img className={classes.Comptia} src={aplus} alt="A+ Certified" /></a>
-        <br /><br /><br />
+        <br />
         <SocialIcon className={classes.SocialIcon} url='http://facebook.com/mwayles' />
         <SocialIcon className={classes.SocialIcon} url='http://www.github.com/mattwayles' />
         <SocialIcon className={classes.SocialIcon} url='https://www.linkedin.com/in/matthew-wayles-03354369' />

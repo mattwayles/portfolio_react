@@ -1,0 +1,26 @@
+import React from 'react';
+import classes from '../ProjectStyle.css';
+import wikiViewImg from '../../../assets/portfolio/JavaScript/wikiview.jpg';
+
+const wikiView = () => (
+    <section className={classes.Project}>
+            <section className={classes.ProjectDiv}>
+                <section className={classes.ImageDiv}>
+                    <img className={classes.Image} src={wikiViewImg} alt="Wikipedia Viewer"/>
+                </section>
+                <p className={classes.ProjectName}>Wikipedia Viewer</p>
+                <p className={classes.ProjectDescription}>Wikipedia search platform project written in
+                    <span className={classes.Bold}> JQuery</span> with
+                    <span className={classes.Bold}> HTML5</span> and <span className={classes.Bold}> CSS3</span>.</p>
+                <ul className={classes.List}>
+                    <li>Solo Educational Project</li>
+                    <li>Part of FreeCodeCamp Full-Stack Certification</li>
+                    <li>Assisted with MS70-480 MCP Certification</li>
+                    <li><a href="https://codepen.io/LiquidIce25/pen/Opwray" rel="noopener noreferrer" target="_blank">
+                        View Source</a></li>
+                </ul>
+            </section>
+    </section>
+);
+
+export default wikiView;

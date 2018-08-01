@@ -1,8 +1,15 @@
 import React from 'react';
 import classes from './Personal.css';
-import placeholder from '../../assets/Placeholder.png'
+import formative from '../../assets/personal/formative.JPG';
+import travel from '../../assets/personal/travel.jpg';
+import activities from '../../assets/personal/currentActivities.jpg';
+import programming from '../../assets/personal/programming.jpg';
 
 class Personal extends React.Component {
+    componentWillMount() {
+        window.scroll(0,0);
+    }
+
     render() {
         return (
             <main className={classes.Main}>
@@ -11,13 +18,13 @@ class Personal extends React.Component {
                     <section className={classes.FlexRow}>
                         <section className={classes.Text}>
                             <p className={classes.Topic}>Formative Years</p>
-                            <span className={classes.FirstLetter}>I</span> was born and raised in suburban Philadelphia, and enjoyed a normal childhood of outdoor play, sports, video games, and objectionable bedtimes.
+                            <p className={classes.Text}><span className={classes.FirstLetter}>I</span> was born and raised in suburban Philadelphia, and enjoyed a normal childhood of outdoor play, sports, video games, and objectionable bedtimes.
                             At age 13, my parents decided to retire from their accomplished careers and chose Beaufort, South Carolina from one of those <em>"Best Places to Retire in 2004"</em> magazines.
-                            I decided to remain in South Carolina during my undergraduate university years, completing the Bachelor of Science Computer Information Systems program with honors at the distinguished College of Charleston.</section>
-                            <img className={classes.Image} src={placeholder} alt="Placeholder" />
+                            I decided to remain in South Carolina during my undergraduate university years, completing the Bachelor of Science Computer Information Systems program with honors at the distinguished College of Charleston.</p></section>
+                            <img className={classes.Image} src={formative} alt="Formative Years" />
                     </section>
                     <section className={classes.FlexRow}>
-                        <img className={classes.Image} src={placeholder} alt="Placeholder" />
+                        <img className={classes.TravelImage} src={travel} alt="Travel" />
                         <section className={classes.Text}>
                             <p className={classes.Topic}>Travel</p>
                             <span className={classes.FirstLetter}>A</span> Study Abroad opportunity during the summer of 2012 was my first exposure to the extensive cultural diversity offered in this world.
@@ -38,10 +45,10 @@ class Personal extends React.Component {
                             snowboarding in the winter, and running throughout the year. I make the best of the unique area I live in by frequenting the beach and the waterways whenever possible,
                             which has fostered an interest in fishing and fresh seafood.
                         </section>
-                        <img className={classes.Image} src={placeholder} alt="Placeholder" />
+                        <img className={classes.Image} src={activities} alt="Current Activities" />
                     </section>
                     <section className={classes.FlexRow}>
-                        <img className={classes.Image} src={placeholder} alt="Placeholder" />
+                        <img className={classes.ProgrammingImage} src={programming} alt="Passion for Programming" />
                         <section className={classes.Text}>
                             <p className={classes.Topic}>Passion for Programming</p>
                             <span className={classes.FirstLetter}>M</span>y enjoyment of software development began in my early teens, when I would modify the HTML of my AOL Instant Messenger profile to make it stand out from the crowd.

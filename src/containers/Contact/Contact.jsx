@@ -5,6 +5,10 @@ import classes from './Contact.css';
 import {SocialIcon} from "react-social-icons";
 
 class Contact extends React.Component {
+    componentWillMount() {
+        window.scroll(0,0);
+    }
+
     render() {
 
         return (

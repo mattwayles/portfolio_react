@@ -1,5 +1,5 @@
 .Main {
-    margin: 5% auto 1%;
+    margin: 72px auto;
     width: 80%;
     box-shadow: 2px 2px 5px #ccc;
     border: 1px solid #eee;
@@ -12,8 +12,27 @@
 .Header {
     margin: 3%;
     color: var(--main-color);
-    font-size: 5em;
+    font-size: 5vw;
     text-shadow: 2px 4px 3px rgba(0,0,0,0.2), 0 -5px 35px rgba(255,255,255,0.3);
+}
+
+.Language {
+    width: 100%;
+    padding: 5px 0;
+    margin-top: 1%;
+    color: var(--hover-color);
+    background-color: var(--main-color);
+    font-size: 2.5vw;
+    border-radius: 5px;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.2);
+}
+
+.ExpandCollapse {
+    float: right;
+    cursor: pointer;
+    margin: 1%;
+    width: 5%;
+    border-radius: 5px;
 }
 
 .FlexRow {
@@ -54,4 +73,34 @@
 .Image {
     height: 10%;
     border-radius: 5px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .Language {
+        margin-top: 3vw;
+        padding: 10px 0;
+        font-size: 4vw;
+    }
+    .ExpandCollapse {
+        margin: 2%;
+
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .Main {
+        width: 100%;
+    }
+    .Header {
+        font-size: 7vw;
+    }
+    .Language {
+        margin-top: 4vw;
+        padding: 10px 0;
+        font-size: 4vw;
+    }
+    .ExpandCollapse {
+        margin: 2%;
+
+    }
 }
