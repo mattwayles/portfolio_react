@@ -36,7 +36,7 @@ class Resume extends React.Component {
     render() {
         const { pageNumber, numPages, hover } = this.state;
         return (
-            <main className={classes.Main}>
+            <section className={classes.Main}>
                     <Document
                         file={resume}
                         onLoadSuccess={this.onDocumentLoadSuccess}
@@ -56,7 +56,7 @@ class Resume extends React.Component {
                             src={hover? nextHover : next} alt="=>" /> : null}
                         </p>
                 </section>
-            </main>
+            </section>
         )
     }
 }

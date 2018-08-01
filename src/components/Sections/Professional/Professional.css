@@ -24,7 +24,7 @@
 }
 
 .bold {
-    color: var(--accent-color);
+    color: #c15435;
     font-weight: 700;
     opacity: 1;
 }
@@ -37,10 +37,10 @@
 }
 
 .CloudImage {
-    box-shadow: 5px 5px var(--main-color);
+    box-shadow: 5px 5px #1c4f62;
 }
 
-@media only screen and (max-width: 1440px) {
+@media only screen and (max-width: 1439px) {
     .FlexRow {
         height: 150px;
         margin-top: 6%;
@@ -51,6 +51,10 @@
     }
     .CloudImage, .YearsImage {
         margin-top: 4%;
+    }
+    .Statement {
+        font-size: 3.6vw;
+        line-height: 3.6vw;
     }
 }
 

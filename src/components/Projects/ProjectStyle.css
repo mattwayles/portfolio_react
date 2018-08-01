@@ -1,14 +1,14 @@
 .Bold {
-    color: var(--accent-color);
+    color: #c15435;
     font-weight: 600;
     opacity: 1;
 }
 
 .Project {
-    border: 1px solid var(--main-color);
+    border: 1px solid #1c4f62;
     margin: 1% auto;
     width: 98%;
-    background-color: rgba(233, 240, 243,.8);
+    background-color: rgba(255, 255, 255,.7);
 }
 
 .ProjectDiv {
@@ -26,13 +26,13 @@
     font-weight: 700;
     font-size: 2vw;
     margin: 1% 1% 2% 2%;
-    color: var(--accent-color);
+    color: #c15435;
 }
 
 .ProjectDescription, .List {
     margin: 5% 4% 1% 2%;
     font-size: 1.2vw;
-    color: var(--main-color);
+    color: #1c4f62;
     text-shadow: none;
 }
 

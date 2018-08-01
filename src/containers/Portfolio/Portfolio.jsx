@@ -49,7 +49,7 @@ class Portfolio extends React.Component {
         const { java, cSharp, javascript, autoIt } = this.state;
         
         return (
-            <main className={classes.Main}>
+            <section className={classes.Main}>
                 <p className={classes.Header}>Development Portfolio</p>
                 <section onMouseEnter={(e) => this.handleJavaExpand(e, true)}
                          onMouseLeave={(e) => this.handleJavaExpand(e, false)}
@@ -95,7 +95,7 @@ class Portfolio extends React.Component {
                             <img className={classes.ExpandCollapse} src={more} alt="\/" />}
                     {autoIt.expanded ? <AutoItProjects />: null}
                 </section>
-            </main>
+            </section>
         );
     }
 }

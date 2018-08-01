@@ -1,7 +1,7 @@
 .Button {
-    background-color: var(--main-color);
+    background-color: #1c4f62;
     border: none;
-    color: var(--accent-color);
+    color: #c15435;
     outline: none;
     border-radius: 25px;
     cursor: pointer;

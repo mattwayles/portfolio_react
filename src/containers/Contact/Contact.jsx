@@ -12,7 +12,7 @@ class Contact extends React.Component {
     render() {
 
         return (
-            <main className={classes.Main}>
+            <section className={classes.Main}>
                 <p className={classes.Header}>Contact Me</p>
                 <section className={classes.FlexRow}>
                     <img className={classes.Image} src={contact} alt="Contact Me" />
@@ -35,7 +35,7 @@ class Contact extends React.Component {
                         </section>
                     </section>
                 </section>
-            </main>
+            </section>
         );
     }
 }

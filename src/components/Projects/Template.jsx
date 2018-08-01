@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './ProjectStyle.css';
+import templateImg from '../../assets/Placeholder.png';
 
 const template = () => (
     <section className={classes.Project}>
@@ -14,7 +15,7 @@ const template = () => (
                 </ul>
             </section>
             <section className={classes.ProjectDiv}>
-                <img className={classes.Image} src={/*templateImg*/} alt="template"/>
+                <img className={classes.Image} src={templateImg} alt="template"/>
             </section>
         </section>
     </section>

@@ -14,7 +14,7 @@ class Main extends React.Component {
     render() {
 
         return (
-            <main className={classes.Main}>
+            <section className={classes.Main}>
                 <section className={classes.Intro}>
                     <section className={classes.Headshot}>
                         <img src={headshot} alt="Broken" />
@@ -26,7 +26,7 @@ class Main extends React.Component {
                 </section>
                 <Links />
                  <Professional />
-            </main>
+            </section>
         );
     }
 }

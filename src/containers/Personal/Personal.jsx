@@ -12,7 +12,7 @@ class Personal extends React.Component {
 
     render() {
         return (
-            <main className={classes.Main}>
+            <section className={classes.Main}>
                 <p className={classes.Header}>About Me</p>
                 <section className={classes.Grid}>
                     <section className={classes.FlexRow}>
@@ -21,7 +21,7 @@ class Personal extends React.Component {
                             <p className={classes.Text}><span className={classes.FirstLetter}>I</span> was born and raised in suburban Philadelphia, and enjoyed a normal childhood of outdoor play, sports, video games, and objectionable bedtimes.
                             At age 13, my parents decided to retire from their accomplished careers and chose Beaufort, South Carolina from one of those <em>"Best Places to Retire in 2004"</em> magazines.
                             I decided to remain in South Carolina during my undergraduate university years, completing the Bachelor of Science Computer Information Systems program with honors at the distinguished College of Charleston.</p></section>
-                            <img className={classes.Image} src={formative} alt="Formative Years" />
+                        <img className={classes.Image} src={formative} alt="Formative Years" />
                     </section>
                     <section className={classes.FlexRow}>
                         <img className={classes.TravelImage} src={travel} alt="Travel" />
@@ -61,7 +61,7 @@ class Personal extends React.Component {
                         </section>
                     </section>
                 </section>
-            </main>
+            </section>
         );
     }
 }

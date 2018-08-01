@@ -13,11 +13,11 @@
     font-size: 3em;
     font-family: inherit;
     font-weight: bold;
-    color: var(--main-color);
+    color: #1c4f62;
 }
 
 .About h1 {
-    color: var(--main-color);
+    color: #1c4f62;
 }
 
 .About h3 {
@@ -29,7 +29,7 @@
 }
 
 .About ul{
-    color: var(--main-color);
+    color: #1c4f62;
     padding: 10px 100px;
 }
 
