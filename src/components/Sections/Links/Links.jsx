@@ -2,6 +2,7 @@ import React from 'react';
 
 import classes from './Links.css';
 import {SocialIcon} from "react-social-icons";
+import oca from '../../../assets/home/certs/oca.png'
 import mcp480 from '../../../assets/home/certs/mcp_html.png';
 import mcp410 from '../../../assets/home/certs/mcp_win2012.png';
 import mcp680 from '../../../assets/home/certs/mcp_win7.png';
@@ -11,6 +12,7 @@ import secplus from '../../../assets/home/certs/a+.png';
 
 const links = () => (
     <section className={classes.Links}>
+        <a href="https://education.oracle.com/oracle-certified-professional-java-se-7-programmer/trackp_155"><img className={classes.Oracle} src={oca} alt="Oracle Certified Java Programmer" /></a>
         <a href="https://www.microsoft.com/en-us/learning/exam-70-480.aspx"><img className={classes.Microsoft} src={mcp480} alt="JavaScript Certified" /></a>
         <a href="https://www.microsoft.com/en-us/learning/exam-70-410.aspx"><img className={classes.Microsoft} src={mcp410} alt="Server2012 Certified" /></a>
         <a href="https://www.microsoft.com/en-us/learning/exam-70-680.aspx"><img className={classes.Microsoft} src={mcp680} alt="Win7 Certified" /></a>

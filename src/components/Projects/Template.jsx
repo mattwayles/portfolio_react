@@ -4,19 +4,16 @@ import templateImg from '../../assets/Placeholder.png';
 
 const template = () => (
     <section className={classes.Project}>
-        <section className={classes.FlexRow}>
-            <section className={classes.ProjectDiv}>
-                <p className={classes.ProjectName}>templateName</p>
-                <p className={classes.ProjectDescription}>templateDesc</p>
-                <ul className={classes.List}>
-                    <li>templateList</li>
-                    <li><a href="http://templateURL" rel="noopener noreferrer"
-                           target="_blank">Open Source</a></li>
-                </ul>
+        <section className={classes.ProjectDiv}>
+            <section className={classes.ImageDiv}>
+                <img className={classes.Image} src={templateImg} alt="templateImg"/>
             </section>
-            <section className={classes.ProjectDiv}>
-                <img className={classes.Image} src={templateImg} alt="template"/>
-            </section>
+            <p className={classes.ProjectName}>TemplateName</p>
+            <p className={classes.ProjectDescription}>TemplateDesc</p>
+            <ul className={classes.List}>
+                <li>TemplateListItem</li>
+                <li><em>TemplateSource</em></li>
+            </ul>
         </section>
     </section>
 );

@@ -10,7 +10,7 @@ const shuckShare = () => (
                 </section>
                 <p className={classes.ProjectName}>Shuck & Share</p>
                 <p className={classes.ProjectDescription}>Freelance website written for Shuck & Share humanitarian organization in Florida.
-                    Written in <span className={classes.Bold}> ECMAScript 6</span> with <span className={classes.Bold}> HTML5</span>
+                    Written in <span className={classes.Bold}> ECMAScript 6</span> with <span className={classes.Bold}> HTML5 </span>
                     and <span className={classes.Bold}> CSS3</span>.</p>
                 <ul className={classes.List}>
                     <li>Solo Professional Project</li>

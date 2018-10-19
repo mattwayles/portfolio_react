@@ -15,10 +15,10 @@ const gct = () => (
                     <span className={classes.Bold}> Node.js</span>.</p>
                 <ul className={classes.List}>
                     <li>Agile Team Project</li>
-                    <li><span className={classes.Bold}>My Roles:</span> Lead UI Developer</li>
+                    <li><span className={classes.Bold}>My Roles:</span> Lead Developer</li>
                     <li><span className={classes.Bold}>My Contributions:</span></li>
                     <ul className={classes.InnerList}>
-                        <li>Helped design the base UI design</li>
+                        <li>Responsible for UI design and implementation</li>
                         <li>Managed a small team of developers to complete UI tasks and keep up with back-end development</li>
                         <li>Responsible for securing the UI using <span className={classes.Bold}>Tomcat Basic Authentication</span></li>
                         <li>Responsible for receiving automatic updates using <span className={classes.Bold}>STOMP</span></li>

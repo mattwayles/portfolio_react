@@ -5,10 +5,10 @@
 .SocialIcon {
     margin: 8% 1% 0 1%;
 }
-.Microsoft, .Comptia {
+.Microsoft, .Oracle, .Comptia {
     margin: 10px;
 }
-.Microsoft {
+.Microsoft, .Oracle {
     width: 7vw;
 }
 .Comptia {
