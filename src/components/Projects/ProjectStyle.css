@@ -31,7 +31,7 @@
 
 .ProjectDescription, .List {
     margin: 5% 4% 1% 2%;
-    font-size: 1.2vw;
+    font-size: 1vw;
     color: #1c4f62;
     text-shadow: none;
 }
@@ -55,12 +55,17 @@
     border-radius: 5px;
 }
 
+.GooglePlay {
+    margin-left: 1.5vw;
+    width: 18%;
+}
+
 @media only screen and (max-width: 1024px) {
     .ProjectName {
-        font-size: 3vw;
+        font-size: 3.5vw;
     }
 
     .ProjectDescription, .List {
-        font-size: 2vw;
+        font-size: 2.7vw;
     }
 }

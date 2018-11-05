@@ -7,6 +7,7 @@ import GCT from "./GCT";
 import Scoreboard from "./Scoreboard";
 import ScoreboardConfig from "./ScoreboardConfig";
 import HikersWatch from "./HikersWatch";
+import AcidRain from "./AcidRain";
 
 const javaProjects = () => {
 
@@ -17,6 +18,7 @@ const javaProjects = () => {
         <LiquidLab />
         <Scoreboard />
         <ScoreboardConfig />
+        <AcidRain />
         <HikersWatch />
         <Yahtzee />
     </Auxil>)

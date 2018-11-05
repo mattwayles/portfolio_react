@@ -47,6 +47,7 @@
     .Main {
         margin: 52px 0 0 0;
         width: 100%;
+        background-color: rgba(255, 255, 255, .4);
     }
     .Intro {
         margin-left: 15%;
@@ -72,6 +73,7 @@
 @media only screen and (max-width: 499px) {
     .Main {
         width: 100%;
+        background-color: rgba(255, 255, 255, .4);
     }
     .Intro {
         margin-bottom: 5%;

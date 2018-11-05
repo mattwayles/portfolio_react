@@ -64,18 +64,15 @@
     color: #c15435;
 }
 
-.ProjectDescription {
-    margin: 14% 4% 1% 2%;
-    font-size: 1.5em;
-    color: #1c4f62;
-}
-
 .Image {
     height: 10%;
     border-radius: 5px;
 }
 
 @media only screen and (max-width: 1024px) {
+    .Main {
+        background-color: rgba(255, 255, 255, 0.5);
+    }
     .Language {
         margin-top: 3vw;
         padding: 10px 0;
@@ -91,6 +88,7 @@
     .Main {
         margin: 52px 0 0 0;
         width: 100%;
+        background-color: rgba(255, 255, 255, 0.5);
     }
     .Header {
         font-size: 7vw;

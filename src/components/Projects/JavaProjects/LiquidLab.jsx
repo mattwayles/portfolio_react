@@ -18,7 +18,7 @@ const liquidLab = () => (
                     <li>SQLite3 Database</li>
                     <li><a href="https://github.com/mattwayles/LiquidLabJava" rel="noopener noreferrer"
                            target="_blank">Open Source</a></li>
-                </ul>
+                </ul><br />
             </section>
     </section>
 );
