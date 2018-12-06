@@ -18,22 +18,6 @@
   font-size: large;
 }
 
-.Footer {
-  text-align: left;
-  position: fixed;
-  width: 100%;
-  height: .8vw;
-  bottom: 0;
-  color: #fff;
-  background-color: #1c4f62;
-}
-
-.Footer p {
-  margin: 0;
-  padding: 0;
-  font-size: .6vw;
-}
-
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

@@ -4,26 +4,7 @@ import downArrowImg from '../../assets/arrows/downArrow.png';
 import classes from './Main.css';
 import Auxil from "../../hoc/Auxil";
 import posed from 'react-pose';
-
-
-
-//TODO:
-    //Pic of me is getting resized when I scroll, what gives?
-    //Gently make the picture and arrows more opaque as I scroll down, and begin announcing the new elements
-
-//Next page (new Container!):
-//Toolbar fixed to top of the page
-
-//What can I do for you?
-//I want to LEARN MORE ABOUT YOU (open About Me page)
-//I want to VIEW YOUR DEVELOPMENT PROJECTS (open projects page)
-//I want to VIEW YOUR RESUME (open resume component)
-//I want to WORK WITH YOU (open e-mail, or a contact form would be even better)
-//I want to CONTACT YOU (open contact page, hopefully I can implement a contact form)
-
-
-
-
+import MainNavigation from "../../components/MainNavigation/MainNavigation";
 
 const TRANSITION_DURATION = 1500;
 const ARROW_DURATION = 500;
@@ -39,8 +20,8 @@ const DescriptionLine = posed.p({
 });
 
 const DownArrow = posed.img({
-    arrowHidden: { opacity: 0, y: -50},
-    arrowVisible:{ opacity: 1, y: 50 }
+    arrowHidden: { opacity: 0, y: -100},
+    arrowVisible:{ opacity: 1, y: 0 }
 });
 
 class Main extends React.Component {
@@ -63,6 +44,13 @@ class Main extends React.Component {
             arrow3: false
         }
     };
+
+    componentDidMount() {
+        window.scrollTo(0,0);
+        if (!this.state.originalWelcomeImageLoaded) {
+            this.loadOriginalWelcomeImage();
+        }
+    }
 
     loadOriginalWelcomeImage = () => {
         this.setState({ originalWelcomeImageLoaded: true });
@@ -103,35 +91,34 @@ class Main extends React.Component {
         } else {
             setTimeout(() => {
                 this.setState({ currentArrowNo: 1});
-                this.displayDownArrow()}, ARROW_DURATION)
+                this.displayDownArrow()}, ARROW_DURATION);
         }
     };
 
     render() {
         const {originalWelcomeImageLoaded, coloredWelcomeImageLoaded, description, downArrows} = this.state;
 
-        if (!originalWelcomeImageLoaded) {
-            this.loadOriginalWelcomeImage();
-        }
-
-        console.log(window.pageYOffset/500);
-
         return (
             <Auxil>
-                <WelcomeImage pose={originalWelcomeImageLoaded ? 'divVisible' : 'divHidden'} style={{opacity: 1 - window.pageYOffset/500}} className={classes.WelcomeImage} />
-                <WelcomeImage pose={coloredWelcomeImageLoaded ? 'divVisible' : 'divHidden'} style={{opacity: 1 - window.pageYOffset/500}} className={classes.WelcomeImageColored}>
-                        <p className={classes.Hello}>Hello, I'm Matthew Wayles.</p>
+                <WelcomeImage pose={originalWelcomeImageLoaded ? 'divVisible' : 'divHidden'} className={classes.WelcomeImage} />
+                <WelcomeImage pose={coloredWelcomeImageLoaded ? 'divVisible' : 'divHidden'} className={classes.WelcomeImageColored}>
+                    <section className={classes.Intro}>
+                    <p className={classes.Hello}>Hello, I'm Matthew Wayles.</p>
                         <DescriptionLine pose={description.line1 ? 'descVisible' : 'descHidden'} className={classes.Description}><em>✓&emsp;<span className={classes.Bold}>Full-Stack</span> Software Engineer</em></DescriptionLine>
                         <DescriptionLine pose={description.line2 ? 'descVisible' : 'descHidden'} className={classes.Description}><em>✓&emsp;Cross-platform <span className={classes.Bold}>Desktop</span>, <span className={classes.Bold}>Mobile</span>, and <span className={classes.Bold}>Web</span> Applications</em></DescriptionLine>
                         <DescriptionLine pose={description.line3 ? 'descVisible' : 'descHidden'} className={classes.Description}><em>✓&emsp;10+ yrs <span className={classes.Bold}>Professional</span> and <span className={classes.Bold}>Educational</span> Experience</em></DescriptionLine>
                         <DescriptionLine pose={description.line4 ? 'descVisible' : 'descHidden'} className={classes.Description}><em>✓&emsp;Available for <span className={classes.Bold}>Freelance</span> projects and <span className={classes.Bold}>Consulting</span></em></DescriptionLine>
+                    </section>
                 </WelcomeImage>
-                <section className={classes.ScrollDiv}>
-                    <DownArrow pose={downArrows.arrow1 ? 'arrowVisible' : 'arrowHidden'} src={downArrowImg} style={{opacity: 1 - window.pageYOffset/500}} />
-                    <DownArrow pose={downArrows.arrow2 ? 'arrowVisible' : 'arrowHidden'} src={downArrowImg} style={{opacity: 1 - window.pageYOffset/500}} />
-                    <DownArrow pose={downArrows.arrow3 ? 'arrowVisible' : 'arrowHidden'} src={downArrowImg} style={{opacity: 1 - window.pageYOffset/500}} />
+                <section className={classes.ScrollDivContainer}>
+                    {window.pageYOffset < window.innerHeight / 2 ?  <section className={classes.ScrollDiv}>
+                        <DownArrow pose={downArrows.arrow1 ? 'arrowVisible' : 'arrowHidden'} src={downArrowImg} />
+                        <DownArrow pose={downArrows.arrow2 ? 'arrowVisible' : 'arrowHidden'} src={downArrowImg} />
+                        <DownArrow pose={downArrows.arrow3 ? 'arrowVisible' : 'arrowHidden'} src={downArrowImg} />
+                    </section> : null}
                 </section>
-                    <section style={{marginTop: '1500px'}}>Hi</section>*/}
+                <MainNavigation />
+
             </Auxil>
     );
     }

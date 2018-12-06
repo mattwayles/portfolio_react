@@ -18,8 +18,8 @@ class Layout extends Component {
     render() {
         return (
             <Auxil>
-                <Toolbar clicked={this.toggleSideDrawerHandler} />
-                <SideDrawer open={this.state.sideDrawerOpen} close={this.toggleSideDrawerHandler} />
+                {/*<Toolbar clicked={this.toggleSideDrawerHandler} />
+                <SideDrawer open={this.state.sideDrawerOpen} close={this.toggleSideDrawerHandler} /> */}
                 <main>
                     {this.props.children}
                 </main> 

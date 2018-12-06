@@ -24,11 +24,6 @@ class App extends Component {
                 </Switch>
             </Layout>
           </BrowserRouter>
-          <div className={classes.Footer}>
-              <p>
-                  ©2018 - All content is original and developed independently by Matthew Wayles. Reproduction without authorization is prohibited.
-              </p>
-          </div>
       </div>
     );
   }

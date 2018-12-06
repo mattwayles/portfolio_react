@@ -1,7 +1,6 @@
 import React from 'react';
 
-import classes from './Links.css';
-import {SocialIcon} from "react-social-icons";
+import classes from './CertificationIcons.css';
 import oca from '../../../assets/home/certs/oca.png'
 import mcp480 from '../../../assets/home/certs/mcp_html.png';
 import mcp410 from '../../../assets/home/certs/mcp_win2012.png';
@@ -10,7 +9,7 @@ import aplus from '../../../assets/home/certs/sec+.png';
 import netplus from '../../../assets/home/certs/net+.png';
 import secplus from '../../../assets/home/certs/a+.png';
 
-const links = () => (
+const certificationIcons = () => (
     <section className={classes.Links}>
         <a href="https://education.oracle.com/oracle-certified-professional-java-se-7-programmer/trackp_155"><img className={classes.Oracle} src={oca} alt="Oracle Certified Java Programmer" /></a>
         <a href="https://www.microsoft.com/en-us/learning/exam-70-480.aspx"><img className={classes.Microsoft} src={mcp480} alt="JavaScript Certified" /></a>
@@ -19,14 +18,7 @@ const links = () => (
         <a href="https://certification.comptia.org/certifications/security"><img className={classes.Comptia} src={secplus} alt="Security+ Certified" /></a>
         <a href="https://certification.comptia.org/certifications/network"><img className={classes.Comptia} src={netplus} alt="Network+ Certified" /></a>
         <a href="https://certification.comptia.org/certifications/a"><img className={classes.Comptia} src={aplus} alt="A+ Certified" /></a>
-        <br />
-        <SocialIcon className={classes.SocialIcon} url='http://facebook.com/mwayles' />
-        <SocialIcon className={classes.SocialIcon} url='http://www.github.com/mattwayles' />
-        <SocialIcon className={classes.SocialIcon} url='https://www.linkedin.com/in/matthew-wayles-03354369' />
-        <SocialIcon className={classes.SocialIcon} url='https://plus.google.com/u/0/101869636481098207270' />
-        <SocialIcon className={classes.SocialIcon} url='https://codepen.io/LiquidIce25/' />
-        <SocialIcon className={classes.SocialIcon} url='http://www.freecodecamp.com/mattwayles' />
     </section>
 );
 
-export default links;
+export default certificationIcons;

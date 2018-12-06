@@ -1,0 +1,57 @@
+.MainNavigation {
+    height: 100vh;
+    background-color: #fff;
+    position: relative;
+    z-index: 0;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+.NavigationOptions {
+    display: flex;
+    flex-flow: column;
+    margin: 0 auto;
+}
+
+.HowCanIHelp {
+    margin: 0;
+    padding-top: 5vh;
+    color: #779ecb;
+    text-align: center;
+    font-size: 7vw;
+}
+
+.ButtonDiv {
+    margin: 5vh auto;
+    width: 60vw;
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+}
+
+.Button {
+    border: 1px solid var(--main-color);
+    border-radius: 50px;
+    cursor: pointer;
+    font: inherit;
+    padding: 2vh 2vw;
+    font-size: 1vw;
+    margin-bottom: 3vh;
+}
+
+.Footer {
+    position: relative;
+    width: 100%;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    color: #fff;
+    padding: 1vh 0;
+    background-color: #BBB;
+}
+
+.Footer p {
+    text-align: center;
+    margin: 0;
+    font-size: 1vw;
+}

@@ -1,105 +1,135 @@
-.Main {
-    width: 80%;
-    height: 100%;
-    margin: 72px auto;
-    text-align: center;
-    box-shadow: 2px 2px 5px #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    box-sizing: border-box;
-    background-color: rgba(255, 255, 255, .6);
+.WelcomeImage, .WelcomeImageColored {
+    height: 85vh;
+    width: 100%;
 }
 
-.Intro {
-    width: 80%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-}
-.Headshot {
-    width: 34%;
-    margin: 6% 1% 3% 1%;
-}
-.Headshot img {
-    width: 15vw;
-    border-radius: 50%;
-    float: right;
-    margin: auto;
+.WelcomeImage {
+    background: url('../../assets/backgrounds/welcomeImage.jpg') no-repeat fixed center;
+    background-size: cover;
+    position: relative;
+    z-index: -3;
 }
 
-.NameTag {
-    text-align: left;
-    margin: 8.5% 0 3% 1%;
+.WelcomeImageColored {
+    background: url('../../assets/backgrounds/welcomeImageColored.jpg') no-repeat fixed center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
 }
-.NameTag header {
+
+.Intro{
+    position: fixed;
+}
+
+.Hello {
     font-size: 5vw;
-    color: rgba(0,0,0,0.8);
-    text-shadow: 2px 4px 3px rgba(0,0,0,0.2), 0 -5px 35px rgba(255,255,255,0.3);
+    font-weight: bold;
+    color: #FFF;
+    margin: 15vh 0 0 5vw;
 }
-.NameTag h2 {
-    color: #1c4f62;
+
+.Description{
+    width: 0;
+    color: #FFF;
     font-size: 2.5vw;
-    margin-top: 10px;
+    margin: 2vh 0 0 8vw;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-align: start;
+    position: relative;
+    z-index: -1;
+}
+
+.Bold {
+    color: #CCC;
+    font-weight: 900;
+}
+
+.ScrollDivContainer {
+    width: 100%;
+    height: 16vh;
+    position: relative;
+    background-color: #fff;
+    z-index: 0;
+}
+
+.ScrollDiv {
+    display: flex;
+    flex-flow: column;
+    margin: 0 auto;
+    padding: 4vh 0;
+    width: 20%;
+    text-align: center;
+    position: relative;
+    background-color: #fff;
+    z-index: 0;
+}
+
+.ScrollDiv img {
+    margin: 0 auto;
+    width: 10%;
 }
 
 
-@media only screen and (max-width: 1023px) {
-    .Main {
-        margin: 52px 0 0 0;
-        width: 100%;
-        background-color: rgba(255, 255, 255, .4);
-    }
-    .Intro {
-        margin-left: 15%;
-        margin-bottom: 8%;
-    }
-    .Headshot img {
-        margin-top: 2vw;
-        width: 35vw;
-    }
-    .NameTag {
-        text-align: center;
-        margin: 16.5% 0 3% 1%;
-    }
-    .NameTag header {
-        font-size: 8.5vw;
-    }
-    .NameTag h2 {
-        color: #1c4f62;
-        font-size: 4.5vw;
-    }
-}
+/*@media only screen and (max-width: 1023px) {*/
+    /*.Main {*/
+        /*margin: 52px 0 0 0;*/
+        /*width: 100%;*/
+        /*background-color: rgba(255, 255, 255, .5);*/
+    /*}*/
+    /*.Intro {*/
+        /*margin-left: 15%;*/
+        /*margin-bottom: 8%;*/
+    /*}*/
+    /*.Headshot img {*/
+        /*margin-top: 2vw;*/
+        /*width: 35vw;*/
+    /*}*/
+    /*.NameTag {*/
+        /*text-align: center;*/
+        /*margin: 16.5% 0 3% 1%;*/
+    /*}*/
+    /*.NameTag header {*/
+        /*font-size: 8.5vw;*/
+    /*}*/
+    /*.NameTag h2 {*/
+        /*color: #1c4f62;*/
+        /*font-size: 4.5vw;*/
+    /*}*/
+/*}*/
 
-@media only screen and (max-width: 499px) {
-    .Main {
-        width: 100%;
-        background-color: rgba(255, 255, 255, .4);
-    }
-    .Intro {
-        margin-bottom: 5%;
-    }
-    .Headshot img {
-        margin-top: 8vw;
-        width: 35vw;
-    }
-    .NameTag {
-        text-align: center;
-        margin: 16.5% 0 3% 1%;
-    }
-    .NameTag header {
-        font-size: 10.5vw;
-    }
-    .NameTag h2 {
-        color: #1c4f62;
-        font-size: 4.5vw;
-    }
-}
+/*@media only screen and (max-width: 499px) {*/
+    /*.Main {*/
+        /*width: 100%;*/
+        /*background-color: rgba(255, 255, 255, .5);*/
+    /*}*/
+    /*.Intro {*/
+        /*margin-bottom: 5%;*/
+    /*}*/
+    /*.Headshot img {*/
+        /*margin-top: 8vw;*/
+        /*width: 35vw;*/
+    /*}*/
+    /*.NameTag {*/
+        /*text-align: center;*/
+        /*margin: 16.5% 0 3% 1%;*/
+    /*}*/
+    /*.NameTag header {*/
+        /*font-size: 10.5vw;*/
+    /*}*/
+    /*.NameTag h2 {*/
+        /*color: #1c4f62;*/
+        /*font-size: 4.5vw;*/
+    /*}*/
+/*}*/
 
-@supports (-ms-ime-align:auto) {
-    .Intro {
-        padding: 4vw 0;
-    }
-    .NameTag header {
-        margin-top: 2vw;
-    }
-}
+/*@supports (-ms-ime-align:auto) {*/
+    /*.Intro {*/
+        /*padding: 4vw 0;*/
+    /*}*/
+    /*.NameTag header {*/
+        /*margin-top: 2vw;*/
+    /*}*/
+/*}*/
