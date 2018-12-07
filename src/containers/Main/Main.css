@@ -37,6 +37,7 @@
     margin: 2vh 0 0 8vw;
     white-space: nowrap;
     overflow-x: hidden;
+    -ms-overflow-style: none;
     text-align: start;
     position: relative;
     z-index: -1;
@@ -65,11 +66,29 @@
     position: relative;
     background-color: #fff;
     z-index: 0;
+    cursor: pointer;
 }
 
 .ScrollDiv img {
     margin: 0 auto;
+    height: 10%;
     width: 10%;
+}
+
+.Footer {
+    position: relative;
+    width: 100%;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    color: #fff;
+    padding: 1vh 0;
+    background-color: #BBB;
+}
+
+.Footer p {
+    text-align: center;
+    margin: 0;
+    font-size: 1vw;
 }
 
 
@@ -94,6 +113,9 @@
     }
     .ScrollDiv {
         width: 30vw;
+    }
+    .Footer p {
+        font-size: 1vw;
     }
 }
 
@@ -121,5 +143,8 @@
     }
     .ScrollDiv {
         width: 60vw;
+    }
+    .Footer p {
+        font-size: 2.5vw;
     }
 }

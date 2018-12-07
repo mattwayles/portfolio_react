@@ -8,6 +8,10 @@
   --fail-color: #c90e0e;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     width: 100%;
     margin: 0;

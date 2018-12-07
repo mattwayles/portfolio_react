@@ -1,14 +1,18 @@
 TODO:
 
-*Optimize on all browsers: Chrome, Firefox, Edge, IE, Safari
-*Auto-resize if user turns device
-*Clicking on DOWN ARROWS on main page slowly scrolls
-*Make links work
-*Resume page
+*Test on Safari
+*Comment!
+*DynamicFont React library on HowCanIHelpLabel
+*Resume page: make the Page Number stop moving
+*Resume page: link to download
+*Resume page: Right/Left buttons could conform better (smaller, lighter color, no background, just a circular border, better angle >) 
+*Back to top button
+*Pull scroll down arrows into reusable component
 *Portfolio page
 *About Me page
 *Contact page
 *Contact form
+*I want you to INSPIRE me...reach out to API for motivational quotes
 
 NICE-TO-HAVES:
 

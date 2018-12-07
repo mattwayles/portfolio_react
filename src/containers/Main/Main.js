@@ -95,6 +95,12 @@ class Main extends React.Component {
         }
     };
 
+    scrollClick = () => {
+        document.documentMode || window.StyleMedia ?
+            window.scrollTo(0, window.innerHeight)
+            : window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+    };
+
     render() {
         const {originalWelcomeImageLoaded, coloredWelcomeImageLoaded, description, downArrows} = this.state;
 
@@ -111,14 +117,18 @@ class Main extends React.Component {
                     </section>
                 </WelcomeImage>
                 <section className={classes.ScrollDivContainer}>
-                    {window.pageYOffset < window.innerHeight / 2 ?  <section className={classes.ScrollDiv}>
+                    {window.pageYOffset < window.innerHeight / 2 ?  <section onClick={this.scrollClick} className={classes.ScrollDiv}>
                         <DownArrow pose={downArrows.arrow1 ? 'arrowVisible' : 'arrowHidden'} src={downArrowImg} />
                         <DownArrow pose={downArrows.arrow2 ? 'arrowVisible' : 'arrowHidden'} src={downArrowImg} />
                         <DownArrow pose={downArrows.arrow3 ? 'arrowVisible' : 'arrowHidden'} src={downArrowImg} />
                     </section> : null}
                 </section>
                 <MainNavigation />
-
+                <section className={classes.Footer}>
+                    <p>©2018</p>
+                    <p>All content is original and developed independently by Matthew Wayles.</p>
+                    <p>Reproduction without authorization is prohibited.</p>
+                </section>
             </Auxil>
     );
     }

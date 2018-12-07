@@ -14,22 +14,18 @@ class Resume extends React.Component {
         pageNumber: 1,
     };
 
-    componentWillMount() {
-        window.scroll(0,0);
-    }
-
     onDocumentLoadSuccess = ({ numPages }) => {
         this.setState({ numPages });
     };
 
     handleBack = () => {
         this.setState({ pageNumber: this.state.pageNumber - 1 });
-        window.scrollTo(0, 0)
+        window.scrollTo(0, this.props.scrollTo)
     };
 
     handleNext = () => {
         this.setState({ pageNumber: this.state.pageNumber + 1 });
-        window.scrollTo(0, 0)
+        window.scrollTo(0, this.props.scrollTo)
     };
 
 

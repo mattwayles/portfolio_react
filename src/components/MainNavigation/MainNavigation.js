@@ -5,6 +5,7 @@ import posed from "react-pose";
 import SocialIcons from "../Sections/SocialIcons/SocialIcons";
 import Auxil from "../../hoc/Auxil";
 import CertificationIcons from "../Sections/CertificationIcons/CertificationIcons";
+import Resume from "../../containers/Resume/Resume";
 
 const TRANSITION_DURATION = 1000;
 const BOUNCE_DURATION = 500;
@@ -15,6 +16,7 @@ const SHOW_BUTTON2_HEIGHT = 72;
 const SHOW_BUTTON3_HEIGHT = 78;
 const SHOW_BUTTON4_HEIGHT = 83;
 const SHOW_BUTTON5_HEIGHT = 88;
+const MAIN_SCROLLED = 100;
 
 const HowCanIHelpLabel = posed.p({
     hidden: { opacity: 0, scale: 0},
@@ -35,7 +37,11 @@ class MainNavigation extends React.Component {
     state = {
         documentHeight: 0,
         windowHeight: 0,
-        howCanIHelpLabel: {display: false, bounce: false},
+        label: {text: "How can I help you?", display: false, bounce: false},
+        labelModified: false,
+        open: {
+            resume: false
+        },
         buttons: {
           button1: false,
           button2: false,
@@ -46,16 +52,22 @@ class MainNavigation extends React.Component {
     };
 
     componentDidMount() {
+        window.addEventListener('resize', this.handleWindowSizeChange);
         this.setState({
             documentHeight: document.documentElement.offsetHeight,
             windowHeight: window.innerHeight})
     }
 
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleWindowSizeChange);
+    }
+
     componentDidUpdate() {
-        const scrollPercent = ((window.pageYOffset + this.state.windowHeight) / this.state.documentHeight) * 100;
+        let scrollPercent = ((window.pageYOffset + this.state.windowHeight) / this.state.documentHeight) * 100;
+        //console.log(scrollPercent);
         if (scrollPercent > SHOW_LABEL_HEIGHT) {
-            if (!this.state.howCanIHelpLabel.display) {
-                this.setState({howCanIHelpLabel: {display: true, bounce: false}});
+            if (!this.state.label.display) {
+                this.setState({label: {...this.state.label, display: true, bounce: false}});
             }
             else if (scrollPercent > SHOW_BUTTON1_HEIGHT && !this.state.buttons.button1) {
                 this.setState({buttons: {...this.state.buttons, button1: true}});
@@ -73,25 +85,54 @@ class MainNavigation extends React.Component {
                 this.setState({buttons: {...this.state.buttons, button5: true}});
                 setTimeout(() => this.bounceLabel(), 5000);
             }
+            else{
+                scrollPercent = (window.pageYOffset / this.state.documentHeight) * 100;
+                if (scrollPercent > MAIN_SCROLLED && !this.state.labelModified) {
+                    this.state.open.resume ? this.setState({
+                        label: {...this.state.label, text: "Like what you see? Send me a message!"},
+                        labelModified: true
+                    }) : null;
+                }
+            }
         }
-        else if (scrollPercent < window.innerHeight / 5 && this.state.howCanIHelpLabel.display) {
-            this.resetMainNavigationAnimation();
-        }
+        // else if (scrollPercent < window.innerHeight / 5 && this.state.label.display) {
+        //     this.resetMainNavigationAnimation();
+        // }
 
     }
 
-    resetMainNavigationAnimation = () => {
-        this.setState({ howCanIHelpLabel: {display: false, bounce: false}, buttons: {} });
-    };
+    // resetMainNavigationAnimation = () => {
+    //     this.setState({ label: {...this.state.label, display: false, bounce: false}, buttons: {} });
+    // };
 
     bounceLabel = () => {
-        this.setState({howCanIHelpLabel: {display: true, bounce: true}});
-        setTimeout(() => this.setState({howCanIHelpLabel: {display: true, bounce: false}}), BOUNCE_DURATION);
+        this.setState({label: {...this.state.label, display: true, bounce: true}});
+        setTimeout(() => this.setState({label: {...this.state.label, display: true, bounce: false}}), BOUNCE_DURATION);
         setTimeout(() => this.bounceLabel(), 5000);
     };
 
+    handleWindowSizeChange = () => {
+        this.setState({
+            documentHeight: document.documentElement.offsetHeight,
+            windowHeight: window.innerHeight})
+    };
+
+    openPage = (openPage, closePage) => {
+        switch (openPage) {
+            case "resume":
+                this.setState({
+                    label: {...this.state.label, text: "Sure! Scroll down for my Resume"},
+                    labelModified: false,
+                    open: {...this.state.open, [openPage]: true, [closePage]: false}});
+                break;
+        }
+        closePage ?
+            this.setState({ open: {...this.state.open, [openPage]: true, [closePage]: false}})
+            : this.setState({ open: {...this.state.open, [openPage]: true}})
+    };
+
     render() {
-        const {howCanIHelpLabel, buttons} = this.state;
+        const {open, documentHeight, label, buttons} = this.state;
 
         const scrollPercent = ((window.pageYOffset + this.state.windowHeight) / this.state.documentHeight) * 100;
 
@@ -102,11 +143,11 @@ class MainNavigation extends React.Component {
                         {scrollPercent > SHOW_BUTTON5_HEIGHT ? <SocialIcons /> : null}
                         <section className={classes.NavigationOptions}>
                             <HowCanIHelpLabel
-                                pose={howCanIHelpLabel.display ? howCanIHelpLabel.bounce ? "bounce" : "visible" : "hidden"}
-                                className={classes.HowCanIHelp}> How can I help you?
+                                pose={label.display ? label.bounce ? "bounce" : "visible" : "hidden"}
+                                className={classes.HowCanIHelp}> {label.text}
                             </HowCanIHelpLabel>
                             <section className={classes.ButtonDiv}>
-                                <Button pose={buttons.button1 ? "visible" : "hiddenLeft"} className={classes.Button}>I want to view your <span style={{fontWeight: "bold"}}><em>Resume</em></span></Button>
+                                <Button pose={buttons.button1 ? "visible" : "hiddenLeft"} onClick={() => this.openPage("resume")} className={classes.Button}>I want to view your <span style={{fontWeight: "bold"}}><em>Resume</em></span></Button>
                                 <Button pose={buttons.button2 ? "visible" : "hiddenRight"} className={classes.Button}>I want to view your <span style={{fontWeight: "bold"}}><em>Portfolio</em></span></Button>
                                 <Button pose={buttons.button3 ? "visible" : "hiddenLeft"} className={classes.Button}>I want to <span style={{fontWeight: "bold"}}><em>Learn more</em></span> about you</Button>
                                 <Button pose={buttons.button4 ? "visible" : "hiddenRight"} className={classes.Button}>I want to <span style={{fontWeight: "bold"}}><em>Work With</em></span> you</Button>
@@ -116,11 +157,7 @@ class MainNavigation extends React.Component {
                         {scrollPercent > SHOW_BUTTON5_HEIGHT ? <CertificationIcons /> : null}
                     </Auxil>
             </section>
-                <section className={classes.Footer}>
-                    <p>©2018</p>
-                    <p>All content is original and developed independently by Matthew Wayles.</p>
-                    <p>Reproduction without authorization is prohibited.</p>
-                </section>
+                {open.resume ? <Resume scrollTo={documentHeight} /> : null}
             </Auxil>
 
         )

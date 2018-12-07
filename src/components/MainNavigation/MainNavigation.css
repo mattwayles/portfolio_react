@@ -7,19 +7,19 @@
     flex-flow: row;
 }
 
-.NavigationOptions {
-    display: flex;
-    flex-flow: column;
-    margin: 0 auto;
-}
-
 .HowCanIHelp {
     width: 100%;
     margin: 0;
     padding-top: 15vh;
     color: var(--main-color);
     text-align: center;
-    font-size: 7vw;
+    font-size: 5vw;
+}
+
+.NavigationOptions {
+    display: flex;
+    flex-flow: column;
+    margin: 0 auto;
 }
 
 .ButtonDiv {
@@ -43,22 +43,6 @@
     outline: none;
 }
 
-.Footer {
-    position: relative;
-    width: 100%;
-    border-top-left-radius: 100%;
-    border-top-right-radius: 100%;
-    color: #fff;
-    padding: 1vh 0;
-    background-color: #BBB;
-}
-
-.Footer p {
-    text-align: center;
-    margin: 0;
-    font-size: 1vw;
-}
-
 @media only screen and (max-width: 1367px) {
     .Button {
         font-size: 2vw;
@@ -74,7 +58,7 @@
     }
     .HowCanIHelp {
         padding-top: 10vh;
-        font-size: 8.5vw;
+        font-size: 6.5vw;
     }
     .Button {
         font-size: 4vw;
