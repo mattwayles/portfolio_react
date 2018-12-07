@@ -9,12 +9,12 @@ import CertificationIcons from "../Sections/CertificationIcons/CertificationIcon
 const TRANSITION_DURATION = 1000;
 const BOUNCE_DURATION = 500;
 
-const SHOW_LABEL_HEIGHT = 65;
-const SHOW_BUTTON1_HEIGHT = 70;
-const SHOW_BUTTON2_HEIGHT = 75;
-const SHOW_BUTTON3_HEIGHT = 81;
-const SHOW_BUTTON4_HEIGHT = 86;
-const SHOW_BUTTON5_HEIGHT = 91;
+const SHOW_LABEL_HEIGHT = 62;
+const SHOW_BUTTON1_HEIGHT = 67;
+const SHOW_BUTTON2_HEIGHT = 72;
+const SHOW_BUTTON3_HEIGHT = 78;
+const SHOW_BUTTON4_HEIGHT = 83;
+const SHOW_BUTTON5_HEIGHT = 88;
 
 const HowCanIHelpLabel = posed.p({
     hidden: { opacity: 0, scale: 0},

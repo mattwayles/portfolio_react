@@ -13,18 +13,19 @@
 
 @media only screen and (max-width: 1367px) {
     .SocialIcons {
-        width: 7.5vw;
+        width: 10vw;
     }
     .SocialIcon {
-        width: 4vw;
+        width: 4.5vw;
     }
 }
 
 @media only screen and (max-width: 499px) {
     .SocialIcons {
-        width: 10vw;
+        padding-top: 20vh;
+        width: 12vw;
     }
     .SocialIcon {
-        width: 7vw;
+        width: 10vw;
     }
 }
