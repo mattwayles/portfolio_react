@@ -1,6 +1,7 @@
 TODO:
 
 *Optimize for mobile
+*Optimize on all browsers: Chrome, Firefox, Edge, IE, Safari
 *Clicking on DOWN ARROWS on main page slowly scrolls
 *Resume page
 *Portfolio page

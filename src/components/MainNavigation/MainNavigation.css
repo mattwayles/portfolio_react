@@ -14,6 +14,7 @@
 }
 
 .HowCanIHelp {
+    width: 100%;
     margin: 0;
     padding-top: 15vh;
     color: var(--main-color);
@@ -30,12 +31,13 @@
 }
 
 .Button {
+    color: var(--main-color);
     border: 1px solid var(--main-color);
     border-radius: 50px;
     cursor: pointer;
     font: inherit;
-    padding: 2vh 2vw;
-    font-size: 1vw;
+    padding: 1.5vh .5vw;
+    font-size: 1.5vw;
     margin-bottom: 3vh;
     vertical-align: middle;
 }
@@ -66,10 +68,17 @@
 }
 
 @media only screen and (max-width: 599px) {
+    .MainNavigation {
+        height: 85vh;
+    }
+    .HowCanIHelp {
+        padding-top: 10vh;
+        font-size: 8.5vw;
+    }
     .Button {
-        font-size: 3vw;
+        font-size: 4vw;
     }
     .Footer p {
-        font-size: 2vw;
+        font-size: 2.5vw;
     }
 }

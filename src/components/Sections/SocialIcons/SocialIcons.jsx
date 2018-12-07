@@ -13,7 +13,7 @@ const TRANSITION_DURATION = 250;
 const ROTATE_DURATION = 600;
 const ICON_COUNT = 6;
 const Icon = posed.img({
-    hidden: {  x: -200},
+    hidden: {  x: "-15vw"},
     visible: { x: 0, rotate: 0, transition: { ease: 'easeIn', duration:  TRANSITION_DURATION} },
     rotate: { rotate: 360, transition: { ease: 'easeIn', duration:  ROTATE_DURATION} },
 });

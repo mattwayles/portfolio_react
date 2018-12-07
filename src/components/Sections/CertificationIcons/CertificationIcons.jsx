@@ -28,7 +28,7 @@ const Certificate = posed.img({
     hoverable: true,
     init: { x: 0 },
     hover: { x: '-5vw' },
-    hidden: {  x: 200 },
+    hidden: {  x: "15vw" },
     visible: { x: 0, rotate: 0, transition: { ease: 'easeIn', duration:  TRANSITION_DURATION} },
     rotate: { rotate: 360, transition: { ease: 'easeIn', duration:  ROTATE_DURATION} },
 });

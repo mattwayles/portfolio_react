@@ -16,13 +16,19 @@
 }
 
 @media only screen and (max-width: 1367px) {
+    .CertificationIcons {
+        width: 7.5vw;
+    }
     .CertificationIcon {
-        width: 5vw;
+        width: 4vw;
     }
 }
 
 @media only screen and (max-width: 499px) {
+    .CertificationIcons {
+        width: 12vw;
+    }
     .CertificationIcon {
-        width: 7vw;
+        width: 10vw;
     }
 }

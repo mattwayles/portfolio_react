@@ -4,14 +4,14 @@
 }
 
 .WelcomeImage {
-    background: url('../../assets/backgrounds/welcomeImage.jpg') no-repeat fixed right bottom;
+    background: url('../../assets/backgrounds/welcomeImage.jpg') no-repeat fixed top right;
     background-size: cover;
     position: relative;
     z-index: -3;
 }
 
 .WelcomeImageColored {
-    background: url('../../assets/backgrounds/welcomeImageColored.jpg') no-repeat fixed right bottom;
+    background: url('../../assets/backgrounds/welcomeImageColored.jpg') no-repeat fixed top right;
     background-size: cover;
     position: absolute;
     top: 0;
@@ -74,25 +74,50 @@
 
 
 @media only screen and (max-width: 1367px) {
+    .WelcomeImage, .WelcomeImageColored {
+        background-attachment: scroll;
+        height: 80vh;
+        width: 100%;
+    }
+    .Intro{
+        position: absolute;
+        top: 5vw;
+        left: 5vw;
+        z-index: -1;
+    }
     .Hello {
-        margin-top: 20vh;
-        font-size: 7vw;
+        margin:0;
+        font-size: 6vw;
     }
     .Description {
-        margin: 4vh 0 0 8vw;
+        margin: 4vh 0 0 6vw;
     }
     .ScrollDiv {
-        width: 40vw;
+        width: 30vw;
     }
 }
 
 @media only screen and (max-width: 599px) {
+    .WelcomeImage, .WelcomeImageColored {
+        height: 80vh;
+        width: 100%;
+        background-attachment: scroll;
+    }
+    .Intro{
+        position: absolute;
+        top: 3vw;
+        left: 3.5vw;
+        z-index: -1;
+    }
     .Hello {
-        margin-top: 3vw;
+        margin:0;
     }
     .Description {
-        margin: 3vh 0 0 8vw;
+        margin: 2.5vh 0 0 .5vw;
         font-size: 3.5vw;
+    }
+    .ScrollDivContainer {
+        height: 12vh;
     }
     .ScrollDiv {
         width: 60vw;
