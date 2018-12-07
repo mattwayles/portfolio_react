@@ -4,14 +4,14 @@
 }
 
 .WelcomeImage {
-    background: url('../../assets/backgrounds/welcomeImage.jpg') no-repeat fixed center;
+    background: url('../../assets/backgrounds/welcomeImage.jpg') no-repeat fixed right bottom;
     background-size: cover;
     position: relative;
     z-index: -3;
 }
 
 .WelcomeImageColored {
-    background: url('../../assets/backgrounds/welcomeImageColored.jpg') no-repeat fixed center;
+    background: url('../../assets/backgrounds/welcomeImageColored.jpg') no-repeat fixed right bottom;
     background-size: cover;
     position: absolute;
     top: 0;
@@ -60,7 +60,7 @@
     flex-flow: column;
     margin: 0 auto;
     padding: 4vh 0;
-    width: 20%;
+    width: 20vw;
     text-align: center;
     position: relative;
     background-color: #fff;
@@ -73,63 +73,28 @@
 }
 
 
-/*@media only screen and (max-width: 1023px) {*/
-    /*.Main {*/
-        /*margin: 52px 0 0 0;*/
-        /*width: 100%;*/
-        /*background-color: rgba(255, 255, 255, .5);*/
-    /*}*/
-    /*.Intro {*/
-        /*margin-left: 15%;*/
-        /*margin-bottom: 8%;*/
-    /*}*/
-    /*.Headshot img {*/
-        /*margin-top: 2vw;*/
-        /*width: 35vw;*/
-    /*}*/
-    /*.NameTag {*/
-        /*text-align: center;*/
-        /*margin: 16.5% 0 3% 1%;*/
-    /*}*/
-    /*.NameTag header {*/
-        /*font-size: 8.5vw;*/
-    /*}*/
-    /*.NameTag h2 {*/
-        /*color: #1c4f62;*/
-        /*font-size: 4.5vw;*/
-    /*}*/
-/*}*/
+@media only screen and (max-width: 1367px) {
+    .Hello {
+        margin-top: 20vh;
+        font-size: 7vw;
+    }
+    .Description {
+        margin: 4vh 0 0 8vw;
+    }
+    .ScrollDiv {
+        width: 40vw;
+    }
+}
 
-/*@media only screen and (max-width: 499px) {*/
-    /*.Main {*/
-        /*width: 100%;*/
-        /*background-color: rgba(255, 255, 255, .5);*/
-    /*}*/
-    /*.Intro {*/
-        /*margin-bottom: 5%;*/
-    /*}*/
-    /*.Headshot img {*/
-        /*margin-top: 8vw;*/
-        /*width: 35vw;*/
-    /*}*/
-    /*.NameTag {*/
-        /*text-align: center;*/
-        /*margin: 16.5% 0 3% 1%;*/
-    /*}*/
-    /*.NameTag header {*/
-        /*font-size: 10.5vw;*/
-    /*}*/
-    /*.NameTag h2 {*/
-        /*color: #1c4f62;*/
-        /*font-size: 4.5vw;*/
-    /*}*/
-/*}*/
-
-/*@supports (-ms-ime-align:auto) {*/
-    /*.Intro {*/
-        /*padding: 4vw 0;*/
-    /*}*/
-    /*.NameTag header {*/
-        /*margin-top: 2vw;*/
-    /*}*/
-/*}*/
+@media only screen and (max-width: 599px) {
+    .Hello {
+        margin-top: 3vw;
+    }
+    .Description {
+        margin: 3vh 0 0 8vw;
+        font-size: 3.5vw;
+    }
+    .ScrollDiv {
+        width: 60vw;
+    }
+}

@@ -4,7 +4,6 @@ import Layout from './containers/Layout/Layout';
 import Main from './containers/Main/Main';
 import Personal from "./containers/Personal/Personal";
 import Resume from "./containers/Resume/Resume";
-import classes from './App.css';
 import Contact from "./containers/Contact/Contact";
 import Portfolio from "./containers/Portfolio/Portfolio";
 

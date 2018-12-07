@@ -5,7 +5,6 @@
     z-index: 0;
     display: flex;
     flex-flow: row;
-    align-items: center;
 }
 
 .NavigationOptions {
@@ -16,8 +15,8 @@
 
 .HowCanIHelp {
     margin: 0;
-    padding-top: 5vh;
-    color: #779ecb;
+    padding-top: 15vh;
+    color: var(--main-color);
     text-align: center;
     font-size: 7vw;
 }
@@ -38,6 +37,7 @@
     padding: 2vh 2vw;
     font-size: 1vw;
     margin-bottom: 3vh;
+    vertical-align: middle;
 }
 
 .Footer {
@@ -54,4 +54,22 @@
     text-align: center;
     margin: 0;
     font-size: 1vw;
+}
+
+@media only screen and (max-width: 1367px) {
+    .Button {
+        font-size: 2vw;
+    }
+    .Footer p {
+        font-size: 1.5vw;
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    .Button {
+        font-size: 3vw;
+    }
+    .Footer p {
+        font-size: 2vw;
+    }
 }

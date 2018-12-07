@@ -1,12 +1,15 @@
 TODO:
 
-*Make the social icons come out like drops: https://codepen.io/caterdesigns/pen/ZYpQqV
-*Simple images for each button
-*Redo freecodecamp icon
-*"How Can I Help You?" is not centered
 *Optimize for mobile
+*Clicking on DOWN ARROWS on main page slowly scrolls
 *Resume page
 *Portfolio page
 *About Me page
 *Contact page
 *Contact form
+
+NICE-TO-HAVES:
+
+-Main Page:
+    * Simple icons next to the words on each button. Requires vertical alignment and image creation
+    * Better animation for social icons and certifications, something like a drip effect would be cool

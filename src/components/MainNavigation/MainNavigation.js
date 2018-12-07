@@ -4,8 +4,10 @@ import classes from './MainNavigation.css';
 import posed from "react-pose";
 import SocialIcons from "../Sections/SocialIcons/SocialIcons";
 import Auxil from "../../hoc/Auxil";
+import CertificationIcons from "../Sections/CertificationIcons/CertificationIcons";
 
 const TRANSITION_DURATION = 1000;
+const BOUNCE_DURATION = 600;
 const SHOW_LABEL_HEIGHT = window.innerHeight / 5;
 const SHOW_BUTTON1_HEIGHT = SHOW_LABEL_HEIGHT + window.innerHeight / 5;
 const SHOW_BUTTON2_HEIGHT = SHOW_LABEL_HEIGHT + window.innerHeight / 4;
@@ -15,7 +17,8 @@ const SHOW_BUTTON5_HEIGHT = SHOW_LABEL_HEIGHT + window.innerHeight / 1.5;
 
 const HowCanIHelpLabel = posed.p({
     hidden: { opacity: 0, scale: 4.0},
-    visible: { opacity: 1,  scale: 1.0, transition: { ease: 'easeIn', duration: TRANSITION_DURATION } }
+    visible: {color: "#779ecb", opacity: 1, scale: 1.0, transition: {ease: 'easeIn', duration: TRANSITION_DURATION}},
+    bounce: {color: "#BBB", scale: 1.25, transition: {ease: 'easeIn', duration: BOUNCE_DURATION}}
 });
 
 const Button = posed.button({
@@ -29,7 +32,7 @@ const Button = posed.button({
 
 class MainNavigation extends React.Component {
     state = {
-        howCanIHelpLabelVisible: false,
+        howCanIHelpLabel: {display: false, bounce: false},
         buttons: {
           button1: false,
           button2: false,
@@ -41,8 +44,9 @@ class MainNavigation extends React.Component {
 
     componentDidUpdate() {
         if (window.pageYOffset > SHOW_LABEL_HEIGHT) {
-            if (!this.state.howCanIHelpLabelVisible) {
-                this.setState({howCanIHelpLabelVisible: true});
+            if (!this.state.howCanIHelpLabel.display) {
+                console.log(window.innerHeight);
+                this.setState({howCanIHelpLabel: {display: true, bounce: false}});
             }
             else if (window.pageYOffset > SHOW_BUTTON1_HEIGHT && !this.state.buttons.button1) {
                 this.setState({buttons: {...this.state.buttons, button1: true}});
@@ -58,32 +62,37 @@ class MainNavigation extends React.Component {
             }
             else if (window.pageYOffset > SHOW_BUTTON5_HEIGHT && !this.state.buttons.button5) {
                 this.setState({buttons: {...this.state.buttons, button5: true}});
+                setTimeout(() => this.bounceLabel(), 5000);
             }
         }
-        else if (window.pageYOffset < window.innerHeight / 5 && this.state.howCanIHelpLabelVisible) {
+        else if (window.pageYOffset < window.innerHeight / 5 && this.state.howCanIHelpLabel.display) {
             this.resetMainNavigationAnimation();
         }
 
     }
 
     resetMainNavigationAnimation = () => {
-        this.setState({ howCanIHelpLabelVisible: false, buttons: {} });
+        this.setState({ howCanIHelpLabel: {display: false, bounce: false}, buttons: {} });
     };
 
-
+    bounceLabel = () => {
+        this.setState({howCanIHelpLabel: {display: true, bounce: true}});
+        setTimeout(() => this.setState({howCanIHelpLabel: {display: true, bounce: false}}), BOUNCE_DURATION);
+        setTimeout(() => this.bounceLabel(), 5000);
+    };
 
     render() {
-        const {howCanIHelpLabelVisible, buttons} = this.state;
+        const {howCanIHelpLabel, buttons} = this.state;
 
         return (
             <Auxil>
             <section className={classes.MainNavigation}>
                 {window.pageYOffset > SHOW_LABEL_HEIGHT ?
                     <Auxil>
-                        <SocialIcons />
+                        {window.pageYOffset > SHOW_BUTTON5_HEIGHT ? <SocialIcons /> : null}
                         <section className={classes.NavigationOptions}>
                             <HowCanIHelpLabel
-                                pose={howCanIHelpLabelVisible ? "visible" : "hidden"}
+                                pose={howCanIHelpLabel.display ? howCanIHelpLabel.bounce ? "bounce" : "visible" : "hidden"}
                                 className={classes.HowCanIHelp}> How can I help you?
                             </HowCanIHelpLabel>
                             <section className={classes.ButtonDiv}>
@@ -94,6 +103,7 @@ class MainNavigation extends React.Component {
                                 <Button pose={buttons.button5 ? "visible" : "hiddenLeft"} className={classes.Button}>I want to <span style={{fontWeight: "bold"}}><em>Contact</em></span> you</Button>
                             </section>
                         </section>
+                        {window.pageYOffset > SHOW_BUTTON5_HEIGHT ? <CertificationIcons /> : null}
                     </Auxil>
                     : null}
             </section>

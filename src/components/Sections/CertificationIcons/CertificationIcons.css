@@ -1,47 +1,28 @@
-.Links {
-    width: 100%;
-    text-align: center;
+.CertificationIcons {
+    width: 5vw;
+    display: flex;
+    flex-flow: column;
+    padding-top: 25vh;
 }
-.SocialIcon {
-    margin: 8% 1% 0 1%;
-}
-.Microsoft, .Oracle, .Comptia {
-    margin: 10px;
-}
-.Microsoft, .Oracle {
-    width: 7vw;
-}
-.Comptia {
-    margin-top: 8px;
-    width: 8vw;
+.CertificationIcon {
+    width: 3vw;
+    margin: 1vh 2vw 1vh 0;
+    transition: width 500ms ease-in-out;
 }
 
-@media only screen and (max-width: 1023px) {
-    .SocialIcon {
-        margin: 2% 1% 10% 1%;
-    }
-    .Microsoft, .Oracle, .Comptia {
-        margin: 2px;
-    }
-    .Microsoft, .Oracle {
-        width: 12vw;
-    }
-    .Comptia {
-        width: 13vw;
+.CertificationIcon:hover {
+    width: 8vw;
+    transition: all 500ms ease-in-out;
+}
+
+@media only screen and (max-width: 1367px) {
+    .CertificationIcon {
+        width: 5vw;
     }
 }
 
 @media only screen and (max-width: 499px) {
-    .SocialIcon {
-        margin: 2% 1% 10% 1%;
-    }
-    .Microsoft, .Oracle, .Comptia {
-        margin: 2px;
-    }
-    .Microsoft, .Oracle {
-        width: 12vw;
-    }
-    .Comptia {
-        width: 13vw;
+    .CertificationIcon {
+        width: 7vw;
     }
 }

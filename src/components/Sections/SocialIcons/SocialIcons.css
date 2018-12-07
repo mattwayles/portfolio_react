@@ -2,20 +2,23 @@
     width: 5vw;
     display: flex;
     flex-flow: column;
+    padding-top: 25vh;
 }
+
 .SocialIcon {
+    width: 3vw;
     margin: 1vh 0 1vh 2vw;
     z-index: 2;
 }
 
-@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: 1367px) {
     .SocialIcon {
-        margin: 2% 1% 10% 1%;
+        width: 5vw;
     }
 }
 
 @media only screen and (max-width: 499px) {
     .SocialIcon {
-        margin: 2% 1% 10% 1%;
+        width: 7vw;
     }
 }
