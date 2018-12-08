@@ -9,6 +9,7 @@ class Portfolio extends React.Component {
     //TODO:
     //Maybe save this for last? It's likely to be very time-consuming
     //Headers or no headers? 'Tis the question
+    //Fix AcidRain logo. Put the words against a stormy background
     //Logos for all applications
     //I want some sort of animation on all labels
     //I want squares showing images of all of my applications.
