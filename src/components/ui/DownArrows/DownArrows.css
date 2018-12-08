@@ -1,0 +1,42 @@
+
+.ScrollDivContainer {
+    width: 100%;
+    height: 16vh;
+    position: relative;
+    background-color: #fff;
+    z-index: 0;
+}
+
+.ScrollDiv {
+    display: flex;
+    flex-flow: column;
+    margin: 0 auto;
+    padding: 4vh 0;
+    width: 20vw;
+    text-align: center;
+    position: relative;
+    background-color: #fff;
+    z-index: 0;
+    cursor: pointer;
+}
+
+.ScrollDiv img {
+    margin: 0 auto;
+    height: 10%;
+    width: 10%;
+}
+
+@media only screen and (max-width: 1367px) {
+    .ScrollDiv {
+        width: 30vw;
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    .ScrollDivContainer {
+        height: 12vh;
+    }
+    .ScrollDiv {
+        width: 60vw;
+    }
+}

@@ -7,17 +7,49 @@
     display: flex;
     flex-flow: row;
     justify-content: center;
+    align-items: baseline;
 }
 
 .Pages {
     width: 100%;
     color: var(--main-color);
-    font-size: 2.5vw;
+    font-size: 2vw;
 }
 
-.PageButton {
+.BackArrow, .NextArrow, .Placeholder {
     margin: 0 2vw;
-    height: 4vw;
-    width: 4vw;
+    padding: .25vw;
+    height: 1vw;
+    width: 1vw;
+    border: 1px solid var(--main-color);
     border-radius: 4vw;
+    cursor: pointer;
+}
+
+.ButtonDiv {
+    text-decoration: none;
+    margin: 0 auto;
+    padding-top: 5vh;
+    width: 60vw;
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    background-color: #FFF;
+}
+
+.Placeholder {
+    content:url('../../assets/arrows/backArrowHover.png');
+    cursor: auto;
+    border: none;
+}
+
+.BackArrow:hover {
+    content:url('../../assets/arrows/backArrowHover.png');
+    background-color: var(--main-color);
+}
+
+.NextArrow:hover {
+    transition: all .5s ease-in-out;
+    content:url('../../assets/arrows/nextArrowHover.png');
+    background-color: var(--main-color);
 }

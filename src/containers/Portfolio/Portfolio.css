@@ -1,105 +1,30 @@
 .Main {
-    margin: 72px auto;
-    width: 80%;
-    box-shadow: 2px 2px 5px #ccc;
-    border: 1px solid #eee;
-    border-radius: 5px;
-    padding: 20px 10px;
-    box-sizing: border-box;
-    background-color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+    width: 100%;
+    background-color: #FFF;
 }
 
 .Header {
-    margin: 3%;
-    color: #1c4f62;
-    font-size: 5vw;
-    text-shadow: 2px 4px 3px rgba(0,0,0,0.2), 0 -5px 35px rgba(255,255,255,0.3);
-}
-
-.Language {
+    text-align: center;
     width: 100%;
-    padding: 5px 0;
-    margin-top: 1%;
-    color: #e9f0f3;
-    background-color: #1c4f62;
-    font-size: 2.5vw;
-    border-radius: 5px;
-    text-shadow: 2px 4px 3px rgba(0,0,0,0.2);
+    margin: 0 auto;
+    font-size: 5vw;
+    color: var(--main-color);
+    padding: 6vw 0 3vw;
 }
 
-.ExpandCollapse {
-    float: right;
-    cursor: pointer;
-    margin: 1%;
-    width: 5%;
-    border-radius: 5px;
-}
-
-.FlexRow {
+.ProjectDiv {
+    background-color: #fff;
+    width: 80vw;
+    margin: 0 auto;
+    padding: 10vh 0;
     display: flex;
     flex-flow: row;
-    margin: 1% auto;
-    justify-content: space-between;
-    padding: 2%;
-}
-
-.Bold {
-    color: #c15435;
-    font-weight: 600;
-    opacity: 1;
+    flex-wrap: wrap;
 }
 
 .Project {
-    border: 1px solid #1c4f62;
-    margin: 1% auto;
-    border-radius: 25px;
-    width: 100%;
-    background-color: rgba(233, 240, 243,.5);
-}
-
-.ProjectName {
-    font-weight: 700;
-    font-size: 3em;
-    margin: 1% 1% 2% 2%;
-    color: #c15435;
-}
-
-.Image {
-    height: 10%;
-    border-radius: 5px;
-}
-
-@media only screen and (max-width: 1024px) {
-    .Main {
-        background-color: rgba(255, 255, 255, 0.5);
-    }
-    .Language {
-        margin-top: 3vw;
-        padding: 10px 0;
-        font-size: 4vw;
-    }
-    .ExpandCollapse {
-        margin: 2%;
-
-    }
-}
-
-@media only screen and (max-width: 1023px) {
-    .Main {
-        margin: 52px 0 0 0;
-        width: 100%;
-        background-color: rgba(255, 255, 255, 0.5);
-    }
-    .Header {
-        font-size: 7vw;
-    }
-    .Language {
-        margin-top: 4vw;
-        padding: 10px 0;
-        font-size: 4vw;
-    }
-    .ExpandCollapse {
-        margin: 2%;
-
-    }
+    height: 15vw;
+    width: 15vw;
+    cursor: pointer;
 }

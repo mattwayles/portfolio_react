@@ -2,12 +2,8 @@ TODO:
 
 *Test on Safari
 *Comment!
-*DynamicFont React library on HowCanIHelpLabel
-*Resume page: make the Page Number stop moving
-*Resume page: link to download
-*Resume page: Right/Left buttons could conform better (smaller, lighter color, no background, just a circular border, better angle >) 
-*Back to top button
-*Pull scroll down arrows into reusable component
+*Keyframe animation only fires once
+*Incorporate logo onto front page
 *Portfolio page
 *About Me page
 *Contact page
@@ -15,6 +11,10 @@ TODO:
 *I want you to INSPIRE me...reach out to API for motivational quotes
 
 NICE-TO-HAVES:
+
+-All:
+    *Replace react-pose with pure CSS transitions
+    *Use keyframes to make transitions and animations more dynamic
 
 -Main Page:
     * Simple icons next to the words on each button. Requires vertical alignment and image creation

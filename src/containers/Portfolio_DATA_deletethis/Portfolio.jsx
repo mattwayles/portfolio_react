@@ -50,7 +50,6 @@ class Portfolio extends React.Component {
         
         return (
             <section className={classes.Main}>
-                <p className={classes.Header}>Development Portfolio</p>
                 <section onMouseEnter={(e) => this.handleJavaExpand(e, true)}
                          onMouseLeave={(e) => this.handleJavaExpand(e, false)}
                          onClick={(e) => this.handleJavaExpand(e)} className={classes.Language}>

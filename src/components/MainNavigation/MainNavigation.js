@@ -6,6 +6,10 @@ import SocialIcons from "../Sections/SocialIcons/SocialIcons";
 import Auxil from "../../hoc/Auxil";
 import CertificationIcons from "../Sections/CertificationIcons/CertificationIcons";
 import Resume from "../../containers/Resume/Resume";
+import DownArrows from "../ui/DownArrows/DownArrows";
+import DynamicFont from 'react-dynamic-font';
+import Button from "../ui/Button/Button";
+import Portfolio from "../../containers/Portfolio/Portfolio";
 
 const TRANSITION_DURATION = 1000;
 const BOUNCE_DURATION = 500;
@@ -18,29 +22,30 @@ const SHOW_BUTTON4_HEIGHT = 83;
 const SHOW_BUTTON5_HEIGHT = 88;
 const MAIN_SCROLLED = 100;
 
+const LABEL_ORIGINAL = "How can I help you?";
+const LABEL_RESUME = "Okay, check out my Resume below!";
+const LABEL_RESUME_SCROLLED = "If you liked my Resume, why not check out my Portfolio?";
+const LABEL_PORTFOLIO = "Voila! Scroll down for my portfolio, and peruse at your leisure!";
+const LABEL_PORTFOLIO_SCROLLED = "Are you interested in collaborating on a project? Send me a message!";
+const LABEL_ERROR = "Whoops! That operation isn't supported yet.";
+
 const HowCanIHelpLabel = posed.p({
     hidden: { opacity: 0, scale: 0},
     visible: {color: "#779ecb", opacity: 1, scale: 1.0, transition: {ease: 'easeIn', duration: TRANSITION_DURATION}},
-    bounce: {color: "#BBB", scale: 1.25, transition: {ease: 'easeIn', duration: BOUNCE_DURATION}}
-});
-
-const Button = posed.button({
-    hoverable: true,
-    init: { scale: 1, color: "#779ecb", backgroundColor: "#FFF"},
-    hover: {scale: 1.1, color: "#fff", backgroundColor: "#779ecb"},
-    hiddenLeft: { opacity: 0, x: "-15vw"},
-    hiddenRight: { opacity: 0, x: "15vw"},
-    visible: { opacity: 1, x: 0, transition: { ease: 'easeIn', duration: TRANSITION_DURATION } }
+    bounce: {color: "#BBB", scale: 1.25, transition: {ease: 'easeIn', duration: BOUNCE_DURATION}},
 });
 
 class MainNavigation extends React.Component {
     state = {
+        scroll: 0,
         documentHeight: 0,
         windowHeight: 0,
-        label: {text: "How can I help you?", display: false, bounce: false},
+        label: {text: LABEL_ORIGINAL, display: false, bounce: false},
         labelModified: false,
         open: {
-            resume: false
+            any: false,
+            resume: false,
+            portfolio: false
         },
         buttons: {
           button1: false,
@@ -52,6 +57,7 @@ class MainNavigation extends React.Component {
     };
 
     componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll);
         window.addEventListener('resize', this.handleWindowSizeChange);
         this.setState({
             documentHeight: document.documentElement.offsetHeight,
@@ -59,11 +65,12 @@ class MainNavigation extends React.Component {
     }
 
     componentWillUnmount() {
+        window.addEventListener('scroll', this.handleScroll);
         window.removeEventListener('resize', this.handleWindowSizeChange);
     }
 
     componentDidUpdate() {
-        let scrollPercent = ((window.pageYOffset + this.state.windowHeight) / this.state.documentHeight) * 100;
+        let scrollPercent = ((this.state.scroll + this.state.windowHeight) / this.state.documentHeight) * 100;
         //console.log(scrollPercent);
         if (scrollPercent > SHOW_LABEL_HEIGHT) {
             if (!this.state.label.display) {
@@ -86,29 +93,37 @@ class MainNavigation extends React.Component {
                 setTimeout(() => this.bounceLabel(), 5000);
             }
             else{
-                scrollPercent = (window.pageYOffset / this.state.documentHeight) * 100;
+                scrollPercent = (this.state.scroll / this.state.documentHeight) * 100;
                 if (scrollPercent > MAIN_SCROLLED && !this.state.labelModified) {
                     this.state.open.resume ? this.setState({
-                        label: {...this.state.label, text: "Like what you see? Send me a message!"},
-                        labelModified: true
-                    }) : null;
+                            label: {...this.state.label, text: LABEL_RESUME_SCROLLED},
+                            labelModified: true}) : null;
+                    this.state.open.portfolio ? this.setState({
+                        label: {...this.state.label, text: LABEL_PORTFOLIO_SCROLLED},
+                        labelModified: true}) : null;
                 }
             }
         }
-        // else if (scrollPercent < window.innerHeight / 5 && this.state.label.display) {
-        //     this.resetMainNavigationAnimation();
-        // }
+        else if (scrollPercent < SHOW_LABEL_HEIGHT && this.state.label.display) {
+            this.resetMainNavigationAnimation();
+        }
 
     }
 
-    // resetMainNavigationAnimation = () => {
-    //     this.setState({ label: {...this.state.label, display: false, bounce: false}, buttons: {} });
-    // };
+    resetMainNavigationAnimation = () => {
+        this.setState({ label: {...this.state.label, display: false, bounce: false}, buttons: {} });
+    };
 
     bounceLabel = () => {
         this.setState({label: {...this.state.label, display: true, bounce: true}});
         setTimeout(() => this.setState({label: {...this.state.label, display: true, bounce: false}}), BOUNCE_DURATION);
         setTimeout(() => this.bounceLabel(), 5000);
+    };
+
+    handleScroll = () => {
+        if (window.pageYOffset !== this.state.scroll) {
+            this.setState({scroll: window.pageYOffset});
+        }
     };
 
     handleWindowSizeChange = () => {
@@ -117,24 +132,48 @@ class MainNavigation extends React.Component {
             windowHeight: window.innerHeight})
     };
 
-    openPage = (openPage, closePage) => {
+    openPage = (openPage) => {
         switch (openPage) {
             case "resume":
-                this.setState({
-                    label: {...this.state.label, text: "Sure! Scroll down for my Resume"},
-                    labelModified: false,
-                    open: {...this.state.open, [openPage]: true, [closePage]: false}});
+                this.setState({open: {any: true, resume: true, portfolio: false}});
+                setTimeout(() => {
+                    this.setState({
+                        label: {...this.state.label, text: LABEL_RESUME},
+                        labelModified: false,
+                    });
+                }, 1000);
                 break;
+            case "portfolio":
+                this.setState({open: {any: true, portfolio: true, resume: false}});
+                setTimeout(() => {
+                    this.setState({
+                        label: {...this.state.label, text: LABEL_PORTFOLIO},
+                        labelModified: false,
+                    });
+                }, 1000);
+                break;
+            default:
+                    this.setState({ label: {...this.state.label, text: LABEL_ERROR}});
+
         }
-        closePage ?
-            this.setState({ open: {...this.state.open, [openPage]: true, [closePage]: false}})
-            : this.setState({ open: {...this.state.open, [openPage]: true}})
+    };
+
+    scrollClick = () => {
+        document.documentMode || window.StyleMedia ?
+            window.scrollTo(0, this.state.documentHeight)
+            : window.scrollTo({ top: this.state.documentHeight, behavior: 'smooth' });
+    };
+
+    backToNavClick = () => {
+        document.documentMode || window.StyleMedia ?
+            window.scrollTo(0, this.state.windowHeight)
+            : window.scrollTo({ top: this.state.windowHeight, behavior: 'smooth' });
     };
 
     render() {
-        const {open, documentHeight, label, buttons} = this.state;
+        const {open, scroll, documentHeight, label, buttons} = this.state;
 
-        const scrollPercent = ((window.pageYOffset + this.state.windowHeight) / this.state.documentHeight) * 100;
+        const scrollPercent = ((scroll + this.state.windowHeight) / this.state.documentHeight) * 100;
 
         return (
             <Auxil>
@@ -144,20 +183,28 @@ class MainNavigation extends React.Component {
                         <section className={classes.NavigationOptions}>
                             <HowCanIHelpLabel
                                 pose={label.display ? label.bounce ? "bounce" : "visible" : "hidden"}
-                                className={classes.HowCanIHelp}> {label.text}
+                                className={open.any ? classes.AnimateLabel : classes.Label}>
+                                    <DynamicFont content={label.text} />
                             </HowCanIHelpLabel>
                             <section className={classes.ButtonDiv}>
-                                <Button pose={buttons.button1 ? "visible" : "hiddenLeft"} onClick={() => this.openPage("resume")} className={classes.Button}>I want to view your <span style={{fontWeight: "bold"}}><em>Resume</em></span></Button>
-                                <Button pose={buttons.button2 ? "visible" : "hiddenRight"} className={classes.Button}>I want to view your <span style={{fontWeight: "bold"}}><em>Portfolio</em></span></Button>
-                                <Button pose={buttons.button3 ? "visible" : "hiddenLeft"} className={classes.Button}>I want to <span style={{fontWeight: "bold"}}><em>Learn more</em></span> about you</Button>
-                                <Button pose={buttons.button4 ? "visible" : "hiddenRight"} className={classes.Button}>I want to <span style={{fontWeight: "bold"}}><em>Work With</em></span> you</Button>
-                                <Button pose={buttons.button5 ? "visible" : "hiddenLeft"} className={classes.Button}>I want to <span style={{fontWeight: "bold"}}><em>Contact</em></span> you</Button>
+                                <Button visible={buttons.button1} pressed={open.resume} enter={"left"} click={this.openPage} page={"resume"} label={"I want to view your "} span={"Resume"} />
+                                <Button visible={buttons.button2} pressed={open.portfolio} enter={"right"} click={this.openPage} page={"portfolio"} label={"I want to view your "} span={"Portfolio"} />
+                                <Button visible={buttons.button3} pressed={open.about} enter={"left"} click={this.openPage} page={"about"} label={"I want to "} span={"Learn more"} suffix={" about you"} />
+                                <Button visible={buttons.button4} pressed={open.collaborate} enter={"right"} click={this.openPage} page={"collaborate"} label={"I want to "} span={"Work with"} suffix={" you"} />
+                                <Button visible={buttons.button5} pressed={open.contact} enter={"left"} click={this.openPage} page={"contact"} label={"I want to "} span={"Contact"} suffix={" you"} />
+                                {open.any ? <DownArrows click={this.scrollClick}/> : null}
                             </section>
                         </section>
                         {scrollPercent > SHOW_BUTTON5_HEIGHT ? <CertificationIcons /> : null}
                     </Auxil>
             </section>
                 {open.resume ? <Resume scrollTo={documentHeight} /> : null}
+                {open.portfolio ? <Portfolio /> : null}
+                {open.any ?
+                    <section className={classes.NavButtonDiv}>
+                        <Button visible={true} enter={"right"} click={this.backToNavClick} label={"Take me back to the "} span={"Navigation Panel"} />
+                    </section>
+                        : null}
             </Auxil>
 
         )

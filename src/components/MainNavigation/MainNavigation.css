@@ -1,5 +1,5 @@
 .MainNavigation {
-    height: 100vh;
+    height: 90vh;
     background-color: #fff;
     position: relative;
     z-index: 0;
@@ -7,28 +7,36 @@
     flex-flow: row;
 }
 
-.HowCanIHelp {
-    width: 100%;
+.Label, .AnimateLabel {
     margin: 0;
-    padding-top: 15vh;
+    padding-top: 5vh;
     color: var(--main-color);
     text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    -ms-overflow-style: none;
     font-size: 5vw;
 }
 
 .NavigationOptions {
     display: flex;
     flex-flow: column;
+    width: 60vw;
     margin: 0 auto;
 }
 
-.ButtonDiv {
+.ButtonDiv, .NavButtonDiv {
     margin: 5vh auto;
     width: 60vw;
     display: flex;
     flex-flow: column;
     text-align: center;
+    background-color: #FFF;
 }
+
+.NavButtonDiv {
+     margin-top: 0;
+ }
 
 .Button {
     color: var(--main-color);
@@ -41,6 +49,26 @@
     margin-bottom: 3vh;
     vertical-align: middle;
     outline: none;
+}
+
+.AnimateLabel {
+    animation-name: changeLabel;
+    animation-duration: 2s;
+}
+
+@keyframes changeLabel {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @media only screen and (max-width: 1367px) {

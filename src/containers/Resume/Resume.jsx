@@ -1,12 +1,12 @@
 import React from 'react';
 import classes from './Resume.css';
+
 import {Document, Page} from 'react-pdf';
 import resume from './Matthew_Wayles_Resume.pdf';
-import back from '../../assets/arrows/back.png'
-import backHover from '../../assets/arrows/back_hover.png'
-import next from '../../assets/arrows/next.png'
-import nextHover from '../../assets/arrows/next_hover.png'
-
+import back from '../../assets/arrows/backArrow.png'
+import next from '../../assets/arrows/nextArrow.png'
+import Auxil from "../../hoc/Auxil";
+import Button from "../../components/ui/Button/Button";
 
 class Resume extends React.Component {
     state = {
@@ -30,29 +30,35 @@ class Resume extends React.Component {
 
 
     render() {
-        const { pageNumber, numPages, hover } = this.state;
+        const { pageNumber, numPages } = this.state;
         return (
-            <section className={classes.Main}>
+            <Auxil>
+                <section className={classes.Main}>
                     <Document
                         file={resume}
                         onLoadSuccess={this.onDocumentLoadSuccess}
                     >
-                        <Page loading="Loading..." width={window.innerWidth} pageNumber={pageNumber} />
+                        <Page
+                            loading="Loading..." width={window.innerWidth} pageNumber={pageNumber} />
                     </Document>
-                <section className={classes.FlexRow}>
+                    <section className={classes.FlexRow}>
                         <p className={classes.Pages}>
-                            { pageNumber !== 1 ? <img
-                            className={classes.PageButton}
-                            onClick={this.handleBack}
-                            src={hover? backHover : back} alt="<=" /> : null}
-                        Page {pageNumber} of {numPages}
-                        { pageNumber !== numPages ? <img
-                            className={classes.PageButton}
-                            onClick={this.handleNext}
-                            src={hover? nextHover : next} alt="=>" /> : null}
+                            <img
+                                className={pageNumber !== 1 ? classes.BackArrow : classes.Placeholder}
+                                onClick={this.handleBack}
+                                src={back} alt="<=" />
+                            Page {pageNumber} of {numPages}
+                            <img
+                                className={pageNumber !== numPages ? classes.NextArrow : classes.Placeholder}
+                                onClick={this.handleNext}
+                                src={next} alt="=>" />
                         </p>
+                    </section>
                 </section>
-            </section>
+                <section className={classes.ButtonDiv}>
+                    <a href={resume} className={classes.ButtonDiv} download><Button visible={true} enter={"left"} span={"Download"} suffix={" this awesome Resume"} /></a>
+                </section>
+            </Auxil>
         )
     }
 }

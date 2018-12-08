@@ -1,13 +1,12 @@
 import React from 'react';
-import downArrowImg from '../../assets/arrows/downArrow.png';
 
 import classes from './Main.css';
 import Auxil from "../../hoc/Auxil";
 import posed from 'react-pose';
 import MainNavigation from "../../components/MainNavigation/MainNavigation";
+import DownArrows from "../../components/ui/DownArrows/DownArrows";
 
 const TRANSITION_DURATION = 1500;
-const ARROW_DURATION = 500;
 
 const WelcomeImage = posed.section({
     divHidden: { opacity: 0 },
@@ -19,17 +18,12 @@ const DescriptionLine = posed.p({
     descVisible: { width: "100%", transition: { ease: "easeIn", duration: TRANSITION_DURATION } }
 });
 
-const DownArrow = posed.img({
-    arrowHidden: { opacity: 0, y: -100},
-    arrowVisible:{ opacity: 1, y: 0 }
-});
-
 class Main extends React.Component {
     state = {
+        scroll: 0,
         currentLineNo: 1,
-        currentArrowNo: 1,
         maxLineNo: 4,
-        maxArrowNo: 3,
+        displayArrows: false,
         originalWelcomeImageLoaded: false,
         coloredWelcomeImageLoaded: false,
         description: {
@@ -38,19 +32,26 @@ class Main extends React.Component {
             line3: false,
             line4: false,
         },
-        downArrows: {
-            arrow1: false,
-            arrow2: false,
-            arrow3: false
-        }
+
     };
 
     componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll);
         window.scrollTo(0,0);
         if (!this.state.originalWelcomeImageLoaded) {
             this.loadOriginalWelcomeImage();
         }
     }
+
+    componentWillUnmount() {
+        window.addEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll = () => {
+        if (window.pageYOffset !== this.state.scroll) {
+            this.setState({scroll: window.pageYOffset});
+        }
+    };
 
     loadOriginalWelcomeImage = () => {
         this.setState({ originalWelcomeImageLoaded: true });
@@ -65,34 +66,9 @@ class Main extends React.Component {
     displayDescriptionLine = () => {
         const line = "line" + this.state.currentLineNo;
         this.setState({ description: {...this.state.description, [line]: true}, currentLineNo: this.state.currentLineNo + 1});
-        setTimeout(() => {this.state.currentLineNo <= this.state.maxLineNo ? this.displayDescriptionLine() : this.displayDownArrow()}, TRANSITION_DURATION - 500);
+        setTimeout(() => {this.state.currentLineNo <= this.state.maxLineNo ? this.displayDescriptionLine()
+            : this.setState({displayArrows: true})}, TRANSITION_DURATION - 500);
 
-    };
-
-    displayDownArrow =() => {
-        const currentArrowNo = this.state.currentArrowNo;
-        if (currentArrowNo <= this.state.maxArrowNo) {
-            const arrow = "arrow" + this.state.currentArrowNo;
-            this.setState({ downArrows: {...this.state.downArrows, [arrow]: true }, currentArrowNo: this.state.currentArrowNo + 1});
-            setTimeout(() => {this.displayDownArrow()}, ARROW_DURATION)
-        } else {
-            setTimeout(() => {
-                this.setState({ currentArrowNo: 1});
-                this.removeDownArrow()}, ARROW_DURATION)
-        }
-    };
-
-    removeDownArrow = () => {
-        const arrow = "arrow" + this.state.currentArrowNo;
-        this.setState({ downArrows: {...this.state.downArrows, [arrow]: false }, currentArrowNo: this.state.currentArrowNo + 1});
-
-        if (this.state.currentArrowNo <= this.state.maxArrowNo) {
-            setTimeout(() => {this.removeDownArrow()}, ARROW_DURATION)
-        } else {
-            setTimeout(() => {
-                this.setState({ currentArrowNo: 1});
-                this.displayDownArrow()}, ARROW_DURATION);
-        }
     };
 
     scrollClick = () => {
@@ -102,7 +78,7 @@ class Main extends React.Component {
     };
 
     render() {
-        const {originalWelcomeImageLoaded, coloredWelcomeImageLoaded, description, downArrows} = this.state;
+        const {originalWelcomeImageLoaded, coloredWelcomeImageLoaded, description, displayArrows, scroll} = this.state;
 
         return (
             <Auxil>
@@ -116,14 +92,9 @@ class Main extends React.Component {
                         <DescriptionLine pose={description.line4 ? 'descVisible' : 'descHidden'} className={classes.Description}><em>✓&emsp;Available for <span className={classes.Bold}>Freelance</span> projects and <span className={classes.Bold}>Consulting</span></em></DescriptionLine>
                     </section>
                 </WelcomeImage>
-                <section className={classes.ScrollDivContainer}>
-                    {window.pageYOffset < window.innerHeight / 2 ?  <section onClick={this.scrollClick} className={classes.ScrollDiv}>
-                        <DownArrow pose={downArrows.arrow1 ? 'arrowVisible' : 'arrowHidden'} src={downArrowImg} />
-                        <DownArrow pose={downArrows.arrow2 ? 'arrowVisible' : 'arrowHidden'} src={downArrowImg} />
-                        <DownArrow pose={downArrows.arrow3 ? 'arrowVisible' : 'arrowHidden'} src={downArrowImg} />
-                    </section> : null}
-                </section>
+                {scroll < window.innerHeight / 2 && displayArrows ? <DownArrows click={this.scrollClick} /> : <section className={classes.Placeholder} />}
                 <MainNavigation />
+
                 <section className={classes.Footer}>
                     <p>©2018</p>
                     <p>All content is original and developed independently by Matthew Wayles.</p>
