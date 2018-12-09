@@ -26,7 +26,7 @@ const LABEL_ORIGINAL = "How can I help you?";
 const LABEL_RESUME = "Okay, check out my Resume below!";
 const LABEL_RESUME_SCROLLED = "If you liked my Resume, why not check out my Portfolio?";
 const LABEL_PORTFOLIO = "Voila! Scroll down for my portfolio, and peruse at your leisure!";
-const LABEL_PORTFOLIO_SCROLLED = "Are you interested in collaborating on a project? Send me a message!";
+const LABEL_PORTFOLIO_SCROLLED = "Interested in collaborating on a project? Send me a message!";
 const LABEL_ERROR = "Whoops! That operation isn't supported yet.";
 
 const HowCanIHelpLabel = posed.p({
