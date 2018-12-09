@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './../ProjectStyle.css';
 import scoreboardConfigImg from '../../../assets/portfolio/Java/scoreboardConfig.png';
-import googlePlay from '../../../assets/google-play-badge.png';
+import googlePlay from '../../../assets/portfolio/logos/google-play-badge.png';
 
 const scoreboardConfig = () => (
     <section className={classes.Project}>

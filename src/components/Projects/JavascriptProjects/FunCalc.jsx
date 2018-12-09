@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from '../ProjectStyle.css';
-import funCalcImg from '../../../assets/portfolio/JavaScript/funcalc.jpg'
+import funCalcImg from '../../../assets/portfolio/expandimages/funcalc.jpg'
 
 const funCalc = () => (
     <section className={classes.Project}>

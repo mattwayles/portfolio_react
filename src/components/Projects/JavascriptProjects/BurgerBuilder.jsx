@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from '../ProjectStyle.css';
-import burgerBuilderImg from '../../../assets/portfolio/JavaScript/burgerbuilder.jpg';
+import burgerBuilderImg from '../../../assets/portfolio/expandimages/burgerbuilder.jpg';
 
 const burgerBuilder = () => (
     <section className={classes.Project}>

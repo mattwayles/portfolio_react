@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from '../ProjectStyle.css';
-import authTemplateImg from '../../../assets/portfolio/JavaScript/authtemplate.jpg';
+import authTemplateImg from '../../../assets/portfolio/expandimages/authtemplate.jpg';
 
 const authTemplate = () => (
     <section className={classes.Project}>

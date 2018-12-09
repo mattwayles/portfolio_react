@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from '../ProjectStyle.css';
-import goldespImg from '../../../assets/portfolio/JavaScript/goldesp.jpg';
+import goldespImg from '../../../assets/portfolio/expandimages/goldesp.jpg';
 
 const goldesp = () => (
     <section className={classes.Project}>

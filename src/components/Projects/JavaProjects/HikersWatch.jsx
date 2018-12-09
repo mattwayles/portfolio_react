@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './../ProjectStyle.css';
 import hikersWatchImg from '../../../assets/portfolio/Java/hikersWatch.png';
-import googlePlay from '../../../assets/google-play-badge.png';
+import googlePlay from '../../../assets/portfolio/logos/google-play-badge.png';
 
 const hikersWatch = () => (
     <section className={classes.Project}>

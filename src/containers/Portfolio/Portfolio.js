@@ -8,14 +8,14 @@ import authTemplateLogo from '../../assets/portfolio/logos/authTemplateLogo.png'
 import burgerBuilderLogo from '../../assets/portfolio/logos/burgerBuilderLogo.jpg';
 import funCalcLogo from '../../assets/portfolio/logos/funCalcLogo.jpg';
 import gctLogo from '../../assets/portfolio/logos/gctLogo.jpg';
+import goldespLogo from '../../assets/portfolio/logos/goldespLogo.jpg';
 
 class Portfolio extends React.Component {
 
     //TODO:
     //Maybe save this for last? It's likely to be very time-consuming
-    //Headers or no headers? 'Tis the question
     //Logos for all applications
-    //I want some sort of animation on all labels
+    //Add Portfolio 2.0
     //I want squares showing images of all of my applications.
     //I want some sort of time-based animation with the squares.
     //When I hover, i want a semi-ransparent backdrop
@@ -30,6 +30,7 @@ class Portfolio extends React.Component {
 
             <section className={classes.Main}>
                 <section className={classes.ProjectDiv}>
+                    <img className={classes.Project} src={goldespLogo} alt={"GOLDesp"} />
                     <img className={classes.Project} src={gctLogo} alt={"GOLDesp Config Tool"} />
                     <img className={classes.Project} src={acidRainLogo} alt={"Acid Rain"} />
                     <img className={classes.Project} src={scoreboardConfigLogo} alt={"AST Scoreboard"} />

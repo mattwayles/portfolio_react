@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from '../ProjectStyle.css';
-import gctLogo from '../../../assets/portfolio/JavaScript/gct.png';
+import gctLogo from '../../../assets/portfolio/expandimages/gct.png';
 
 const gct = () => (
     <section className={classes.Project}>

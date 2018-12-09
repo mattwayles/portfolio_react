@@ -22,7 +22,7 @@ const SHOW_BUTTON4_HEIGHT = 83;
 const SHOW_BUTTON5_HEIGHT = 88;
 const MAIN_SCROLLED = 100;
 
-const LABEL_ORIGINAL = "How can I help you?";
+const LABEL_ORIGINAL = "How can I help you?"; 
 const LABEL_RESUME = "Okay, check out my Resume below!";
 const LABEL_RESUME_SCROLLED = "If you liked my Resume, why not check out my Portfolio?";
 const LABEL_PORTFOLIO = "Voila! Scroll down for my portfolio, and peruse at your leisure!";
