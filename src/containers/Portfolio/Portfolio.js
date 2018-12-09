@@ -1,15 +1,19 @@
 import React from 'react';
 import classes from './Portfolio.css';
-import acidRainLogo from '../../assets/portfolio/web/acidRainLogo.png';
-import scoreboardConfigLogo from '../../assets/portfolio/web/scoreboardConfigLogo.jpg';
-import hikersWatchLogo from '../../assets/portfolio/web/hikersWatchLogo.jpg';
+import acidRainLogo from '../../assets/portfolio/logos/acidRainLogo.jpg';
+import scoreboardConfigLogo from '../../assets/portfolio/logos/scoreboardConfigLogo.jpg';
+import hikersWatchLogo from '../../assets/portfolio/logos/hikersWatchLogo.jpg';
+import shuckShareLogo from '../../assets/portfolio/logos/shuckShareLogo.jpg';
+import authTemplateLogo from '../../assets/portfolio/logos/authTemplateLogo.png';
+import burgerBuilderLogo from '../../assets/portfolio/logos/burgerBuilderLogo.jpg';
+import funCalcLogo from '../../assets/portfolio/logos/funCalcLogo.jpg';
+import gctLogo from '../../assets/portfolio/logos/gctLogo.jpg';
 
 class Portfolio extends React.Component {
 
     //TODO:
     //Maybe save this for last? It's likely to be very time-consuming
     //Headers or no headers? 'Tis the question
-    //Fix AcidRain logo. Put the words against a stormy background
     //Logos for all applications
     //I want some sort of animation on all labels
     //I want squares showing images of all of my applications.
@@ -25,11 +29,15 @@ class Portfolio extends React.Component {
         return(
 
             <section className={classes.Main}>
-                {/* <p className={classes.Header}><em>Mobile</em></p> */}
                 <section className={classes.ProjectDiv}>
+                    <img className={classes.Project} src={gctLogo} alt={"GOLDesp Config Tool"} />
                     <img className={classes.Project} src={acidRainLogo} alt={"Acid Rain"} />
                     <img className={classes.Project} src={scoreboardConfigLogo} alt={"AST Scoreboard"} />
                     <img className={classes.Project} src={hikersWatchLogo} alt={"Hiker's Watch"} />
+                    <img className={classes.Project} src={shuckShareLogo} alt={"Shuck & Share"} />
+                    <img className={classes.Project} src={authTemplateLogo} alt={"Authentication Template"} />
+                    <img className={classes.Project} src={burgerBuilderLogo} alt={"Burger Builder"} />
+                    <img className={classes.Project} src={funCalcLogo} alt={"FunCalc"} />
                 </section>
             </section>
 
