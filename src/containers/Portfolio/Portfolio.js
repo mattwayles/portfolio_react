@@ -10,7 +10,6 @@ import burgerBuilderLogo from '../../assets/portfolio/logos/burgerBuilderLogo.jp
 import funCalcLogo from '../../assets/portfolio/logos/funCalcLogo.jpg';
 import gctLogo from '../../assets/portfolio/logos/gctLogo.jpg';
 import goldLogo from '../../assets/portfolio/logos/goldLogo.jpg';
-import goldLogoBackdrop from '../../assets/portfolio/logos/backdrop/goldLogoBackdrop.jpg';
 import HoveredLogo from "../../components/Projects/HoveredLogo/HoveredLogo";
 import GoldESP from "../../components/Projects/JavaProjects/GoldESP";
 
@@ -36,7 +35,6 @@ class Portfolio extends React.Component {
 
     //TODO:
     //Logos for all applications
-    //Transition on logo hover; fade picture out, fade backdrop in! U Can Do EEt!
     //Transition on down arrow hover
     //Transition on click, make div expand and slowly fade to details. Needs to look like one cohesive unit
     //Clean up the full project views. Yuck!
@@ -107,11 +105,9 @@ class Portfolio extends React.Component {
         return(
             <section className={classes.Main}>
                 <section className={classes.ProjectDiv}>
-                    {projects.gold.expanded ?
-                        <GoldESP exit={this.exitFullProject} />
-                        : projects.gold.hover ?
-                                <HoveredLogo projName="gold" title={"GOLDesp"} tech={["Java"]}  backdrop={goldLogoBackdrop} unhover={this.unHover} clicked={this.displayFullProject}/>
-                            : <LeftProject pose={projects.gold.display ? "visible" : "hidden" } onMouseEnter={() => this.hover('gold')} className={classes.Project} src={goldLogo} alt={"GOLDesp"} />}
+                    {projects.gold.expanded ? <GoldESP exit={this.exitFullProject} />
+                        : projects.gold.hover ? <HoveredLogo projName="gold" title={"GOLDesp"} tech={["Java"]} bgImg={goldLogo} unhover={this.unHover} clicked={this.displayFullProject} />
+                        : <LeftProject pose={projects.gold.display ? "visible" : "hidden" } onMouseEnter={() => this.hover('gold')} className={classes.Project} src={goldLogo} alt={"GOLDesp"} />}
                     <TopProject pose={projects.gct.display ? "visible" : "hidden" } className={classes.Project} src={gctLogo} alt={"GOLDesp Config Tool"} />
                     <BottomProject pose={projects.acidRain.display ? "visible" : "hidden" } className={classes.Project} src={acidRainLogo} alt={"Acid Rain"} />
                     <TopProject pose={projects.scoreboardConfig.display ? "visible" : "hidden" } className={classes.Project} src={scoreboardConfigLogo} alt={"AST Scoreboard"} />
