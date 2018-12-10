@@ -5,10 +5,10 @@
 }
 
 .Project {
+    transition: width 2s ease-in;
+    position: relative;
     border: 1px solid #1c4f62;
-    margin: 1% auto;
-    width: 98%;
-    background-color: rgba(255, 255, 255,.7);
+    width: 80vw;
 }
 
 .ProjectDiv {
@@ -58,6 +58,23 @@
 .GooglePlay {
     margin-left: 1.5vw;
     width: 18%;
+}
+
+.CloseButton {
+    position: absolute;
+    top: 1vw;
+    right: 1vw;
+    width: 1vw;
+    height: .8vw;
+    border: 1px solid var(--main-color);
+    border-radius: 50%;
+    padding: .2vw;
+    cursor: pointer;
+}
+
+.CloseButton:hover {
+    content:url('../../assets/arrows/upArrowHover.png');
+    background-color: var(--main-color);
 }
 
 @media only screen and (max-width: 1024px) {

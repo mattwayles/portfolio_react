@@ -2,7 +2,7 @@ TODO:
 
 *Test on Safari
 *Comment!
-*Keyframe animation only fires once
+
 *Incorporate logo onto front page
 *Portfolio page
 *About Me page

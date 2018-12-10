@@ -1,9 +1,11 @@
 import React from 'react';
 import classes from '../ProjectStyle.css';
+import closeButton from '../../../assets/arrows/upArrow.png';
 import goldespImg from '../../../assets/portfolio/Java/goldespLogo.png';
 
-const goldesp = () => (
+const goldesp = (props) => (
     <section className={classes.Project}>
+        <img onClick={() => props.exit('gold')} className={classes.CloseButton} src={closeButton} alt={"X"} />
             <section className={classes.ProjectDiv}>
                 <section className={classes.ImageDiv}>
                     <img className={classes.Image} src={goldespImg} alt="GoldESP"/>

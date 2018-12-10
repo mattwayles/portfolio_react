@@ -12,6 +12,7 @@ import Button from "../ui/Button/Button";
 import Portfolio from "../../containers/Portfolio/Portfolio";
 
 const TRANSITION_DURATION = 1000;
+const LABEL_CHANGE_DURATION = 1200;
 const BOUNCE_DURATION = 500;
 
 const SHOW_LABEL_HEIGHT = 62;
@@ -32,7 +33,7 @@ const LABEL_ERROR = "Whoops! That operation isn't supported yet.";
 const HowCanIHelpLabel = posed.p({
     hidden: { opacity: 0, scale: 0},
     visible: {color: "#779ecb", opacity: 1, scale: 1.0, transition: {ease: 'easeIn', duration: TRANSITION_DURATION}},
-    bounce: {color: "#BBB", scale: 1.25, transition: {ease: 'easeIn', duration: BOUNCE_DURATION}},
+    bounce: {color: "#BBB", scale: 1.25, transition: {ease: 'easeInOut', duration: BOUNCE_DURATION}},
 });
 
 class MainNavigation extends React.Component {
@@ -40,8 +41,8 @@ class MainNavigation extends React.Component {
         scroll: 0,
         documentHeight: 0,
         windowHeight: 0,
-        label: {text: LABEL_ORIGINAL, display: false, bounce: false},
-        labelModified: false,
+        label: {text: LABEL_ORIGINAL, display: false, bounce: false, modified: false, change: false},
+        suggest: null,
         open: {
             any: false,
             resume: false,
@@ -94,20 +95,19 @@ class MainNavigation extends React.Component {
             }
             else{
                 scrollPercent = (this.state.scroll / this.state.documentHeight) * 100;
-                if (scrollPercent > MAIN_SCROLLED && !this.state.labelModified) {
-                    this.state.open.resume ? this.setState({
-                            label: {...this.state.label, text: LABEL_RESUME_SCROLLED},
-                            labelModified: true}) : null;
-                    this.state.open.portfolio ? this.setState({
-                        label: {...this.state.label, text: LABEL_PORTFOLIO_SCROLLED},
-                        labelModified: true}) : null;
+                if (scrollPercent > MAIN_SCROLLED && !this.state.label.modified) {
+                    if (this.state.open.resume) { this.setState({
+                            label: {...this.state.label, text: LABEL_RESUME_SCROLLED, modified: true},
+                            suggest: 'portfolio'})}
+                    else if (this.state.open.portfolio) { this.setState({
+                        label: {...this.state.label, text: LABEL_PORTFOLIO_SCROLLED, modified: true},
+                            suggest: 'collaborate'})}
                 }
             }
         }
         else if (scrollPercent < SHOW_LABEL_HEIGHT && this.state.label.display) {
             this.resetMainNavigationAnimation();
         }
-
     }
 
     resetMainNavigationAnimation = () => {
@@ -133,24 +133,21 @@ class MainNavigation extends React.Component {
     };
 
     openPage = (openPage) => {
+        this.setState({open: {any: true, [openPage]: true}, label: {...this.state.label, change: true}});
         switch (openPage) {
             case "resume":
-                this.setState({open: {any: true, resume: true, portfolio: false}});
+
                 setTimeout(() => {
-                    this.setState({
-                        label: {...this.state.label, text: LABEL_RESUME},
-                        labelModified: false,
-                    });
-                }, 1000);
+                    this.setState({label: {...this.state.label, text: LABEL_RESUME, modified: false}});}, LABEL_CHANGE_DURATION / 2);
+                setTimeout(() => {
+                    this.setState({label: {...this.state.label, change: false}});}, LABEL_CHANGE_DURATION);
                 break;
             case "portfolio":
-                this.setState({open: {any: true, portfolio: true, resume: false}});
+
                 setTimeout(() => {
-                    this.setState({
-                        label: {...this.state.label, text: LABEL_PORTFOLIO},
-                        labelModified: false,
-                    });
-                }, 1000);
+                    this.setState({label: {...this.state.label, text: LABEL_PORTFOLIO, modified: false}});}, LABEL_CHANGE_DURATION / 2);
+                setTimeout(() => {
+                    this.setState({label: {...this.state.label, change: false}});}, LABEL_CHANGE_DURATION);
                 break;
             default:
                     this.setState({ label: {...this.state.label, text: LABEL_ERROR}});
@@ -171,9 +168,9 @@ class MainNavigation extends React.Component {
     };
 
     render() {
-        const {open, scroll, documentHeight, label, buttons} = this.state;
+        const {open, scroll, documentHeight, windowHeight, label, suggest, buttons} = this.state;
 
-        const scrollPercent = ((scroll + this.state.windowHeight) / this.state.documentHeight) * 100;
+        const scrollPercent = ((scroll + windowHeight) / this.state.documentHeight) * 100;
 
         return (
             <Auxil>
@@ -183,14 +180,14 @@ class MainNavigation extends React.Component {
                         <section className={classes.NavigationOptions}>
                             <HowCanIHelpLabel
                                 pose={label.display ? label.bounce ? "bounce" : "visible" : "hidden"}
-                                className={open.any ? classes.AnimateLabel : classes.Label}>
+                                className={label.change ? classes.AnimateLabel : classes.Label}>
                                     <DynamicFont content={label.text} />
                             </HowCanIHelpLabel>
                             <section className={classes.ButtonDiv}>
                                 <Button visible={buttons.button1} pressed={open.resume} enter={"left"} click={this.openPage} page={"resume"} label={"I want to view your "} span={"Resume"} />
-                                <Button visible={buttons.button2} pressed={open.portfolio} enter={"right"} click={this.openPage} page={"portfolio"} label={"I want to view your "} span={"Portfolio"} />
+                                <Button visible={buttons.button2} pressed={open.portfolio} bounce={label.bounce && suggest === "portfolio"}  enter={"right"} click={this.openPage} page={"portfolio"} label={"I want to view your "} span={"Portfolio"} />
                                 <Button visible={buttons.button3} pressed={open.about} enter={"left"} click={this.openPage} page={"about"} label={"I want to "} span={"Learn more"} suffix={" about you"} />
-                                <Button visible={buttons.button4} pressed={open.collaborate} enter={"right"} click={this.openPage} page={"collaborate"} label={"I want to "} span={"Work with"} suffix={" you"} />
+                                <Button visible={buttons.button4} pressed={open.collaborate} bounce={label.bounce && suggest === "collaborate"} enter={"right"} click={this.openPage} page={"collaborate"} label={"I want to "} span={"Work with"} suffix={" you"} />
                                 <Button visible={buttons.button5} pressed={open.contact} enter={"left"} click={this.openPage} page={"contact"} label={"I want to "} span={"Contact"} suffix={" you"} />
                                 {open.any ? <DownArrows click={this.scrollClick}/> : null}
                             </section>
@@ -199,7 +196,7 @@ class MainNavigation extends React.Component {
                     </Auxil>
             </section>
                 {open.resume ? <Resume scrollTo={documentHeight} /> : null}
-                {open.portfolio ? <Portfolio /> : null}
+                {open.portfolio ? <Portfolio scrollPercent={scrollPercent}/> : null}
                 {open.any ?
                     <section className={classes.NavButtonDiv}>
                         <Button visible={true} enter={"right"} click={this.backToNavClick} label={"Take me back to the "} span={"Navigation Panel"} />

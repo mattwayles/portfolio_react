@@ -53,7 +53,7 @@
 
 .AnimateLabel {
     animation-name: changeLabel;
-    animation-duration: 2s;
+    animation-duration: 1.2s;
 }
 
 @keyframes changeLabel {
