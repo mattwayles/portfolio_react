@@ -5,8 +5,7 @@ import expand from '../../../assets/arrows/expandArrow.png';
 
 
 const hoveredLogo = (props) => (
-    <section onMouseLeave={() => props.unhover(props.projName)} style={{backgroundImage: `url(${props.bgImg}`}} className={classes.ProjectDetails}>
-        <section className={classes.Backdrop}>
+    <section className={classes.ProjectDetails}>
             <p className={classes.ProjectTitle}>{props.title}</p>
             <section className={classes.FlexRow}>
                 {props.tech.map((item) => {
@@ -14,7 +13,6 @@ const hoveredLogo = (props) => (
                 })}
             </section>
             <img className={classes.Expand} onClick={() => props.clicked(props.projName)} src={expand} alt={"+"} />
-        </section>
     </section>
 );
 

@@ -1,18 +1,25 @@
 
-.ProjectDetails, .Backdrop {
+.ProjectDetails {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
     height: 15vw;
     width: 15vw;
     background-size: cover;
-}
-
-.Backdrop {
-    animation-name: fadeIn;
-    animation-duration: 1s;
-    background-color: rgba(0,0,0,.7);
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    animation-name: fadeOut;
+    animation-duration: 1s;
+}
+
+.ProjectDetails:hover {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    background-color: rgba(0,0,0,.7);
+    opacity: 1;
 }
 
 .ProjectTitle {
@@ -57,3 +64,16 @@
         opacity: 1;
     }
 }
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        background-color: rgba(0,0,0,.7);
+    }
+
+    100% {
+        opacity: 0;
+        background-color: rgba(0,0,0,0);
+    }
+}
+

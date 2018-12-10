@@ -5,10 +5,10 @@
 }
 
 .Project {
-    transition: width 2s ease-in;
-    position: relative;
+    transition: all 2s ease-in;
     border: 1px solid #1c4f62;
-    width: 80vw;
+    overflow: hidden;
+    -ms-overflow-style: none;
 }
 
 .ProjectDiv {
@@ -73,7 +73,7 @@
 }
 
 .CloseButton:hover {
-    content:url('../../assets/arrows/upArrowHover.png');
+    content:url('../../assets/arrows/upArrow.png');
     background-color: var(--main-color);
 }
 
