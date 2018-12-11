@@ -40,10 +40,10 @@
 }
 
 .ProjectTech {
-    margin: 0 .5vw;
+    margin: .25vh .25vw;
     color: #fff;
-    font-size: 1vw;
-    padding: .5vh .5vw;
+    font-size: .8vw;
+    padding: .25vh .25vw;
     font-family: inherit;
     border: 1px solid white;
     border-radius: .5vw;

@@ -1,37 +1,26 @@
 .Main {
-    margin: 72px auto;
-    width: 80%;
-    height: 100%;
-    box-shadow: 2px 2px 5px #ccc;
-    border: 1px solid #eee;
-    border-radius: 5px;
-    padding: 10px;
-    box-sizing: border-box;
-    background-color: rgba(255, 255, 255, 0.6);
-}
-
-.Header {
-    margin: 3%;
-    color: #1c4f62;
-    font-size: 5vw;
-    text-shadow: 2px 4px 3px rgba(0,0,0,0.2), 0 -5px 35px rgba(255,255,255,0.3);
+    padding: 15vh 0;
+    background-color: #fff;
 }
 
 .Grid {
-    margin: 3% auto;
-    width: 90%;
+    margin: 0 auto;
+    width: 80%;
 }
 
 .FlexRow {
     display: flex;
     flex-flow: row;
     height: 100%;
-    margin: 1% auto;
+    padding: 1% auto;
     justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 .bold, .Topic {
-    color: #c15435;
+    font-family: inherit;
+    color: #BBB;
     font-weight: 700;
     opacity: 1;
 }
@@ -40,9 +29,12 @@
     color: #1c4f62;
     font-weight: 700;
     font-size: 1.7vw;
+    font-family: inherit;
 }
 
 .Text {
+    font-family: inherit;
+    color: var(--main-color);
     font-size: 1vw;
 }
 

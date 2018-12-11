@@ -1,36 +1,55 @@
 .Main {
-    margin: 72px auto;
+    padding: 10vh 0;
+    margin: 0 auto;
     width: 80%;
-    box-shadow: 2px 2px 5px #ccc;
-    border: 1px solid #eee;
-    border-radius: 5px;
-    padding: 10px;
-    box-sizing: border-box;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: #fff;
 }
 
-.Header {
-    margin: 3%;
-    color: #1c4f62;
-    font-size: 5vw;
-    text-shadow: 2px 4px 3px rgba(0,0,0,0.2), 0 -5px 35px rgba(255,255,255,0.3);
+.Form {
+    margin: 0 auto;
+    width: 60vw;
+    height: 100%;
+}
+
+.FormInput, .FormMessage, .FormError, .FormMessageError {
+    width: 50%;
+    height: 4%;
+    margin: 0 auto 1vh;
+    border: 1px solid var(--main-color);
+    border-radius: 25px;
+    padding: 1.5vh 1.5vw;
+    font-size: 1vw;
+    font-family: inherit;
+    color: var(--main-color);
+    outline: none;
+}
+
+.FormMessage, .FormMessageError {
+    width: 100%;
+    height: 20vh;
+    resize: none;
+}
+
+.FormError, .FormMessageError {
+    background-color: #ffe5e5;
+}
+
+.Button {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .FlexRow {
     display: flex;
     flex-flow: row;
-    margin: 3% auto 1%;
-    justify-content: flex-start;
-    padding: 2%;
+    justify-content: space-evenly;
+    padding: 4vh 0;
 }
 
-.FlexColumn {
-    display: flex;
-    flex-flow: column;
-    margin: 0 auto;
-    justify-content: center;
-    text-align: center;
-    padding: 2%;
+.SocialIcon {
+    margin: 0 5vw;
+    width: 20%;
 }
 
 .Text {
@@ -50,8 +69,12 @@
     margin: 0 2%;
 }
 
-.SocialIcon {
-    margin: 0 auto;
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #BBB;
+    opacity: .7; /* Firefox */
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #BBB;
 }
 
 @media only screen and (max-width: 1280px) {

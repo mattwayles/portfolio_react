@@ -13,8 +13,7 @@
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+
 }
 
 .Project {
@@ -31,13 +30,42 @@
     overflow: hidden;
 }
 
+.Closing {
+    position: relative;
+    animation-name: flatten;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+}
+
 @keyframes expand {
     0% {
         width: 15vw;
         height: 15vw;
+        border: 1px solid var(--main-color);
+        border-radius: 0;
     }
     100% {
-        width: 80vw;
-        height: 80vh;
+        width: 100%;
+        height: 75vh;
+        border: 3px solid var(--main-color);
+        border-radius: 25px;
+    }
+}
+
+@keyframes flatten {
+    0% {
+        width: 100%;
+        height: 75vh;
+        border: 3px solid var(--main-color);
+        border-radius: 25px;
+        opacity: 1;
+    }
+    100% {
+        width: 15vw;
+        height: 15vw;
+        border: 1px solid var(--main-color);
+        border-radius: 0;
+        opacity: .1;
     }
 }

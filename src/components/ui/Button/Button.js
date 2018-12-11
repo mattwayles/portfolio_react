@@ -7,6 +7,9 @@ import classes from './Button.css';
 const TRANSITION_DURATION = 1000;
 const BOUNCE_DURATION = 500;
 
+/**
+ * React-Pose poses for buttons [hidden, init, hover, press, bounce]
+ */
 const Button = posed.button({
     hoverable: true,
     pressable: true,
@@ -18,6 +21,15 @@ const Button = posed.button({
     hiddenRight: { opacity: 0, x: "15vw"},
 });
 
+/**
+ * Display a Button that conforms to the style of the webpage
+ * visible - Whether this button is currently visible or not
+ * enter - The direction for this button to enter
+ * click - Function to execute when the button is clicked
+ * label - Button text
+ * span - Bold text in the button text
+ * suffix - Text immediately following bolded button label text
+ */
 const button = (props) => (
     <Button
         pose={props.visible ? props.bounce ? "bounce" : "init" : "left" === props.enter ? "hiddenLeft" : "hiddenRight"}

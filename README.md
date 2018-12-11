@@ -1,14 +1,10 @@
 TODO:
 
-*Test on Safari
-*Comment!
-
+*Clean up CSS Files
 *Incorporate logo onto front page
-*Portfolio page
-*About Me page
-*Contact page
-*Contact form
-*I want you to INSPIRE me...reach out to API for motivational quotes
+*Fix MOBILE/Tablet UX
+*Fix browser compatibility: Chrome, Firefox, IE, Edge, Safari
+*Portfolio page: Finish Projects
 
 NICE-TO-HAVES:
 

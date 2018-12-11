@@ -3,7 +3,11 @@ import classes from './HoveredLogo.css';
 
 import expand from '../../../assets/arrows/expandArrow.png';
 
-
+/**
+ * When a Portfolio Project is hovered, display a backdrop containing information about the project
+ * @param props The information about this particular hovered project
+ * @returns {*}
+ */
 const hoveredLogo = (props) => (
     <section className={classes.ProjectDetails}>
             <p className={classes.ProjectTitle}>{props.title}</p>

@@ -4,11 +4,18 @@ import classes from './DownArrows.css';
 import downArrowImg from '../../../assets/arrows/downArrow.png';
 
 const ARROW_DURATION = 500;
+
+/**
+ * React-Pose poses for DownArrow [hidden, visible]
+ */
 const DownArrow = posed.img({
     arrowHidden: { opacity: 0, y: "-2vh"},
     arrowVisible:{ opacity: 1, y: 0 }
 });
 
+/**
+ * Display a group of three animated down arrows
+ */
 class DownArrows extends React.Component {
     state = {
         currentArrowNo: 1,
@@ -20,10 +27,16 @@ class DownArrows extends React.Component {
         }
     };
 
+    /**
+     * Display arrows on mount
+     */
     componentDidMount() {
         this.displayDownArrow();
     }
 
+    /**
+     * Manage the state and use logic to decice what to render
+     */
     displayDownArrow = () => {
         const currentArrowNo = this.state.currentArrowNo;
         if (currentArrowNo <= this.state.maxArrowNo) {
@@ -43,6 +56,9 @@ class DownArrows extends React.Component {
         }
     };
 
+    /**
+     * Remove arrows
+     */
     removeDownArrow = () => {
         const arrow = "arrow" + this.state.currentArrowNo;
         this.setState({
