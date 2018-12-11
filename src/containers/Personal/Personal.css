@@ -9,6 +9,7 @@
 }
 
 .FlexRow {
+    max-height: 60vh;
     display: flex;
     flex-flow: row;
     height: 100%;

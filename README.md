@@ -1,5 +1,6 @@
 TODO:
 
+*Personal width poses make for weird rendering
 *Contact social icons need to do something on hover
 *Fix MOBILE/Tablet UX
 *Fix browser compatibility: Chrome, Firefox, IE, Edge, Safari
