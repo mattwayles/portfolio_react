@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../../assets/home/logo.png';
 import facebookIcon from '../../assets/home/social/facebookIcon.png';
 import linkedinIcon from '../../assets/home/social/linkedinIcon.png';
 import phoneIcon from '../../assets/home/social/phoneIcon.png';
@@ -62,14 +63,16 @@ class Contact extends React.Component {
         const {name, email, message} = this.state;
         return (
             <section className={classes.Main}>
+                <section className={classes.LogoDiv}>
+                    <img className={classes.Logo} src={logo} alt={"Contact Me"} />
+                </section>
                 {!this.props.collab ?
                             <section className={classes.FlexRow}>
                                 <a href={'http://facebook.com/mwayles'}><img src={facebookIcon} className={classes.SocialIcon} alt={"Facebook Message"}/></a>
                                 <a href={'https://www.linkedin.com/in/matthew-wayles-03354369'}><img src={linkedinIcon} className={classes.SocialIcon} alt={"LinkedIn Message"}/></a>
-                                <a href="tel:+1843-368-9968"><img className={classes.SocialIcon} src={phoneIcon} alt="843-368-9968" alt={"Call or Text"} /></a>
+                                <a href="tel:+1843-368-9968"><img className={classes.SocialIcon} src={phoneIcon} alt="843-368-9968" /></a>
                             </section>
                     : null}
-
                 <form id="collaborate" className={classes.Form}>
                     <input type="text" name="name"
                         onChange={(e) => this.type(e, 'name')}

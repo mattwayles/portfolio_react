@@ -18,7 +18,7 @@
     overflow: hidden;
 }
 
-.bold, .Topic {
+.Topic {
     font-family: inherit;
     color: #BBB;
     font-weight: 700;
@@ -50,41 +50,23 @@
 
 }
 
-.TravelImage {
-    margin: 3% 2%;
-}
-
-.ProgrammingImage {
-
-    margin: 6% 2%;
-}
-
 @media only screen and (max-width: 1024px) {
     .Main {
         margin: 52px 0 0 0;
         width: 100%;
         background-color: rgba(255, 255, 255, 0.5);
     }
-    .Header {
-        font-size: 8vw;
-    }
     .FirstLetter {
         font-size: 2.7vw;
     }
-
     .Text {
         font-size: 2vw;
     }
-
     .Topic {
         font-size: 2.5vw;
     }
     .Image {
         margin: 10% 3% 3% 3%;
-    }
-    .TravelImage, .ProgrammingImage {
-        margin: 20% 3% 3% 0;
-
     }
 }
 
@@ -93,29 +75,17 @@
         width: 100%;
         background-color: rgba(255, 255, 255, 0.5);
     }
-    .Header {
-        font-size: 10vw;
-    }
     .FirstLetter {
         font-size: 2.7vw;
     }
-
     .Text {
         font-size: 2vw;
     }
-
     .Topic {
         font-size: 2.5vw;
     }
     .Image {
         margin: 5% 0 5% 3%;
-        width: 50%;
-        height: 150px;
-
-    }
-
-    .TravelImage, .ProgrammingImage {
-        margin: 25% 3% 3% 0;
         width: 50%;
         height: 150px;
     }
