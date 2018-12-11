@@ -57,8 +57,13 @@
 }
 
 .SocialIcon {
+    border-radius: 50%;
     margin: 0 5vw;
     width: 20%;
+}
+
+.SocialIcon:hover {
+    box-shadow: 0 0 10px 15px var(--main-color);
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
