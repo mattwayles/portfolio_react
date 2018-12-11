@@ -56,14 +56,20 @@
     padding: 4vh 0;
 }
 
-.SocialIcon {
-    border-radius: 50%;
+.FacebookIcon, .LinkedInIcon, .PhoneIcon {
+    border-radius: 100%;
     margin: 0 5vw;
     width: 20%;
 }
 
-.SocialIcon:hover {
-    box-shadow: 0 0 10px 15px var(--main-color);
+.FacebookIcon:hover {
+    box-shadow: 0 0 10px 15px rgb(59, 89, 152);
+}
+.LinkedInIcon:hover {
+    box-shadow: 0 0 10px 15px rgb(0, 127, 177);
+}
+.PhoneIcon:hover {
+    box-shadow: 0 0 10px 15px rgb(207, 117, 56);
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */

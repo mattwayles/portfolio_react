@@ -69,11 +69,11 @@ class Contact extends React.Component {
                 {!this.props.collab ?
                             <section className={classes.FlexRow}>
                                 <a href={'http://facebook.com/mwayles'} rel="noopener noreferrer" target="_blank">
-                                    <img src={facebookIcon} className={classes.SocialIcon} alt={"Facebook Message"}/></a>
+                                    <img src={facebookIcon} className={classes.FacebookIcon} alt={"Facebook Message"}/></a>
                                 <a href={'https://www.linkedin.com/in/matthew-wayles-03354369'} rel="noopener noreferrer" target="_blank">
-                                    <img src={linkedinIcon} className={classes.SocialIcon} alt={"LinkedIn Message"}/></a>
+                                    <img src={linkedinIcon} className={classes.LinkedInIcon} alt={"LinkedIn Message"}/></a>
                                 <a href="tel:+1843-368-9968" rel="noopener noreferrer" target="_blank">
-                                    <img className={classes.SocialIcon} src={phoneIcon} alt="843-368-9968" /></a>
+                                    <img className={classes.PhoneIcon} src={phoneIcon} alt="843-368-9968" /></a>
                             </section>
                     : null}
                 <form id="collaborate" className={classes.Form}>
