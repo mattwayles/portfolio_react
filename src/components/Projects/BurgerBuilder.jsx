@@ -9,14 +9,8 @@ const PROJECT_NAME = "burgerBuilder";
 const burgerBuilder = (props) => (
     <section className={classes.Project}>
         <img onClick={() => props.exit(PROJECT_NAME)} className={classes.CloseButton} src={closeButton} alt={"X"} />
-        <section className={classes.ImageDiv}>
-            <img className={classes.Image} src={burgerBuilderImg} alt="Burger Builder"/>
-            <section className={classes.Buttons}>
-                <a href="https://github.com/mattwayles/burgerbuilder" rel="noopener noreferrer"
-                   target="_blank"><Button visible={true} pressed={false} enter={"right"} label={"Open Source"} /></a>
-            </section>
-        </section>
         <section className={classes.ProjectDiv}>
+            <section className={classes.ProjectDetails}>
             <p className={classes.ProjectName}>Burger Builder</p>
             <p className={classes.ProjectDescription}>Hamburger building application with user authentication and storage. Written in
                 <span className={classes.Bold}> React.js</span>.</p>
@@ -31,6 +25,14 @@ const burgerBuilder = (props) => (
                     <li>Uses browser <span className={classes.Bold}>LocalSession</span> for token storage and retrieval</li>
                 </ul>
             </ul>
+            </section>
+            <section className={classes.ImageDiv}>
+                <img className={classes.Image} src={burgerBuilderImg} alt="Burger Builder"/>
+                <section className={classes.Buttons}>
+                    <a href="https://github.com/mattwayles/burgerbuilder" rel="noopener noreferrer"
+                       target="_blank"><Button visible={true} pressed={false} enter={"right"} label={"Open Source"} /></a>
+                </section>
+            </section>
         </section>
     </section>
 );

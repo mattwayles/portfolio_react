@@ -19,18 +19,8 @@ const CERTIFICATION_COUNT = 7;
  * React-Pose poses for Certification Icons [hidden, visible, hover] (browser-dependent)
  */
 const Certificate = posed.img({
-    hoverable: true,
     init: { x: 0 },
-    hover: { x: '-5vw'},
-    hidden: {  x: "15vw" },
-    visible: { x: 0, rotate: 0, transition: { ease: 'easeIn', duration:  TRANSITION_DURATION} },
-    rotate: { rotate: 360, transition: { ease: 'easeIn', duration:  ROTATE_DURATION} },
-});
-const IECertificate = posed.img({
-    hoverable: true,
-    init: { x: 0 },
-    hover: { x: -60, transition: { ease: 'easeIn', duration:  0}},
-    hidden: {  x: "15vw" },
+    hidden: { x: "15vw" },
     visible: { x: 0, rotate: 0, transition: { ease: 'easeIn', duration:  TRANSITION_DURATION} },
     rotate: { rotate: 360, transition: { ease: 'easeIn', duration:  ROTATE_DURATION} },
 });
@@ -90,31 +80,22 @@ class CertificationIcons extends React.Component {
     render() {
         const {cert1, cert2, cert3, cert4, cert5, cert6, cert7} = this.state;
 
-        let isIE = document.documentMode;
-
         return(
             <section className={classes.CertificationIcons}>
-                <a href="https://education.oracle.com/oracle-certified-professional-java-se-7-programmer/trackp_155">
-                    {isIE? <IECertificate pose={cert1.display ? cert1.rotate? "rotate" : "visible" : "hidden"} className={classes.CertificationIcon} src={oca} alt="Oracle Certified Java Programmer" />
-                        : <Certificate pose={cert1.display ? cert1.rotate? "rotate" : "visible" : "hidden"} className={classes.CertificationIcon} src={oca} alt="Oracle Certified Java Programmer" />}</a>
-                <a href="https://www.microsoft.com/en-us/learning/exam-70-480.aspx">
-                    {isIE? <IECertificate pose={cert2.display ? cert2.rotate? "rotate" : "visible" : "hidden"} className={classes.CertificationIcon} src={mcp480} alt="JavaScript Certified" />
-                        :<Certificate pose={cert2.display ? cert2.rotate? "rotate" : "visible" : "hidden"} className={classes.CertificationIcon} src={mcp480} alt="JavaScript Certified" />}</a>
-                <a href="https://www.microsoft.com/en-us/learning/exam-70-410.aspx">
-                        {isIE? <IECertificate pose={cert3.display ? cert3.rotate? "rotate" : "visible" : "hidden"} className={classes.CertificationIcon} src={mcp410} alt="Server2012 Certified" />
-                            :<Certificate pose={cert3.display ? cert3.rotate? "rotate" : "visible" : "hidden"} className={classes.CertificationIcon} src={mcp410} alt="Server2012 Certified" />}</a>
-                <a href="https://www.microsoft.com/en-us/learning/exam-70-680.aspx">
-                    {isIE? <IECertificate pose={cert4.display ? cert4.rotate? "rotate" : "visible" : "hidden"} className={classes.CertificationIcon} src={mcp680} alt="Win7 Certified" />
-                        :<Certificate pose={cert4.display ? cert4.rotate? "rotate" : "visible" : "hidden"} className={classes.CertificationIcon} src={mcp680} alt="Win7 Certified" />}</a>
-                <a href="https://certification.comptia.org/certifications/security">
-                    {isIE? <IECertificate pose={cert5.display ? cert5.rotate? "rotate" : "visible" : "hidden"} className={classes.CertificationIcon} src={secplus} alt="Security+ Certified" />
-                        :<Certificate pose={cert5.display ? cert5.rotate? "rotate" : "visible" : "hidden"} className={classes.CertificationIcon} src={secplus} alt="Security+ Certified" />}</a>
-                <a href="https://certification.comptia.org/certifications/network">
-                    {isIE? <IECertificate pose={cert6.display ? cert6.rotate? "rotate" : "visible" : "hidden"} className={classes.CertificationIcon} src={netplus} alt="Network+ Certified" />
-                        :<Certificate pose={cert6.display ? cert6.rotate? "rotate" : "visible" : "hidden"} className={classes.CertificationIcon} src={netplus} alt="Network+ Certified" />}</a>
-                <a href="https://certification.comptia.org/certifications/a">
-                    {isIE? <IECertificate pose={cert7.display ? cert7.rotate? "rotate" : "visible" : "hidden"} className={classes.CertificationIcon} src={aplus} alt="A+ Certified" />
-                        :<Certificate pose={cert7.display ? cert7.rotate? "rotate" : "visible" : "hidden"} className={classes.CertificationIcon} src={aplus} alt="A+ Certified" />}</a>
+                <a href="https://education.oracle.com/oracle-certified-professional-java-se-7-programmer/trackp_155" rel="noopener noreferrer" target="_blank">
+                  <Certificate pose={cert1.display ? cert1.rotate? "rotate" : "visible" : "hidden"} className={classes.CertificationIcon} src={oca} alt="" /></a>
+                <a href="https://www.microsoft.com/en-us/learning/exam-70-480.aspx" rel="noopener noreferrer" target="_blank">
+                    <Certificate pose={cert2.display ? cert2.rotate? "rotate" : "visible" : "hidden"} className={classes.CertificationIcon} src={mcp480} alt="" /></a>
+                <a href="https://www.microsoft.com/en-us/learning/exam-70-410.aspx" rel="noopener noreferrer" target="_blank">
+                    <Certificate pose={cert3.display ? cert3.rotate? "rotate" : "visible" : "hidden"} className={classes.CertificationIcon} src={mcp410} alt="" /></a>
+                <a href="https://www.microsoft.com/en-us/learning/exam-70-680.aspx" rel="noopener noreferrer" target="_blank">
+                    <Certificate pose={cert4.display ? cert4.rotate? "rotate" : "visible" : "hidden"} className={classes.CertificationIcon} src={mcp680} alt="" /></a>
+                <a href="https://certification.comptia.org/certifications/security" rel="noopener noreferrer" target="_blank">
+                    <Certificate pose={cert5.display ? cert5.rotate? "rotate" : "visible" : "hidden"} className={classes.CertificationIcon} src={secplus} alt="" /></a>
+                <a href="https://certification.comptia.org/certifications/network" rel="noopener noreferrer" target="_blank">
+                    <Certificate pose={cert6.display ? cert6.rotate? "rotate" : "visible" : "hidden"} className={classes.CertificationIcon} src={netplus} alt="" /></a>
+                <a href="https://certification.comptia.org/certifications/a" rel="noopener noreferrer" target="_blank">
+                    <Certificate pose={cert7.display ? cert7.rotate? "rotate" : "visible" : "hidden"} className={classes.CertificationIcon} src={aplus} alt="" /></a>
             </section>
         )}}
 

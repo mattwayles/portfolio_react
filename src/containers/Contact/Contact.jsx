@@ -6,13 +6,61 @@ import phoneIcon from '../../assets/home/social/phoneIcon.png';
 import classes from './Contact.css';
 import * as emailjs from 'emailjs-com';
 import Button from "../../components/ui/Button/Button";
+import posed from "react-pose/lib/index";
+
+const TRANSITION_DURATION = 1000;
+const HOVER_DURATION = 500;
+const SHOW_LOGO = 105;
+const SHOW_ICONS = 110;
+const SHOW_NAME_INPUT = 120;
+const SHOW_EMAIL_INPUT = 130;
+const SHOW_MESSAGE_INPUT = 140;
+const SHOW_SUBMIT_BUTTON = 150;
+/**
+ * React-Pose poses for page elements
+ */
+
+const Logo = posed.img({
+    hidden: { opacity: 0 },
+    visible: {opacity: 1, transition: { ease: 'easeIn', duration:  TRANSITION_DURATION} }
+});
+
+const FormInput = posed.input({
+    visible:  {opacity: 1, x: 0, transition: { ease: 'easeIn', duration:  TRANSITION_DURATION} },
+    hidden: { opacity: 0, x: '-50vw' }
+});
+
+const FormTextarea = posed.textarea({
+    hidden: { opacity: 0, x: '-50vw' },
+    visible: {opacity: 1, x: 0, transition: { ease: 'easeIn', duration:  TRANSITION_DURATION} }
+});
+
+const Icon = posed.img({
+    hoverable: true,
+    init: {rotate: 0, scale: 1, transition: { ease: 'easeIn', duration:  TRANSITION_DURATION}},
+    hover: {rotate: 360, scale: 1.5, transition: { ease: 'easeIn', duration:  HOVER_DURATION}},
+    hidden: { opacity: 0},
+    visible: { opacity: 1, rotate: 0, transition: { ease: 'easeIn', duration:  TRANSITION_DURATION} },
+});
 
 /**
  * Display a contact OR collaboration page; these were consolidated into one page because they are so similar. Rendering is
- * donw based on 'collab' prop; render Collaboration page is true, Contact page if false.
+ * down based on 'collab' prop; render Collaboration page is true, Contact page if false.
  */
 class Contact extends React.Component {
     state = {
+        display: {
+            logo: false,
+            icons: {
+                fb: false,
+                li: false,
+                ph: false
+            },
+            nameInput: false,
+            emailInput: false,
+            messageInput: false,
+            submitButton: false
+        },
         name: {value: "", error: false, placeholder: "Name"},
         email: {value: "", error: false, placeholder: "E-Mail"},
         message: {value: "", error: false, placeholder: this.props.collab ?
@@ -20,6 +68,49 @@ class Contact extends React.Component {
                 "look like? How involved would you like me to be? This is the place to totally nerd out!"
                 : "Tell me your life story! How's it going today? What are your hopes and dreams? What brought you to my site?"}
     };
+
+    /**
+     * On component update, analyze scroll location to determine what to render
+     */
+    componentDidUpdate() {
+        if (this.props.scrollPercent > SHOW_LOGO) {
+            if (!this.state.display.logo) { //Render logo
+                this.setState({display: {...this.state.display, logo: true}});
+            }
+            else if (this.props.scrollPercent > SHOW_ICONS && !this.state.display.icons.fb) {
+                this.setState({display: {...this.state.display, icons: {...this.state.display.icons, fb: true}}});
+                setTimeout(() => this.setState({display: {...this.state.display, icons: {...this.state.display.icons, li: true}}}), 500);
+                setTimeout(() => this.setState({display: {...this.state.display, icons: {...this.state.display.icons, ph: true}}}), 1000);
+            }
+            //Render form elements
+            else if (this.props.scrollPercent > SHOW_NAME_INPUT && !this.state.display.nameInput) {
+                this.setState({display: {...this.state.display, nameInput: true}});
+            }
+            else if (this.props.scrollPercent > SHOW_EMAIL_INPUT && !this.state.display.emailInput) {
+                this.setState({display: {...this.state.display, emailInput: true}});
+            }
+            else if (this.props.scrollPercent > SHOW_MESSAGE_INPUT && !this.state.display.messageInput) {
+                this.setState({display: {...this.state.display, messageInput: true}});
+            }
+            else if (this.props.scrollPercent > SHOW_SUBMIT_BUTTON && !this.state.display.submitButton) {
+                this.setState({display: {...this.state.display, submitButton: true}});
+            }
+        }
+        else if (this.props.scrollPercent < SHOW_LOGO && this.state.display.logo) {
+            this.setState({  display: {
+                    logo: false,
+                    icons: {
+                        fb: false,
+                        li: false,
+                        ph: false
+                    },
+                    nameInput: false,
+                    emailInput: false,
+                    messageInput: false,
+                    submitButton: false
+                }});
+        }
+    }
 
     /**
      * Manage input validation by updating state every time an input value changes
@@ -60,40 +151,44 @@ class Contact extends React.Component {
     };
 
     render() {
-        const {name, email, message} = this.state;
+        const {name, email, message, display} = this.state;
+        const {collab} = this.props;
+
         return (
             <section className={classes.Main}>
                 <section className={classes.LogoDiv}>
-                    <img className={classes.Logo} src={logo} alt={"Contact Me"} />
+                    <Logo pose={display.logo ? "visible" : "hidden"} className={classes.Logo} src={logo} alt={"Contact Me"} />
                 </section>
-                {!this.props.collab ?
+                {!collab ?
                             <section className={classes.FlexRow}>
                                 <a href={'http://facebook.com/mwayles'} rel="noopener noreferrer" target="_blank">
-                                    <img src={facebookIcon} className={classes.FacebookIcon} alt={"Facebook Message"}/></a>
+                                    <Icon pose={display.icons.fb ? "visible" : "hidden"} src={facebookIcon} className={classes.SocialIcon} alt={"Facebook Message"}/></a>
                                 <a href={'https://www.linkedin.com/in/matthew-wayles-03354369'} rel="noopener noreferrer" target="_blank">
-                                    <img src={linkedinIcon} className={classes.LinkedInIcon} alt={"LinkedIn Message"}/></a>
+                                    <Icon pose={display.icons.li ? "visible" : "hidden"} src={linkedinIcon} className={classes.SocialIcon} alt={"LinkedIn Message"}/></a>
                                 <a href="tel:+1843-368-9968" rel="noopener noreferrer" target="_blank">
-                                    <img className={classes.PhoneIcon} src={phoneIcon} alt="843-368-9968" /></a>
+                                    <Icon pose={display.icons.ph ? "visible" : "hidden"} className={classes.SocialIcon} src={phoneIcon} alt="843-368-9968" /></a>
                             </section>
                     : null}
                 <form id="collaborate" className={classes.Form}>
-                    <input type="text" name="name"
+                    <FormInput type="text" name="name"
+                               pose={display.nameInput ? "visible" : "hidden"}
                         onChange={(e) => this.type(e, 'name')}
                         className={name.error ? classes.FormError : classes.FormInput}
                         placeholder={name.placeholder} />
-                    <input type="email" name="user_email"
+                    <FormInput type="email" name="user_email"
+                               pose={display.emailInput ? "visible" : "hidden"}
                         onChange={(e) => this.type(e, 'email')}
                            className={email.error ? classes.FormError : classes.FormInput}
                            placeholder={email.placeholder} />
-                    <textarea
+                    <FormTextarea name="message"
+                        pose={display.messageInput ? "visible" : "hidden"}
                         onChange={(e) => this.type(e, 'message')}
                         className={message.error ? classes.FormMessageError : classes.FormMessage}
-                        placeholder={message.placeholder}
-                        name="message" />
+                        placeholder={message.placeholder} />
                 </form>
 
                 <section className={classes.Button}>
-                    <Button visible={true} pressed={false} enter={"left"} click={this.send} label={this.props.collab ? "Let's do Business!" : "All done, send it off!"} />
+                    <Button visible={display.submitButton} pressed={false} enter={"left"} click={this.send} label={collab ? "Let's do Business!" : "All done, send it off!"} />
                 </section>
             </section>
         );

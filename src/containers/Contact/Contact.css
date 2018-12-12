@@ -15,13 +15,14 @@
     width: 50%;
     height: 4%;
     margin: 0 auto 1vh;
-    border: 1px solid var(--main-color);
+    border: 1px solid #779ecb;
     border-radius: 25px;
     padding: 1.5vh 1.5vw;
     font-size: 1vw;
     font-family: inherit;
-    color: var(--main-color);
+    color: #779ecb;
     outline: none;
+    transition: all 500ms ease-in-out;
 }
 
 .FormMessage, .FormMessageError {
@@ -32,6 +33,11 @@
 
 .FormError, .FormMessageError {
     background-color: #ffe5e5;
+}
+
+.FormInput:hover, .FormMessage:hover {
+    transition: all 500ms ease-in-out;
+    box-shadow: 0 0 2px 2px #779ecb;
 }
 
 .Button {
@@ -45,9 +51,6 @@
     text-align: center;
 }
 
-.Logo {
-}
-
 .FlexRow {
     display: flex;
     flex-flow: row;
@@ -56,20 +59,10 @@
     padding: 4vh 0;
 }
 
-.FacebookIcon, .LinkedInIcon, .PhoneIcon {
+.SocialIcon {
     border-radius: 100%;
     margin: 0 5vw;
     width: 20%;
-}
-
-.FacebookIcon:hover {
-    box-shadow: 0 0 10px 15px rgb(59, 89, 152);
-}
-.LinkedInIcon:hover {
-    box-shadow: 0 0 10px 15px rgb(0, 127, 177);
-}
-.PhoneIcon:hover {
-    box-shadow: 0 0 10px 15px rgb(207, 117, 56);
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */

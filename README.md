@@ -1,14 +1,14 @@
 TODO:
 
-*Fix hover on contact social icons; no white border, make background colors match
 *Fix MOBILE/Tablet UX
-*Fix browser compatibility: Chrome, Firefox, IE, Edge, Safari
+*Fix browser compatibility: Safari
 *Portfolio page: Finish Projects
 
 NICE-TO-HAVES:
 
 -All:
     *Replace react-pose with pure CSS transitions
+    *X-Translations don't work in IE - should be fixed by fixing the previous item
     *Use keyframes to make transitions and animations more dynamic
 
 -Main Page:

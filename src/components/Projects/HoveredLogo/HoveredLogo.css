@@ -50,6 +50,7 @@
 
 .Expand {
     margin-top: 3vh;
+    height: 5%;
     width: 10%;
     cursor: pointer;
 }

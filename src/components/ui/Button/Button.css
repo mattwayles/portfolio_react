@@ -1,6 +1,6 @@
 .Button {
-    color: var(--main-color);
-    border: 1px solid var(--main-color);
+    color: #779ecb;
+    border: 1px solid #779ecb;
     border-radius: 50px;
     cursor: pointer;
     font: inherit;
@@ -9,4 +9,32 @@
     margin-bottom: 3vh;
     vertical-align: middle;
     outline: none;
+}
+
+.Button:hover {
+    transform: scale(1.1);
+    color: #fff;
+    background-color: #779ecb;
+}
+
+.Button::-moz-focus-inner {
+    color: #779ecb;
+    border: 1px solid #779ecb;
+    border-radius: 50px;
+    cursor: pointer;
+    font: inherit;
+    padding: 1.5vh .5vw;
+    font-size: 1.5vw;
+    margin-bottom: 3vh;
+    vertical-align: middle;
+    outline: none;
+}
+
+@media only screen and (max-width: 599px) {
+    .Button {
+        font-size: 4vw;
+    }
+    .Button::-moz-focus-inner {
+        font-size: 4vw;
+    }
 }

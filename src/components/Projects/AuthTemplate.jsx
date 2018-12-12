@@ -9,14 +9,8 @@ const PROJECT_NAME = "authTemplate";
 const authTemplate = (props) => (
     <section className={classes.Project}>
         <img onClick={() => props.exit(PROJECT_NAME)} className={classes.CloseButton} src={closeButton} alt={"X"} />
-        <section className={classes.ImageDiv}>
-            <img className={classes.Image} src={authTemplateImg} alt="Authentication Template"/>
-            <section className={classes.Buttons}>
-                <a href="https://github.com/mattwayles/authTemplate" rel="noopener noreferrer"
-                   target="_blank"><Button visible={true} pressed={false} enter={"right"} label={"Open Source"} /></a>
-            </section>
-        </section>
         <section className={classes.ProjectDiv}>
+            <section className={classes.ProjectDetails}>
             <p className={classes.ProjectName}>Authentication Template</p>
             <p className={classes.ProjectDescription}>Token-based authentication template for React.js applications. Written in
                 <span className={classes.Bold}> React</span>.</p>
@@ -30,6 +24,14 @@ const authTemplate = (props) => (
                     <li>Portable to MongoDB or Google Firebase databases</li>
                 </ul>
             </ul>
+            </section>
+            <section className={classes.ImageDiv}>
+                <img className={classes.Image} src={authTemplateImg} alt="Authentication Template"/>
+                <section className={classes.Buttons}>
+                    <a href="https://github.com/mattwayles/authTemplate" rel="noopener noreferrer"
+                       target="_blank"><Button visible={true} pressed={false} enter={"right"} label={"Open Source"} /></a>
+                </section>
+            </section>
         </section>
     </section>
 );

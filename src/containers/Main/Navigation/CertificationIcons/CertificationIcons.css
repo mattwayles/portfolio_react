@@ -1,18 +1,18 @@
 .CertificationIcons {
-    width: 5vw;
+    margin-right: 2vw;
+    width: 8vw;
     display: flex;
     flex-flow: column;
-    padding-top: 15vh;
+    text-align: right;
 }
 .CertificationIcon {
     width: 3vw;
-    margin: 1vh 2vw 1vh 0;
+    margin: 1vh 0;
     transition: width 500ms ease-in-out;
 }
 
 .CertificationIcon:hover {
     width: 8vw;
-    transition: all 500ms ease-in-out;
 }
 
 @media only screen and (max-width: 1367px) {
@@ -26,10 +26,9 @@
 
 @media only screen and (max-width: 499px) {
     .CertificationIcons {
-        padding-top: 20vh;
         width: 12vw;
     }
     .CertificationIcon {
-        width: 10vw;
+        width: 8vw;
     }
 }

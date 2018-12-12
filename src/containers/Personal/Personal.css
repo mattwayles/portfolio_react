@@ -9,7 +9,6 @@
 }
 
 .FlexRow {
-    max-height: 60vh;
     display: flex;
     flex-flow: row;
     height: 100%;
@@ -35,7 +34,7 @@
 
 .Text {
     font-family: inherit;
-    color: var(--main-color);
+    color: #779ecb;
     font-size: 1vw;
     overflow: hidden;
 }

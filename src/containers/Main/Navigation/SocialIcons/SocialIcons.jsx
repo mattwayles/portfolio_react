@@ -108,12 +108,12 @@ class SocialIcons extends React.Component {
 
         return(
             <section className={classes.SocialIcons}>
-                <a href={'http://facebook.com/mwayles'}><FacebookIcon><Icon pose={icon1.display ? icon1.rotate? 'rotate' : 'visible' : 'hidden'} src={facebookIcon} className={classes.SocialIcon}/></FacebookIcon></a>
-                <a href={'http://www.github.com/mattwayles'}><GithubIcon><Icon pose={icon2.display ? icon2.rotate? 'rotate' : 'visible' : 'hidden'} src={githubIcon} className={classes.SocialIcon}/></GithubIcon></a>
-                <a href={'https://www.linkedin.com/in/matthew-wayles-03354369'}><LinkedInIcon><Icon  pose={icon3.display ? icon3.rotate? 'rotate' : 'visible' : 'hidden'} src={linkedinIcon} className={classes.SocialIcon}/></LinkedInIcon></a>
-                <a href={'https://plus.google.com/u/0/101869636481098207270'}><GooglePlusIcon><Icon pose={icon4.display ? icon4.rotate? 'rotate' : 'visible' : 'hidden'} src={googlePlusIcon} className={classes.SocialIcon}/></GooglePlusIcon></a>
-                <a href={'https://codepen.io/LiquidIce25/'}><CodePenIcon><Icon pose={icon5.display ? icon5.rotate? 'rotate' : 'visible' : 'hidden'} src={codepenIcon} className={classes.SocialIcon}/></CodePenIcon></a>
-                <a href={'http://www.freecodecamp.com/mattwayles'}><FreeCodeCampIcon><Icon pose={icon6.display ? icon6.rotate? 'rotate' : 'visible' : 'hidden'} src={freeCodeCampIcon} className={classes.SocialIcon}/></FreeCodeCampIcon></a>
+                <a href={'http://facebook.com/mwayles'} rel="noopener noreferrer" target="_blank"><FacebookIcon><Icon pose={icon1.display ? icon1.rotate? 'rotate' : 'visible' : 'hidden'} src={facebookIcon} className={classes.SocialIcon}/></FacebookIcon></a>
+                <a href={'http://www.github.com/mattwayles'} rel="noopener noreferrer" target="_blank"><GithubIcon><Icon pose={icon2.display ? icon2.rotate? 'rotate' : 'visible' : 'hidden'} src={githubIcon} className={classes.SocialIcon}/></GithubIcon></a>
+                <a href={'https://www.linkedin.com/in/matthew-wayles-03354369'} rel="noopener noreferrer" target="_blank"><LinkedInIcon><Icon  pose={icon3.display ? icon3.rotate? 'rotate' : 'visible' : 'hidden'} src={linkedinIcon} className={classes.SocialIcon}/></LinkedInIcon></a>
+                <a href={'https://plus.google.com/u/0/101869636481098207270'} rel="noopener noreferrer" target="_blank"><GooglePlusIcon><Icon pose={icon4.display ? icon4.rotate? 'rotate' : 'visible' : 'hidden'} src={googlePlusIcon} className={classes.SocialIcon}/></GooglePlusIcon></a>
+                <a href={'https://codepen.io/LiquidIce25/'} rel="noopener noreferrer" target="_blank"><CodePenIcon><Icon pose={icon5.display ? icon5.rotate? 'rotate' : 'visible' : 'hidden'} src={codepenIcon} className={classes.SocialIcon}/></CodePenIcon></a>
+                <a href={'http://www.freecodecamp.com/mattwayles'} rel="noopener noreferrer" target="_blank"><FreeCodeCampIcon><Icon pose={icon6.display ? icon6.rotate? 'rotate' : 'visible' : 'hidden'} src={freeCodeCampIcon} className={classes.SocialIcon}/></FreeCodeCampIcon></a>
             </section>
         )}}
 

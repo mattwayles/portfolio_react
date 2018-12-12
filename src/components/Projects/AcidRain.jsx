@@ -8,10 +8,8 @@ const PROJECT_NAME = "acidRain";
 const acidRain = (props) => (
     <section className={classes.Project}>
         <img onClick={() => props.exit(PROJECT_NAME)} className={classes.CloseButton} src={closeButton} alt={"X"} />
-        <section className={classes.ImageDiv}>
-            <img className={classes.Image} src={acidRainImg} alt="Acid Rain"/>
-        </section>
         <section className={classes.ProjectDiv}>
+            <section className={classes.ProjectDetails}>
             <p className={classes.ProjectName}>Acid Rain</p>
             <p className={classes.ProjectDescription}>Casual mobile game challenging users to catch clean water while
                 protecting a city from acid rain drops. Written in <span className={classes.Bold}>Java</span> using
@@ -27,6 +25,10 @@ const acidRain = (props) => (
                     <li>Google Play, iOS App coming soon!</li>
                 </ul>
             </ul>
+            </section>
+            <section className={classes.ImageDiv}>
+                <img className={classes.Image} src={acidRainImg} alt="Acid Rain"/>
+            </section>
         </section>
     </section>
 );

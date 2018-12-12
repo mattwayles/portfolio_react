@@ -7,7 +7,6 @@ import Auxil from "../../../components/Auxil";
 import CertificationIcons from "./CertificationIcons/CertificationIcons";
 import Resume from "../../Resume/Resume";
 import DownArrows from "../../../components/ui/DownArrows/DownArrows";
-import DynamicFont from 'react-dynamic-font';
 import Button from "../../../components/ui/Button/Button";
 import Portfolio from "../../Portfolio/Portfolio";
 import Personal from "../../Personal/Personal";
@@ -44,7 +43,7 @@ const LABEL_ERROR = "Whoops! That operation isn't supported yet.";
 const HowCanIHelpLabel = posed.p({
     hidden: { opacity: 0, scale: 0},
     visible: {color: "#779ecb", opacity: 1, scale: 1.0, transition: {ease: 'easeIn', duration: TRANSITION_DURATION}},
-    bounce: {color: "#BBB", scale: 1.25, transition: {ease: 'easeInOut', duration: BOUNCE_DURATION}},
+    bounce: {color: "#BBB", scale: 1.2, transition: {ease: 'easeInOut', duration: BOUNCE_DURATION}}
 });
 
 /**
@@ -244,15 +243,15 @@ class Navigation extends React.Component {
 
         return (
             <Auxil>
-            <section className={classes.MainNavigation}>
-                    <Auxil>
+                <section className={classes.MainNavigation}>
+                    <HowCanIHelpLabel
+                        pose={label.display ? label.bounce ? "bounce" : "visible" : "hidden"}
+                        className={label.change ? classes.AnimateLabel : classes.Label}>
+                        {label.text}
+                    </HowCanIHelpLabel>
+                    <section className={classes.NavigationContent}>
                         {scrollPercent > SHOW_BUTTON5_HEIGHT ? <SocialIcons /> : null}
                         <section className={classes.NavigationOptions}>
-                            <HowCanIHelpLabel
-                                pose={label.display ? label.bounce ? "bounce" : "visible" : "hidden"}
-                                className={label.change ? classes.AnimateLabel : classes.Label}>
-                                    <DynamicFont content={label.text} />
-                            </HowCanIHelpLabel>
                             <section className={classes.ButtonDiv}>
                                 <Button visible={buttons.button1} pressed={open.resume} enter={"left"} click={this.openPage} page={"resume"} label={"I want to view your "} span={"Resume"} />
                                 <Button visible={buttons.button2} pressed={open.portfolio} bounce={label.bounce && suggest === "portfolio"}  enter={"right"} click={this.openPage} page={"portfolio"} label={"I want to view your "} span={"Portfolio"} />
@@ -263,8 +262,8 @@ class Navigation extends React.Component {
                             </section>
                         </section>
                         {scrollPercent > SHOW_BUTTON5_HEIGHT ? <CertificationIcons /> : null}
-                    </Auxil>
-            </section>
+                    </section>
+                </section>
 
                 {open.resume ? <Resume scrollTo={documentHeight} /> : null}
                 {open.portfolio ? <Portfolio scrollPercent={scrollPercent}/> : null}
@@ -272,9 +271,8 @@ class Navigation extends React.Component {
                 {open.collaborate ? <Contact collab={true} scrollPercent={scrollPercent}/> : null}
                 {open.contact ? <Contact collab={false} scrollPercent={scrollPercent}/> : null}
                 {open.any ? <section className={classes.NavButtonDiv}>
-                        <Button visible={true} enter={"right"} click={this.backToNavClick} label={"Take me back to the "} span={"Navigation Panel"} />
+                        <Button visible={true} enter={"right"} click={this.backToNavClick} label={"Go back to the "} span={"Navigation Panel"} />
                     </section> : null}
-
             </Auxil>
 
         )

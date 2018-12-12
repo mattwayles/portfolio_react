@@ -22,7 +22,7 @@ const DescriptionLine = posed.p({
 });
 
 /**
- * Display the mai npage when the website is accessed
+ * Display the main page when the website is accessed
  */
 class Main extends React.Component {
     state = {
@@ -138,7 +138,6 @@ class Main extends React.Component {
 
                 {scroll < window.innerHeight / 2 && displayArrows ? <DownArrows click={this.scrollClick} /> : <section className={classes.Placeholder} />}
                 <MainNavigation />
-
 
                 <section className={classes.Footer}>
                     <p>©2018</p>

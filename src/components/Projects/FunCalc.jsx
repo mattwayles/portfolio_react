@@ -9,14 +9,8 @@ const PROJECT_NAME = "funCalc";
 const funCalc = (props) => (
     <section className={classes.Project}>
         <img onClick={() => props.exit(PROJECT_NAME)} className={classes.CloseButton} src={closeButton} alt={"X"} />
-        <section className={classes.ImageDiv}>
-            <img className={classes.Image} src={funCalcImg} alt="FunCalc"/>
-            <section className={classes.Buttons}>
-                <a href="http://codepen.io/LiquidIce25/pen/NpZdeK" rel="noopener noreferrer"
-                   target="_blank"><Button visible={true} pressed={false} enter={"right"} label={"View Source"} /></a>
-            </section>
-        </section>
         <section className={classes.ProjectDiv}>
+            <section className={classes.ProjectDetails}>
             <p className={classes.ProjectName}>FunCalc</p>
             <p className={classes.ProjectDescription}>Arithmetic calculator offering colorful themes to enhance
                 interest in mathematics for children. Written in <span className={classes.Bold}>ECMAScript 6</span> with
@@ -30,6 +24,14 @@ const funCalc = (props) => (
                                          target="_blank">MS70-480 MCP Certification</a></li>
                 </ul>
             </ul>
+        </section>
+            <section className={classes.ImageDiv}>
+                <img className={classes.Image} src={funCalcImg} alt="FunCalc"/>
+                <section className={classes.Buttons}>
+                    <a href="http://codepen.io/LiquidIce25/pen/NpZdeK" rel="noopener noreferrer"
+                       target="_blank"><Button visible={true} pressed={false} enter={"right"} label={"View Source"} /></a>
+                </section>
+            </section>
         </section>
     </section>
 );

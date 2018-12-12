@@ -16,9 +16,9 @@ const SHOW_PASSION_HEIGHT = 185;
  * React-Pose poses for Personal sections [hidden, visible]
  */
 const Section = posed.section({
-    visible: { opacity: 1, x: 0, width: '100%', transition: {ease: 'easeIn', duration: TRANSITION_DURATION}},
-    hiddenLeft: { opacity: 0, x: "-50vw", width: 0},
-    hiddenRight: { opacity: 0, x: "50vw", width: 0},
+    visible: { opacity: 1, x: 0, transition: {ease: 'easeIn', duration: TRANSITION_DURATION}},
+    hiddenLeft: { opacity: 0, x: "-50vw"},
+    hiddenRight: { opacity: 0, x: "50vw"},
 });
 
 /**

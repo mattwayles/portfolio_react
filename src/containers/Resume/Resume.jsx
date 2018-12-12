@@ -3,8 +3,6 @@ import classes from './Resume.css';
 
 import {Document, Page} from 'react-pdf';
 import resume from './Matthew_Wayles_Resume.pdf';
-import back from '../../assets/arrows/backArrow.png'
-import next from '../../assets/arrows/nextArrow.png'
 import Auxil from "../../components/Auxil";
 import Button from "../../components/ui/Button/Button";
 
@@ -30,7 +28,8 @@ class Resume extends React.Component {
      */
     handleBack = () => {
         this.setState({ pageNumber: this.state.pageNumber - 1 });
-        window.scrollTo(0, this.props.scrollTo)
+        const doc = document.getElementById("pdfDoc");
+        doc.scrollTop = 0;
     };
 
     /**
@@ -38,7 +37,8 @@ class Resume extends React.Component {
      */
     handleNext = () => {
         this.setState({ pageNumber: this.state.pageNumber + 1 });
-        window.scrollTo(0, this.props.scrollTo)
+        const doc = document.getElementById("pdfDoc");
+        doc.scrollTop = 0;
     };
 
 
@@ -48,23 +48,18 @@ class Resume extends React.Component {
         return (
             <Auxil>
                 <section className={classes.Main}>
-
-                    <Document file={resume} onLoadSuccess={this.onDocumentLoadSuccess}>
-                        <Page loading="Loading..." width={window.innerWidth} pageNumber={pageNumber} />
-                    </Document>
+                    <section id="pdfDoc" className={classes.PdfDoc}>
+                        <Document loading={"Loading something GREAT..."} file={resume} onLoadSuccess={this.onDocumentLoadSuccess}>
+                            <Page width={window.innerWidth < 600 ? window.innerWidth : window.innerWidth / 2} pageNumber={pageNumber} />
+                        </Document>
+                    </section>
 
                     <section className={classes.FlexRow}>
-                        <p className={classes.Pages}>
-                            <img
-                                className={pageNumber !== 1 ? classes.BackArrow : classes.Placeholder}
-                                onClick={this.handleBack}
-                                src={back} alt="<=" />
-                            Page {pageNumber} of {numPages}
-                            <img
-                                className={pageNumber !== numPages ? classes.NextArrow : classes.Placeholder}
-                                onClick={this.handleNext}
-                                src={next} alt="=>" />
-                        </p>
+                        {pageNumber > 1 ? <p className={ classes.BackArrow } onClick={this.handleBack}>
+                            {"<"} </p> : null}
+                        <p className={classes.Pages}>Page {pageNumber} of {numPages}</p>
+                        {pageNumber <= 1 ? <p className={classes.NextArrow} onClick={this.handleNext}>
+                            {">"} </p>  : null}
                     </section>
                 </section>
 
