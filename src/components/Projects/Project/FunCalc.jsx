@@ -1,8 +1,8 @@
 import React from 'react';
-import classes from './ProjectStyle.css';
-import closeButton from '../../assets/arrows/upArrow.png';
-import funCalcImg from '../../assets/portfolio/expanded/funcalc.jpg'
-import Button from "../ui/Button/Button";
+import classes from '../ProjectStyle.css';
+import closeButton from '../../../assets/arrows/upArrow.png';
+import funCalcImg from '../../../assets/portfolio/expanded/funcalc.jpg'
+import Button from "../../ui/Button/Button";
 
 const PROJECT_NAME = "funCalc";
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import classes from './ProjectStyle.css';
-import yahtzeeImg from '../../assets/portfolio/expanded/yahtzee.jpg';
+import classes from '../ProjectStyle.css';
+import yahtzeeImg from '../../../assets/portfolio/expanded/yahtzee.jpg';
 
 const yahtzee = () => (
     <section className={classes.Project}>

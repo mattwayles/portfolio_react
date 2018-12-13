@@ -1,6 +1,6 @@
 import React from 'react';
-import classes from './ProjectStyle.css';
-import expireGuardImg from '../../assets/portfolio/expanded/expireguard.jpg';
+import classes from '../ProjectStyle.css';
+import expireGuardImg from '../../../assets/portfolio/expanded/expireguard.jpg';
 const expireGuard = () => (
     <section className={classes.Project}>
             <section className={classes.ProjectDiv}>

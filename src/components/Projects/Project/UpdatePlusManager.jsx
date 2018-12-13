@@ -1,15 +1,15 @@
 import React from 'react';
-import classes from './ProjectStyle.css';
-import updatePlusConsoleImg from '../../assets/portfolio/expanded/update+.jpg';
+import classes from '../ProjectStyle.css';
+import updatePlusMgrImg from '../../../assets/portfolio/expanded/update+mgr.jpg';
 
-const updatePlusConsole = () => (
+const updatePlusManager = () => (
     <section className={classes.Project}>
             <section className={classes.ProjectDiv}>
                 <section className={classes.ImageDiv}>
-                    <img className={classes.Image} src={updatePlusConsoleImg} alt="Update+ Console"/>
+                    <img className={classes.Image} src={updatePlusMgrImg} alt="Update+ Manager"/>
                 </section>
-                <p className={classes.ProjectName}>Update+ User Console</p>
-                <p className={classes.ProjectDescription}>User console to execute automated Windows update packages. Written in
+                <p className={classes.ProjectName}>Update+ Manager</p>
+                <p className={classes.ProjectDescription}>User Interface to create automated Windows update packages. Written in
                     <span className={classes.Bold}> AutoIt</span>.</p>
                 <ul className={classes.List}>
                     <li>Agile Team project</li>
@@ -26,4 +26,4 @@ const updatePlusConsole = () => (
     </section>
 );
 
-export default updatePlusConsole;
+export default updatePlusManager;

@@ -11,16 +11,16 @@ import funCalcLogo from '../../assets/portfolio/logos/funCalcLogo.jpg';
 import gctLogo from '../../assets/portfolio/logos/gctLogo.jpg';
 import goldLogo from '../../assets/portfolio/logos/goldLogo.jpg';
 import HoveredLogo from "../../components/Projects/HoveredLogo/HoveredLogo";
-import GoldESP from "../../components/Projects/GoldESP";
+import GoldESP from "../../components/Projects/Project/GoldESP";
 import Auxil from "../../components/Auxil";
-import GCT from "../../components/Projects/GCT";
-import AcidRain from "../../components/Projects/AcidRain";
-import ScoreboardConfig from "../../components/Projects/ScoreboardConfig";
-import HikersWatch from "../../components/Projects/HikersWatch";
-import ShuckShare from "../../components/Projects/ShuckShare";
-import AuthTemplate from "../../components/Projects/AuthTemplate";
-import BurgerBuilder from "../../components/Projects/BurgerBuilder";
-import FunCalc from "../../components/Projects/FunCalc";
+import GCT from "../../components/Projects/Project/GCT";
+import AcidRain from "../../components/Projects/Project/AcidRain";
+import ScoreboardConfig from "../../components/Projects/Project/ScoreboardConfig";
+import HikersWatch from "../../components/Projects/Project/HikersWatch";
+import ShuckShare from "../../components/Projects/Project/ShuckShare";
+import AuthTemplate from "../../components/Projects/Project/AuthTemplate";
+import BurgerBuilder from "../../components/Projects/Project/BurgerBuilder";
+import FunCalc from "../../components/Projects/Project/FunCalc";
 
 const SHOW_PORTFOLIO_HEIGHT = 120;
 

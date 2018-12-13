@@ -1,6 +1,6 @@
 import React from 'react';
-import classes from './ProjectStyle.css';
-import shutdownImg from '../../assets/portfolio/expanded/shutdowninitiator.jpg';
+import classes from '../ProjectStyle.css';
+import shutdownImg from '../../../assets/portfolio/expanded/shutdowninitiator.jpg';
 
 const shutdownInitiator = () => (
     <section className={classes.Project}>

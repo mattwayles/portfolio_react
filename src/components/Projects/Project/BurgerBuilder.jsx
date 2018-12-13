@@ -1,8 +1,8 @@
 import React from 'react';
-import classes from './ProjectStyle.css';
-import closeButton from '../../assets/arrows/upArrow.png';
-import burgerBuilderImg from '../../assets/portfolio/expanded/burgerbuilder.jpg';
-import Button from "../ui/Button/Button";
+import classes from '../ProjectStyle.css';
+import closeButton from '../../../assets/arrows/upArrow.png';
+import burgerBuilderImg from '../../../assets/portfolio/expanded/burgerbuilder.jpg';
+import Button from "../../ui/Button/Button";
 
 const PROJECT_NAME = "burgerBuilder";
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import classes from './ProjectStyle.css';
-import gctLogo from '../../assets/portfolio/expanded/gct.png';
+import classes from '../ProjectStyle.css';
+import gctLogo from '../../../assets/portfolio/expanded/gct.png';
 
 const GCTUI = () => (
     <section className={classes.Project}>

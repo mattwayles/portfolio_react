@@ -1,8 +1,8 @@
 import React from 'react';
-import logo from '../../assets/home/logo.png';
-import facebookIcon from '../../assets/home/social/facebookContactIcon.png';
-import linkedinIcon from '../../assets/home/social/linkedinContactIcon.png';
-import phoneIcon from '../../assets/home/social/phoneIcon.png';
+import logo from '../../assets/contact/logo.png';
+import facebookIcon from '../../assets/contact/facebookContactIcon.png';
+import linkedinIcon from '../../assets/contact/linkedinContactIcon.png';
+import phoneIcon from '../../assets/contact/phoneIcon.png';
 import classes from './Contact.css';
 import * as emailjs from 'emailjs-com';
 import Button from "../../components/ui/Button/Button";
@@ -16,10 +16,10 @@ const SHOW_NAME_INPUT = 120;
 const SHOW_EMAIL_INPUT = 130;
 const SHOW_MESSAGE_INPUT = 140;
 const SHOW_SUBMIT_BUTTON = 140;
+
 /**
  * React-Pose poses for page elements
  */
-
 const Logo = posed.img({
     hidden: { opacity: 0 },
     visible: {opacity: 1, transition: { ease: 'easeIn', duration:  TRANSITION_DURATION} }

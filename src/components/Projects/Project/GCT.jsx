@@ -1,7 +1,7 @@
 import React from 'react';
-import classes from './ProjectStyle.css';
-import closeButton from '../../assets/arrows/upArrow.png';
-import gctLogo from '../../assets/portfolio/expanded/gctLogo.png';
+import classes from '../ProjectStyle.css';
+import closeButton from '../../../assets/arrows/upArrow.png';
+import gctLogo from '../../../assets/portfolio/expanded/gctLogo.png';
 
 const PROJECT_NAME = "gct";
 

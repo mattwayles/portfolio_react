@@ -1,6 +1,6 @@
 import React from 'react';
-import classes from './ProjectStyle.css';
-import scoreboardImg from '../../assets/portfolio/expanded/scoreboard.png';
+import classes from '../ProjectStyle.css';
+import scoreboardImg from '../../../assets/portfolio/expanded/scoreboard.png';
 
 const scoreboard = () => (
     <section className={classes.Project}>

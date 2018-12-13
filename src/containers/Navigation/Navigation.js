@@ -2,14 +2,14 @@ import React from 'react';
 
 import classes from './Navigation.css';
 import posed from "react-pose";
-import Auxil from "../../../components/Auxil";
-import Resume from "../../Resume/Resume";
-import DownArrows from "../../../components/ui/DownArrows/DownArrows";
-import Button from "../../../components/ui/Button/Button";
-import Portfolio from "../../Portfolio/Portfolio";
-import Personal from "../../Personal/Personal";
-import Contact from "../../Contact/Contact";
-import Certifications from "../../Certifications/Certifications";
+import Auxil from "../../components/Auxil";
+import Resume from "../Resume/Resume";
+import DownArrows from "../../components/ui/DownArrows/DownArrows";
+import Button from "../../components/ui/Button/Button";
+import Portfolio from "../Portfolio/Portfolio";
+import Personal from "../Personal/Personal";
+import Contact from "../Contact/Contact";
+import Certifications from "../Certifications/Certifications";
 
 const TRANSITION_DURATION = 1000;
 const LABEL_CHANGE_DURATION = 1200;

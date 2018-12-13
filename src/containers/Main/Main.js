@@ -3,7 +3,7 @@ import React from 'react';
 import classes from './Main.css';
 import Auxil from "../../components/Auxil";
 import posed from 'react-pose';
-import MainNavigation from "./Navigation/Navigation";
+import MainNavigation from "../Navigation/Navigation";
 import DownArrows from "../../components/ui/DownArrows/DownArrows";
 import Footer from "../../components/Footer/Footer";
 

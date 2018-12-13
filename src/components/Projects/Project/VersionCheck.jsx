@@ -1,6 +1,6 @@
 import React from 'react';
-import classes from './ProjectStyle.css';
-import versionCheckImg from '../../assets/portfolio/expanded/versioncheck.jpg';
+import classes from '../ProjectStyle.css';
+import versionCheckImg from '../../../assets/portfolio/expanded/versioncheck.jpg';
 
 const versionCheck = () => (
     <section className={classes.Project}>

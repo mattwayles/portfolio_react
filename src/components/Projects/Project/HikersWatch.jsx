@@ -1,8 +1,8 @@
 import React from 'react';
-import classes from './ProjectStyle.css';
-import closeButton from '../../assets/arrows/upArrow.png';
-import hikersWatchImg from '../../assets/portfolio/expanded/hikersWatch.png';
-import googlePlay from '../../assets/portfolio/logos/google-play-badge.png';
+import classes from '../ProjectStyle.css';
+import closeButton from '../../../assets/arrows/upArrow.png';
+import hikersWatchImg from '../../../assets/portfolio/expanded/hikersWatch.png';
+import googlePlay from '../../../assets/portfolio/logos/google-play-badge.png';
 
 const PROJECT_NAME = "hikersWatch";
 

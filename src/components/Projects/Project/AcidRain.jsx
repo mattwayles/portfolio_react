@@ -1,7 +1,7 @@
 import React from 'react';
-import classes from './ProjectStyle.css';
-import closeButton from '../../assets/arrows/upArrow.png';
-import acidRainImg from '../../assets/portfolio/expanded/acidRain.png';
+import classes from '../ProjectStyle.css';
+import closeButton from '../../../assets/arrows/upArrow.png';
+import acidRainImg from '../../../assets/portfolio/expanded/acidRain.png';
 
 const PROJECT_NAME = "acidRain";
 

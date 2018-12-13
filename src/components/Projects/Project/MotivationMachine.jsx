@@ -1,6 +1,6 @@
 import React from 'react';
-import classes from './ProjectStyle.css';
-import motivationMachineImg from '../../assets/portfolio/expanded/motivation.jpg'
+import classes from '../ProjectStyle.css';
+import motivationMachineImg from '../../../assets/portfolio/expanded/motivation.jpg'
 
 const motivationMachine = () => (
     <section className={classes.Project}>

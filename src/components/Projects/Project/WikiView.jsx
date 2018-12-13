@@ -1,6 +1,6 @@
 import React from 'react';
-import classes from './ProjectStyle.css';
-import wikiViewImg from '../../assets/portfolio/expanded/wikiview.jpg';
+import classes from '../ProjectStyle.css';
+import wikiViewImg from '../../../assets/portfolio/expanded/wikiview.jpg';
 
 const wikiView = () => (
     <section className={classes.Project}>

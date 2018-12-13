@@ -1,9 +1,9 @@
 import React from 'react';
-import classes from './ProjectStyle.css';
-import closeButton from '../../assets/arrows/upArrow.png';
-import goldespImg from '../../assets/portfolio/expanded/goldespLogo.png';
-import Button from "../ui/Button/Button";
-import Auxil from "../Auxil";
+import classes from '../ProjectStyle.css';
+import closeButton from '../../../assets/arrows/upArrow.png';
+import goldespImg from '../../../assets/portfolio/expanded/goldespLogo.png';
+import Button from "../../ui/Button/Button";
+import Auxil from "../../Auxil";
 
 const PROJECT_NAME = "gold";
 

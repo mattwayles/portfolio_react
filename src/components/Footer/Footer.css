@@ -35,51 +35,51 @@
 }
 
 .FacebookIcon {
-    background-image: url("../../assets/home/social/facebookIcon.png");
+    background-image: url("../../assets/contact/facebookIcon.png");
 }
 .FacebookIcon:hover {
     transition: all 250ms ease-in;
-    background-image: url("../../assets/home/social/facebookIconHover.png")
+    background-image: url("../../assets/contact/facebookIconHover.png")
 }
 
 .GithubIcon {
-    background-image: url("../../assets/home/social/githubIcon.png");
+    background-image: url("../../assets/contact/githubIcon.png");
 }
 .GithubIcon:hover {
     transition: all 250ms ease-in;
-    background-image: url("../../assets/home/social/githubIconHover.png")
+    background-image: url("../../assets/contact/githubIconHover.png")
 }
 
 .LinkedinIcon {
-    background-image: url("../../assets/home/social/linkedinIcon.png");
+    background-image: url("../../assets/contact/linkedinIcon.png");
 }
 .LinkedinIcon:hover {
     transition: all 250ms ease-in;
-    background-image: url("../../assets/home/social/linkedinIconHover.png")
+    background-image: url("../../assets/contact/linkedinIconHover.png")
 }
 
 .GooglePlusIcon {
-    background-image: url("../../assets/home/social/googlePlusIcon.png");
+    background-image: url("../../assets/contact/googlePlusIcon.png");
 }
 .GooglePlusIcon:hover {
     transition: all 250ms ease-in;
-    background-image: url("../../assets/home/social/googlePlusIconHover.png")
+    background-image: url("../../assets/contact/googlePlusIconHover.png")
 }
 
 .CodepenIcon {
-    background-image: url("../../assets/home/social/codepenIcon.png");
+    background-image: url("../../assets/contact/codepenIcon.png");
 }
 .CodepenIcon:hover {
     transition: all 250ms ease-in;
-    background-image: url("../../assets/home/social/codepenIconHover.png")
+    background-image: url("../../assets/contact/codepenIconHover.png")
 }
 
 .FreeCodeCampIcon {
-    background-image: url("../../assets/home/social/freeCodeCampIcon.png");
+    background-image: url("../../assets/contact/freeCodeCampIcon.png");
 }
 .FreeCodeCampIcon:hover {
     transition: all 250ms ease-in;
-    background-image: url("../../assets/home/social/freeCodeCampIconHover.png")
+    background-image: url("../../assets/contact/freeCodeCampIconHover.png")
 }
 
 .Footer p {

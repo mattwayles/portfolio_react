@@ -1,6 +1,9 @@
 import React from 'react';
 import classes from './Footer.css';
 
+/**
+ * Display a footer containing social icons and a copywright
+ */
 const footer = () => (
     <section className={classes.Main}>
         <section className={classes.Footer}>

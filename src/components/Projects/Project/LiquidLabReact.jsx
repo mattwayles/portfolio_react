@@ -1,6 +1,6 @@
 import React from 'react';
-import classes from './ProjectStyle.css';
-import liquidLabImg from '../../assets/portfolio/expanded/liquidlabreact.jpg';
+import classes from '../ProjectStyle.css';
+import liquidLabImg from '../../../assets/portfolio/expanded/liquidlabreact.jpg';
 
 const liquidLabReact = () => (
     <section className={classes.Project}>

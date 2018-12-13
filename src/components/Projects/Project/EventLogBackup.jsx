@@ -1,6 +1,6 @@
 import React from 'react';
-import classes from './ProjectStyle.css';
-import elbuImg from '../../assets/portfolio/expanded/eventlogbackup.jpg';
+import classes from '../ProjectStyle.css';
+import elbuImg from '../../../assets/portfolio/expanded/eventlogbackup.jpg';
 
 const elbu = () => (
     <section className={classes.Project}>
