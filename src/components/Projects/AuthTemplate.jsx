@@ -29,7 +29,7 @@ const authTemplate = (props) => (
                 <img className={classes.Image} src={authTemplateImg} alt="Authentication Template"/>
                 <section className={classes.Buttons}>
                     <a href="https://github.com/mattwayles/authTemplate" rel="noopener noreferrer"
-                       target="_blank"><Button visible={true} pressed={false} enter={"right"} label={"Open Source"} /></a>
+                       target="_blank"><Button classes={classes.Button} visible={true} pressed={false} enter={"right"} label={"Open Source"} /></a>
                 </section>
             </section>
         </section>

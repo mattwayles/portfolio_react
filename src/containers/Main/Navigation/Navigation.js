@@ -51,6 +51,7 @@ const HowCanIHelpLabel = posed.p({
  */
 class Navigation extends React.Component {
     state = {
+        addressBarOpen: true,
         scroll: 0,
         documentHeight: 0,
         windowHeight: 0,
@@ -85,7 +86,7 @@ class Navigation extends React.Component {
         window.addEventListener('resize', this.handleWindowSizeChange);
         this.setState({
             documentHeight: window.innerHeight * 2,
-            windowHeight: window.innerHeight})
+            windowHeight: window.innerHeight});
     }
 
     /**
@@ -110,6 +111,7 @@ class Navigation extends React.Component {
      */
     handleWindowSizeChange = () => {
         this.setState({
+            addressBarOpen: !this.state.addressBarOpen,
             documentHeight: window.innerHeight * 2,
             windowHeight: window.innerHeight})
     };
@@ -234,6 +236,7 @@ class Navigation extends React.Component {
             this.setState({label: {...this.state.label, text: labelText, modified: false}});}, LABEL_CHANGE_DURATION / 2);
         setTimeout(() => {
             this.setState({label: {...this.state.label, change: false}, suggest: null});}, LABEL_CHANGE_DURATION);
+        setTimeout(() => window.scrollTo(0, window.innerHeight + 1), 0);
     };
 
     render() {
@@ -246,7 +249,7 @@ class Navigation extends React.Component {
                 <section className={classes.MainNavigation}>
                     <HowCanIHelpLabel
                         pose={label.display ? label.bounce ? "bounce" : "visible" : "hidden"}
-                        className={label.change ? classes.AnimateLabel : classes.Label}>
+                        className={ classes.Label}>
                         {label.text}
                     </HowCanIHelpLabel>
                     <section className={classes.NavigationContent}>
@@ -264,7 +267,6 @@ class Navigation extends React.Component {
                         {scrollPercent > SHOW_BUTTON5_HEIGHT ? <CertificationIcons /> : null}
                     </section>
                 </section>
-
                 {open.resume ? <Resume scrollTo={documentHeight} /> : null}
                 {open.portfolio ? <Portfolio scrollPercent={scrollPercent}/> : null}
                 {open.about ? <Personal scrollPercent={scrollPercent}/> : null}

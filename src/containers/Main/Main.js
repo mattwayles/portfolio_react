@@ -97,9 +97,14 @@ class Main extends React.Component {
      * When display arrows are clicked, scroll to the Navigation section
      */
     scrollClick = () => {
+
+
+        //TODO: Why does the scroll position change when the label changes?
+
+        let isMobile = window.innerWidth < 599;
         document.documentMode || window.StyleMedia ?
-            window.scrollTo(0, window.innerHeight)
-            : window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+            window.scrollTo(0, isMobile ? window.innerHeight + (window.innerHeight * .2) : window.innerHeight)
+            : window.scrollTo({ top: isMobile ? window.innerHeight + (window.innerHeight * .2) : window.innerHeight, behavior: 'smooth' });
     };
 
     render() {

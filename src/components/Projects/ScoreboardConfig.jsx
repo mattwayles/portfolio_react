@@ -32,7 +32,7 @@ const scoreboardConfig = (props) => (
                 <section className={classes.Buttons}>
                     <a href="https://github.com/mattwayles/scoreboardconfig" rel="noopener noreferrer"
                        target="_blank">
-                        <Button visible={true} pressed={false} enter={"right"} label={"Open Source"} />
+                        <Button classes={classes.Button} visible={true} pressed={false} enter={"right"} label={"Open Source"} />
                     </a>
                 </section>
             </section>

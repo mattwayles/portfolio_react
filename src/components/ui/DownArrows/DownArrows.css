@@ -1,6 +1,6 @@
 .ScrollDivContainer {
     width: 100%;
-    height: 16vh;
+    height: 15vh;
     position: relative;
     background-color: #fff;
     z-index: 0;
@@ -33,7 +33,7 @@
 
 @media only screen and (max-width: 599px) {
     .ScrollDivContainer {
-        height: 12vh;
+        height: 25vh;
     }
     .ScrollDiv {
         width: 60vw;

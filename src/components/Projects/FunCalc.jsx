@@ -29,7 +29,7 @@ const funCalc = (props) => (
                 <img className={classes.Image} src={funCalcImg} alt="FunCalc"/>
                 <section className={classes.Buttons}>
                     <a href="http://codepen.io/LiquidIce25/pen/NpZdeK" rel="noopener noreferrer"
-                       target="_blank"><Button visible={true} pressed={false} enter={"right"} label={"View Source"} /></a>
+                       target="_blank"><Button classes={classes.Button} visible={true} pressed={false} enter={"right"} label={"View Source"} /></a>
                 </section>
             </section>
         </section>

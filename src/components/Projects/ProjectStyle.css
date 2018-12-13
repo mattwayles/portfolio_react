@@ -11,7 +11,7 @@
     overflow: hidden;
     -ms-overflow-style: none;
     width: 75vw;
-    height: 70vh;
+    height: 75vh;
     padding: 0 1vw;
 }
 
@@ -33,7 +33,6 @@
     width: 50%;
     flex-flow: column;
     align-items: center;
-    justify-content: center;
     margin: 1.5vw;
 }
 
@@ -102,6 +101,50 @@
     background-color: #779ecb;
 }
 
+@media only screen and (max-width: 599px) {
+    .Project {
+        width: 100%;
+    }
+    .ProjectDiv {
+        margin: 0 auto;
+        display: flex;
+        flex-flow: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+    .ProjectDetails {
+        width: 90%;
+    }
+    .ImageDiv {
+        justify-content: start;
+        width: 80%;
+        margin: 3vw 0 0 0;
+    }
+    .Image {
+        width: 80%;
+        border-radius: 5px;
+    }
+    .Buttons {
+        width: 80%;
+    }
+    .Button {
+        font-size: 3vw;
+        padding: 2vw;
+        margin-bottom: 0;
+    }
+    .ProjectName {
+        font-size: 5vw;
+    }
+    .ProjectDescription, .List {
+        font-size: 3vw;
+    }
+    .CloseButton {
+        top: 4vw;
+        right: 4vw;
+        width: 4vw;
+        height: 4vw;
+    }
+}
 
 @keyframes fadeIn{
     0% {
@@ -109,15 +152,5 @@
     }
     100% {
         opacity: 1;
-    }
-}
-
-@media only screen and (max-width: 1024px) {
-    .ProjectName {
-        font-size: 3.5vw;
-    }
-
-    .ProjectDescription, .List {
-        font-size: 2.7vw;
     }
 }

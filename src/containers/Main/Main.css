@@ -99,7 +99,7 @@
 
 @media only screen and (max-width: 599px) {
     .WelcomeImage, .WelcomeImageColored {
-        height: 80vh;
+        height: 75vh;
         width: 100%;
         background-attachment: scroll;
     }
@@ -110,14 +110,14 @@
         z-index: -1;
     }
     .Hello {
-        margin:0;
+        margin: 2vh 0 0 .25vh;
     }
     .Description {
-        margin: 2.5vh 0 0 .5vw;
+        margin: 1.5vh 0 0 .5vw;
         font-size: 3.5vw;
     }
     .Placeholder {
-        height: 12vh;
+        height: 25vh;
     }
     .Footer p {
         font-size: 2.5vw;

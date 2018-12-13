@@ -7,7 +7,7 @@
 
 .ProjectDiv {
     background-color: #fff;
-    width: 80vw;
+    width: 75vw;
     margin: 0 auto;
     padding: 15vh 0;
     display: flex;
@@ -43,6 +43,25 @@
     border: 1px solid #779ecb;
 }
 
+@media only screen and (max-width: 599px) {
+    .ProjectDiv {
+        width: 100%;
+        padding-top: 0;
+    }
+    .Project {
+        height: 50vw;
+        width: 50vw;
+    }
+    .ExpandedProject {
+        -webkit-animation-name: mobileExpand;
+        animation-name: mobileExpand;
+    }
+    .Closing {
+        animation-name: mobileFlatten;
+        -webkit-animation-name: mobileFlatten;
+    }
+}
+
 @keyframes expand {
     0% {
         height: 15vw;
@@ -51,7 +70,7 @@
         border-radius: 0;
     }
     100% {
-        height: 70vh;
+        height: 75vh;
         width: 77vw;
         border: 3px solid #779ecb;
         border-radius: 25px;
@@ -61,7 +80,7 @@
 @keyframes flatten {
     0% {
         width: 77vw;
-        height: 70vh;
+        height: 75vh;
         border: 3px solid #779ecb;
         border-radius: 25px;
         opacity: 1;
@@ -69,6 +88,38 @@
     100% {
         width: 15vw;
         height: 15vw;
+        border: 1px solid #779ecb;
+        border-radius: 0;
+        opacity: .1;
+    }
+}
+
+@keyframes mobileExpand {
+    0% {
+        height: 15vw;
+        width: 15vw;
+        border: 1px solid #779ecb;
+        border-radius: 0;
+    }
+    100% {
+        height: 75vh;
+        width: 100vw;
+        border: 3px solid #779ecb;
+        border-radius: 25px;
+    }
+}
+
+@keyframes mobileFlatten {
+    0% {
+        width: 100vw;
+        height: 75vh;
+        border: 3px solid #779ecb;
+        border-radius: 25px;
+        opacity: 1;
+    }
+    100% {
+        width: 50vw;
+        height: 50vw;
         border: 1px solid #779ecb;
         border-radius: 0;
         opacity: .1;

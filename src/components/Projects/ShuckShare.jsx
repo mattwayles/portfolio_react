@@ -29,7 +29,7 @@ const shuckShare = (props) => (
                 <img className={classes.Image} src={shuckShareImg} alt="Shuck & Share"/>
                 <section className={classes.Buttons}>
                     <a href="http://shuckandshare.org" rel="noopener noreferrer"
-                       target="_blank"><Button visible={true} pressed={false} enter={"right"} label={"Visit Website"} /></a>
+                       target="_blank"><Button classes={classes.Button} visible={true} pressed={false} enter={"right"} label={"Visit Website"} /></a>
                 </section>
             </section>
         </section>

@@ -30,7 +30,7 @@ const burgerBuilder = (props) => (
                 <img className={classes.Image} src={burgerBuilderImg} alt="Burger Builder"/>
                 <section className={classes.Buttons}>
                     <a href="https://github.com/mattwayles/burgerbuilder" rel="noopener noreferrer"
-                       target="_blank"><Button visible={true} pressed={false} enter={"right"} label={"Open Source"} /></a>
+                       target="_blank"><Button classes={classes.Button} visible={true} pressed={false} enter={"right"} label={"Open Source"} /></a>
                 </section>
             </section>
         </section>

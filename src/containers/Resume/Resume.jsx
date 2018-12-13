@@ -30,6 +30,7 @@ class Resume extends React.Component {
         this.setState({ pageNumber: this.state.pageNumber - 1 });
         const doc = document.getElementById("pdfDoc");
         doc.scrollTop = 0;
+        window.scrollTo(0, window.innerHeight * 2);
     };
 
     /**
@@ -39,6 +40,7 @@ class Resume extends React.Component {
         this.setState({ pageNumber: this.state.pageNumber + 1 });
         const doc = document.getElementById("pdfDoc");
         doc.scrollTop = 0;
+        window.scrollTo(0, window.innerHeight * 2);
     };
 
 

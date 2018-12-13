@@ -35,10 +35,10 @@ const goldesp = (props) => (
                     <section className={classes.Buttons}>
                         <a href="https://www.tapestrysolutions.com/products/goldesp-mro-supply/"
                            rel="noopener noreferrer" target="_blank">
-                            <Button visible={true} pressed={false} enter={"right"} label={"Learn More"} />
+                            <Button classes={classes.Button} visible={true} pressed={false} enter={"right"} label={"Learn More"} />
                         </a>
                         <a href="https://www.youtube.com/watch?v=yQzc9aW_7n0"
-                           rel="noopener noreferrer" target="_blank"><Button visible={true} pressed={false} enter={"right"} label={"Watch Video"} /></a>
+                           rel="noopener noreferrer" target="_blank"><Button classes={classes.Button} visible={true} pressed={false} enter={"right"} label={"Watch Video"} /></a>
                     </section>
                 </section>
             </section>

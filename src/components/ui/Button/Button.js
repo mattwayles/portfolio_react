@@ -34,7 +34,7 @@ const button = (props) => (
     <Button
         pose={props.visible ? props.bounce ? "bounce" : "init" : "left" === props.enter ? "hiddenLeft" : "hiddenRight"}
         onClick={props.click ? () => props.click(props.page) : null}
-        className={classes.Button}>
+        className={props.classes + " " + classes.Button}>
         {props.label}
         <span style={{fontWeight: "bold"}}><em>{props.span}</em></span>
         {props.suffix}

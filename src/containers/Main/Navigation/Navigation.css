@@ -1,4 +1,5 @@
 .MainNavigation {
+    border: 2px solid red;
     height: 90vh;
     background-color: #fff;
     position: relative;
@@ -8,7 +9,7 @@
 .Label, .AnimateLabel {
     margin: 0 auto;
     padding: 5vh;
-    width: 90%;
+    width: 80%;
     color: #779ecb;
     text-align: center;
     font-size: 5vw;
@@ -42,19 +43,6 @@
      margin-top: 0;
  }
 
-.Button {
-    color: #779ecb;
-    border: 1px solid #779ecb;
-    border-radius: 50px;
-    cursor: pointer;
-    font: inherit;
-    padding: 1.5vh .5vw;
-    font-size: 1.5vw;
-    margin-bottom: 3vh;
-    vertical-align: middle;
-    outline: none;
-}
-
 .AnimateLabel {
     animation-name: changeLabel;
     animation-duration: 1.2s;
@@ -76,20 +64,22 @@
 }
 
 @media only screen and (max-width: 1367px) {
-    .Button {
-        font-size: 2vw;
-    }
     .Footer p {
         font-size: 1vw;
     }
 }
 
 @media only screen and (max-width: 599px) {
+    .MainNavigation {
+        height: 80vh;
+    }
     .Label, .AnimateLabel {
-        padding-top: 10vh;
         font-size: 6.5vw;
     }
     .Footer p {
         font-size: 2.5vw;
+    }
+    .NavButtonDiv{
+        width: 80vw;
     }
 }
