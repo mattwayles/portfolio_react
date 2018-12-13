@@ -1,10 +1,11 @@
 .Main {
-    padding: 15vh 0;
+    padding: 16vh 0;
     background-color: #fff;
 }
 
 .Grid {
     margin: 0 auto;
+    padding-top: 5vh;
     width: 80%;
 }
 
@@ -70,6 +71,12 @@
 }
 
 @media only screen and (max-width: 499px) {
+    .Main {
+        padding-top: 20vh;
+    }
+    .Grid {
+        margin: 5vh auto;
+    }
     .FlexRowReverse {
         flex-flow: column-reverse;
     }

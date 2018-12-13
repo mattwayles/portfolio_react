@@ -3,7 +3,6 @@ import classes from './Resume.css';
 
 import {Document, Page} from 'react-pdf';
 import resume from './Matthew_Wayles_Resume.pdf';
-import Auxil from "../../components/Auxil";
 import Button from "../../components/ui/Button/Button";
 
 /**
@@ -51,8 +50,8 @@ class Resume extends React.Component {
         const { pageNumber, numPages, width } = this.state;
 
         return (
-            <Auxil>
-                <section className={classes.Main} id={"view"}>
+                <section className={classes.Main}>
+                    <section id={"view"}>
                     <section className={document.documentMode || window.StyleMedia ? classes.PdfDoc : null}>
                         <Document loading={"Loading something GREAT..."} file={resume} onLoadSuccess={this.onDocumentLoadSuccess}>
                             <Page width={document.documentMode || window.StyleMedia ? width / 1.5 : width} pageNumber={pageNumber} />
@@ -69,7 +68,7 @@ class Resume extends React.Component {
                 <section className={classes.ButtonDiv}>
                     <a href={resume} className={classes.ButtonDiv} download><Button visible={true} enter={"left"} span={"Download"} suffix={" my Resume"} /></a>
                 </section>
-            </Auxil>
+                </section>
         )
     }
 }

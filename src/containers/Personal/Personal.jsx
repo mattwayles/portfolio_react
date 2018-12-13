@@ -59,8 +59,8 @@ class Personal extends React.Component {
     render() {
         const {young, travel, activities, passion} = this.state;
         return (
-            <section className={classes.Main} id={"view"}>
-                <section className={classes.Grid}>
+            <section className={classes.Main}>
+                <section className={classes.Grid} id={"view"}>
                     <Section  pose={young ? "visible" : "hiddenLeft"} className={classes.FlexRowReverse}>
                         <section className={classes.Text}>
                             <p className={classes.Topic}>Young'in</p>

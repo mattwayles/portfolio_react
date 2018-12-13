@@ -156,7 +156,8 @@ class Contact extends React.Component {
         const {collab} = this.props;
 
         return (
-            <section className={classes.Main} id={"view"}>
+            <section className={classes.Main}>
+                <section className={classes.View} id={"view"}>
                 <section className={classes.LogoDiv}>
                     <Logo pose={display.logo ? "visible" : "hidden"} className={classes.Logo} src={logo} alt={"Contact Me"} />
                 </section>
@@ -192,6 +193,7 @@ class Contact extends React.Component {
                     <Button visible={display.submitButton} pressed={false} classes={classes.Button} enter={"left"} click={this.send} label={collab ? "Let's do Business!" : "All done, send it off!"} />
                 </section>
                 {sent ? <p className={classes.Sent}>E-mail sent successfully!</p> : null }
+            </section>
             </section>
         );
     }

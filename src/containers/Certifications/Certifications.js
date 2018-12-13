@@ -92,7 +92,8 @@ class Certifications extends React.Component {
     render() {
         const {oca, html, win2012, win7, secplus, netplus, aplus} = this.state;
         return (
-            <section className={classes.Main} id={"view"}>
+            <section className={classes.Main}>
+                <section className={classes.View} id={"view"}>
                 <Certification pose={oca ? "visible" : "hidden"} className={classes.Certification}>
                     <a href="https://education.oracle.com/oracle-certified-professional-java-se-7-programmer/trackp_155" rel="noopener noreferrer" target="_blank">
                         <Badge pose={oca ? "visible" : "hidden"} className={classes.Badge} src={ocaBadge} alt={"OCA"} /></a>
@@ -190,6 +191,7 @@ class Certifications extends React.Component {
                             users to the data they need to do their jobs regardless of the devices being used.</p>
                     </section>
                 </Certification>
+                </section>
             </section>
         );
     }
