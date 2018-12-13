@@ -124,19 +124,16 @@ class Navigation extends React.Component {
      * When display arrows are clicked, scroll to the Navigation section
      */
     scrollClick = () => {
-        let isMobile = window.innerWidth < 599;
-        document.documentMode || window.StyleMedia ?
-            window.scrollTo(0, isMobile && this.state.addressBarOpen ? this.state.documentHeight + (this.state.documentHeight * .1) : this.state.documentHeight)
-            : window.scrollTo({ top: isMobile && this.state.addressBarOpen ? this.state.documentHeight + (this.state.documentHeight * .1) : this.state.documentHeight, behavior: 'smooth' });
+        const view = document.getElementById("view");
+        view.scrollIntoView({block: "start", behavior: "smooth"});
     };
 
     /**
      * Manage mouse clicks of the Back To Navigation button (browser-dependent)
      */
     backToNavClick = () => {
-        document.documentMode || window.StyleMedia ?
-            window.scrollTo(0, this.state.windowHeight)
-            : window.scrollTo({ top: this.state.windowHeight, behavior: 'smooth' });
+        const nav = document.getElementById("nav");
+        nav.scrollIntoView({block: "start", behavior: "smooth"});
     };
 
     /**
@@ -222,7 +219,7 @@ class Navigation extends React.Component {
      */
     openPage = (openPage) => {
         let labelText = "";
-        this.setState({open: {any: true, [openPage]: true}, label: {...this.state.label, change: true}});
+        this.setState({open: {any: true, [openPage]: true}, label: {...this.state.label, change: openPage !== 'resume'}});
         switch (openPage) {
             case "resume":
                 labelText = LABEL_RESUME;
@@ -259,11 +256,11 @@ class Navigation extends React.Component {
 
         return (
             <Auxil>
-                <section className={classes.MainNavigation}>
+                <section className={classes.MainNavigation} id={"nav"}>
                     <section className={classes.LabelDiv}>
                         <HowCanIHelpLabel
                             pose={label.display ? label.bounce ? "bounce" : "visible" : "hidden"}
-                            className={ classes.Label}>
+                            className={ label.change ? classes.AnimateLabel : classes.Label }>
                             {label.text}
                         </HowCanIHelpLabel>
                     </section>

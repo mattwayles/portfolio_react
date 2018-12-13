@@ -105,6 +105,10 @@ class Portfolio extends React.Component {
      */
     displayFullProject = (proj) => {
         this.setState({ projects: {...this.state.projects, [proj]: {display: true, expanded: true, closing: false}}});
+        setTimeout(() => {
+            const div = document.getElementById(proj);
+            div.scrollIntoView({block: "start", behavior: "smooth"});
+        },2000)
     };
 
     /**
@@ -122,9 +126,9 @@ class Portfolio extends React.Component {
 
         return(
             <section className={classes.Main}>
-                <section className={classes.ProjectDiv}>
+                <section className={classes.ProjectDiv} id={"view"}>
 
-                    <LeftProject
+                    <LeftProject id={"gold"}
                         pose={projects.gold.display ?  "visible" : "hidden" }
                         className={projects.gold.closing ? classes.Closing : projects.gold.expanded ? classes.ExpandedProject : classes.Project}>
                         {projects.gold.expanded ? <GoldESP exit={this.exitFullProject} /> :
@@ -135,7 +139,7 @@ class Portfolio extends React.Component {
                         }
                     </LeftProject>
 
-                    <TopProject
+                    <TopProject id={"gct"}
                         pose={projects.gct.display ?  "visible" : "hidden" }
                         className={projects.gct.closing ? classes.Closing : projects.gct.expanded ? classes.ExpandedProject : classes.Project}>
                         {projects.gct.expanded ? <GCT exit={this.exitFullProject} /> :
@@ -146,7 +150,7 @@ class Portfolio extends React.Component {
                         }
                     </TopProject>
 
-                    <BottomProject
+                    <BottomProject id={"acidRain"}
                         pose={projects.acidRain.display ?  "visible" : "hidden" }
                         className={projects.acidRain.closing ? classes.Closing : projects.acidRain.expanded ? classes.ExpandedProject : classes.Project}>
                         {projects.acidRain.expanded ? <AcidRain exit={this.exitFullProject} /> :
@@ -157,7 +161,7 @@ class Portfolio extends React.Component {
                         }
                     </BottomProject>
 
-                    <TopProject
+                    <TopProject id={"scoreboardConfig"}
                         pose={projects.scoreboardConfig.display ?  "visible" : "hidden" }
                         className={projects.scoreboardConfig.closing ? classes.Closing : projects.scoreboardConfig.expanded ? classes.ExpandedProject : classes.Project}>
                         {projects.scoreboardConfig.expanded ? <ScoreboardConfig exit={this.exitFullProject} /> :
@@ -168,7 +172,7 @@ class Portfolio extends React.Component {
                         }
                     </TopProject>
 
-                    <RightProject
+                    <RightProject id={"hikersWatch"}
                         pose={projects.hikersWatch.display ?  "visible" : "hidden" }
                         className={projects.hikersWatch.closing ? classes.Closing : projects.hikersWatch.expanded ? classes.ExpandedProject : classes.Project}>
                         {projects.hikersWatch.expanded ? <HikersWatch exit={this.exitFullProject} /> :
@@ -179,7 +183,7 @@ class Portfolio extends React.Component {
                         }
                     </RightProject>
 
-                    <LeftProject
+                    <LeftProject id={"shuckShare"}
                         pose={projects.shuckShare.display ?  "visible" : "hidden" }
                         className={projects.shuckShare.closing ? classes.Closing : projects.shuckShare.expanded ? classes.ExpandedProject : classes.Project}>
                         {projects.shuckShare.expanded ? <ShuckShare exit={this.exitFullProject} /> :
@@ -190,7 +194,7 @@ class Portfolio extends React.Component {
                         }
                     </LeftProject>
 
-                    <BottomProject
+                    <BottomProject id={"authTemplate"}
                         pose={projects.authTemplate.display ?  "visible" : "hidden" }
                         className={projects.authTemplate.closing ? classes.Closing : projects.authTemplate.expanded ? classes.ExpandedProject : classes.Project}>
                         {projects.authTemplate.expanded ? <AuthTemplate exit={this.exitFullProject} /> :
@@ -201,7 +205,7 @@ class Portfolio extends React.Component {
                         }
                     </BottomProject>
 
-                    <TopProject
+                    <TopProject id={"burgerBuilder"}
                         pose={projects.burgerBuilder.display ?  "visible" : "hidden" }
                         className={projects.burgerBuilder.closing ? classes.Closing : projects.burgerBuilder.expanded ? classes.ExpandedProject : classes.Project}>
                         {projects.burgerBuilder.expanded ? <BurgerBuilder exit={this.exitFullProject} /> :
@@ -212,7 +216,7 @@ class Portfolio extends React.Component {
                         }
                     </TopProject>
 
-                    <BottomProject
+                    <BottomProject id={"funCalc"}
                         pose={projects.funCalc.display ?  "visible" : "hidden" }
                         className={projects.funCalc.closing ? classes.Closing : projects.funCalc.expanded ? classes.ExpandedProject : classes.Project}>
                         {projects.funCalc.expanded ? <FunCalc exit={this.exitFullProject} /> :

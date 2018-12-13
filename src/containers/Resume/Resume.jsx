@@ -33,7 +33,8 @@ class Resume extends React.Component {
      */
     handleBack = () => {
         this.setState({ pageNumber: this.state.pageNumber - 1 });
-        window.scrollTo(0, window.innerHeight * 2);
+        const view = document.getElementById("view");
+        view.scrollIntoView({block: "start", behavior: "smooth"});
     };
 
     /**
@@ -41,7 +42,8 @@ class Resume extends React.Component {
      */
     handleNext = () => {
         this.setState({ pageNumber: this.state.pageNumber + 1 });
-        window.scrollTo(0, window.innerHeight * 2);
+        const view = document.getElementById("view");
+        view.scrollIntoView({block: "start", behavior: "smooth"});
     };
 
 
@@ -50,7 +52,7 @@ class Resume extends React.Component {
 
         return (
             <Auxil>
-                <section className={classes.Main}>
+                <section className={classes.Main} id={"view"}>
                     <section className={document.documentMode || window.StyleMedia ? classes.PdfDoc : null}>
                         <Document loading={"Loading something GREAT..."} file={resume} onLoadSuccess={this.onDocumentLoadSuccess}>
                             <Page width={document.documentMode || window.StyleMedia ? width / 1.5 : width} pageNumber={pageNumber} />

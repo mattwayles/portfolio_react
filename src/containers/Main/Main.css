@@ -56,31 +56,6 @@
     z-index: 0;
 }
 
-
-@media only screen and (max-width: 1367px) {
-    .WelcomeImage, .WelcomeImageColored {
-        background-attachment: scroll;
-        height: 70vh;
-        width: 100%;
-    }
-    .Intro{
-        position: absolute;
-        top: 5vw;
-        left: 5vw;
-        z-index: -1;
-    }
-    .Hello {
-        margin:0;
-        font-size: 6vw;
-    }
-    .Description {
-        margin: 2vh 0 0 6vw;
-    }
-    .Footer p {
-        font-size: 1vw;
-    }
-}
-
 @media only screen and (max-width: 599px) {
     .WelcomeImage, .WelcomeImageColored {
         height: 75vh;

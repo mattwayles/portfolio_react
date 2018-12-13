@@ -25,12 +25,6 @@
     width: 10%;
 }
 
-@media only screen and (max-width: 1367px) {
-    .ScrollDiv {
-        width: 30vw;
-    }
-}
-
 @media only screen and (max-width: 599px) {
     .ScrollDivContainer {
         height: 25vh;

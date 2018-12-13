@@ -55,12 +55,6 @@
     }
 }
 
-@media only screen and (max-width: 1367px) {
-    .Footer p {
-        font-size: 1vw;
-    }
-}
-
 @media only screen and (max-width: 599px) {
     .MainNavigation {
         height: 80vh;

@@ -7,7 +7,7 @@
 
 .ProjectDiv {
     background-color: #fff;
-    width: 100%;
+    width: 100vw;
     margin: 0 auto;
     display: flex;
     flex-flow: row;
@@ -17,8 +17,8 @@
 
 .Project {
     position: relative;
-    height: 19.78vw;
-    width: 19.78vw;
+    height: 20vw;
+    width: 20vw;
 }
 
 .ExpandedProject {

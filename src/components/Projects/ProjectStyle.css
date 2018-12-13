@@ -20,7 +20,7 @@
     overflow-y: auto;
     display: flex;
     flex-flow: row;
-    align-items: start;
+    align-items: center;
 }
 
 .ProjectDetails {

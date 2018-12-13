@@ -99,10 +99,8 @@ class Main extends React.Component {
      */
     scrollClick = () => {
 
-        let isMobile = window.innerWidth < 599;
-        document.documentMode || window.StyleMedia ?
-            window.scrollTo(0, isMobile ? window.innerHeight + (window.innerHeight * .1) : window.innerHeight)
-            : window.scrollTo({ top: isMobile ? window.innerHeight + (window.innerHeight * .1) : window.innerHeight, behavior: 'smooth' });
+        const nav = document.getElementById("nav");
+        nav.scrollIntoView({block: 'start', behavior: 'smooth'});
     };
 
     render() {

@@ -46,6 +46,13 @@
     margin: 0 auto;
 }
 
+.Sent {
+    width: 100%;
+    text-align: center;
+    font-size: 2vw;
+    color: #5f7ea2;
+}
+
 .LogoDiv {
     width: 100%;
     margin: 0 auto 2vh;

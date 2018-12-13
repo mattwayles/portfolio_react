@@ -59,8 +59,9 @@ class Contact extends React.Component {
             nameInput: false,
             emailInput: false,
             messageInput: false,
-            submitButton: false
+            submitButton: false,
         },
+        sent: false,
         name: {value: "", error: false, placeholder: "Name"},
         email: {value: "", error: false, placeholder: "E-Mail"},
         message: {value: "", error: false, placeholder: this.props.collab ?
@@ -146,16 +147,16 @@ class Contact extends React.Component {
                 }, (err) => {
                     console.error('Error while sending e-mail:', err);
                 });
-            window.scrollTo(0, window.innerHeight);
         }
+        this.setState({ sent: true });
     };
 
     render() {
-        const {name, email, message, display} = this.state;
+        const {name, email, message, display, sent} = this.state;
         const {collab} = this.props;
 
         return (
-            <section className={classes.Main}>
+            <section className={classes.Main} id={"view"}>
                 <section className={classes.LogoDiv}>
                     <Logo pose={display.logo ? "visible" : "hidden"} className={classes.Logo} src={logo} alt={"Contact Me"} />
                 </section>
@@ -190,6 +191,7 @@ class Contact extends React.Component {
                 <section className={classes.Button}>
                     <Button visible={display.submitButton} pressed={false} classes={classes.Button} enter={"left"} click={this.send} label={collab ? "Let's do Business!" : "All done, send it off!"} />
                 </section>
+                {sent ? <p className={classes.Sent}>E-mail sent successfully!</p> : null }
             </section>
         );
     }
