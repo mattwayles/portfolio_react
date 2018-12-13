@@ -48,22 +48,6 @@
     font-weight: 900;
 }
 
-.Footer {
-    width: 100%;
-    border-top-left-radius: 100%;
-    border-top-right-radius: 100%;
-    padding: 2vh 0;
-    color: #fff;
-    background-color: #BBB;
-}
-
-.Footer p {
-    max-height: 10vh;
-    text-align: center;
-    margin: 0;
-    font-size: 1vw;
-}
-
 .Placeholder {
     width: 100%;
     height: 16vh;
@@ -113,7 +97,7 @@
         margin: 2vh 0 0 .25vh;
     }
     .Description {
-        margin: 1.5vh 0 0 .5vw;
+        margin: 1vh 0 0 .5vw;
         font-size: 3.5vw;
     }
     .Placeholder {

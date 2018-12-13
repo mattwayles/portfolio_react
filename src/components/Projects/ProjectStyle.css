@@ -1,5 +1,5 @@
 .Bold {
-    color: #BBB;
+    color: #AAA;
     font-weight: 600;
     opacity: 1;
 }
@@ -10,8 +10,8 @@
     animation-fill-mode: forwards;
     overflow: hidden;
     -ms-overflow-style: none;
-    width: 75vw;
-    height: 75vh;
+    width: 100vw;
+    height: 70vh;
     padding: 0 1vw;
 }
 
@@ -30,7 +30,7 @@
 .ImageDiv {
     position: relative;
     display: flex;
-    width: 50%;
+    width: 45%;
     flex-flow: column;
     align-items: center;
     margin: 1.5vw;
@@ -44,7 +44,7 @@
 
 .ProjectDescription, .List {
     font-size: 1vw;
-    color: #779ecb;
+    color: #5f7ea2;
     text-shadow: none;
 }
 
@@ -64,7 +64,7 @@
 }
 
 .Image {
-    width: 100%;
+    width: 95%;
     border-radius: 25px;
     margin-bottom: 3vh;
 }
@@ -90,7 +90,7 @@
     right: 1vw;
     width: 1vw;
     height: .8vw;
-    border: 1px solid #779ecb;
+    border: 1px solid #5f7ea2;
     border-radius: 50%;
     padding: .2vw;
     cursor: pointer;
@@ -98,11 +98,12 @@
 
 .CloseButton:hover {
     content:url('../../assets/arrows/upArrowHover.png');
-    background-color: #779ecb;
+    background-color: #5f7ea2;
 }
 
 @media only screen and (max-width: 599px) {
     .Project {
+        height: 85vh;
         width: 100%;
     }
     .ProjectDiv {
@@ -141,8 +142,8 @@
     .CloseButton {
         top: 4vw;
         right: 4vw;
-        width: 4vw;
-        height: 4vw;
+        width: 5vw;
+        height: 5vw;
     }
 }
 

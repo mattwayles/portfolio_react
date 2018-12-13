@@ -1,12 +1,12 @@
 .Button {
-    color: #779ecb;
-    border: 1px solid #779ecb;
+    color: #5f7ea2;
+    border: 1px solid #5f7ea2;
     border-radius: 50px;
     cursor: pointer;
     font: inherit;
     padding: 1.5vh .5vw;
-    font-size: 1.5vw;
-    margin-bottom: 3vh;
+    font-size: 1.25vw;
+    margin-bottom: 2vh;
     vertical-align: middle;
     outline: none;
 }
@@ -14,12 +14,12 @@
 .Button:hover {
     transform: scale(1.1);
     color: #fff;
-    background-color: #779ecb;
+    background-color: #5f7ea2;
 }
 
 .Button::-moz-focus-inner {
-    color: #779ecb;
-    border: 1px solid #779ecb;
+    color: #5f7ea2;
+    border: 1px solid #5f7ea2;
     border-radius: 50px;
     cursor: pointer;
     font: inherit;

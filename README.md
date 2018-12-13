@@ -1,6 +1,5 @@
 TODO:
 
-*Fix MOBILE/Tablet UX
 *Fix browser compatibility: Safari
 *Portfolio page: Finish Projects
 
@@ -13,4 +12,3 @@ NICE-TO-HAVES:
 
 -Main Page:
     * Simple icons next to the words on each button. Requires vertical alignment and image creation
-    * Better animation for social icons and certifications, something like a drip effect would be cool

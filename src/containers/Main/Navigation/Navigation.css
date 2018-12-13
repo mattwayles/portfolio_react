@@ -1,38 +1,29 @@
 .MainNavigation {
-    border: 2px solid red;
-    height: 90vh;
+    height: 100vh;
     background-color: #fff;
     position: relative;
     z-index: 0;
 }
 
-.Label, .AnimateLabel {
+.LabelDiv {
     margin: 0 auto;
-    padding: 5vh;
+    height: 30vh;
     width: 80%;
-    color: #779ecb;
+    position: relative;
+    background-color: #fff;
+    border: 1px solid white;
+}
+
+.Label, .AnimateLabel {
+    color: #5f7ea2;
     text-align: center;
-    font-size: 5vw;
-    overflow-x: hidden;
-    -ms-overflow-style: none;
-}
-
-.NavigationContent {
-    display: flex;
-    flex-flow: row;
-    justify-content: start;
-}
-
-.NavigationOptions {
-    display: flex;
-    flex-flow: column;
-    width: 65vw;
-    margin: 0 auto;
+    font-size: 4vw;
 }
 
 .ButtonDiv, .NavButtonDiv {
+    padding-top: 2vh;
     margin: 0 auto;
-    width: 65vw;
+    width: 80%;
     display: flex;
     flex-flow: column;
     text-align: center;
@@ -40,7 +31,8 @@
 }
 
 .NavButtonDiv {
-     margin-top: 0;
+     margin: 0 auto;
+    padding: 2vh 0 5vh;
  }
 
 .AnimateLabel {
@@ -52,10 +44,10 @@
     0% {
         opacity: 1;
     }
-    25% {
+    45% {
         opacity: 0;
     }
-    55% {
+    65% {
         opacity: 0;
     }
     100% {
@@ -73,13 +65,13 @@
     .MainNavigation {
         height: 80vh;
     }
+    .LabelDiv {
+        height: 18vh;
+    }
     .Label, .AnimateLabel {
         font-size: 6.5vw;
     }
     .Footer p {
         font-size: 2.5vw;
-    }
-    .NavButtonDiv{
-        width: 80vw;
     }
 }

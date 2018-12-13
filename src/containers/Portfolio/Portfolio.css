@@ -7,9 +7,8 @@
 
 .ProjectDiv {
     background-color: #fff;
-    width: 75vw;
+    width: 100%;
     margin: 0 auto;
-    padding: 15vh 0;
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
@@ -18,8 +17,8 @@
 
 .Project {
     position: relative;
-    height: 15vw;
-    width: 15vw;
+    height: 19.78vw;
+    width: 19.78vw;
 }
 
 .ExpandedProject {
@@ -29,7 +28,7 @@
     -webkit-animation-duration: 3s;
     animation-duration: 3s;
     overflow: hidden;
-    border: 3px solid #779ecb;
+    border: 3px solid #5f7ea2;
     border-radius: 25px;
 }
 
@@ -40,13 +39,13 @@
     animation-duration: 3s;
     -webkit-animation-duration: 3s;
     overflow: hidden;
-    border: 1px solid #779ecb;
+    border: 1px solid #5f7ea2;
 }
 
 @media only screen and (max-width: 599px) {
     .ProjectDiv {
         width: 100%;
-        padding-top: 0;
+        padding-top: 20vh;
     }
     .Project {
         height: 50vw;
@@ -64,31 +63,31 @@
 
 @keyframes expand {
     0% {
-        height: 15vw;
-        width: 15vw;
-        border: 1px solid #779ecb;
+        height: 20vw;
+        width: 20vw;
+        border: 1px solid #5f7ea2;
         border-radius: 0;
     }
     100% {
-        height: 75vh;
-        width: 77vw;
-        border: 3px solid #779ecb;
+        height: 70vh;
+        width: 100vw;
+        border: 3px solid #5f7ea2;
         border-radius: 25px;
     }
 }
 
 @keyframes flatten {
     0% {
-        width: 77vw;
-        height: 75vh;
-        border: 3px solid #779ecb;
+        width: 100vw;
+        height: 70vh;
+        border: 3px solid #5f7ea2;
         border-radius: 25px;
         opacity: 1;
     }
     100% {
-        width: 15vw;
-        height: 15vw;
-        border: 1px solid #779ecb;
+        width:20vw;
+        height: 20vw;
+        border: 1px solid #5f7ea2;
         border-radius: 0;
         opacity: .1;
     }
@@ -96,15 +95,15 @@
 
 @keyframes mobileExpand {
     0% {
-        height: 15vw;
-        width: 15vw;
-        border: 1px solid #779ecb;
+        height: 50vw;
+        width: 50vw;
+        border: 1px solid #5f7ea2;
         border-radius: 0;
     }
     100% {
-        height: 75vh;
+        height: 85vh;
         width: 100vw;
-        border: 3px solid #779ecb;
+        border: 3px solid #5f7ea2;
         border-radius: 25px;
     }
 }
@@ -112,15 +111,15 @@
 @keyframes mobileFlatten {
     0% {
         width: 100vw;
-        height: 75vh;
-        border: 3px solid #779ecb;
+        height: 85vh;
+        border: 3px solid #5f7ea2;
         border-radius: 25px;
         opacity: 1;
     }
     100% {
         width: 50vw;
         height: 50vw;
-        border: 1px solid #779ecb;
+        border: 1px solid #5f7ea2;
         border-radius: 0;
         opacity: .1;
     }

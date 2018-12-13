@@ -8,7 +8,7 @@
     width: 80%;
 }
 
-.FlexRow {
+.FlexRow, .FlexRowReverse {
     display: flex;
     flex-flow: row;
     height: 100%;
@@ -20,9 +20,10 @@
 
 .Topic {
     font-family: inherit;
-    color: #BBB;
+    color: #AAA;
     font-weight: 700;
     opacity: 1;
+    font-size: 1.5vw;
 }
 
 .FirstLetter {
@@ -33,22 +34,19 @@
 }
 
 .Text {
+    width: 40vw;
     font-family: inherit;
-    color: #779ecb;
+    color: #5f7ea2;
     font-size: 1vw;
-    overflow: hidden;
 }
 
-.Topic {
-    font-size: 1.5vw;
+.ImageDiv {
+    margin: 1vh 2vw;
 }
 
-.Image, .TravelImage, .ProgrammingImage {
+.Image {
     border-radius: 25px;
-    margin: 0 2%;
-    -ms-interpolation-mode: bicubic;
-    height: 20vw;
-
+    width: 30vw;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -72,22 +70,23 @@
 }
 
 @media only screen and (max-width: 499px) {
-    .Main {
-        width: 100%;
-        background-color: rgba(255, 255, 255, 0.5);
+    .FlexRowReverse {
+        flex-flow: column-reverse;
+    }
+    .FlexRow {
+        flex-flow: column;
     }
     .FirstLetter {
-        font-size: 2.7vw;
+        font-size: 3.5vw;
     }
     .Text {
-        font-size: 2vw;
+        width: 100%;
+        font-size: 3vw;
     }
     .Topic {
-        font-size: 2.5vw;
+        font-size: 4vw;
     }
     .Image {
-        margin: 5% 0 5% 3%;
-        width: 50%;
-        height: 150px;
+        width: 75vw;
     }
 }

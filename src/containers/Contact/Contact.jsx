@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../../assets/home/logo.png';
-import facebookIcon from '../../assets/home/social/facebookIcon.png';
-import linkedinIcon from '../../assets/home/social/linkedinIcon.png';
+import facebookIcon from '../../assets/home/social/facebookContactIcon.png';
+import linkedinIcon from '../../assets/home/social/linkedinContactIcon.png';
 import phoneIcon from '../../assets/home/social/phoneIcon.png';
 import classes from './Contact.css';
 import * as emailjs from 'emailjs-com';
@@ -15,7 +15,7 @@ const SHOW_ICONS = 110;
 const SHOW_NAME_INPUT = 120;
 const SHOW_EMAIL_INPUT = 130;
 const SHOW_MESSAGE_INPUT = 140;
-const SHOW_SUBMIT_BUTTON = 150;
+const SHOW_SUBMIT_BUTTON = 140;
 /**
  * React-Pose poses for page elements
  */
@@ -188,7 +188,7 @@ class Contact extends React.Component {
                 </form>
 
                 <section className={classes.Button}>
-                    <Button visible={display.submitButton} pressed={false} enter={"left"} click={this.send} label={collab ? "Let's do Business!" : "All done, send it off!"} />
+                    <Button visible={display.submitButton} pressed={false} classes={classes.Button} enter={"left"} click={this.send} label={collab ? "Let's do Business!" : "All done, send it off!"} />
                 </section>
             </section>
         );

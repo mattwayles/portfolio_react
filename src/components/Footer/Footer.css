@@ -1,0 +1,107 @@
+.Main {
+    width: 100%;
+    background-color: #fff;
+}
+.Footer {
+    width: 100%;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    padding: 2vh 0;
+    color: #fff;
+    background-color: #555;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.SocialIcons {
+    margin: 2vh auto;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    text-align: center;
+}
+
+.SocialIcon {
+    width: 50%;
+}
+
+.FacebookIcon, .GithubIcon, .LinkedinIcon, .GooglePlusIcon, .CodepenIcon, .FreeCodeCampIcon {
+    width: 2vw;
+    height: 2vw;
+    margin: 1vh 2vw;
+    transition: all 250ms ease-in;
+    background-size: cover;
+}
+
+.FacebookIcon {
+    background-image: url("../../assets/home/social/facebookIcon.png");
+}
+.FacebookIcon:hover {
+    transition: all 250ms ease-in;
+    background-image: url("../../assets/home/social/facebookIconHover.png")
+}
+
+.GithubIcon {
+    background-image: url("../../assets/home/social/githubIcon.png");
+}
+.GithubIcon:hover {
+    transition: all 250ms ease-in;
+    background-image: url("../../assets/home/social/githubIconHover.png")
+}
+
+.LinkedinIcon {
+    background-image: url("../../assets/home/social/linkedinIcon.png");
+}
+.LinkedinIcon:hover {
+    transition: all 250ms ease-in;
+    background-image: url("../../assets/home/social/linkedinIconHover.png")
+}
+
+.GooglePlusIcon {
+    background-image: url("../../assets/home/social/googlePlusIcon.png");
+}
+.GooglePlusIcon:hover {
+    transition: all 250ms ease-in;
+    background-image: url("../../assets/home/social/googlePlusIconHover.png")
+}
+
+.CodepenIcon {
+    background-image: url("../../assets/home/social/codepenIcon.png");
+}
+.CodepenIcon:hover {
+    transition: all 250ms ease-in;
+    background-image: url("../../assets/home/social/codepenIconHover.png")
+}
+
+.FreeCodeCampIcon {
+    background-image: url("../../assets/home/social/freeCodeCampIcon.png");
+}
+.FreeCodeCampIcon:hover {
+    transition: all 250ms ease-in;
+    background-image: url("../../assets/home/social/freeCodeCampIconHover.png")
+}
+
+.Footer p {
+    max-height: 10vh;
+    text-align: center;
+    margin: 0;
+    font-size: 1vw;
+}
+
+@media only screen and (max-width: 1367px) {
+    .Footer p {
+        font-size: 1vw;
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    .FacebookIcon, .GithubIcon, .LinkedinIcon, .GooglePlusIcon, .CodepenIcon, .FreeCodeCampIcon {
+        width: 4vw;
+        height: 4vw;
+        margin: 1vh 4vw;
+    }
+    .Footer p {
+        font-size: 2.5vw;
+    }
+}

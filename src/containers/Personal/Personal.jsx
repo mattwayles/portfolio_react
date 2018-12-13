@@ -7,10 +7,10 @@ import passionImg from '../../assets/personal/programming.jpg';
 import posed from "react-pose/lib/index";
 
 const TRANSITION_DURATION = 1000;
-const SHOW_YOUNG_HEIGHT = 120;
-const SHOW_TRAVEL_HEIGHT = 140;
-const SHOW_ACTIVITIES_HEIGHT = 160;
-const SHOW_PASSION_HEIGHT = 185;
+const SHOW_YOUNG_HEIGHT = window.innerWidth > 599 ? 130 : 140;
+const SHOW_TRAVEL_HEIGHT = window.innerWidth > 599 ? 155 : 180;
+const SHOW_ACTIVITIES_HEIGHT = window.innerWidth > 599 ? 180 : 220;
+const SHOW_PASSION_HEIGHT = window.innerWidth > 599 ? 205 : 260;
 
 /**
  * React-Pose poses for Personal sections [hidden, visible]
@@ -61,7 +61,7 @@ class Personal extends React.Component {
         return (
             <section className={classes.Main}>
                 <section className={classes.Grid}>
-                    <Section  pose={young ? "visible" : "hiddenLeft"} className={classes.FlexRow}>
+                    <Section  pose={young ? "visible" : "hiddenLeft"} className={classes.FlexRowReverse}>
                         <section className={classes.Text}>
                             <p className={classes.Topic}>Young'in</p>
                             <p className={classes.Text}><span className={classes.FirstLetter}>I</span> was born and raised in suburban Philadelphia and enjoyed a normal childhood of outdoor play,
@@ -69,10 +69,14 @@ class Personal extends React.Component {
                                 one of those <em>"Best Places to Retire in 2004"</em> magazines. I attended Beaufort Academy until I began realizing my passion for programming,
                                 which led to a transfer to Beaufort High School due to their superior education in technology. I decided to remain in South Carolina during my undergraduate university
                                 years, completing the Bachelor of Science Computer Information Systems program with honors at the distinguished College of Charleston.</p></section>
-                        <img className={classes.Image} src={formativeImg} alt="Formative Years" />
+                        <section className={classes.ImageDiv}>
+                            <img className={classes.Image} src={formativeImg} alt="Formative Years" />
+                        </section>
                     </Section>
                     <Section pose={travel ? "visible" : "hiddenRight"} className={classes.FlexRow}>
-                        <img className={classes.TravelImage} src={travelImg} alt="Travel" />
+                        <section className={classes.ImageDiv}>
+                            <img className={classes.Image} src={travelImg} alt="Travel" />
+                        </section>
                         <section className={classes.Text}>
                             <p className={classes.Topic}>Travel</p>
                             <span className={classes.FirstLetter}>A</span> Study Abroad opportunity during the summer of 2012 was my first exposure to the extensive cultural diversity offered in this world.
@@ -85,7 +89,7 @@ class Personal extends React.Component {
                             Although I have no current trips planned, traveling has become an important part of my life, and an integral piece of who I am today.
                             </section>
                     </Section>
-                    <Section pose={activities ? "visible" : "hiddenLeft"} className={classes.FlexRow}>
+                    <Section pose={activities ? "visible" : "hiddenLeft"} className={classes.FlexRowReverse}>
                         <section className={classes.Text}>
                             <p className={classes.Topic}>Current Activities</p>
                             <span className={classes.FirstLetter}>W</span>hen I'm not traveling or learning new technologies, I enjoy spending time with my girlfriend of 2.5 years, Ryan.
@@ -93,10 +97,14 @@ class Personal extends React.Component {
                             snowboarding in the winter, and running throughout the year. I make the best of the unique area I live in by frequenting the beach and the waterways whenever possible,
                             which has fostered an interest in fishing and fresh seafood.
                         </section>
-                        <img className={classes.Image} src={activitiesImg} alt="Current Activities" />
+                        <section className={classes.ImageDiv}>
+                            <img className={classes.Image} src={activitiesImg} alt="Current Activities" />
+                        </section>
                     </Section>
                     <Section pose={passion ? "visible" : "hiddenRight"} className={classes.FlexRow}>
-                        <img className={classes.ProgrammingImage} src={passionImg} alt="Passion for Programming" />
+                        <section className={classes.ImageDiv}>
+                            <img className={classes.Image} src={passionImg} alt="Passion for Programming" />
+                        </section>
                         <section className={classes.Text}>
                             <p className={classes.Topic}>Passion for Programming</p>
                             <span className={classes.FirstLetter}>M</span>y enjoyment of software development began in my early teens, when I would modify the HTML of my AOL Instant Messenger profile to make it stand out from the crowd.

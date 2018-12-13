@@ -13,10 +13,10 @@ const BOUNCE_DURATION = 500;
 const Button = posed.button({
     hoverable: true,
     pressable: true,
-    hover: {scale: 1.1, color: "#fff", backgroundColor: "#779ecb"},
-    press: {scale: 1, color: "#fff", backgroundColor: "#bbb", borderColor: "#bbb"},
-    init: { opacity: 1, x: 0, scale: 1, color: "#779ecb", borderColor: "#779ecb", backgroundColor: "#FFF", transition: {ease: 'easeIn', duration: TRANSITION_DURATION}},
-    bounce: {color: "#BBB", borderColor: "#BBB", scale: 1.05, transition: {ease: 'easeInOut', duration: BOUNCE_DURATION}},
+    hover: {scale: 1.1, color: "#fff", backgroundColor: "#5f7ea2"},
+    press: {scale: 1, color: "#fff", backgroundColor: "#AAA", borderColor: "#AAA"},
+    init: { opacity: 1, x: 0, scale: 1, color: "#5f7ea2", borderColor: "#5f7ea2", backgroundColor: "#FFF", transition: {ease: 'easeIn', duration: TRANSITION_DURATION}},
+    bounce: {color: "#AAA", borderColor: "#AAA", scale: 1.05, transition: {ease: 'easeInOut', duration: BOUNCE_DURATION}},
     hiddenLeft: { opacity: 0, x: "-65vw"},
     hiddenRight: { opacity: 0, x: "65vw"},
 });

@@ -1,0 +1,60 @@
+.Main {
+    width: 100vw;
+    height: 100%;
+    background-color: #fff;
+    padding: 16vh 0 5vh;
+}
+
+.Certification {
+    padding: 4vh 2vw;
+    margin: 0 auto;
+    width: 75%;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+.Badge {
+    width: 12vw;
+}
+
+.CertificationInfo {
+    padding-left: 5vw;
+    display: flex;
+    flex-flow: column;
+    justify-content: start;
+}
+
+a {
+    text-decoration: none;
+}
+
+.Title {
+    font-size: 1.5vw;
+    color: #AAA;
+    font-weight: bold;
+}
+
+.Details {
+    font-size: 1.25vw;
+    color: #5f7ea2;
+    width: 60vw;
+}
+
+@media only screen and (max-width: 599px) {
+    .Main {
+        padding-top: 20vh;
+    }
+    .Certification {
+        width: 90%;
+    }
+    .Badge {
+        width: 24vw;
+    }
+    .Title {
+        font-size: 3.5vw;
+    }
+    .Details {
+        font-size: 3vw;
+    }
+}

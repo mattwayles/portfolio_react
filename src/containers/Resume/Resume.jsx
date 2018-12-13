@@ -11,9 +11,14 @@ import Button from "../../components/ui/Button/Button";
  */
 class Resume extends React.Component {
     state = {
+        width: 0,
         numPages: null,
         pageNumber: 1,
     };
+
+    componentDidMount() {
+        this.setState({ width: window.innerWidth });
+    }
 
     /**
      * Manage page number in state after document is loaded
@@ -28,8 +33,6 @@ class Resume extends React.Component {
      */
     handleBack = () => {
         this.setState({ pageNumber: this.state.pageNumber - 1 });
-        const doc = document.getElementById("pdfDoc");
-        doc.scrollTop = 0;
         window.scrollTo(0, window.innerHeight * 2);
     };
 
@@ -38,24 +41,21 @@ class Resume extends React.Component {
      */
     handleNext = () => {
         this.setState({ pageNumber: this.state.pageNumber + 1 });
-        const doc = document.getElementById("pdfDoc");
-        doc.scrollTop = 0;
         window.scrollTo(0, window.innerHeight * 2);
     };
 
 
     render() {
-        const { pageNumber, numPages } = this.state;
+        const { pageNumber, numPages, width } = this.state;
 
         return (
             <Auxil>
                 <section className={classes.Main}>
-                    <section id="pdfDoc" className={classes.PdfDoc}>
+                    <section className={document.documentMode || window.StyleMedia ? classes.PdfDoc : null}>
                         <Document loading={"Loading something GREAT..."} file={resume} onLoadSuccess={this.onDocumentLoadSuccess}>
-                            <Page width={window.innerWidth < 600 ? window.innerWidth : window.innerWidth / 2} pageNumber={pageNumber} />
+                            <Page width={document.documentMode || window.StyleMedia ? width / 1.5 : width} pageNumber={pageNumber} />
                         </Document>
                     </section>
-
                     <section className={classes.FlexRow}>
                         {pageNumber > 1 ? <p className={ classes.BackArrow } onClick={this.handleBack}>
                             {"<"} </p> : null}
@@ -64,9 +64,8 @@ class Resume extends React.Component {
                             {">"} </p>  : null}
                     </section>
                 </section>
-
                 <section className={classes.ButtonDiv}>
-                    <a href={resume} className={classes.ButtonDiv} download><Button visible={true} enter={"left"} span={"Download"} suffix={" this awesome Resume"} /></a>
+                    <a href={resume} className={classes.ButtonDiv} download><Button visible={true} enter={"left"} span={"Download"} suffix={" my Resume"} /></a>
                 </section>
             </Auxil>
         )

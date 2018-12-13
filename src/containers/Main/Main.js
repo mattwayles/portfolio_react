@@ -5,6 +5,7 @@ import Auxil from "../../components/Auxil";
 import posed from 'react-pose';
 import MainNavigation from "./Navigation/Navigation";
 import DownArrows from "../../components/ui/DownArrows/DownArrows";
+import Footer from "../../components/Footer/Footer";
 
 const TRANSITION_DURATION = 1500;
 
@@ -98,13 +99,10 @@ class Main extends React.Component {
      */
     scrollClick = () => {
 
-
-        //TODO: Why does the scroll position change when the label changes?
-
         let isMobile = window.innerWidth < 599;
         document.documentMode || window.StyleMedia ?
-            window.scrollTo(0, isMobile ? window.innerHeight + (window.innerHeight * .2) : window.innerHeight)
-            : window.scrollTo({ top: isMobile ? window.innerHeight + (window.innerHeight * .2) : window.innerHeight, behavior: 'smooth' });
+            window.scrollTo(0, isMobile ? window.innerHeight + (window.innerHeight * .1) : window.innerHeight)
+            : window.scrollTo({ top: isMobile ? window.innerHeight + (window.innerHeight * .1) : window.innerHeight, behavior: 'smooth' });
     };
 
     render() {
@@ -125,7 +123,7 @@ class Main extends React.Component {
                             pose={description.line2 ? 'descVisible' : 'descHidden'}
                             className={classes.Description}>
                             <em>✓&emsp;Cross-platform <span className={classes.Bold}>Desktop</span>,
-                                <span className={classes.Bold}>Mobile</span>, and <span className={classes.Bold}>Web</span> Applications</em>
+                                <span className={classes.Bold}> Mobile</span>, and <span className={classes.Bold}>Web</span> Applications</em>
                         </DescriptionLine>
                         <DescriptionLine
                             pose={description.line3 ? 'descVisible' : 'descHidden'}
@@ -144,11 +142,7 @@ class Main extends React.Component {
                 {scroll < window.innerHeight / 2 && displayArrows ? <DownArrows click={this.scrollClick} /> : <section className={classes.Placeholder} />}
                 <MainNavigation />
 
-                <section className={classes.Footer}>
-                    <p>©2018</p>
-                    <p>All content is original and developed independently by Matthew Wayles.</p>
-                    <p>Reproduction without authorization is prohibited.</p>
-                </section>
+               <Footer />
             </Auxil>
     );
     }

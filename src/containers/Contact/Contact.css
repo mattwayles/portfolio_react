@@ -1,5 +1,5 @@
 .Main {
-    padding: 12vh 0;
+    padding: 10vh 0;
     margin: 0 auto;
     width: 80%;
     background-color: #fff;
@@ -15,18 +15,18 @@
     width: 50%;
     height: 4%;
     margin: 0 auto 1vh;
-    border: 1px solid #779ecb;
+    border: 1px solid #5f7ea2;
     border-radius: 25px;
     padding: 1.5vh 1.5vw;
     font-size: 1vw;
     font-family: inherit;
-    color: #779ecb;
+    color: #5f7ea2;
     outline: none;
     transition: all 500ms ease-in-out;
 }
 
 .FormMessage, .FormMessageError {
-    width: 100%;
+    width: 90%;
     height: 20vh;
     resize: none;
 }
@@ -37,24 +37,30 @@
 
 .FormInput:hover, .FormMessage:hover {
     transition: all 500ms ease-in-out;
-    box-shadow: 0 0 2px 2px #779ecb;
+    box-shadow: 0 0 2px 2px #5f7ea2;
 }
 
 .Button {
     text-align: center;
-    width: 100%;
+    width: 40%;
     margin: 0 auto;
 }
 
 .LogoDiv {
     width: 100%;
+    margin: 0 auto 2vh;
     text-align: center;
+}
+
+.Logo {
+    width: 10vw;
 }
 
 .FlexRow {
     display: flex;
     flex-flow: row;
     justify-content: center;
+    text-align: center;
     margin: 0 auto;
     padding: 4vh 0;
 }
@@ -66,24 +72,63 @@
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #BBB;
-    opacity: .7; /* Firefox */
+    color: #AAA;
+    opacity: .9; /* Firefox */
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: #BBB;
+    color: #AAA;
 }
 
 @media only screen and (max-width: 1280px) {
     .Main {
+        padding-top: 16vh;
         margin: 52px 0 0 0;
         width: 100%;
         background-color: rgba(255, 255, 255, 0.5);
     }
+
     .FlexRow {
-        display: flex;
-        flex-flow: column;
-        margin: 3% auto 1%;
-        justify-content: flex-start;
-        padding: 2%;
+        padding: 2vh 0;
+    }
+
+    .SocialIcon {
+        width: 30%;
+    }
+
+    .Logo {
+        width: 20vw;
+    }
+
+    .Form {
+        width: 90vw;
+    }
+
+    .FormInput, .FormMessage, .FormError, .FormMessageError {
+        width: 80%;
+        margin: 0 auto 2vh;
+        border: 1px solid #5f7ea2;
+        border-radius: 25px;
+        padding: 1.5vh 1.5vw;
+        font-size: 3.5vw;
+        font-family: inherit;
+        color: #5f7ea2;
+        outline: none;
+        transition: all 500ms ease-in-out;
+    }
+
+    .FormMessage, .FormMessageError {
+        width: 90%;
+        height: 40vh;
+    }
+
+    .Button {
+        width: 80%;
+    }
+
+    ::placeholder {
+        padding-left: 1.5vw;
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        padding-left: 1.5vw;
     }
 }
