@@ -1,6 +1,5 @@
 TODO:
 
-*Fix browser compatibility: Safari
 *Portfolio page: Finish Projects
 
 NICE-TO-HAVES:
