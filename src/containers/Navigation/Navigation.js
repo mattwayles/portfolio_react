@@ -218,8 +218,8 @@ class Navigation extends React.Component {
                         <Button visible={buttons.button1} pressed={open.resume} enter={"left"} click={this.scrollClick} page={"resume"} label={"I want to view your "} span={"Resume"} />
                         <Button visible={buttons.button2} pressed={open.certifications} bounce={label.bounce && suggest === "certifications"} enter={"right"} click={this.scrollClick} page={"certifications"} label={"I want to view your "} span={"Certifications"} />
                         <Button visible={buttons.button3} pressed={open.portfolio} bounce={label.bounce && suggest === "portfolio"}  enter={"left"} click={this.scrollClick} page={"portfolio"} label={"I want to view your "} span={"Portfolio"} />
-                        <Button visible={buttons.button4} pressed={open.collaborate} bounce={label.bounce && suggest === "collaborate"} enter={"left"} click={this.scrollClick} page={"collaborate"} label={"I want to "} span={"Work with"} suffix={" you"} />
-                        <Button visible={buttons.button5} pressed={open.about} bounce={label.bounce && suggest === "about"} enter={"right"} click={this.scrollClick} page={"about"} label={"I want to "} span={"Learn more"} suffix={" about you"} />
+                        <Button visible={buttons.button4} pressed={open.collaborate} bounce={label.bounce && suggest === "collaborate"} enter={"right"} click={this.scrollClick} page={"collaborate"} label={"I want to "} span={"Work with"} suffix={" you"} />
+                        <Button visible={buttons.button5} pressed={open.about} bounce={label.bounce && suggest === "about"} enter={"left"} click={this.scrollClick} page={"about"} label={"I want to "} span={"Learn more"} suffix={" about you"} />
                         <Button visible={buttons.button6} pressed={open.contact} bounce={label.bounce && suggest === "contact"} enter={"right"} click={this.scrollClick} page={"contact"} label={"I want to "} span={"Contact"} suffix={" you"} />
                         {open.any ? <DownArrows click={this.scrollClick}/> : null}
                     </section>

@@ -2,12 +2,13 @@ import React from 'react';
 import classes from '../ProjectStyle.css';
 import gctLogo from '../../../assets/portfolio/expanded/gct.png';
 
-const GCTUI = () => (
-    <section className={classes.Project}>
-            <section className={classes.ProjectDiv}>
-                <section className={classes.ImageDiv}>
-                    <img className={classes.Image} src={gctLogo} alt="GCT"/>
-                </section>
+const PROJECT_NAME = 'gctui';
+
+const GCTUI = (props) => (
+    <section className={props.closing ? classes.ProjectClosing : classes.Project}>
+        <section onClick={() => props.exit(PROJECT_NAME)} className={classes.CloseButton} />
+        <section className={classes.ProjectDiv}>
+            <section className={classes.ProjectDetails}>
                 <p className={classes.ProjectName}>GOLDesp Configuration Toolkit (GCT)</p>
                 <p className={classes.ProjectDescription}>User interface for the GoldESP Configuration Toolkit,
                     providing customers control over their application and the ability to make changes without server downtime.
@@ -29,6 +30,10 @@ const GCTUI = () => (
                     <li><em>Source is proprietary information owned by Tapestry Solutions, Inc.</em></li>
                 </ul>
             </section>
+            <section className={classes.ImageDiv}>
+                <img className={classes.Image} src={gctLogo} alt="GCT"/>
+            </section>
+        </section>
     </section>
 );
 

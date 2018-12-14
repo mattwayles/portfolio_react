@@ -4,7 +4,7 @@ import posed from "react-pose";
 import classes from './Button.css';
 
 
-const TRANSITION_DURATION = 1500;
+const TRANSITION_DURATION = 1000;
 const BOUNCE_DURATION = 500;
 
 /**

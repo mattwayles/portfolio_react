@@ -119,8 +119,8 @@
 @media only screen and (max-width: 599px) {
     .Project, .ProjectClosing {
         left: 5vw;
-        top: 7.5vh;
-        height: 85vh;
+        top: 2.5vh;
+        height: 95vh;
         width: 84vw;
     }
     .Project {
@@ -195,7 +195,7 @@
     }
     100% {
         width: 84vw;
-        height: 85vh;
+        height: 95vh;
         opacity: 1;
     }
 }
@@ -216,7 +216,7 @@
 @keyframes fadeOutMobile{
     0% {
         width: 84vw;
-        height: 85vh;
+        height: 95vh;
         opacity: 1;
     }
     100% {
