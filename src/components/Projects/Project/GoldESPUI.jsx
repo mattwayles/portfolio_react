@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from '../ProjectStyle.css';
 import goldespImg from '../../../assets/portfolio/expanded/goldesp.jpg';
+import Button from "../../ui/Button/Button";
 
 const PROJECT_NAME = "goldui";
 
@@ -24,14 +25,18 @@ const goldESPUI = (props) => (
                         <li>Bug Fixes</li>
                     </ul>
                     <li><em>Source is proprietary information owned by Tapestry Solutions, Inc.</em></li>
-                    <li><a href="https://www.tapestrysolutions.com/products/goldesp-mro-supply/GoldESPUI.jsx"
-                           rel="noopener noreferrer" target="_blank">Learn more</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=yQzc9aW_7n0"
-                           rel="noopener noreferrer" target="_blank">Watch Video</a></li>
                 </ul>
             </section>
             <section className={classes.ImageDiv}>
                 <img className={classes.Image} src={goldespImg} alt="GoldESP"/>
+                <section className={classes.Buttons}>
+                    <a href="https://www.tapestrysolutions.com/products/goldesp-mro-supply/"
+                       rel="noopener noreferrer" target="_blank">
+                        <Button classes={classes.Button} visible={true} pressed={false} enter={"right"} label={"Learn More"} />
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=yQzc9aW_7n0"
+                       rel="noopener noreferrer" target="_blank"><Button classes={classes.Button} visible={true} pressed={false} enter={"right"} label={"Watch Video"} /></a>
+                </section>
             </section>
         </section>
     </section>
