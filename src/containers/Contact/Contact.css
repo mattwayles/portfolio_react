@@ -23,6 +23,7 @@
     color: #5f7ea2;
     outline: none;
     transition: all 500ms ease-in-out;
+    background-color: #EEE;
 }
 
 .FormMessage, .FormMessageError {
@@ -40,10 +41,14 @@
     box-shadow: 0 0 2px 2px #5f7ea2;
 }
 
-.Button {
+.Button, .MailButton {
     text-align: center;
     width: 40%;
     margin: 0 auto;
+}
+
+.MailButton {
+    width: 80%;
 }
 
 .Sent {
@@ -67,7 +72,7 @@
     width: 10vw;
 }
 
-.FlexRow {
+.Icons {
     display: flex;
     flex-flow: row;
     justify-content: center;
@@ -80,6 +85,23 @@
     border-radius: 100%;
     margin: 0 5vw;
     width: 20%;
+}
+
+.ContactRow {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.ContactDiv {
+    margin: 5vh 0 10vh;
+}
+
+.ContactRow p {
+    color: #5f7ea2;
+    padding: 0 2vw;
+    font-size: 1.5vw;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -98,7 +120,7 @@
         background-color: rgba(255, 255, 255, 0.5);
     }
 
-    .FlexRow {
+    .Icons {
         padding: 2vh 0;
     }
 

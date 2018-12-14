@@ -12,7 +12,6 @@ import Contact from "../Contact/Contact";
 import Certifications from "../Certifications/Certifications";
 
 const TRANSITION_DURATION = 1000;
-const LABEL_CHANGE_DURATION = 1200;
 const BOUNCE_DURATION = 500;
 
 const SHOW_LABEL_HEIGHT = 62;
@@ -24,20 +23,13 @@ const SHOW_BUTTON5_HEIGHT = 87;
 const SHOW_BUTTON6_HEIGHT = 92;
 const MAIN_SCROLLED = 125;
 
-const LABEL_ORIGINAL = "How can I help you?"; 
-const LABEL_RESUME = "Okay, check out my Resume below!";
+const LABEL_ORIGINAL = "How can I help you?";
 const LABEL_RESUME_SCROLLED = "If you liked my resume, read more about my certifications!";
-const LABEL_CERTIFICATIONS = "You're now certified to view my certifications below!";
 const LABEL_CERTIFICATIONS_SCROLLED = "I've been busy lately, check out my portfolio!";
-const LABEL_PORTFOLIO = "Voila! Scroll down for my portfolio, and peruse at your leisure!";
 const LABEL_PORTFOLIO_SCROLLED = "Interested in collaborating on a project? Send me a message!";
-const LABEL_ABOUT = "I'm flattered! Scroll down to learn more about me!";
 const LABEL_ABOUT_SCROLLED = "I'm interested in learning about you, too. Send me a message!";
-const LABEL_COLLABORATE = "Let's do it! Scroll down to fill out a contact form.";
 const LABEL_COLLABORATE_SCROLLED = "If we're going to be working together, read more about me!";
-const LABEL_CONTACT = "Awesome! I look forward to hearing from you!";
 const LABEL_CONTACT_SCROLLED = "What else would you like to do while you're here?";
-const LABEL_ERROR = "Whoops! That operation isn't supported yet.";
 
 /**
  * React-Pose poses for the interactive label [hidden, visible, bounce]
@@ -53,7 +45,6 @@ const HowCanIHelpLabel = posed.p({
  */
 class Navigation extends React.Component {
     state = {
-        addressBarOpen: true,
         scroll: 0,
         documentHeight: 0,
         windowHeight: 0,
@@ -115,7 +106,6 @@ class Navigation extends React.Component {
      */
     handleWindowSizeChange = () => {
         this.setState({
-            addressBarOpen: !this.state.addressBarOpen,
             documentHeight: window.innerHeight * 2,
             windowHeight: window.innerHeight})
     };
@@ -123,9 +113,12 @@ class Navigation extends React.Component {
     /**
      * When display arrows are clicked, scroll to the Navigation section
      */
-    scrollClick = () => {
-        const view = document.getElementById("view");
-        view.scrollIntoView({block: "start", behavior: "smooth"});
+    scrollClick = ( openPage ) => {
+        this.setState({open: {any: true, [openPage]: true}, label: {...this.state.label, modified: false}});
+        setTimeout(() => {
+            const view = document.getElementById("view");
+            view.scrollIntoView({block: "start", behavior: "smooth"});
+        }, 200);
     };
 
     /**
@@ -193,16 +186,9 @@ class Navigation extends React.Component {
             }
         }
         else if (scrollPercent < SHOW_LABEL_HEIGHT && this.state.label.display) {
-            this.resetMainNavigationAnimation();
+            this.setState({ label: {...this.state.label, display: false, bounce: false}, buttons: {} });
         }
     }
-
-    /**
-     * Remove navigation elements from DOM when user scrolls up
-     */
-    resetMainNavigationAnimation = () => {
-        this.setState({ label: {...this.state.label, display: false, bounce: false}, buttons: {} });
-    };
 
     /**
      * Bounce the interactive label on an interval
@@ -211,42 +197,6 @@ class Navigation extends React.Component {
         this.setState({label: {...this.state.label, display: true, bounce: true}});
         setTimeout(() => this.setState({label: {...this.state.label, display: true, bounce: false}}), BOUNCE_DURATION);
         setTimeout(() => this.bounceLabel(), 5000);
-    };
-
-    /**
-     * Dynamically render content below the navigation page based on button clicks
-     * @param openPage  The page to open
-     */
-    openPage = (openPage) => {
-        let labelText = "";
-        this.setState({open: {any: true, [openPage]: true}, label: {...this.state.label, change: openPage !== 'resume'}});
-        switch (openPage) {
-            case "resume":
-                labelText = LABEL_RESUME;
-                break;
-            case "portfolio":
-                labelText = LABEL_PORTFOLIO;
-                break;
-            case "about":
-                labelText = LABEL_ABOUT;
-                break;
-            case "collaborate":
-                labelText = LABEL_COLLABORATE;
-                break;
-            case "contact":
-                labelText = LABEL_CONTACT;
-                break;
-            case "certifications":
-                labelText = LABEL_CERTIFICATIONS;
-                break;
-            default:
-                labelText = LABEL_ERROR;
-                break;
-        }
-        setTimeout(() => {
-            this.setState({label: {...this.state.label, text: labelText, modified: false}});}, LABEL_CHANGE_DURATION / 2);
-        setTimeout(() => {
-            this.setState({label: {...this.state.label, change: false}, suggest: null});}, LABEL_CHANGE_DURATION);
     };
 
     render() {
@@ -260,17 +210,17 @@ class Navigation extends React.Component {
                     <section className={classes.LabelDiv}>
                         <HowCanIHelpLabel
                             pose={label.display ? label.bounce ? "bounce" : "visible" : "hidden"}
-                            className={ label.change ? classes.AnimateLabel : classes.Label }>
+                            className={ classes.Label }>
                             {label.text}
                         </HowCanIHelpLabel>
                     </section>
                     <section className={classes.ButtonDiv}>
-                        <Button visible={buttons.button1} pressed={open.resume} enter={"left"} click={this.openPage} page={"resume"} label={"I want to view your "} span={"Resume"} />
-                        <Button visible={buttons.button2} pressed={open.certifications} bounce={label.bounce && suggest === "certifications"} enter={"right"} click={this.openPage} page={"certifications"} label={"I want to view your "} span={"Certifications"} />
-                        <Button visible={buttons.button3} pressed={open.portfolio} bounce={label.bounce && suggest === "portfolio"}  enter={"left"} click={this.openPage} page={"portfolio"} label={"I want to view your "} span={"Portfolio"} />
-                        <Button visible={buttons.button4} pressed={open.collaborate} bounce={label.bounce && suggest === "collaborate"} enter={"left"} click={this.openPage} page={"collaborate"} label={"I want to "} span={"Work with"} suffix={" you"} />
-                        <Button visible={buttons.button5} pressed={open.about} bounce={label.bounce && suggest === "about"} enter={"right"} click={this.openPage} page={"about"} label={"I want to "} span={"Learn more"} suffix={" about you"} />
-                        <Button visible={buttons.button6} pressed={open.contact} bounce={label.bounce && suggest === "contact"} enter={"right"} click={this.openPage} page={"contact"} label={"I want to "} span={"Contact"} suffix={" you"} />
+                        <Button visible={buttons.button1} pressed={open.resume} enter={"left"} click={this.scrollClick} page={"resume"} label={"I want to view your "} span={"Resume"} />
+                        <Button visible={buttons.button2} pressed={open.certifications} bounce={label.bounce && suggest === "certifications"} enter={"right"} click={this.scrollClick} page={"certifications"} label={"I want to view your "} span={"Certifications"} />
+                        <Button visible={buttons.button3} pressed={open.portfolio} bounce={label.bounce && suggest === "portfolio"}  enter={"left"} click={this.scrollClick} page={"portfolio"} label={"I want to view your "} span={"Portfolio"} />
+                        <Button visible={buttons.button4} pressed={open.collaborate} bounce={label.bounce && suggest === "collaborate"} enter={"left"} click={this.scrollClick} page={"collaborate"} label={"I want to "} span={"Work with"} suffix={" you"} />
+                        <Button visible={buttons.button5} pressed={open.about} bounce={label.bounce && suggest === "about"} enter={"right"} click={this.scrollClick} page={"about"} label={"I want to "} span={"Learn more"} suffix={" about you"} />
+                        <Button visible={buttons.button6} pressed={open.contact} bounce={label.bounce && suggest === "contact"} enter={"right"} click={this.scrollClick} page={"contact"} label={"I want to "} span={"Contact"} suffix={" you"} />
                         {open.any ? <DownArrows click={this.scrollClick}/> : null}
                     </section>
                 </section>

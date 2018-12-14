@@ -25,14 +25,14 @@ const SHOW_APLUS_HEIGHT = 235;
  */
 const Certification = posed.section({
     visible: { opacity: 1, transition: {ease: 'easeIn', duration: TRANSITION_DURATION}},
-    hidden: { opacity: 0 },
+    hidden: { opacity: .5 },
 });
 
 const Badge = posed.img({
     hoverable: true,
     hover: {scale: 1.2, rotate: 0, transition: {ease: 'easeIn', duration: TRANSITION_DURATION / 1.5}},
     visible: { opacity: 1, rotate: 360, scale: 1,transition: {ease: 'easeIn', duration: TRANSITION_DURATION}},
-    hidden: { opacity: 0, rotate: 0, scale: 0 },
+    hidden: { opacity: .25, rotate: 0, scale: .5 },
 });
 
 /**

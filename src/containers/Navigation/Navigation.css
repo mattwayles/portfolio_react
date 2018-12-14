@@ -14,7 +14,7 @@
     border: 1px solid white;
 }
 
-.Label, .AnimateLabel {
+.Label {
     color: #5f7ea2;
     text-align: center;
     font-size: 4vw;
@@ -35,26 +35,6 @@
     padding: 2vh 0 5vh;
  }
 
-.AnimateLabel {
-    animation-name: changeLabel;
-    animation-duration: 1.2s;
-}
-
-@keyframes changeLabel {
-    0% {
-        opacity: 1;
-    }
-    45% {
-        opacity: 0;
-    }
-    65% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
 @media only screen and (max-width: 599px) {
     .MainNavigation {
         height: 80vh;
@@ -62,7 +42,7 @@
     .LabelDiv {
         height: 18vh;
     }
-    .Label, .AnimateLabel {
+    .Label {
         font-size: 6.5vw;
     }
     .Footer p {

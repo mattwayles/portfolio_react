@@ -2,11 +2,14 @@ import React from 'react';
 import logo from '../../assets/contact/logo.png';
 import facebookIcon from '../../assets/contact/facebookContactIcon.png';
 import linkedinIcon from '../../assets/contact/linkedinContactIcon.png';
+import mailIcon from '../../assets/contact/mailMe.png';
+import callIcon from '../../assets/contact/callMe.png';
 import phoneIcon from '../../assets/contact/phoneIcon.png';
 import classes from './Contact.css';
 import * as emailjs from 'emailjs-com';
 import Button from "../../components/ui/Button/Button";
 import posed from "react-pose/lib/index";
+import Auxil from "../../components/Auxil";
 
 const TRANSITION_DURATION = 1000;
 const HOVER_DURATION = 500;
@@ -43,6 +46,11 @@ const Icon = posed.img({
     visible: { opacity: 1, rotate: 0, transition: { ease: 'easeIn', duration:  TRANSITION_DURATION} },
 });
 
+const ContactDetails = posed.section({
+    hidden: { opacity: 0},
+    visible: { opacity: 1, transition: { ease: 'easeIn', duration:  TRANSITION_DURATION} },
+});
+
 /**
  * Display a contact OR collaboration page; these were consolidated into one page because they are so similar. Rendering is
  * down based on 'collab' prop; render Collaboration page is true, Contact page if false.
@@ -51,11 +59,15 @@ class Contact extends React.Component {
     state = {
         display: {
             logo: false,
+            form: this.props.collab,
             icons: {
                 fb: false,
                 li: false,
-                ph: false
+                phone: false,
+                call: false,
+                mail: false
             },
+            mailButton: false,
             nameInput: false,
             emailInput: false,
             messageInput: false,
@@ -80,21 +92,26 @@ class Contact extends React.Component {
             }
             else if (this.props.scrollPercent > SHOW_ICONS && !this.state.display.icons.fb) {
                 this.setState({display: {...this.state.display, icons: {...this.state.display.icons, fb: true}}});
-                setTimeout(() => this.setState({display: {...this.state.display, icons: {...this.state.display.icons, li: true}}}), 500);
-                setTimeout(() => this.setState({display: {...this.state.display, icons: {...this.state.display.icons, ph: true}}}), 1000);
+                setTimeout(() => this.setState({display: {...this.state.display, icons: {...this.state.display.icons, li: true}}}), 250);
+                setTimeout(() => this.setState({display: {...this.state.display, icons: {...this.state.display.icons, phone: true}}}), 500);
+                setTimeout(() => this.setState({display: {...this.state.display, icons: {...this.state.display.icons, call: true}}}), 750);
+                setTimeout(() => this.setState({display: {...this.state.display, icons: {...this.state.display.icons, mail: true}}}), 1000);
+                setTimeout(() => this.setState({display: {...this.state.display, mailButton: true}}), 125);
             }
-            //Render form elements
-            else if (this.props.scrollPercent > SHOW_NAME_INPUT && !this.state.display.nameInput) {
-                this.setState({display: {...this.state.display, nameInput: true}});
-            }
-            else if (this.props.scrollPercent > SHOW_EMAIL_INPUT && !this.state.display.emailInput) {
-                this.setState({display: {...this.state.display, emailInput: true}});
-            }
-            else if (this.props.scrollPercent > SHOW_MESSAGE_INPUT && !this.state.display.messageInput) {
-                this.setState({display: {...this.state.display, messageInput: true}});
-            }
-            else if (this.props.scrollPercent > SHOW_SUBMIT_BUTTON && !this.state.display.submitButton) {
-                this.setState({display: {...this.state.display, submitButton: true}});
+            if (this.state.display.form) {
+                //Render form elements
+                if (this.props.scrollPercent > SHOW_NAME_INPUT && !this.state.display.nameInput) {
+                    this.setState({display: {...this.state.display, nameInput: true}});
+                }
+                else if (this.props.scrollPercent > SHOW_EMAIL_INPUT && !this.state.display.emailInput) {
+                    this.setState({display: {...this.state.display, emailInput: true}});
+                }
+                else if (this.props.scrollPercent > SHOW_MESSAGE_INPUT && !this.state.display.messageInput) {
+                    this.setState({display: {...this.state.display, messageInput: true}});
+                }
+                else if (this.props.scrollPercent > SHOW_SUBMIT_BUTTON && !this.state.display.submitButton) {
+                    this.setState({display: {...this.state.display, submitButton: true}});
+                }
             }
         }
         else if (this.props.scrollPercent < SHOW_LOGO && this.state.display.logo) {
@@ -151,6 +168,15 @@ class Contact extends React.Component {
         this.setState({ sent: true });
     };
 
+    /**
+     * Open the form
+     */
+    openForm = () => {
+        this.setState({ display: {...this.state.display, form: true }});
+        const view = document.getElementById("collaborate");
+        view.scrollIntoView({block: 'start', behavior: 'smooth'});
+    };
+
     render() {
         const {name, email, message, display, sent} = this.state;
         const {collab} = this.props;
@@ -162,14 +188,27 @@ class Contact extends React.Component {
                     <Logo pose={display.logo ? "visible" : "hidden"} className={classes.Logo} src={logo} alt={"Contact Me"} />
                 </section>
                 {!collab ?
-                            <section className={classes.FlexRow}>
-                                <a href={'http://facebook.com/mwayles'} rel="noopener noreferrer" target="_blank">
-                                    <Icon pose={display.icons.fb ? "visible" : "hidden"} src={facebookIcon} className={classes.SocialIcon} alt={"Facebook Message"}/></a>
-                                <a href={'https://www.linkedin.com/in/matthew-wayles-03354369'} rel="noopener noreferrer" target="_blank">
-                                    <Icon pose={display.icons.li ? "visible" : "hidden"} src={linkedinIcon} className={classes.SocialIcon} alt={"LinkedIn Message"}/></a>
-                                <a href="tel:+1843-368-9968" rel="noopener noreferrer" target="_blank">
-                                    <Icon pose={display.icons.ph ? "visible" : "hidden"} className={classes.SocialIcon} src={phoneIcon} alt="843-368-9968" /></a>
-                            </section>
+                    <Auxil>
+                        <section className={classes.Icons}>
+                            <a href={'http://facebook.com/mwayles'} rel="noopener noreferrer" target="_blank">
+                                <Icon pose={display.icons.fb ? "visible" : "hidden"} src={facebookIcon} className={classes.SocialIcon} alt={"Facebook Message"}/></a>
+                            <a href={'https://www.linkedin.com/in/matthew-wayles-03354369'} rel="noopener noreferrer" target="_blank">
+                                <Icon pose={display.icons.li ? "visible" : "hidden"} src={linkedinIcon} className={classes.SocialIcon} alt={"LinkedIn Message"}/></a>
+                            <a href="tel:+1843-368-9968" rel="noopener noreferrer" target="_blank">
+                                <Icon pose={display.icons.phone ? "visible" : "hidden"} className={classes.SocialIcon} src={phoneIcon} alt="843-368-9968" /></a>
+                        </section>
+                        <section className={classes.ContactDiv}>
+                            <ContactDetails pose={display.icons.call ? "visible" : "hidden"} className={classes.ContactRow}>
+                                <img src={callIcon} alt={"Call:"} /><p>843-368-9968</p>
+                            </ContactDetails>
+                            <ContactDetails pose={display.icons.mail ? "visible" : "hidden"} className={classes.ContactRow}>
+                                <img src={mailIcon} alt={"Mail:"} /><p>mattwayles@gmail.com</p>
+                            </ContactDetails>
+                        </section>
+                        {display.form ? null : <ContactDetails pose={display.mailButton ? "visible" : "hidden"} className={classes.Button}>
+                            <Button visible={display.mailButton} pressed={false} classes={classes.MailButton} enter={"left"} click={this.openForm} label={"I want to send an e-mail "} span={" NOW"} suffix={", from here!"} />
+                        </ContactDetails>}
+                    </Auxil>
                     : null}
                 <form id="collaborate" className={classes.Form}>
                     <FormInput type="text" name="name"
