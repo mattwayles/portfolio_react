@@ -2,12 +2,13 @@ import React from 'react';
 import classes from '../ProjectStyle.css';
 import shutdownImg from '../../../assets/portfolio/expanded/shutdowninitiator.jpg';
 
-const shutdownInitiator = () => (
-    <section className={classes.Project}>
-            <section className={classes.ProjectDiv}>
-                <section className={classes.ImageDiv}>
-                    <img className={classes.Image} src={shutdownImg} alt="Shutdown Initiator"/>
-                </section>
+const PROJECT_NAME = 'shutdown';
+
+const shutdownInitiator = (props) => (
+    <section className={props.closing ? classes.ProjectClosing : classes.Project}>
+        <section onClick={() => props.exit(PROJECT_NAME)} className={classes.CloseButton} />
+        <section className={classes.ProjectDiv}>
+            <section className={classes.ProjectDetails}>
                 <p className={classes.ProjectName}>Shutdown Initiator</p>
                 <p className={classes.ProjectDescription}>Immediately send shutdown signal to specified systems in an
                     emergency, or perform a blanket shutdown. Written in <span className={classes.Bold}> C#</span> with
@@ -20,6 +21,10 @@ const shutdownInitiator = () => (
                     <li><em>Source is classified U.S. Government property</em></li>
                 </ul>
             </section>
+            <section className={classes.ImageDiv}>
+                <img className={classes.Image} src={shutdownImg} alt="Shutdown Initiator"/>
+            </section>
+        </section>
     </section>
 );
 

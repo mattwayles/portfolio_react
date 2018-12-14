@@ -15,6 +15,7 @@ import goldLogo from '../../assets/portfolio/logos/goldLogo.jpg';
 import goldUiLogo from '../../assets/portfolio/logos/goldUiLogo.jpg';
 import liquidLabReactLogo from '../../assets/portfolio/logos/liquidLabReactLogo.jpg';
 import liquidLabJavaLogo from '../../assets/portfolio/logos/liquidLabJavaLogo.jpg';
+import shutdownLogo from '../../assets/portfolio/logos/shutdownLogo.jpg';
 import HoveredLogo from "../../components/Projects/HoveredLogo/HoveredLogo";
 import GoldESP from "../../components/Projects/Project/GoldESP";
 import GCT from "../../components/Projects/Project/GCT";
@@ -30,6 +31,7 @@ import GCTUI from "../../components/Projects/Project/GCTUI";
 import LiquidLabReact from "../../components/Projects/Project/LiquidLabReact";
 import LiquidLab from "../../components/Projects/Project/LiquidLab";
 import Scoreboard from "../../components/Projects/Project/Scoreboard";
+import ShutdownInitiator from "../../components/Projects/Project/ShutdownInitiator";
 
 const SHOW_PORTFOLIO_HEIGHT = 120;
 
@@ -61,22 +63,23 @@ class Portfolio extends React.Component {
     //Add Portfolio 2.0.
 
     state = {
+        closing: false,
       projects: {
-          closing: false,
-          gold: { display: false, expanded: false},
-          goldui: { display: false, expanded: false},
+          acidRain: { display: false, expanded: false},
+          authTemplate: {display: false, expanded: false},
+          burgerBuilder: {display: false, expanded: false},
+          funCalc: {display: false, expanded: false},
           gct: { display: false, expanded: false},
           gctui: { display: false, expanded: false},
-          acidRain: { display: false, expanded: false},
+          gold: { display: false, expanded: false},
+          goldui: { display: false, expanded: false},
+          hikersWatch: {display: false, expanded: false},
           liquidLabReact: { display: false, expanded: false},
           liquidLabJava: { display: false, expanded: false},
           scoreboard: {display: false, expanded: false},
           scoreboardConfig: {display: false, expanded: false},
-          hikersWatch: {display: false, expanded: false},
           shuckShare: {display: false, expanded: false},
-          authTemplate: {display: false, expanded: false},
-          burgerBuilder: {display: false, expanded: false},
-          funCalc: {display: false, expanded: false}
+          shutdown: {display: false, expanded: false}
       }
     };
 
@@ -98,27 +101,29 @@ class Portfolio extends React.Component {
                 setTimeout(() => this.setState({projects: {...this.state.projects, hikersWatch: {display: true,  expanded: false}}}), 1400);
                 setTimeout(() => this.setState({projects: {...this.state.projects, shuckShare: {display: true,  expanded: false}}}), 1600);
                 setTimeout(() => this.setState({projects: {...this.state.projects, authTemplate: {display: true,  expanded: false}}}), 1800);
-                setTimeout(() => this.setState({projects: {...this.state.projects, burgerBuilder: {display: true,  expanded: false}}}), 2000);
-                setTimeout(() => this.setState({projects: {...this.state.projects, funCalc: {display: true,  expanded: false}}}), 2200);
+                setTimeout(() => this.setState({projects: {...this.state.projects, shutdown: {display: true,  expanded: false}}}), 2000);
+                setTimeout(() => this.setState({projects: {...this.state.projects, burgerBuilder: {display: true,  expanded: false}}}), 2200);
+                setTimeout(() => this.setState({projects: {...this.state.projects, funCalc: {display: true,  expanded: false}}}), 2400);
             }
         }
         //Remove from DOM when user scrolls up
         else if (this.props.scrollPercent < SHOW_PORTFOLIO_HEIGHT && this.state.projects.display) {
             this.setState({ projects: {
-                    gold: { display: false, expanded: false},
-                    goldui: { display: false, expanded: false},
+                    acidRain: { display: false, expanded: false},
+                    authTemplate: {display: false, expanded: false},
+                    burgerBuilder: {display: false, expanded: false},
+                    funCalc: {display: false, expanded: false},
                     gct: { display: false, expanded: false},
                     gctui: { display: false, expanded: false},
-                    acidRain: { display: false, expanded: false},
+                    gold: { display: false, expanded: false},
+                    goldui: { display: false, expanded: false},
+                    hikersWatch: {display: false, expanded: false},
                     liquidLabReact: { display: false, expanded: false},
                     liquidLabJava: { display: false, expanded: false},
                     scoreboard: {display: false, expanded: false},
                     scoreboardConfig: {display: false, expanded: false},
-                    hikersWatch: {display: false, expanded: false},
                     shuckShare: {display: false, expanded: false},
-                    authTemplate: {display: false, expanded: false},
-                    burgerBuilder: {display: false, expanded: false},
-                    funCalc: {display: false, expanded: false}
+                    shutdown: {display: false, expanded: false}
                 } });
         }
     }
@@ -257,23 +262,31 @@ class Portfolio extends React.Component {
                     </TopProject>
 
                     <BottomProject
+                        pose={projects.shutdown.display ?  "visible" : "hidden" }
+                        className={classes.Project}>
+                        {projects.shutdown.expanded ? <section onClick={() => this.exitFullProject('shutdown')} className={classes.Backdrop}>
+                            <ShutdownInitiator closing={closing} exit={this.exitFullProject} /></section> : null}
+                        <img className={classes.Project} src={shutdownLogo} alt={"Shutdown Initiator"} />
+                        <HoveredLogo projName="shutdown" title={"TacMobile Shutdown Initiator"} tech={["C#", "WPF"]} clicked={this.displayFullProject} />
+                    </BottomProject>
+
+                    <TopProject
                         pose={projects.burgerBuilder.display ?  "visible" : "hidden" }
                         className={classes.Project}>
                         {projects.burgerBuilder.expanded ? <section onClick={() => this.exitFullProject('burgerBuilder')} className={classes.Backdrop}>
                             <BurgerBuilder closing={closing} exit={this.exitFullProject} /></section> : null}
-
                         <img className={classes.Project} src={burgerBuilderLogo} alt={"Burger Builder"} />
                         <HoveredLogo projName="burgerBuilder" title={"Burger Builder"} tech={["React"]} clicked={this.displayFullProject} />
-                    </BottomProject>
+                    </TopProject>
 
-                    <TopProject
+                    <RightProject
                         pose={projects.funCalc.display ?  "visible" : "hidden" }
                         className={classes.Project}>
                         {projects.funCalc.expanded ? <section onClick={() => this.exitFullProject('funCalc')} className={classes.Backdrop}>
                             <FunCalc closing={closing} exit={this.exitFullProject} /></section> : null}
                         <img className={classes.Project} src={funCalcLogo} alt={"FunCalc"} />
                         <HoveredLogo projName="funCalc" title={"FunCalc"} tech={["JavaScript", "HTML/CSS"]} clicked={this.displayFullProject} />
-                    </TopProject>
+                    </RightProject>
                 </section>
             </section>
 
