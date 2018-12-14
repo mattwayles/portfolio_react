@@ -1,6 +1,5 @@
 import React from 'react';
 import classes from '../ProjectStyle.css';
-import closeButton from '../../../assets/arrows/upArrow.png';
 import scoreboardConfigImg from '../../../assets/portfolio/expanded/scoreboardConfig.png';
 import googlePlay from '../../../assets/portfolio/logos/google-play-badge.png';
 import Button from "../../ui/Button/Button";
@@ -8,8 +7,8 @@ import Button from "../../ui/Button/Button";
 const PROJECT_NAME = "scoreboardConfig";
 
 const scoreboardConfig = (props) => (
-    <section className={classes.Project}>
-        <img onClick={() => props.exit(PROJECT_NAME)} className={classes.CloseButton} src={closeButton} alt={"X"} />
+    <section className={props.closing ? classes.ProjectClosing : classes.Project}>
+        <section onClick={() => props.exit(PROJECT_NAME)} className={classes.CloseButton} />
         <section className={classes.ProjectDiv}>
             <section className={classes.ProjectDetails}>
                 <p className={classes.ProjectName}>AST Scoreboard Configuration</p>

@@ -1,6 +1,5 @@
 import React from 'react';
 import classes from '../ProjectStyle.css';
-import closeButton from '../../../assets/arrows/upArrow.png';
 import goldespImg from '../../../assets/portfolio/expanded/goldespLogo.png';
 import Button from "../../ui/Button/Button";
 import Auxil from "../../Auxil";
@@ -9,8 +8,8 @@ const PROJECT_NAME = "gold";
 
 const goldesp = (props) => (
     <Auxil>
-        <section className={classes.Project}>
-            <img onClick={() => props.exit(PROJECT_NAME)} className={classes.CloseButton} src={closeButton} alt={"X"} />
+        <section className={props.closing ? classes.ProjectClosing : classes.Project}>
+            <section onClick={() => props.exit(PROJECT_NAME)} className={classes.CloseButton} />
             <section className={classes.ProjectDiv}>
                 <section className={classes.ProjectDetails}>
                         <p className={classes.ProjectName}>GOLDesp (Server)</p>

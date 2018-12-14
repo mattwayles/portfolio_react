@@ -22,25 +22,14 @@
     width: 20vw;
 }
 
-.ExpandedProject {
-    position: relative;
-    -webkit-animation-name: expand;
-    animation-name: expand;
-    -webkit-animation-duration: 3s;
-    animation-duration: 3s;
-    overflow: hidden;
-    border: 3px solid #5f7ea2;
-    border-radius: 25px;
-}
-
-.Closing {
-    position: relative;
-    animation-name: flatten;
-    -webkit-animation-name: flatten;
-    animation-duration: 3s;
-    -webkit-animation-duration: 3s;
-    overflow: hidden;
-    border: 1px solid #5f7ea2;
+.Backdrop {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.5);
 }
 
 @media only screen and (max-width: 599px) {
@@ -53,10 +42,6 @@
     .Project {
         height: 50vw;
         width: 50vw;
-    }
-    .ExpandedProject {
-        -webkit-animation-name: mobileExpand;
-        animation-name: mobileExpand;
     }
     .Closing {
         animation-name: mobileFlatten;

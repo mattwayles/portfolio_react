@@ -49,10 +49,17 @@
 }
 
 .Expand {
-    margin-top: 3vh;
+    margin-top: 5vh;
     height: 5%;
-    width: 10%;
+    width: 5%;
     cursor: pointer;
+    background-image: url("../../../assets/arrows/expand.png");
+    background-size: cover;
+}
+
+.Expand:hover {
+    background-image: url("../../../assets/arrows/expandHover.png");
+    background-size: cover;
 }
 
 @keyframes fadeIn {
@@ -89,5 +96,9 @@
         margin: 1vh 2vw;
         font-size: 3vw;
         padding: 1vh 2vw;
+    }
+    .Expand {
+        height: 10%;
+        width: 10%;
     }
 }

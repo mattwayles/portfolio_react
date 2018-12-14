@@ -4,15 +4,28 @@
     opacity: 1;
 }
 
-.Project {
-    animation-name: fadeIn;
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
+.Project, .ProjectClosing {
+    width: 80vw;
+    height: 70vh;
+    padding: 0 3vw;
+    position: fixed;
+    top: 15vh;
+    left: 7vw;
+    z-index: 3;
+    background-color: #fff;
+    border-radius: 25px;
     overflow: hidden;
     -ms-overflow-style: none;
-    width: 100vw;
-    height: 70vh;
-    padding: 0 1vw;
+}
+
+.Project {
+    animation-name: fadeIn;
+    animation-duration: 1.5s;
+}
+
+.ProjectClosing {
+    animation-name: fadeOut;
+    animation-duration: 1s;
 }
 
 .ProjectDiv {
@@ -20,7 +33,7 @@
     overflow-y: auto;
     display: flex;
     flex-flow: row;
-    align-items: center;
+    align-items: start;
 }
 
 .ProjectDetails {
@@ -40,9 +53,11 @@
     font-weight: 700;
     font-size: 2vw;
     color: #AAA;
+    width: 40vw;
 }
 
 .ProjectDescription, .List {
+    width: 40vw;
     font-size: 1vw;
     color: #5f7ea2;
     text-shadow: none;
@@ -88,23 +103,31 @@
     position: absolute;
     top: 1vw;
     right: 1vw;
-    width: 1vw;
-    height: .8vw;
-    border: 1px solid #5f7ea2;
-    border-radius: 50%;
-    padding: .2vw;
+    width: 2%;
+    height: 5%;
     cursor: pointer;
+    background-image: url('../../assets/arrows/collapse.png');
+    background-size: cover;
 }
 
 .CloseButton:hover {
-    content:url('../../assets/arrows/upArrowHover.png');
-    background-color: #5f7ea2;
+    transition: all 1s ease-in;
+    background-image: url('../../assets/arrows/collapseHover.png');
+    background-size: cover;
 }
 
 @media only screen and (max-width: 599px) {
-    .Project {
+    .Project, .ProjectClosing {
+        left: 5vw;
+        top: 7.5vh;
         height: 85vh;
-        width: 100%;
+        width: 84vw;
+    }
+    .Project {
+        animation-name: fadeInMobile;
+    }
+    .ProjectClosing {
+        animation-name: fadeOutMobile;
     }
     .ProjectDiv {
         margin: 0 auto;
@@ -115,6 +138,9 @@
     }
     .ProjectDetails {
         width: 90%;
+    }
+    .ProjectName {
+        width: 100%;
     }
     .ImageDiv {
         justify-content: start;
@@ -137,6 +163,7 @@
         font-size: 5vw;
     }
     .ProjectDescription, .List {
+        width: 100%;
         font-size: 3vw;
     }
     .CloseButton {
@@ -149,9 +176,52 @@
 
 @keyframes fadeIn{
     0% {
+        width: 0;
+        height: 0;
         opacity: 0;
     }
     100% {
+        width: 80vw;
+        height: 70vh;
         opacity: 1;
+    }
+}
+
+@keyframes fadeInMobile{
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 84vw;
+        height: 85vh;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut{
+    0% {
+        width: 80vw;
+        height: 70vh;
+        opacity: 1;
+    }
+    100% {
+        width: 0.01vw;
+        height: 0.01vh;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOutMobile{
+    0% {
+        width: 84vw;
+        height: 85vh;
+        opacity: 1;
+    }
+    100% {
+        width: 0;
+        height: 0;
+        opacity: 0;
     }
 }

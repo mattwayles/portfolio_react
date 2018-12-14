@@ -1,13 +1,12 @@
 import React from 'react';
 import classes from '../ProjectStyle.css';
-import closeButton from '../../../assets/arrows/upArrow.png';
 import gctLogo from '../../../assets/portfolio/expanded/gctLogo.png';
 
 const PROJECT_NAME = "gct";
 
 const gct = (props) => (
-    <section className={classes.Project}>
-        <img onClick={() => props.exit(PROJECT_NAME)} className={classes.CloseButton} src={closeButton} alt={"X"} />
+    <section className={props.closing ? classes.ProjectClosing : classes.Project}>
+        <section onClick={() => props.exit(PROJECT_NAME)} className={classes.CloseButton} />
         <section className={classes.ProjectDiv}>
             <section className={classes.ProjectDetails}>
                 <p className={classes.ProjectName}>GOLDesp Configuration Tool (Server)</p>

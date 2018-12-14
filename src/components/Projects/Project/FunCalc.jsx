@@ -1,14 +1,13 @@
 import React from 'react';
 import classes from '../ProjectStyle.css';
-import closeButton from '../../../assets/arrows/upArrow.png';
 import funCalcImg from '../../../assets/portfolio/expanded/funcalc.jpg'
 import Button from "../../ui/Button/Button";
 
 const PROJECT_NAME = "funCalc";
 
 const funCalc = (props) => (
-    <section className={classes.Project}>
-        <img onClick={() => props.exit(PROJECT_NAME)} className={classes.CloseButton} src={closeButton} alt={"X"} />
+    <section className={props.closing ? classes.ProjectClosing : classes.Project}>
+        <section onClick={() => props.exit(PROJECT_NAME)} className={classes.CloseButton} />
         <section className={classes.ProjectDiv}>
             <section className={classes.ProjectDetails}>
             <p className={classes.ProjectName}>FunCalc</p>

@@ -1,8 +1,6 @@
 import React from 'react';
 import classes from './HoveredLogo.css';
 
-import expand from '../../../assets/arrows/expandArrow.png';
-
 /**
  * When a Portfolio Project is hovered, display a backdrop containing information about the project
  * @param props The information about this particular hovered project
@@ -16,7 +14,7 @@ const hoveredLogo = (props) => (
                     return <p key={item} className={classes.ProjectTech}><em>{item}</em></p>
                 })}
             </section>
-            <img className={classes.Expand} onClick={() => props.clicked(props.projName)} src={expand} alt={"+"} />
+            <section className={classes.Expand} onClick={() => props.clicked(props.projName)} />
     </section>
 );
 
