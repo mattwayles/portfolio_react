@@ -11,6 +11,7 @@ const elbu = (props) => (
             <section className={classes.ProjectDetails}>
                 <p className={classes.ProjectName}>Event Log Backup Utility</p>
                 <p className={classes.ProjectDescription}>Background service utility that archives Windows Event Logs to a network location.
+                    Configurable backup conditions and locations make this a robust, custom service that any Windows user can benefit from.
                     Written in <span className={classes.Bold}>AutoIt</span>.</p>
                 <ul className={classes.List}>
                     <li>Solo professional project</li>

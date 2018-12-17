@@ -11,7 +11,7 @@ const yahtzee = (props) => (
         <section className={classes.ProjectDiv}>
             <section className={classes.ProjectDetails}>
                 <p className={classes.ProjectName}>YahtCMD</p>
-                <p className={classes.ProjectDescription}>Command driven fully-featured Yahtzee game written in
+                <p className={classes.ProjectDescription}>Yahtzee in CMD! Command driven fully-featured Yahtzee game written in
                     &nbsp;<span className={classes.Bold}>Java</span></p>
                 <ul className={classes.List}>
                     <li>Solo recreational project</li>

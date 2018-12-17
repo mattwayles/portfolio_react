@@ -11,7 +11,9 @@ const burgerBuilder = (props) => (
         <section className={classes.ProjectDiv}>
             <section className={classes.ProjectDetails}>
             <p className={classes.ProjectName}>Burger Builder</p>
-            <p className={classes.ProjectDescription}>Hamburger building application with user authentication and storage. Written in
+            <p className={classes.ProjectDescription}>Hamburger building application with user authentication and storage.
+                Create your hamburger using existing ingredients, and place your order! Unfortunately, nobody will actually deliver anything
+                (nor will we charge your credit card, this is strictly an educational app). Written in
                 <span className={classes.Bold}> React.js</span>.</p>
             <ul className={classes.List}>
                 <li>Solo Educational Project</li>

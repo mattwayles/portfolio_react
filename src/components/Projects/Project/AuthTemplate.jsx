@@ -11,8 +11,10 @@ const authTemplate = (props) => (
         <section className={classes.ProjectDiv}>
             <section className={classes.ProjectDetails}>
             <p className={classes.ProjectName}>Authentication Template</p>
-            <p className={classes.ProjectDescription}>Token-based authentication template for React.js applications. Written in
-                <span className={classes.Bold}> React</span>.</p>
+            <p className={classes.ProjectDescription}>Token-based authentication template for React.js applications. Authentication
+                Template was designed as a secure portal providing Base64 authentication to any React application. It is intended to
+                be used as a starting point for React applications to be built off of, or integrate seamlessly with existing React
+                apps that require a login page.Written in <span className={classes.Bold}> React</span>.</p>
             <ul className={classes.List}>
                 <li>Solo Recreational Project</li>
                 <ul className={classes.InnerList}>

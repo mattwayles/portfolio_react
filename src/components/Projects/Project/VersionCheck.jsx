@@ -11,7 +11,9 @@ const versionCheck = (props) => (
             <section className={classes.ProjectDetails}>
                 <p className={classes.ProjectName}>VersionCheck</p>
                 <p className={classes.ProjectDescription}>Baseline comparison tool to verify
-                    successful Windows Update installations. Written in <span className={classes.Bold}>C# </span>
+                    successful Windows Update installations. Compare previous file versions with new file versions after windows updates
+                    to ensure the update ran successfully. Intended for offline systems without access to Windows Update servers.
+                    Written in <span className={classes.Bold}>C# </span>
                     with <span className={classes.Bold}>WPF</span></p>
                 <ul className={classes.List}>
                     <li>Solo professional project</li>

@@ -11,7 +11,9 @@ const expireGuard = (props) => (
             <section className={classes.ProjectDetails}>
                 <p className={classes.ProjectName}>ExpireGuard</p>
                 <p className={classes.ProjectDescription}>Certificate Expiration prevention tool written in
-                    <span className={classes.Bold}> C#</span> with <span className={classes.Bold}>WPF</span>.</p>
+                    <span className={classes.Bold}> C#</span> with <span className={classes.Bold}>WPF</span>. Warns users when their
+                system certificates are about to expire, or have already expired. Configurable warnings, notifications, and actions make
+                it a valuable tool for any Windows or Linux user.</p>
                 <ul className={classes.List}>
                     <li>Solo professional Project</li>
                     <li>Supports Windows/UNIX deployment</li>

@@ -11,7 +11,8 @@ const shutdownInitiator = (props) => (
             <section className={classes.ProjectDetails}>
                 <p className={classes.ProjectName}>Shutdown Initiator</p>
                 <p className={classes.ProjectDescription}>Immediately send shutdown signal to specified systems in an
-                    emergency, or perform a blanket shutdown. Written in <span className={classes.Bold}> C#</span> with
+                    emergency, or perform a blanket shutdown. Customizable to allow for group or individual shutdowns, however
+                    you wish to organize your systems. Written in <span className={classes.Bold}> C#</span> with
                     <span className={classes.Bold}> WPF</span>.</p>
                 <ul className={classes.List}>
                     <li>Solo professional project</li>
