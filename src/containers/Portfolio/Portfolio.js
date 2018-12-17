@@ -8,6 +8,7 @@ import hikersWatchLogo from '../../assets/portfolio/logos/hikersWatchLogo.jpg';
 import shuckShareLogo from '../../assets/portfolio/logos/shuckShareLogo.jpg';
 import authTemplateLogo from '../../assets/portfolio/logos/authTemplateLogo.png';
 import burgerBuilderLogo from '../../assets/portfolio/logos/burgerBuilderLogo.jpg';
+import expireGuardLogo from '../../assets/portfolio/logos/expireGuardLogo.jpg';
 import funCalcLogo from '../../assets/portfolio/logos/funCalcLogo.jpg';
 import gctLogo from '../../assets/portfolio/logos/gctLogo.jpg';
 import gctUiLogo from '../../assets/portfolio/logos/gctUiLogo.png';
@@ -15,7 +16,16 @@ import goldLogo from '../../assets/portfolio/logos/goldLogo.jpg';
 import goldUiLogo from '../../assets/portfolio/logos/goldUiLogo.jpg';
 import liquidLabReactLogo from '../../assets/portfolio/logos/liquidLabReactLogo.jpg';
 import liquidLabJavaLogo from '../../assets/portfolio/logos/liquidLabJavaLogo.jpg';
+import localWeatherLogo from '../../assets/portfolio/logos/localWeather.jpg';
+import motivationMachineLogo from '../../assets/portfolio/logos/motivationMachine.jpg';
 import shutdownLogo from '../../assets/portfolio/logos/shutdownLogo.jpg';
+import elbuLogo from '../../assets/portfolio/logos/elbuLogo.jpg';
+import twitchStreamLogo from '../../assets/portfolio/logos/twitchStreamLogo.jpg';
+import updatePlusConsoleLogo from '../../assets/portfolio/logos/updatePlusConsole.jpg';
+import updatePlusManagerLogo from '../../assets/portfolio/logos/updatePlusManager.jpg';
+import versioncheckLogo from '../../assets/portfolio/logos/versioncheckLogo.jpg';
+import wikiViewerLogo from '../../assets/portfolio/logos/wikiViewerLogo.png';
+import yahtzeeLogo from '../../assets/portfolio/logos/yahtzeeLogo.jpg';
 import HoveredLogo from "../../components/Projects/HoveredLogo/HoveredLogo";
 import GoldESP from "../../components/Projects/Project/GoldESP";
 import GCT from "../../components/Projects/Project/GCT";
@@ -32,6 +42,16 @@ import LiquidLabReact from "../../components/Projects/Project/LiquidLabReact";
 import LiquidLab from "../../components/Projects/Project/LiquidLab";
 import Scoreboard from "../../components/Projects/Project/Scoreboard";
 import ShutdownInitiator from "../../components/Projects/Project/ShutdownInitiator";
+import EventLogBackup from "../../components/Projects/Project/EventLogBackup";
+import VersionCheck from "../../components/Projects/Project/VersionCheck";
+import ExpireGuard from "../../components/Projects/Project/ExpireGuard";
+import UpdatePlusConsole from "../../components/Projects/Project/UpdatePlusConsole";
+import UpdatePlusManager from "../../components/Projects/Project/UpdatePlusManager";
+import MotivationMachine from "../../components/Projects/Project/MotivationMachine";
+import LocalWeather from "../../components/Projects/Project/LocalWeather";
+import TwitchStream from "../../components/Projects/Project/TwitchStream";
+import WikiView from "../../components/Projects/Project/WikiView";
+import Yahtzee from "../../components/Projects/Project/Yahtzee";
 
 const SHOW_PORTFOLIO_HEIGHT = 120;
 
@@ -68,6 +88,8 @@ class Portfolio extends React.Component {
           acidRain: { display: false, expanded: false},
           authTemplate: {display: false, expanded: false},
           burgerBuilder: {display: false, expanded: false},
+          elbu: {display: false, expanded: false},
+          expireGuard: {display: false, expanded: false},
           funCalc: {display: false, expanded: false},
           gct: { display: false, expanded: false},
           gctui: { display: false, expanded: false},
@@ -76,10 +98,18 @@ class Portfolio extends React.Component {
           hikersWatch: {display: false, expanded: false},
           liquidLabReact: { display: false, expanded: false},
           liquidLabJava: { display: false, expanded: false},
+          localWeather: { display: false, expanded: false},
+          motivationMachine: { display: false, expanded: false},
+          twitchStream: { display: false, expanded: false},
           scoreboard: {display: false, expanded: false},
           scoreboardConfig: {display: false, expanded: false},
           shuckShare: {display: false, expanded: false},
-          shutdown: {display: false, expanded: false}
+          shutdown: {display: false, expanded: false},
+          updatePlusConsole: {display: false, expanded: false},
+          updatePlusManager: {display: false, expanded: false},
+          versionCheck: {display: false, expanded: false},
+          wikiViewer: {display: false, expanded: false},
+          yahtzee: {display: false, expanded: false}
       }
     };
 
@@ -102,8 +132,18 @@ class Portfolio extends React.Component {
                 setTimeout(() => this.setState({projects: {...this.state.projects, shuckShare: {display: true,  expanded: false}}}), 1600);
                 setTimeout(() => this.setState({projects: {...this.state.projects, authTemplate: {display: true,  expanded: false}}}), 1800);
                 setTimeout(() => this.setState({projects: {...this.state.projects, shutdown: {display: true,  expanded: false}}}), 2000);
-                setTimeout(() => this.setState({projects: {...this.state.projects, burgerBuilder: {display: true,  expanded: false}}}), 2200);
-                setTimeout(() => this.setState({projects: {...this.state.projects, funCalc: {display: true,  expanded: false}}}), 2400);
+                setTimeout(() => this.setState({projects: {...this.state.projects, elbu: {display: true,  expanded: false}}}), 2200);
+                setTimeout(() => this.setState({projects: {...this.state.projects, versionCheck: {display: true,  expanded: false}}}), 2400);
+                setTimeout(() => this.setState({projects: {...this.state.projects, expireGuard: {display: true,  expanded: false}}}), 2600);
+                setTimeout(() => this.setState({projects: {...this.state.projects, updatePlusConsole: {display: true,  expanded: false}}}), 2800);
+                setTimeout(() => this.setState({projects: {...this.state.projects, updatePlusManager: {display: true,  expanded: false}}}), 3000);
+                setTimeout(() => this.setState({projects: {...this.state.projects, motivationMachine: {display: true,  expanded: false}}}), 3200);
+                setTimeout(() => this.setState({projects: {...this.state.projects, localWeather: {display: true,  expanded: false}}}), 3400);
+                setTimeout(() => this.setState({projects: {...this.state.projects, twitchStream: {display: true,  expanded: false}}}), 3600);
+                setTimeout(() => this.setState({projects: {...this.state.projects, wikiViewer: {display: true,  expanded: false}}}), 3800);
+                setTimeout(() => this.setState({projects: {...this.state.projects, burgerBuilder: {display: true,  expanded: false}}}), 4000);
+                setTimeout(() => this.setState({projects: {...this.state.projects, funCalc: {display: true,  expanded: false}}}), 4200);
+                setTimeout(() => this.setState({projects: {...this.state.projects, yahtzee: {display: true,  expanded: false}}}), 4400);
             }
         }
         //Remove from DOM when user scrolls up
@@ -112,6 +152,8 @@ class Portfolio extends React.Component {
                     acidRain: { display: false, expanded: false},
                     authTemplate: {display: false, expanded: false},
                     burgerBuilder: {display: false, expanded: false},
+                    elbu: {display: false, expanded: false},
+                    expireGuard: {display: false, expanded: false},
                     funCalc: {display: false, expanded: false},
                     gct: { display: false, expanded: false},
                     gctui: { display: false, expanded: false},
@@ -120,10 +162,18 @@ class Portfolio extends React.Component {
                     hikersWatch: {display: false, expanded: false},
                     liquidLabReact: { display: false, expanded: false},
                     liquidLabJava: { display: false, expanded: false},
+                    localWeather: { display: false, expanded: false},
+                    motivationMachine: { display: false, expanded: false},
                     scoreboard: {display: false, expanded: false},
                     scoreboardConfig: {display: false, expanded: false},
                     shuckShare: {display: false, expanded: false},
-                    shutdown: {display: false, expanded: false}
+                    shutdown: {display: false, expanded: false},
+                    twitchStream: {display: false, expanded: false},
+                    updatePlusConsole: {display: false, expanded: false},
+                    updatePlusManager: {display: false, expanded: false},
+                    versionCheck: {display: false, expanded: false},
+                    wikiViewer: {display: false, expanded: false},
+                    yahtzee: {display: false, expanded: false}
                 } });
         }
     }
@@ -271,21 +321,111 @@ class Portfolio extends React.Component {
                     </BottomProject>
 
                     <TopProject
+                        pose={projects.elbu.display ?  "visible" : "hidden" }
+                        className={classes.Project}>
+                        {projects.elbu.expanded ? <section onClick={() => this.exitFullProject('elbu')} className={classes.Backdrop}>
+                            <EventLogBackup closing={closing} exit={this.exitFullProject} /></section> : null}
+                        <img className={classes.Project} src={elbuLogo} alt={"Event Log Backup"} />
+                        <HoveredLogo projName="elbu" title={"Event Log Backup Utility"} tech={["AutoIt"]} clicked={this.displayFullProject} />
+                    </TopProject>
+
+                    <RightProject
+                        pose={projects.versionCheck.display ?  "visible" : "hidden" }
+                        className={classes.Project}>
+                        {projects.versionCheck.expanded ? <section onClick={() => this.exitFullProject('versionCheck')} className={classes.Backdrop}>
+                            <VersionCheck closing={closing} exit={this.exitFullProject} /></section> : null}
+                        <img className={classes.Project} src={versioncheckLogo} alt={"VersionCheck"} />
+                        <HoveredLogo projName="versionCheck" title={"VersionCheck"} tech={["C#", "WPF"]} clicked={this.displayFullProject} />
+                    </RightProject>
+
+                    <LeftProject
+                        pose={projects.expireGuard.display ?  "visible" : "hidden" }
+                        className={classes.Project}>
+                        {projects.expireGuard.expanded ? <section onClick={() => this.exitFullProject('expireGuard')} className={classes.Backdrop}>
+                            <ExpireGuard closing={closing} exit={this.exitFullProject} /></section> : null}
+                        <img className={classes.Project} src={expireGuardLogo} alt={"ExpireGuard"} />
+                        <HoveredLogo projName="expireGuard" title={"ExpireGuard"} tech={["C#", "WPF"]} clicked={this.displayFullProject} />
+                    </LeftProject>
+
+                    <BottomProject
+                        pose={projects.updatePlusConsole.display ?  "visible" : "hidden" }
+                        className={classes.Project}>
+                        {projects.updatePlusConsole.expanded ? <section onClick={() => this.exitFullProject('updatePlusConsole')} className={classes.Backdrop}>
+                            <UpdatePlusConsole closing={closing} exit={this.exitFullProject} /></section> : null}
+                        <img className={classes.Project} src={updatePlusConsoleLogo} alt={"Update+ Console"} />
+                        <HoveredLogo projName="updatePlusConsole" title={"Update+ Console"} tech={["AutoIt"]} clicked={this.displayFullProject} />
+                    </BottomProject>
+
+                    <TopProject
+                        pose={projects.updatePlusManager.display ?  "visible" : "hidden" }
+                        className={classes.Project}>
+                        {projects.updatePlusManager.expanded ? <section onClick={() => this.exitFullProject('updatePlusManager')} className={classes.Backdrop}>
+                            <UpdatePlusManager closing={closing} exit={this.exitFullProject} /></section> : null}
+                        <img className={classes.Project} src={updatePlusManagerLogo} alt={"Update+ Manager"} />
+                        <HoveredLogo projName="updatePlusManager" title={"Update+ Manager"} tech={["AutoIt"]} clicked={this.displayFullProject} />
+                    </TopProject>
+
+                    <BottomProject
+                        pose={projects.motivationMachine.display ?  "visible" : "hidden" }
+                        className={classes.Project}>
+                        {projects.motivationMachine.expanded ? <section onClick={() => this.exitFullProject('motivationMachine')} className={classes.Backdrop}>
+                            <MotivationMachine closing={closing} exit={this.exitFullProject} /></section> : null}
+                        <img className={classes.Project} src={motivationMachineLogo} alt={"Motivation Machine"} />
+                        <HoveredLogo projName="motivationMachine" title={"Motivation Machine"} tech={["JavaScript", "HTML/CSS"]} clicked={this.displayFullProject} />
+                    </BottomProject>
+
+                    <RightProject
+                        pose={projects.localWeather.display ?  "visible" : "hidden" }
+                        className={classes.Project}>
+                        {projects.localWeather.expanded ? <section onClick={() => this.exitFullProject('localWeather')} className={classes.Backdrop}>
+                            <LocalWeather closing={closing} exit={this.exitFullProject} /></section> : null}
+                        <img className={classes.Project} src={localWeatherLogo} alt={"Local Weather"} />
+                        <HoveredLogo projName="localWeather" title={"Local Weather"} tech={["JavaScript", "HTML/CSS"]} clicked={this.displayFullProject} />
+                    </RightProject>
+
+                    <LeftProject
+                        pose={projects.twitchStream.display ?  "visible" : "hidden" }
+                        className={classes.Project}>
+                        {projects.twitchStream.expanded ? <section onClick={() => this.exitFullProject('twitchStream')} className={classes.Backdrop}>
+                            <TwitchStream closing={closing} exit={this.exitFullProject} /></section> : null}
+                        <img className={classes.Project} src={twitchStreamLogo} alt={"Twitch Stream"} />
+                        <HoveredLogo projName="twitchStream" title={"Twitch Stream"} tech={["JavaScript", "HTML/CSS"]} clicked={this.displayFullProject} />
+                    </LeftProject>
+
+                    <TopProject
+                        pose={projects.wikiViewer.display ?  "visible" : "hidden" }
+                        className={classes.Project}>
+                        {projects.wikiViewer.expanded ? <section onClick={() => this.exitFullProject('wikiViewer')} className={classes.Backdrop}>
+                            <WikiView closing={closing} exit={this.exitFullProject} /></section> : null}
+                        <img className={classes.Project} src={wikiViewerLogo} alt={"WikiViewer"} />
+                        <HoveredLogo projName="wikiViewer" title={"Wikipedia Viewer"} tech={["JavaScript", "HTML/CSS"]} clicked={this.displayFullProject} />
+                    </TopProject>
+
+                    <BottomProject
                         pose={projects.burgerBuilder.display ?  "visible" : "hidden" }
                         className={classes.Project}>
                         {projects.burgerBuilder.expanded ? <section onClick={() => this.exitFullProject('burgerBuilder')} className={classes.Backdrop}>
                             <BurgerBuilder closing={closing} exit={this.exitFullProject} /></section> : null}
                         <img className={classes.Project} src={burgerBuilderLogo} alt={"Burger Builder"} />
                         <HoveredLogo projName="burgerBuilder" title={"Burger Builder"} tech={["React"]} clicked={this.displayFullProject} />
-                    </TopProject>
+                    </BottomProject>
 
-                    <RightProject
+                    <TopProject
                         pose={projects.funCalc.display ?  "visible" : "hidden" }
                         className={classes.Project}>
                         {projects.funCalc.expanded ? <section onClick={() => this.exitFullProject('funCalc')} className={classes.Backdrop}>
                             <FunCalc closing={closing} exit={this.exitFullProject} /></section> : null}
                         <img className={classes.Project} src={funCalcLogo} alt={"FunCalc"} />
                         <HoveredLogo projName="funCalc" title={"FunCalc"} tech={["JavaScript", "HTML/CSS"]} clicked={this.displayFullProject} />
+                    </TopProject>
+
+                    <RightProject
+                        pose={projects.yahtzee.display ?  "visible" : "hidden" }
+                        className={classes.Project}>
+                        {projects.yahtzee.expanded ? <section onClick={() => this.exitFullProject('yahtzee')} className={classes.Backdrop}>
+                            <Yahtzee closing={closing} exit={this.exitFullProject} /></section> : null}
+                        <img className={classes.Project} src={yahtzeeLogo} alt={"Yahtzee"} />
+                        <HoveredLogo projName="yahtzee" title={"YahtCMD"} tech={["Java"]} clicked={this.displayFullProject} />
                     </RightProject>
                 </section>
             </section>

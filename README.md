@@ -1,7 +1,3 @@
-TODO:
-
-*Portfolio page: Finish Projects
-
 NICE-TO-HAVES:
 
 -All:

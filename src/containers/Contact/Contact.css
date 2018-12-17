@@ -132,6 +132,14 @@
         width: 20vw;
     }
 
+    .ContactRow p {
+        font-size: 4vw;
+    }
+
+    .MailButton {
+        width: 100%;
+    }
+
     .Form {
         width: 90vw;
     }

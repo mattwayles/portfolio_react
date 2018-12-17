@@ -25,6 +25,8 @@ class Resume extends React.Component {
      */
     onDocumentLoadSuccess = ({ numPages }) => {
         this.setState({ numPages });
+        const view = document.getElementById("view");
+        view.scrollIntoView({ block: "start", behavior: "smooth"});
     };
 
     /**

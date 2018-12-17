@@ -2,12 +2,13 @@ import React from 'react';
 import classes from '../ProjectStyle.css';
 import updatePlusConsoleImg from '../../../assets/portfolio/expanded/update+.jpg';
 
-const updatePlusConsole = () => (
-    <section className={classes.Project}>
-            <section className={classes.ProjectDiv}>
-                <section className={classes.ImageDiv}>
-                    <img className={classes.Image} src={updatePlusConsoleImg} alt="Update+ Console"/>
-                </section>
+const PROJECT_NAME = "updatePlusConsole";
+
+const updatePlusConsole = (props) => (
+    <section className={props.closing ? classes.ProjectClosing : classes.Project}>
+        <section onClick={() => props.exit(PROJECT_NAME)} className={classes.CloseButton} />
+        <section className={classes.ProjectDiv}>
+            <section className={classes.ProjectDetails}>
                 <p className={classes.ProjectName}>Update+ User Console</p>
                 <p className={classes.ProjectDescription}>User console to execute automated Windows update packages. Written in
                     <span className={classes.Bold}> AutoIt</span>.</p>
@@ -23,6 +24,10 @@ const updatePlusConsole = () => (
                     <li><em>Source is classified U.S. Government property</em></li>
                 </ul>
             </section>
+            <section className={classes.ImageDiv}>
+                <img className={classes.Image} src={updatePlusConsoleImg} alt="Update+ Console"/>
+            </section>
+        </section>
     </section>
 );
 

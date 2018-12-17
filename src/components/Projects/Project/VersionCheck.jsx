@@ -2,12 +2,13 @@ import React from 'react';
 import classes from '../ProjectStyle.css';
 import versionCheckImg from '../../../assets/portfolio/expanded/versioncheck.jpg';
 
-const versionCheck = () => (
-    <section className={classes.Project}>
-            <section className={classes.ProjectDiv}>
-                <section className={classes.ImageDiv}>
-                    <img className={classes.Image} src={versionCheckImg} alt="VersionCheck"/>
-                </section>
+const PROJECT_NAME = "versionCheck";
+
+const versionCheck = (props) => (
+    <section className={props.closing ? classes.ProjectClosing : classes.Project}>
+        <section onClick={() => props.exit(PROJECT_NAME)} className={classes.CloseButton} />
+        <section className={classes.ProjectDiv}>
+            <section className={classes.ProjectDetails}>
                 <p className={classes.ProjectName}>VersionCheck</p>
                 <p className={classes.ProjectDescription}>Baseline comparison tool to verify
                     successful Windows Update installations. Written in <span className={classes.Bold}>C# </span>
@@ -18,6 +19,10 @@ const versionCheck = () => (
                     <li><em>Source is classified U.S. Government property</em></li>
                 </ul>
             </section>
+            <section className={classes.ImageDiv}>
+                <img className={classes.Image} src={versionCheckImg} alt="VersionCheck"/>
+            </section>
+        </section>
     </section>
 );
 
