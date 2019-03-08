@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './Certifications.css';
 import posed from "react-pose/lib/index";
 
-import ocaBadge from '../../assets/certs/oca.png';
+import ocpBadge from '../../assets/certs/ocp.png';
 import htmlBadge from '../../assets/certs/mcp_html.png';
 import win2012Badge from '../../assets/certs/mcp_win2012.png';
 import win7Badge from '../../assets/certs/mcp_win7.png';
@@ -25,14 +25,14 @@ const SHOW_APLUS_HEIGHT = 235;
  */
 const Certification = posed.section({
     visible: { opacity: 1, transition: {ease: 'easeIn', duration: TRANSITION_DURATION}},
-    hidden: { opacity: .5 },
+    hidden: { opacity: .5 }
 });
 
 const Badge = posed.img({
     hoverable: true,
     hover: {scale: 1.2, rotate: 0, transition: {ease: 'easeIn', duration: TRANSITION_DURATION / 1.5}},
     visible: { opacity: 1, rotate: 360, scale: 1,transition: {ease: 'easeIn', duration: TRANSITION_DURATION}},
-    hidden: { opacity: .25, rotate: 0, scale: .5 },
+    hidden: { opacity: .25, rotate: 0, scale: .5 }
 });
 
 /**
@@ -95,15 +95,19 @@ class Certifications extends React.Component {
             <section className={classes.Main}>
                 <section className={classes.View} id={"view"}>
                 <Certification pose={oca ? "visible" : "hidden"} className={classes.Certification}>
-                    <a href="https://education.oracle.com/oracle-certified-professional-java-se-7-programmer/trackp_155" rel="noopener noreferrer" target="_blank">
-                        <Badge pose={oca ? "visible" : "hidden"} className={classes.Badge} src={ocaBadge} alt={"OCA"} /></a>
+                    <a href="https://education.oracle.com/oracle-certified-professional-java-se-8-programmer/trackp_357" rel="noopener noreferrer" target="_blank">
+                        <Badge pose={oca ? "visible" : "hidden"} className={classes.Badge} src={ocpBadge} alt={"OCA"} /></a>
                     <section className={classes.CertificationInfo}>
-                        <a href="https://education.oracle.com/oracle-certified-professional-java-se-7-programmer/trackp_155" rel="noopener noreferrer" target="_blank">
-                            <p className={classes.Title}>Oracle Certified Associate - Java 8</p>
-                        </a>
-                        <p className={classes.Details}>This certification verifies the ability to develop clean and efficient Java applications,
-                            a proficiency in Java data types, operators, and decision control structures, and a demonstrable understanding of
-                            encapsulation, class inheritance, polymorphism, and other core concepts in Java 8.</p>
+                        <a href="https://education.oracle.com/oracle-certified-professional-java-se-8-programmer/trackp_357" rel="noopener noreferrer" target="_blank">
+                            <p className={classes.Title}>Oracle Certified Professional - Java 8</p>
+                        </a> 
+                        <p className={classes.Details}>This advanced certification verifies an ability to demonstrate the newest
+                            Java 8 language conventions. Built atop the novice Oracle Certified Associate certification, an Oracle
+                            Certified Professional is able to design and implement complex solutions using modern Java principles
+                            while adhering to standardized best practices. Oracle Java 8 Certified Professionals have proven a
+                            proficiency in advanced class design, design patterns and principles, generics and collections, functional
+                            programming (with emphasis on Java streams), internationalization, concurrency, NIO.2, JDBC, and other
+                            advanced concepts in Java 8.</p>
                     </section>
                 </Certification>
 

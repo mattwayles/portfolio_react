@@ -15,19 +15,19 @@
 }
 
 .Label {
-    color: #5f7ea2;
+    color: #0f3460;
     text-align: center;
     font-size: 4vw;
 }
 
 .ButtonDiv, .NavButtonDiv {
-    padding-top: 2vh;
+    padding-top: 3vh;
     margin: 0 auto;
     width: 80%;
     display: flex;
     flex-flow: column;
     text-align: center;
-    background-color: #FFF;
+    background-color: #fff;
 }
 
 .NavButtonDiv {

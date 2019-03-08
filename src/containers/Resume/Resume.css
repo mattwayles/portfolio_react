@@ -2,13 +2,13 @@
     padding-top: 16vh;
     width: 100%;
     text-align: center;
-    background-color: #FFF;
+    background-color: #fff;
 }
 
 .PdfDoc {
     width: 75vw;
     height: 80vh;
-    border: 3px solid #5f7ea2;
+    border: 3px solid #0f3460;
     overflow-y: auto;
     overflow-x: hidden;
     margin: 0 auto;
@@ -25,18 +25,18 @@
 
 .Pages {
     width: 100%;
-    color: #5f7ea2;
+    color: #0f3460;
     font-size: 2vw;
 }
 
 .BackArrow, .NextArrow {
-    color: #5f7ea2;
+    color: #0f3460;
     font-size: 1.5vw;
     width: 1vw;
     height: 1vw;
     line-height: 1vw;
     padding: .25vw;
-    border: 1px solid #5f7ea2;
+    border: 1px solid #0f3460;
     border-radius: 50%;
     cursor: pointer;
     transition: all .5s ease-in-out;
@@ -50,19 +50,19 @@
     display: flex;
     flex-flow: column;
     text-align: center;
-    background-color: #FFF;
+    background-color: #fff;
 }
 
 .BackArrow:hover {
     transition: all .5s ease-in-out;
     color: #fff;
-    background-color: #5f7ea2;
+    background-color: #0f3460;
 }
 
 .NextArrow:hover {
     transition: all .5s ease-in-out;
     color: #fff;
-    background-color: #5f7ea2;
+    background-color: #0f3460;
 }
 
 

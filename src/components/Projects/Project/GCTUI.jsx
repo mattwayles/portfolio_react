@@ -27,7 +27,7 @@ const GCTUI = (props) => (
                         <li>Persisting and managing state using <span className={classes.Bold}>Redux Sagas</span></li>
                         <li>Communication with the back-end API using <span className={classes.Bold}>Axios</span></li>
                     </ul>
-                    <li><em>Source is proprietary information owned by Tapestry Solutions, Inc.</em></li>
+                    <li><em>Source is proprietary information owned by Tapestry Solutions, Inc. Release by authorized request only.</em></li>
                 </ul>
             </section>
             <section className={classes.ImageDiv}>

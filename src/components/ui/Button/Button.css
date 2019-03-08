@@ -1,6 +1,6 @@
 .Button {
-    color: #5f7ea2;
-    border: 1px solid #5f7ea2;
+    color: #0f3460;
+    border: 1px solid #0f3460;
     border-radius: 50px;
     cursor: pointer;
     font: inherit;
@@ -14,12 +14,12 @@
 .Button:hover {
     transform: scale(1.1);
     color: #fff;
-    background-color: #5f7ea2;
+    background-color: #0f3460;
 }
 
 .Button::-moz-focus-inner {
-    color: #5f7ea2;
-    border: 1px solid #5f7ea2;
+    color: #0f3460;
+    border: 1px solid #0f3460;
     border-radius: 50px;
     cursor: pointer;
     font: inherit;

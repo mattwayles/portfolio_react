@@ -21,10 +21,10 @@
 
 .Topic {
     font-family: inherit;
-    color: #AAA;
+    color: #999;
     font-weight: 700;
     opacity: 1;
-    font-size: 1.5vw;
+    font-size: 2vw;
 }
 
 .FirstLetter {
@@ -37,12 +37,12 @@
 .Text {
     width: 40vw;
     font-family: inherit;
-    color: #5f7ea2;
-    font-size: 1vw;
+    color: #0f3460;
+    font-size: 1.25vw;
 }
 
 .ImageDiv {
-    margin: 1vh 2vw;
+    margin: 5vh 2vw 0;
 }
 
 .Image {

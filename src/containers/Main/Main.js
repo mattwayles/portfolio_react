@@ -34,11 +34,11 @@ class Main extends React.Component {
             line1: false,
             line2: false,
             line3: false,
-            line4: false,
+            line4: false
         },
         displayArrows: false,
         originalWelcomeImageLoaded: false,
-        coloredWelcomeImageLoaded: false,
+        coloredWelcomeImageLoaded: false
     };
 
     /**
@@ -98,7 +98,6 @@ class Main extends React.Component {
      * When display arrows are clicked, scroll to the Navigation section
      */
     scrollClick = () => {
-
         const nav = document.getElementById("nav");
         nav.scrollIntoView({block: 'start', behavior: 'smooth'});
     };

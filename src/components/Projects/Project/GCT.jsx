@@ -28,7 +28,7 @@ const gct = (props) => (
                         <li>Persisting and organizing data using <span className={classes.Bold}>MongoDB</span></li>
                         <li>Designed and implemented the API using <span className={classes.Bold}>Spring RESTful Services</span></li>
                     </ul>
-                    <li><em>Source is proprietary information owned by Tapestry Solutions, Inc.</em></li>
+                    <li><em>Source is proprietary information owned by Tapestry Solutions, Inc. Release by authorized request only.</em></li>
                 </ul>
             </section>
             <section className={classes.ImageDiv}>

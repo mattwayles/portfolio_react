@@ -4,7 +4,6 @@ import classes from './Navigation.css';
 import posed from "react-pose";
 import Auxil from "../../components/Auxil";
 import Resume from "../Resume/Resume";
-import DownArrows from "../../components/ui/DownArrows/DownArrows";
 import Button from "../../components/ui/Button/Button";
 import Portfolio from "../Portfolio/Portfolio";
 import Personal from "../Personal/Personal";
@@ -36,8 +35,8 @@ const LABEL_CONTACT_SCROLLED = "What else would you like to do while you're here
  */
 const HowCanIHelpLabel = posed.p({
     hidden: { opacity: 0, scale: 0},
-    visible: {color: "#5f7ea2", opacity: 1, scale: 1.0, transition: {ease: 'easeIn', duration: TRANSITION_DURATION}},
-    bounce: {color: "#AAA", scale: 1.2, transition: {ease: 'easeInOut', duration: BOUNCE_DURATION}}
+    visible: {color: "#0f3460", opacity: 1, scale: 1.0, transition: {ease: 'easeIn', duration: TRANSITION_DURATION}},
+    bounce: {color: "#999", scale: 1.2, transition: {ease: 'easeInOut', duration: BOUNCE_DURATION}}
 });
 
 /**
@@ -69,7 +68,7 @@ class Navigation extends React.Component {
           button3: false,
           button4: false,
           button5: false,
-          button6: false,
+          button6: false
         }
     };
 
@@ -221,7 +220,6 @@ class Navigation extends React.Component {
                         <Button visible={buttons.button4} pressed={open.collaborate} bounce={label.bounce && suggest === "collaborate"} enter={"right"} click={this.scrollClick} page={"collaborate"} label={"I want to "} span={"Work with"} suffix={" you"} />
                         <Button visible={buttons.button5} pressed={open.about} bounce={label.bounce && suggest === "about"} enter={"left"} click={this.scrollClick} page={"about"} label={"I want to "} span={"Learn more"} suffix={" about you"} />
                         <Button visible={buttons.button6} pressed={open.contact} bounce={label.bounce && suggest === "contact"} enter={"right"} click={this.scrollClick} page={"contact"} label={"I want to "} span={"Contact"} suffix={" you"} />
-                        {open.any ? <DownArrows click={this.scrollClick}/> : null}
                     </section>
                 </section>
 

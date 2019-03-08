@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Sunflower:300');
 
 :root {
-  --main-color: #5f7ea2;
+  --main-color: #0f3460;
 }
 
 body {
@@ -10,6 +10,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Sunflower', sans-serif;
-    background-color: #FFF;
+    background-color: #fff;
     z-index: 0;
 }

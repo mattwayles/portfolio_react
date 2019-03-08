@@ -15,12 +15,12 @@
     width: 50%;
     height: 4%;
     margin: 0 auto 1vh;
-    border: 1px solid #5f7ea2;
+    border: 1px solid #0f3460;
     border-radius: 25px;
     padding: 1.5vh 1.5vw;
     font-size: 1vw;
     font-family: inherit;
-    color: #5f7ea2;
+    color: #0f3460;
     outline: none;
     transition: all 500ms ease-in-out;
     background-color: #EEE;
@@ -38,7 +38,7 @@
 
 .FormInput:hover, .FormMessage:hover {
     transition: all 500ms ease-in-out;
-    box-shadow: 0 0 2px 2px #5f7ea2;
+    box-shadow: 0 0 2px 2px #0f3460;
 }
 
 .Button, .MailButton {
@@ -55,7 +55,7 @@
     width: 100%;
     text-align: center;
     font-size: 2vw;
-    color: #5f7ea2;
+    color: #0f3460;
 }
 
 .View {
@@ -99,17 +99,17 @@
 }
 
 .ContactRow p {
-    color: #5f7ea2;
+    color: #0f3460;
     padding: 0 2vw;
     font-size: 1.5vw;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #AAA;
+    color: #999;
     opacity: .9; /* Firefox */
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: #AAA;
+    color: #999;
 }
 
 @media only screen and (max-width: 1280px) {
@@ -147,12 +147,12 @@
     .FormInput, .FormMessage, .FormError, .FormMessageError {
         width: 80%;
         margin: 0 auto 2vh;
-        border: 1px solid #5f7ea2;
+        border: 1px solid #0f3460;
         border-radius: 25px;
         padding: 1.5vh 1.5vw;
         font-size: 3.5vw;
         font-family: inherit;
-        color: #5f7ea2;
+        color: #0f3460;
         outline: none;
         transition: all 500ms ease-in-out;
     }

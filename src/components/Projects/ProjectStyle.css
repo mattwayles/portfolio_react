@@ -1,5 +1,5 @@
 .Bold {
-    color: #AAA;
+    color: #999;
     font-weight: 600;
     opacity: 1;
 }
@@ -52,14 +52,14 @@
 .ProjectName {
     font-weight: 700;
     font-size: 2vw;
-    color: #AAA;
+    color: #999;
     width: 40vw;
 }
 
 .ProjectDescription, .List {
     width: 40vw;
     font-size: 1vw;
-    color: #5f7ea2;
+    color: #0f3460;
     text-shadow: none;
 }
 

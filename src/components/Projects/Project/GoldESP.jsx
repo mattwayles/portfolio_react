@@ -27,6 +27,7 @@ const goldesp = (props) => (
                                 <li>Bug Fixes</li>
                                 <li>Strangulation from monolithic to SOA micro-service architecture</li>
                             </ul>
+                            <li><em>Source is proprietary information owned by Tapestry Solutions, Inc. Release by authorized request only.</em></li>
                         </ul>
                 </section>
                 <section className={classes.ImageDiv}>

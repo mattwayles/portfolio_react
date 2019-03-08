@@ -24,7 +24,7 @@ const goldESPUI = (props) => (
                         <li>Feature Inclusion</li>
                         <li>Bug Fixes</li>
                     </ul>
-                    <li><em>Source is proprietary information owned by Tapestry Solutions, Inc.</em></li>
+                    <li><em>Source is proprietary information owned by Tapestry Solutions, Inc. Release by authorized request only.</em></li>
                 </ul>
             </section>
             <section className={classes.ImageDiv}>
