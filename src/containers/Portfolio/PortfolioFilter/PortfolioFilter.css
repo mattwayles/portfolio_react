@@ -1,0 +1,74 @@
+.Main {
+    display: flex;
+    flex-flow: column;
+    background-color: #fff;
+}
+
+.Filter {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+
+}
+
+.FilterLabel, .FilterOptionLabel, .FilterOptionOn, .FilterOptionOff {
+    color: #0f3460;
+}
+
+.FilterLabel, .FilterOptionOn, .FilterOptionOff {
+    cursor: pointer;
+    -webkit-transition: color .5s;
+    -moz-transition:    color .5s;
+    -o-transition:      color .5s;
+    transition: color .5s;
+}
+
+.FilterLabel {
+    display: inline-table;
+    font-size: 2vw;
+    padding-left: .5vw;
+}
+
+.FilterLabel:hover, .FilterOptionOn:hover, .FilterOptionOff:hover {
+    color: #999;
+}
+
+.DownArrow, .DownArrowOpen {
+    margin-left: 2vw;
+    cursor: pointer;
+    width: 1vw;
+    transition: transform .4s linear;
+}
+
+.DownArrow {
+    transform: rotate(0deg);
+}
+
+.DownArrowOpen {
+    transform: rotate(180deg);
+}
+
+.Expanded {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 80vw;
+    margin: 0 auto;
+}
+
+.FilterOptionLabel {
+    font-size: 1.25vw;
+    margin-right: 1vw;
+    font-weight: bold;
+}
+
+.FilterOptionOn, .FilterOptionOff {
+    font-size: 1vw;
+    margin-right: 1.5vw;
+}
+
+.FilterOptionOn {
+    font-weight: bold;
+    text-decoration: underline;
+}

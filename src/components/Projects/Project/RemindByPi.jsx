@@ -20,11 +20,10 @@ const remindByPi = (props) => (
                 <ul className={classes.List}>
                     <li>Solo Recreational Project</li>
                     <ul className={classes.InnerList}>
-                        <li>Raspberry Pi 1+ Integration</li>
+                        <li>Raspberry Pi Integration</li>
                         <li>Publicly accessible React web application</li>
                         <li>Firebase database authentication and support</li>
-                        <li><em>Please contact me for Source.</em></li>
-                    </ul>
+                    </ul> 
                 </ul>
             </section>
             <section className={classes.ImageDiv}>
@@ -32,6 +31,8 @@ const remindByPi = (props) => (
                 <section className={classes.Buttons}>
                     <a href="http://remindbypi.firebaseapp.com" rel="noopener noreferrer"
                        target="_blank"><Button classes={classes.Button} visible={true} pressed={false} enter={"right"} label={"Visit Website"} /></a>
+                    <a href="https://github.com/mattwayles/pi_scripts" rel="noopener noreferrer"
+                       target="_blank"><Button classes={classes.Button} visible={true} pressed={false} enter={"right"} label={"Open Source"} /></a>
                 </section>
             </section>
         </section>

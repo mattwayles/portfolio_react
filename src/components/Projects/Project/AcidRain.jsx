@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from '../ProjectStyle.css';
+import Button from "../../ui/Button/Button";
 import acidRainImg from '../../../assets/portfolio/expanded/acidRain.png';
 
 const PROJECT_NAME = "acidRain";
@@ -27,6 +28,10 @@ const acidRain = (props) => (
             </section>
             <section className={classes.ImageDiv}>
                 <img className={classes.Image} src={acidRainImg} alt="Acid Rain"/>
+                <section className={classes.Buttons}>
+                    <a href="https://github.com/mattwayles/acidrain" rel="noopener noreferrer"
+                       target="_blank"><Button classes={classes.Button} visible={true} pressed={false} enter={"right"} label={"Open Source"} /></a>
+                </section>
             </section>
         </section>
     </section>
