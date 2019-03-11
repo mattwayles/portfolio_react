@@ -1,5 +1,4 @@
 import React from 'react';
-import Auxil from '../../../components/Auxil';
 import downArrowImg from '../../../assets/arrows/downArrow.png';
 import classes from './PortfolioFilter.css';
 
@@ -8,23 +7,28 @@ import classes from './PortfolioFilter.css';
  */
 class PortfolioFilter extends React.Component {
     state = {
-        open: false
+        open: false,
+        closing: false
     };
 
     /**
      * Handler the user clicking the Filter label, which opens the filter options menu
      */
     filterLabelClick = () => {
-        this.setState({ open: !this.state.open });
+        if (this.state.open) {
+            this.setState({ open: false, closing: true });
+            setTimeout(() => this.setState({ closing: false }), 1000);
+        } else {
+            this.setState({ open: true });
+        }
     };
 
     /**
      * Render a clickable Filter label. When clicked, the user is presented with a list of filter options separated
      * into logical sections
-     * @returns {XML}
      */
     render() {
-        const {open} = this.state;
+        const {open, closing} = this.state;
         const {click, filters} = this.props;
 
         //Mapping source for Source Availability section
@@ -69,8 +73,7 @@ class PortfolioFilter extends React.Component {
                     <p className={classes.FilterLabel} onClick={this.filterLabelClick}>
                         {filters.length > 0 ? "Filter (" + filters.length + ")" : "Filter"}</p>
                 </section>
-                {open ?
-                    <Auxil>
+                    <section className={open ? classes.ExpandedSection : closing ? classes.ExpandedSectionClosing : classes.ExpandedSectionClosed}>
                         <section className={classes.Expanded}>
                             <p className={classes.FilterOptionLabel}>Source Availability:</p>
                             {sourceAvailability.map(option => {
@@ -99,7 +102,7 @@ class PortfolioFilter extends React.Component {
                                           onClick={() => click(option[0])}>{option[1]}</p>
                             })}
                         </section>
-                    </Auxil> : null}
+                    </section>
             </section>
         );
     }

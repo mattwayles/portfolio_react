@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from '../ProjectStyle.css';
-//import hikersWatchImg from '../../../assets/portfolio/expanded/hikersWatch.png';
+import deadCodeImg from '../../../assets/portfolio/expanded/deadCodeImg.png';
 
 const PROJECT_NAME = "deadCode";
 
@@ -26,7 +26,7 @@ const deadCode = (props) => (
                 </ul> 
             </section>
             <section className={classes.ImageDiv}>
-                {/*<img className={classes.Image} src={hikersWatchImg} alt="Hiker's Watch"/>*/}
+                <img className={classes.Image} src={deadCodeImg} alt="Dead Code"/>
             </section>
         </section>
     </section>
