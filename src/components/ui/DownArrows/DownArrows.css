@@ -2,7 +2,7 @@
     width: 100%;
     height: 15vh;
     position: relative;
-    background-color: #fff;
+    background-color: #d5dde2;
     z-index: 0;
 }
 
@@ -14,7 +14,7 @@
     width: 20vw;
     text-align: center;
     position: relative;
-    background-color: #fff;
+    background-color: #d5dde2;
     z-index: 0;
     cursor: pointer;
 }

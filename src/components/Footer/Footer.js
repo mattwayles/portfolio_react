@@ -17,7 +17,6 @@ const footer = () => (
             </section>
             <p>© 11111100011</p>
             <p>All content is original and developed independently by Matthew Wayles.</p>
-            <p>Feel free to use it, though. I consider that  a compliment.</p>
         </section>
     </section>
 

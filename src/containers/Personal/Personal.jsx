@@ -83,19 +83,18 @@ class Personal extends React.Component {
                             From the moment I stepped on the airplane to Madrid, I've had an insatiable travel bug that is always open to new experiences, lifestyles, and perspectives.
                             Apart from living in Spain for five weeks, I took a post-graduation tour of Europe in the Summer of 2013.
                             The tour began in Ireland, and extended to include major cities in Italy, Switzerland, Germany, and the Netherlands.<br />
-                            &emsp;In the Fall of 2015, I was given the opportunity to travel back to Germany and explore areas of the Czech Republic and Austria.
-                            I stayed put in America until 2017, when I joined my girlfriend's bucket-list quest to visit the Seven Wonders of the World.
-                            This trip was two weeks in Peru, capped off with a walk through Machu Picchu and a hike up the towering Wayna Picchu.
-                            Although I have no current trips planned, traveling has become an important part of my life, and an integral piece of who I am today.
+                            In the Fall of 2015, I was given the opportunity to travel back to Germany and explore areas of the Czech Republic and Austria.
+                            I stayed put in America until 2017, when I spent two weeks in Peru, capped off with a walk through Machu Picchu and a hike up the towering Wayna Picchu.
+                            Since that vacation, my trips have almost exclusively been to tropical islands in the Caribbean. Traveling has become an important part of my life, and an integral piece of who I am today.
                             </section>
                     </Section>
                     <Section pose={activities ? "visible" : "hiddenLeft"} className={classes.FlexRowReverse}>
                         <section className={classes.Text}>
                             <p className={classes.Topic}>Current Activities</p>
-                            <span className={classes.FirstLetter}>W</span>hen I'm not traveling or learning new technologies, I enjoy spending time with my girlfriend of 2.5 years, Ryan.
-                            Her thirst for adventure and adrenaline nearly outweighs mine, and we take pleasure in facing new experiences together. I stay active by wakeboarding in the summer,
-                            snowboarding in the winter, and running throughout the year. I make the best of the unique area I live in by frequenting the beach and the waterways whenever possible,
-                            which has fostered an interest in fishing and fresh seafood.
+                            <span className={classes.FirstLetter}>W</span>hen I'm not traveling or learning new technologies, I enjoy spending time in the Colorado Rockies.
+                            I stay active by mountain biking and hiking in the summer, snowboarding and snowshoeing in the winter,
+                            and trail running throughout the year. Whenever I have the chance to travel to an ocean,
+                            you'll find me surfing, wakeboarding, and scuba diving.
                         </section>
                         <section className={classes.ImageDiv}>
                             <img className={classes.Image} src={activitiesImg} alt="Current Activities" />

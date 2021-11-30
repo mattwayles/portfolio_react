@@ -114,23 +114,27 @@ class Main extends React.Component {
                         <DescriptionLine
                             pose={description.line1 ? 'descVisible' : 'descHidden'}
                             className={classes.Description}>
-                            <em>✓&emsp;<span className={classes.Bold}>Full-Stack</span> Software Engineer</em>
+                            <em>✓&emsp;<span className={classes.Bold}>Full-Stack</span> Senior Software Engineer</em>
                         </DescriptionLine>
                         <DescriptionLine
                             pose={description.line2 ? 'descVisible' : 'descHidden'}
+                            className={classes.Description}>
+                            <em>✓&emsp;9 yrs <span className={classes.Bold}>Professional</span> and
+                                <span className={classes.Bold}> Mentoring</span> Experience</em>
+                        </DescriptionLine>
+                        <DescriptionLine
+                            pose={description.line3 ? 'descVisible' : 'descHidden'}
                             className={classes.Description}>
                             <em>✓&emsp;Cross-platform <span className={classes.Bold}>Desktop</span>,
                                 <span className={classes.Bold}> Mobile</span>, and <span className={classes.Bold}>Web</span> Applications</em>
                         </DescriptionLine>
                         <DescriptionLine
-                            pose={description.line3 ? 'descVisible' : 'descHidden'}
-                            className={classes.Description}>
-                            <em>✓&emsp;10+ yrs <span className={classes.Bold}>Professional</span> and <span className={classes.Bold}>Educational</span> Experience</em>
-                        </DescriptionLine>
-                        <DescriptionLine
                             pose={description.line4 ? 'descVisible' : 'descHidden'}
                             className={classes.Description}>
-                            <em>✓&emsp;Available for <span className={classes.Bold}>Freelance</span> projects and <span className={classes.Bold}>Consulting</span></em>
+                            <em>✓&emsp;Available for
+                                <span className={classes.Bold}> Employment</span>,
+                                <span className={classes.Bold}> Freelance</span> projects and
+                                <span className={classes.Bold}> Consulting</span></em>
                         </DescriptionLine>
                     </section>
                 </WelcomeImage>

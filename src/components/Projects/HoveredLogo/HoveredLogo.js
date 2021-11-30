@@ -14,7 +14,7 @@ const hoveredLogo = (props) => (
                     return <p key={item} className={classes.ProjectTech}><em>{item}</em></p>
                 })}
             </section>
-            <section className={classes.Expand} onClick={() => props.clicked(props.projName)} />
+        <p className={classes.LearnMore} onClick={() => props.clicked(props.projName)}><em>Learn More</em></p>
     </section>
 );
 

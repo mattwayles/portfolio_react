@@ -22,7 +22,7 @@ const SHOW_BUTTON5_HEIGHT = 87;
 const SHOW_BUTTON6_HEIGHT = 92;
 const MAIN_SCROLLED = 125;
 
-const LABEL_ORIGINAL = "How can I help you?";
+const LABEL_ORIGINAL = "Welcome! How can I help you?";
 const LABEL_RESUME_SCROLLED = "If you liked my resume, read more about my certifications!";
 const LABEL_CERTIFICATIONS_SCROLLED = "I've been busy lately, check out my portfolio!";
 const LABEL_PORTFOLIO_SCROLLED = "Interested in collaborating on a project? Send me a message!";
@@ -36,7 +36,7 @@ const LABEL_CONTACT_SCROLLED = "What else would you like to do while you're here
 const HowCanIHelpLabel = posed.p({
     hidden: { opacity: 0, scale: 0},
     visible: {color: "#0f3460", opacity: 1, scale: 1.0, transition: {ease: 'easeIn', duration: TRANSITION_DURATION}},
-    bounce: {color: "#999", scale: 1.2, transition: {ease: 'easeInOut', duration: BOUNCE_DURATION}}
+    bounce: {color: "#999", scale: 1.1, transition: {ease: 'easeInOut', duration: BOUNCE_DURATION}}
 });
 
 /**
@@ -47,7 +47,7 @@ class Navigation extends React.Component {
         scroll: 0,
         documentHeight: 0,
         windowHeight: 0,
-        suggest: null,
+        suggest: "",
         label: {
             text: LABEL_ORIGINAL,
             display: false,
@@ -126,6 +126,16 @@ class Navigation extends React.Component {
     backToNavClick = () => {
         const nav = document.getElementById("nav");
         nav.scrollIntoView({block: "start", behavior: "smooth"});
+        setTimeout(() => this.setState({
+            open: {
+                any: false,
+                resume: false,
+                contact: false,
+                portfolio: false,
+                collaborate: false,
+                certifications: false
+            }
+        }), 250);
     };
 
     /**
@@ -214,12 +224,16 @@ class Navigation extends React.Component {
                         </HowCanIHelpLabel>
                     </section>
                     <section className={classes.ButtonDiv}>
-                        <Button visible={buttons.button1} pressed={open.resume} enter={"left"} click={this.scrollClick} page={"resume"} label={"I want to view your "} span={"Resume"} />
-                        <Button visible={buttons.button2} pressed={open.certifications} bounce={label.bounce && suggest === "certifications"} enter={"right"} click={this.scrollClick} page={"certifications"} label={"I want to view your "} span={"Certifications"} />
-                        <Button visible={buttons.button3} pressed={open.portfolio} bounce={label.bounce && suggest === "portfolio"}  enter={"left"} click={this.scrollClick} page={"portfolio"} label={"I want to view your "} span={"Portfolio"} />
-                        <Button visible={buttons.button4} pressed={open.collaborate} bounce={label.bounce && suggest === "collaborate"} enter={"right"} click={this.scrollClick} page={"collaborate"} label={"I want to "} span={"Work with"} suffix={" you"} />
-                        <Button visible={buttons.button5} pressed={open.about} bounce={label.bounce && suggest === "about"} enter={"left"} click={this.scrollClick} page={"about"} label={"I want to "} span={"Learn more"} suffix={" about you"} />
-                        <Button visible={buttons.button6} pressed={open.contact} bounce={label.bounce && suggest === "contact"} enter={"right"} click={this.scrollClick} page={"contact"} label={"I want to "} span={"Contact"} suffix={" you"} />
+                        <section className={classes.ButtonSection}>
+                            <Button visible={buttons.button1} pressed={open.resume} enter={"left"} click={this.scrollClick} page={"resume"} label={"I want to view your "} span={"Resume"} />
+                            <Button visible={buttons.button2} pressed={open.certifications} bounce={label.bounce && suggest === "certifications"} enter={"left"} click={this.scrollClick} page={"certifications"} label={"I want to view your "} span={"Certifications"} />
+                            <Button visible={buttons.button3} pressed={open.portfolio} bounce={label.bounce && suggest === "portfolio"}  enter={"left"} click={this.scrollClick} page={"portfolio"} label={"I want to view your "} span={"Portfolio"} />
+                        </section>
+                        <section className={classes.ButtonSection}>
+                            <Button visible={buttons.button4} pressed={open.collaborate} bounce={label.bounce && suggest === "collaborate"} enter={"right"} click={this.scrollClick} page={"collaborate"} label={"I want to "} span={"Work with"} suffix={" you"} />
+                            <Button visible={buttons.button5} pressed={open.about} bounce={label.bounce && suggest === "about"} enter={"right"} click={this.scrollClick} page={"about"} label={"I want to "} span={"Learn more"} suffix={" about you"} />
+                            <Button visible={buttons.button6} pressed={open.contact} bounce={label.bounce && suggest === "contact"} enter={"right"} click={this.scrollClick} page={"contact"} label={"I want to "} span={"Contact"} suffix={" you"} />
+                        </section>
                     </section>
                 </section>
 
@@ -230,7 +244,7 @@ class Navigation extends React.Component {
                 {open.collaborate ? <Contact collab={true} scrollPercent={scrollPercent}/> : null}
                 {open.contact ? <Contact collab={false} scrollPercent={scrollPercent}/> : null}
                 {open.any ? <section className={classes.NavButtonDiv}>
-                        <Button visible={true} enter={"right"} click={this.backToNavClick} label={"Go back to the "} span={"Navigation Panel"} />
+                        <Button className={classes.NavButton} visible={true} enter={"bottom"} click={this.backToNavClick} label={"Go back to the "} span={"Navigation Panel"} />
                     </section> : null}
             </Auxil>
 

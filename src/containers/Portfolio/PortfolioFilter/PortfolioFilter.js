@@ -35,13 +35,13 @@ class PortfolioFilter extends React.Component {
         const sourceAvailability = [
             ['openSource', 'Open Source']
         ];
-        
+
         //Mapping source for Collaboration section
         const collaboration = [
             ['solo', 'Solo'],
             ['team', 'Team']
         ];
-        
+
         //Mapping source for Project Type section
         const projectType = [
             ['educational', 'Educational'],
@@ -49,7 +49,7 @@ class PortfolioFilter extends React.Component {
             ['professional', 'Professional'],
             ['recreational', 'Recreational']
         ];
-        
+
         //Mapping source for Technologies section
         const technologies = [
             ['android', 'Android'],
@@ -68,11 +68,12 @@ class PortfolioFilter extends React.Component {
 
         return (
             <section className={classes.Main}  id={"view"}>
-                <section className={classes.Filter}>
-                    <img className={open ? classes.DownArrowOpen : classes.DownArrow} src={downArrowImg} alt="Expand" />
-                    <p className={classes.FilterLabel} onClick={this.filterLabelClick}>
-                        {filters.length > 0 ? "Filter (" + filters.length + ")" : "Filter"}</p>
-                </section>
+                <section className={classes.FilterSection}>
+                    <section className={classes.Filter}>
+                        <img onClick={this.filterLabelClick} className={open ? classes.DownArrowOpen : classes.DownArrow} src={downArrowImg} alt="Expand" />
+                        <p className={classes.FilterLabel} onClick={this.filterLabelClick}>
+                            {filters.length > 0 ? "Filtering Results (" + filters.length + ")" : "Filter Results"}</p>
+                    </section>
                     <section className={open ? classes.ExpandedSection : closing ? classes.ExpandedSectionClosing : classes.ExpandedSectionClosed}>
                         <section className={classes.Expanded}>
                             <p className={classes.FilterOptionLabel}>Source Availability:</p>
@@ -103,6 +104,7 @@ class PortfolioFilter extends React.Component {
                             })}
                         </section>
                     </section>
+                </section>
             </section>
         );
     }

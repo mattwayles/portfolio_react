@@ -44,24 +44,14 @@
     font-size: .8vw;
     padding: .25vh .25vw;
     font-family: inherit;
-    border: 1px solid white;
+    border: 1px solid #d5dde2;
     border-radius: .5vw;
 }
 
-.Expand {
-    position: absolute;
-    right: 10%;
-    top: 10%;
-    height: 5%;
-    width: 5%;
+.LearnMore {
     cursor: pointer;
-    background-image: url("../../../assets/arrows/expand.png");
-    background-size: cover;
-}
-
-.Expand:hover {
-    background-image: url("../../../assets/arrows/expandHover.png");
-    background-size: cover;
+    text-decoration: underline;
+    color: #00b9ff;
 }
 
 @keyframes fadeIn {

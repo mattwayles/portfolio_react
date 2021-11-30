@@ -1,8 +1,8 @@
 .Main {
     padding: 16vh 0;
     margin: 0 auto;
-    width: 80%;
-    background-color: #fff;
+    width: 100%;
+    background-color: #d5dde2;
 }
 
 .Form {
@@ -23,7 +23,7 @@
     color: #0f3460;
     outline: none;
     transition: all 500ms ease-in-out;
-    background-color: #EEE;
+    background-color: #fcfcfc;
 }
 
 .FormMessage, .FormMessageError {
@@ -69,6 +69,7 @@
 }
 
 .Logo {
+    border-radius: 100%;
     width: 10vw;
 }
 

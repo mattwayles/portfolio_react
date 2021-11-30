@@ -1,8 +1,7 @@
 .Main {
-    padding-top: 16vh;
     width: 100%;
     text-align: center;
-    background-color: #fff;
+    background-color: #d5dde2;
 }
 
 .PdfDoc {
@@ -46,11 +45,11 @@
     text-decoration: none;
     margin: 0 auto;
     padding-top: 2vh;
-    width: 80vw;
+    width: 30vw;
     display: flex;
     flex-flow: column;
     text-align: center;
-    background-color: #fff;
+    background-color: #d5dde2;
 }
 
 .BackArrow:hover {

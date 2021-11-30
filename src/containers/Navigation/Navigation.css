@@ -1,39 +1,58 @@
 .MainNavigation {
-    height: 100vh;
-    background-color: #fff;
+    height: 70vh;
+    background-color: #d5dde2;
     position: relative;
     z-index: 0;
 }
 
 .LabelDiv {
     margin: 0 auto;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
     height: 30vh;
     width: 80%;
-    position: relative;
-    background-color: #fff;
-    border: 1px solid white;
+    background-color: #d5dde2;
+    border: 1px solid #d5dde2;
 }
 
 .Label {
     color: #0f3460;
     text-align: center;
-    font-size: 4vw;
+    font-size: 3.5vw;
 }
 
-.ButtonDiv, .NavButtonDiv {
-    padding-top: 3vh;
+.ButtonDiv {
     margin: 0 auto;
     width: 80%;
     display: flex;
-    flex-flow: column;
+    flex-flow: row;
+    justify-content: space-between;
     text-align: center;
-    background-color: #fff;
+    background-color: #d5dde2;
+}
+
+.ButtonSection {
+    display: flex;
+    flex-flow: column;
+    width: 48%
 }
 
 .NavButtonDiv {
-     margin: 0 auto;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #d5dde2;
     padding: 2vh 0 5vh;
- }
+}
+
+.NavButton {
+    width: 30%
+}
 
 @media only screen and (max-width: 599px) {
     .MainNavigation {

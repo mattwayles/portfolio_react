@@ -64,21 +64,9 @@ const SHOW_PORTFOLIO_HEIGHT = 120;
 /**
  * React-Pose poses for Portfolio projects [hidden, visible] (4 variations)
  */
-const LeftProject = posed.section({
-    hidden: { opacity: 0, x: "-10vw"},
-    visible: { opacity: 1, x: 0, transition: {ease: 'easeIn', duration: 1000}}
-});
-const TopProject = posed.section({
-    hidden: { opacity: 0, y: "-20vh"},
-    visible: { opacity: 1, y: 0, transition: {ease: 'easeIn', duration: 1000}}
-});
 const BottomProject = posed.section({
-    hidden: { opacity: 0, y: "20vh"},
+    hidden: { opacity: 0, y: "50vh"},
     visible: { opacity: 1, y: 0, transition: {ease: 'easeIn', duration: 1000}}
-});
-const RightProject = posed.section({
-    hidden: { opacity: 0, x: "10vw"},
-    visible: { opacity: 1, x: 0, transition: {ease: 'easeIn', duration: 1000}}
 });
 
 class Projects extends React.Component {
@@ -243,22 +231,22 @@ class Projects extends React.Component {
         return(
             <section className={classes.Main}>
                 <section className={classes.ProjectDiv}>
-                    {Object.keys(projectsToRender).indexOf('gold') >= 0 ? <LeftProject
+                    {Object.keys(projectsToRender).indexOf('gold') >= 0 ? <BottomProject
                         pose={projects.gold.display ?  "visible" : "hidden" }
                         className={classes.Project}>
                         {projects.gold.expanded ? <section onClick={() => this.exitFullProject('gold')} className={classes.Backdrop}>
                             <GoldESP closing={closing} exit={this.exitFullProject} /></section> : null}
                         <img className={classes.Project} src={goldLogo} alt={"GOLDesp Server"} />
                         <HoveredLogo projName="gold" title={"GOLDesp (Server)"} tech={["Java", "Spring"]} clicked={this.displayFullProject} />
-                    </LeftProject> : null}
-                    {Object.keys(projectsToRender).indexOf('goldui') >= 0 ? <TopProject
+                    </BottomProject> : null}
+                    {Object.keys(projectsToRender).indexOf('goldui') >= 0 ? <BottomProject
                         pose={projects.goldui.display ?  "visible" : "hidden" }
                         className={classes.Project}>
                         {projects.goldui.expanded ? <section onClick={() => this.exitFullProject('goldui')} className={classes.Backdrop}>
                             <GoldESPUI closing={closing} exit={this.exitFullProject} /></section> : null}
                         <img className={classes.Project} src={goldUiLogo} alt={"GOLDesp UI"} />
                         <HoveredLogo projName="goldui" title={"GOLDesp (UI)"} tech={["Java", "JavaScript"]} clicked={this.displayFullProject} />
-                    </TopProject> : null}
+                    </BottomProject> : null}
 
                     {Object.keys(projectsToRender).indexOf('gct') >= 0 ? <BottomProject
                         pose={projects.gct.display ?  "visible" : "hidden" }
@@ -269,32 +257,32 @@ class Projects extends React.Component {
                         <HoveredLogo projName="gct" title={"GOLDesp Config Tool (Server)"} tech={["Java", "Spring"]} clicked={this.displayFullProject} />
                     </BottomProject> : null}
 
-                    {Object.keys(projectsToRender).indexOf('gctui') >= 0 ? <TopProject
+                    {Object.keys(projectsToRender).indexOf('gctui') >= 0 ? <BottomProject
                         pose={projects.gctui.display ?  "visible" : "hidden" }
                         className={classes.Project}>
                         {projects.gctui.expanded ?  <section onClick={() => this.exitFullProject('gctui')} className={classes.Backdrop}>
                             <GCTUI closing={closing} exit={this.exitFullProject} /></section> : null}
                         <img className={classes.Project} src={gctUiLogo} alt={"GOLDesp Config Tool (UI)"} />
                         <HoveredLogo projName="gctui" title={"GOLDesp Config Tool (UI)"} tech={["React", "Redux"]} clicked={this.displayFullProject} />
-                    </TopProject> : null}
+                    </BottomProject> : null}
 
-                    {Object.keys(projectsToRender).indexOf('liquidLabReact') >= 0 ? <RightProject
+                    {Object.keys(projectsToRender).indexOf('liquidLabReact') >= 0 ? <BottomProject
                         pose={projects.liquidLabReact.display ?  "visible" : "hidden" }
                         className={classes.Project}>
                         {projects.liquidLabReact.expanded ? <section onClick={() => this.exitFullProject('liquidLabReact')} className={classes.Backdrop}>
                             <LiquidLabReact closing={closing} exit={this.exitFullProject} /></section> : null}
                         <img className={classes.Project} src={liquidLabReactLogo} alt={"LiquidLab (React)"} />
                         <HoveredLogo projName="liquidLabReact" title={"LiquidLab (Web)"} tech={["React"]} clicked={this.displayFullProject} />
-                    </RightProject> : null}
+                    </BottomProject> : null}
 
-                    {Object.keys(projectsToRender).indexOf('liquidLabJava') >= 0 ? <LeftProject
+                    {Object.keys(projectsToRender).indexOf('liquidLabJava') >= 0 ? <BottomProject
                         pose={projects.liquidLabJava.display ?  "visible" : "hidden" }
                         className={classes.Project}>
                         {projects.liquidLabJava.expanded ? <section onClick={() => this.exitFullProject('liquidLabJava')} className={classes.Backdrop}>
                             <LiquidLab closing={closing} exit={this.exitFullProject} /></section> : null}
                         <img className={classes.Project} src={liquidLabJavaLogo} alt={"LiquidLab (Java)"} />
                         <HoveredLogo projName="liquidLabJava" title={"LiquidLab (Native)"} tech={["JavaFX", "Java"]} clicked={this.displayFullProject} />
-                    </LeftProject> : null}
+                    </BottomProject> : null}
 
                     {Object.keys(projectsToRender).indexOf('scoreboard') >= 0 ? <BottomProject
                         pose={projects.scoreboard.display ?  "visible" : "hidden" }
@@ -306,14 +294,14 @@ class Projects extends React.Component {
                     </BottomProject> : null}
 
 
-                    {Object.keys(projectsToRender).indexOf('scoreboardConfig') >= 0 ? <TopProject
+                    {Object.keys(projectsToRender).indexOf('scoreboardConfig') >= 0 ? <BottomProject
                         pose={projects.scoreboardConfig.display ?  "visible" : "hidden" }
                         className={classes.Project}>
                         {projects.scoreboardConfig.expanded ? <section onClick={() => this.exitFullProject('scoreboardConfig')} className={classes.Backdrop}>
                             <ScoreboardConfig closing={closing} exit={this.exitFullProject} /></section> : null}
                         <img className={classes.Project} src={scoreboardConfigLogo} alt={"Scoreboard Config"} />
                         <HoveredLogo projName="scoreboardConfig" title={"AST Scoreboard Configuration"} tech={["Android", "Java"]} clicked={this.displayFullProject} />
-                    </TopProject> : null}
+                    </BottomProject> : null}
 
                     {Object.keys(projectsToRender).indexOf('hikersWatch') >= 0 ? <BottomProject
                         pose={projects.hikersWatch.display ?  "visible" : "hidden" }
@@ -324,32 +312,32 @@ class Projects extends React.Component {
                         <HoveredLogo projName="hikersWatch" title={"Hiker's Watch"} tech={["Android", "Java"]} clicked={this.displayFullProject} />
                     </BottomProject> : null}
 
-                    {Object.keys(projectsToRender).indexOf('acidRain') >= 0 ? <RightProject
+                    {Object.keys(projectsToRender).indexOf('acidRain') >= 0 ? <BottomProject
                         pose={projects.acidRain.display ?  "visible" : "hidden" }
                         className={classes.Project}>
                         {projects.acidRain.expanded ?  <section onClick={() => this.exitFullProject('acidRain')} className={classes.Backdrop}>
                             <AcidRain closing={closing} exit={this.exitFullProject} /></section> : null}
                         <img className={classes.Project} src={acidRainLogo} alt={"Acid Rain"} />
                         <HoveredLogo projName="acidRain" title={"Acid Rain"} tech={["Android", "Java", "LibGDX"]} clicked={this.displayFullProject} />
-                    </RightProject> : null}
+                    </BottomProject> : null}
 
-                    {Object.keys(projectsToRender).indexOf('mediaMarquee') >= 0 ? <LeftProject
+                    {Object.keys(projectsToRender).indexOf('mediaMarquee') >= 0 ? <BottomProject
                         pose={projects.mediaMarquee.display ?  "visible" : "hidden" }
                         className={classes.Project}>
                         {projects.mediaMarquee.expanded ? <section onClick={() => this.exitFullProject('mediaMarquee')} className={classes.Backdrop}>
                             <MediaMarquee closing={closing} exit={this.exitFullProject} /></section> : null}
                         <img className={classes.Project} src={mediaMarqueeLogo} alt={"Media Marquee"} />
                         <HoveredLogo projName="mediaMarquee" title={"Media Marquee"} tech={["Python"]} clicked={this.displayFullProject} />
-                    </LeftProject> : null}
+                    </BottomProject> : null}
 
-                    {Object.keys(projectsToRender).indexOf('remindByPi') >= 0 ? <TopProject
+                    {Object.keys(projectsToRender).indexOf('remindByPi') >= 0 ? <BottomProject
                         pose={projects.remindByPi.display ?  "visible" : "hidden" }
                         className={classes.Project}>
                         {projects.remindByPi.expanded ? <section onClick={() => this.exitFullProject('mediaMarquee')} className={classes.Backdrop}>
                             <RemindByPi closing={closing} exit={this.exitFullProject} /></section> : null}
                         <img className={classes.Project} src={remindByPiLogo} alt={"Remind By Pi"} />
                         <HoveredLogo projName="remindByPi" title={"Remind By Pi"} tech={["React", "Python"]} clicked={this.displayFullProject} />
-                    </TopProject> : null}
+                    </BottomProject> : null}
 
                     {Object.keys(projectsToRender).indexOf('shuckShare') >= 0 ? <BottomProject
                         pose={projects.shuckShare.display ?  "visible" : "hidden" }
@@ -360,32 +348,32 @@ class Projects extends React.Component {
                         <HoveredLogo projName="shuckShare" title={"Shuck & Share"} tech={["JavaScript", "HTML/CSS", "Bootstrap"]} clicked={this.displayFullProject} />
                     </BottomProject> : null}
 
-                    {Object.keys(projectsToRender).indexOf('authTemplate') >= 0 ? <TopProject
+                    {Object.keys(projectsToRender).indexOf('authTemplate') >= 0 ? <BottomProject
                         pose={projects.authTemplate.display ?  "visible" : "hidden" }
                         className={classes.Project}>
                         {projects.authTemplate.expanded ? <section onClick={() => this.exitFullProject('authTemplate')} className={classes.Backdrop}>
                             <AuthTemplate closing={closing} exit={this.exitFullProject} /></section> : null}
                         <img className={classes.Project} src={authTemplateLogo} alt={"Authentication Template"} />
                         <HoveredLogo projName="authTemplate" title={"Authentication Template"} tech={["React"]} clicked={this.displayFullProject} />
-                    </TopProject> : null}
+                    </BottomProject> : null}
 
-                    {Object.keys(projectsToRender).indexOf('elbu') >= 0 ? <RightProject
+                    {Object.keys(projectsToRender).indexOf('elbu') >= 0 ? <BottomProject
                         pose={projects.elbu.display ?  "visible" : "hidden" }
                         className={classes.Project}>
                         {projects.elbu.expanded ? <section onClick={() => this.exitFullProject('elbu')} className={classes.Backdrop}>
                             <EventLogBackup closing={closing} exit={this.exitFullProject} /></section> : null}
                         <img className={classes.Project} src={elbuLogo} alt={"Event Log Backup"} />
                         <HoveredLogo projName="elbu" title={"Event Log Backup Utility"} tech={["AutoIt"]} clicked={this.displayFullProject} />
-                    </RightProject> : null}
+                    </BottomProject> : null}
 
-                    {Object.keys(projectsToRender).indexOf('shutdown') >= 0 ? <LeftProject
+                    {Object.keys(projectsToRender).indexOf('shutdown') >= 0 ? <BottomProject
                         pose={projects.shutdown.display ?  "visible" : "hidden" }
                         className={classes.Project}>
                         {projects.shutdown.expanded ? <section onClick={() => this.exitFullProject('shutdown')} className={classes.Backdrop}>
                             <ShutdownInitiator closing={closing} exit={this.exitFullProject} /></section> : null}
                         <img className={classes.Project} src={shutdownLogo} alt={"Shutdown Initiator"} />
                         <HoveredLogo projName="shutdown" title={"TacMobile Shutdown Initiator"} tech={["C#", "WPF"]} clicked={this.displayFullProject} />
-                    </LeftProject> : null}
+                    </BottomProject> : null}
 
                     {Object.keys(projectsToRender).indexOf('deadCode') >= 0 ? <BottomProject
                         pose={projects.deadCode.display ?  "visible" : "hidden" }
@@ -396,14 +384,14 @@ class Projects extends React.Component {
                         <HoveredLogo projName="deadCode" title={"Dead Code Eliminator"} tech={["Java"]} clicked={this.displayFullProject} />
                     </BottomProject> : null}
 
-                    {Object.keys(projectsToRender).indexOf('versionCheck') >= 0 ? <TopProject
+                    {Object.keys(projectsToRender).indexOf('versionCheck') >= 0 ? <BottomProject
                         pose={projects.versionCheck.display ?  "visible" : "hidden" }
                         className={classes.Project}>
                         {projects.versionCheck.expanded ? <section onClick={() => this.exitFullProject('versionCheck')} className={classes.Backdrop}>
                             <VersionCheck closing={closing} exit={this.exitFullProject} /></section> : null}
                         <img className={classes.Project} src={versioncheckLogo} alt={"VersionCheck"} />
                         <HoveredLogo projName="versionCheck" title={"VersionCheck"} tech={["C#", "WPF"]} clicked={this.displayFullProject} />
-                    </TopProject> : null}
+                    </BottomProject> : null}
 
                     {Object.keys(projectsToRender).indexOf('expireGuard') >= 0 ? <BottomProject
                         pose={projects.expireGuard.display ?  "visible" : "hidden" }
@@ -414,32 +402,32 @@ class Projects extends React.Component {
                         <HoveredLogo projName="expireGuard" title={"ExpireGuard"} tech={["C#", "WPF"]} clicked={this.displayFullProject} />
                     </BottomProject> : null}
 
-                    {Object.keys(projectsToRender).indexOf('updatePlusConsole') >= 0 ? <RightProject
+                    {Object.keys(projectsToRender).indexOf('updatePlusConsole') >= 0 ? <BottomProject
                         pose={projects.updatePlusConsole.display ?  "visible" : "hidden" }
                         className={classes.Project}>
                         {projects.updatePlusConsole.expanded ? <section onClick={() => this.exitFullProject('updatePlusConsole')} className={classes.Backdrop}>
                             <UpdatePlusConsole closing={closing} exit={this.exitFullProject} /></section> : null}
                         <img className={classes.Project} src={updatePlusConsoleLogo} alt={"Update+ Console"} />
                         <HoveredLogo projName="updatePlusConsole" title={"Update+ Console"} tech={["AutoIt"]} clicked={this.displayFullProject} />
-                    </RightProject> : null}
+                    </BottomProject> : null}
 
-                    {Object.keys(projectsToRender).indexOf('updatePlusManager') >= 0 ? <LeftProject
+                    {Object.keys(projectsToRender).indexOf('updatePlusManager') >= 0 ? <BottomProject
                         pose={projects.updatePlusManager.display ?  "visible" : "hidden" }
                         className={classes.Project}>
                         {projects.updatePlusManager.expanded ? <section onClick={() => this.exitFullProject('updatePlusManager')} className={classes.Backdrop}>
                             <UpdatePlusManager closing={closing} exit={this.exitFullProject} /></section> : null}
                         <img className={classes.Project} src={updatePlusManagerLogo} alt={"Update+ Manager"} />
                         <HoveredLogo projName="updatePlusManager" title={"Update+ Manager"} tech={["AutoIt"]} clicked={this.displayFullProject} />
-                    </LeftProject> : null}
+                    </BottomProject> : null}
 
-                    {Object.keys(projectsToRender).indexOf('motivationMachine') >= 0 ? <TopProject
+                    {Object.keys(projectsToRender).indexOf('motivationMachine') >= 0 ? <BottomProject
                         pose={projects.motivationMachine.display ?  "visible" : "hidden" }
                         className={classes.Project}>
                         {projects.motivationMachine.expanded ? <section onClick={() => this.exitFullProject('motivationMachine')} className={classes.Backdrop}>
                             <MotivationMachine closing={closing} exit={this.exitFullProject} /></section> : null}
                         <img className={classes.Project} src={motivationMachineLogo} alt={"Motivation Machine"} />
                         <HoveredLogo projName="motivationMachine" title={"Motivation Machine"} tech={["JavaScript", "HTML/CSS"]} clicked={this.displayFullProject} />
-                    </TopProject> : null}
+                    </BottomProject> : null}
 
                     {Object.keys(projectsToRender).indexOf('localWeather') >= 0 ? <BottomProject
                         pose={projects.localWeather.display ?  "visible" : "hidden" }
@@ -450,32 +438,32 @@ class Projects extends React.Component {
                         <HoveredLogo projName="localWeather" title={"Local Weather"} tech={["JavaScript", "HTML/CSS"]} clicked={this.displayFullProject} />
                     </BottomProject> : null}
 
-                    {Object.keys(projectsToRender).indexOf('twitchStream') >= 0 ? <TopProject
+                    {Object.keys(projectsToRender).indexOf('twitchStream') >= 0 ? <BottomProject
                         pose={projects.twitchStream.display ?  "visible" : "hidden" }
                         className={classes.Project}>
                         {projects.twitchStream.expanded ? <section onClick={() => this.exitFullProject('twitchStream')} className={classes.Backdrop}>
                             <TwitchStream closing={closing} exit={this.exitFullProject} /></section> : null}
                         <img className={classes.Project} src={twitchStreamLogo} alt={"Twitch Stream"} />
                         <HoveredLogo projName="twitchStream" title={"Twitch Stream"} tech={["JavaScript", "HTML/CSS"]} clicked={this.displayFullProject} />
-                    </TopProject> : null}
+                    </BottomProject> : null}
 
-                    {Object.keys(projectsToRender).indexOf('wikiViewer') >= 0 ? <RightProject
+                    {Object.keys(projectsToRender).indexOf('wikiViewer') >= 0 ? <BottomProject
                         pose={projects.wikiViewer.display ?  "visible" : "hidden" }
                         className={classes.Project}>
                         {projects.wikiViewer.expanded ? <section onClick={() => this.exitFullProject('wikiViewer')} className={classes.Backdrop}>
                             <WikiView closing={closing} exit={this.exitFullProject} /></section> : null}
                         <img className={classes.Project} src={wikiViewerLogo} alt={"WikiViewer"} />
                         <HoveredLogo projName="wikiViewer" title={"Wikipedia Viewer"} tech={["JavaScript", "HTML/CSS"]} clicked={this.displayFullProject} />
-                    </RightProject> : null}
+                    </BottomProject> : null}
 
-                    {Object.keys(projectsToRender).indexOf('burgerBuilder') >= 0 ? <LeftProject
+                    {Object.keys(projectsToRender).indexOf('burgerBuilder') >= 0 ? <BottomProject
                         pose={projects.burgerBuilder.display ?  "visible" : "hidden" }
                         className={classes.Project}>
                         {projects.burgerBuilder.expanded ? <section onClick={() => this.exitFullProject('burgerBuilder')} className={classes.Backdrop}>
                             <BurgerBuilder closing={closing} exit={this.exitFullProject} /></section> : null}
                         <img className={classes.Project} src={burgerBuilderLogo} alt={"Burger Builder"} />
                         <HoveredLogo projName="burgerBuilder" title={"Burger Builder"} tech={["React"]} clicked={this.displayFullProject} />
-                    </LeftProject> : null}
+                    </BottomProject> : null}
 
                     {Object.keys(projectsToRender).indexOf('funCalc') >= 0 ? <BottomProject
                         pose={projects.funCalc.display ?  "visible" : "hidden" }
@@ -486,14 +474,14 @@ class Projects extends React.Component {
                         <HoveredLogo projName="funCalc" title={"FunCalc"} tech={["JavaScript", "HTML/CSS"]} clicked={this.displayFullProject} />
                     </BottomProject> : null}
 
-                    {Object.keys(projectsToRender).indexOf('yahtzee') >= 0 ? <TopProject
+                    {Object.keys(projectsToRender).indexOf('yahtzee') >= 0 ? <BottomProject
                         pose={projects.yahtzee.display ?  "visible" : "hidden" }
                         className={classes.Project}>
                         {projects.yahtzee.expanded ? <section onClick={() => this.exitFullProject('yahtzee')} className={classes.Backdrop}>
                             <Yahtzee closing={closing} exit={this.exitFullProject} /></section> : null}
                         <img className={classes.Project} src={yahtzeeLogo} alt={"Yahtzee"} />
                         <HoveredLogo projName="yahtzee" title={"YahtCMD"} tech={["Java"]} clicked={this.displayFullProject} />
-                    </TopProject> : null}
+                    </BottomProject> : null}
                 </section>
             </section>
 

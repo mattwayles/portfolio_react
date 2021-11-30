@@ -77,7 +77,7 @@ class Contact extends React.Component {
         name: {value: "", error: false, placeholder: "Name"},
         email: {value: "", error: false, placeholder: "E-Mail"},
         message: {value: "", error: false, placeholder: this.props.collab ?
-                "Details about your project! What technologies are you using? What's your basic design and architecture " +
+                "Details about your project! What technologies are you using? What does your basic design and architecture " +
                 "look like? How involved would you like me to be? This is the place to totally nerd out!"
                 : "Tell me your life story! How's it going today? What are your hopes and dreams? What brought you to my site?"}
     };
@@ -164,8 +164,8 @@ class Contact extends React.Component {
                 }, (err) => {
                     console.error('Error while sending e-mail:', err);
                 });
+            this.setState({ sent: true });
         }
-        this.setState({ sent: true });
     };
 
     /**

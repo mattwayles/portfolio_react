@@ -4,14 +4,14 @@
 }
 
 .WelcomeImage {
-    background: url('../../assets/main/welcomeImage.jpg') no-repeat fixed top right;
+    background: url('../../assets/main/welcomeImage.jpg') no-repeat fixed top left;
     background-size: cover;
     position: relative;
     z-index: -3;
 }
 
 .WelcomeImageColored {
-    background: url('../../assets/main/welcomeImageColored.jpg') no-repeat fixed top right;
+    background: url('../../assets/main/welcomeImageColored.jpg') no-repeat fixed top left;
     background-size: cover;
     position: absolute;
     top: 0;
@@ -33,7 +33,7 @@
 .Description{
     width: 0;
     color: #fff;
-    font-size: 2.5vw;
+    font-size: 2.25vw;
     margin: 2vh 0 0 8vw;
     white-space: nowrap;
     overflow-x: hidden;
@@ -52,7 +52,7 @@
     width: 100%;
     height: 16vh;
     position: relative;
-    background-color: #fff;
+    background-color: #d5dde2;
     z-index: 0;
 }
 

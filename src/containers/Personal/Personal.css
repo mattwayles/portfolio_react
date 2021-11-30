@@ -1,6 +1,6 @@
 .Main {
     padding: 16vh 0;
-    background-color: #fff;
+    background-color: #d5dde2;
 }
 
 .Grid {
@@ -42,7 +42,7 @@
 }
 
 .ImageDiv {
-    margin: 5vh 2vw 0;
+    margin: 7vh 2vw 0;
 }
 
 .Image {
