@@ -4,14 +4,14 @@
 }
 
 .WelcomeImage {
-    background: url('../../assets/main/welcomeImage.jpg') no-repeat fixed top left;
+    background: url('../../assets/main/welcomeImage.jpg') no-repeat fixed top right;
     background-size: cover;
     position: relative;
     z-index: -3;
 }
 
 .WelcomeImageColored {
-    background: url('../../assets/main/welcomeImageColored.jpg') no-repeat fixed top left;
+    background: url('../../assets/main/welcomeImageColored.jpg') no-repeat fixed top right;
     background-size: cover;
     position: absolute;
     top: 0;

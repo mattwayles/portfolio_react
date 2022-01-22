@@ -157,7 +157,7 @@ class Contact extends React.Component {
             this.setState({ message: {placeholder: "C'mon, blank e-mails are no fun!", value: "", error: true} })
         }
         else {
-            emailjs.sendForm('gmail', 'collaborate', '#collaborate', 'user_L1fdjLcl96mo7Y7tPXIqn')
+            emailjs.sendForm('service_hehdyqb', 'collaborate', '#collaborate', 'user_L1fdjLcl96mo7Y7tPXIqn')
                 .then((response) => {
                     console.log('Sent Mail Successfully', response.status, response.text);
 

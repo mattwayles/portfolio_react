@@ -56,6 +56,7 @@ class PortfolioFilter extends React.Component {
             ['autoit', 'AutoIt'],
             ['html', 'HTML/CSS'],
             ['csharp', 'C#'],
+            ['graphql', 'GraphQL'],
             ['java', 'Java'],
             ['javafx', 'JavaFX'],
             ['javascript', 'JavaScript'],

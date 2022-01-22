@@ -29,7 +29,11 @@ import yahtzeeLogo from '../../../assets/portfolio/logos/yahtzeeLogo.jpg';
 import deadCodeLogo from '../../../assets/portfolio/logos/deadCodeLogo.png';
 import remindByPiLogo from '../../../assets/portfolio/logos/remindByPiLogo.png';
 import mediaMarqueeLogo from '../../../assets/portfolio/logos/mediaMarqueeLogo.jpg';
+import milsSetupUiLogo from '../../../assets/portfolio/logos/milsSetupUi.jpg';
+import mobile40apiLogo from '../../../assets/portfolio/logos/mobile40api.jpg';
 import HoveredLogo from "../../../components/Projects/HoveredLogo/HoveredLogo";
+import MilsSetupUi from "../../../components/Projects/Project/MilsSetupUi";
+import Mobile40Api from "../../../components/Projects/Project/Mobile40Api";
 import GoldESP from "../../../components/Projects/Project/GoldESP";
 import GCT from "../../../components/Projects/Project/GCT";
 import AcidRain from "../../../components/Projects/Project/AcidRain";
@@ -86,7 +90,9 @@ class Projects extends React.Component {
     componentDidUpdate() {
         if (this.props.scrollPercent > SHOW_PORTFOLIO_HEIGHT) {
             if (!this.state.populated) {
-                this.setState({ populated: true, projects: {...this.state.projects, gold: {display: true, expanded: false}}});
+                this.setState({ populated: true, projects: {...this.state.projects, milsSetupUi: {display: true, expanded: false}}});
+                setTimeout(() => this.setState({projects: {...this.state.projects, mobile40api: {display: true, expanded: false}}}), 200);
+                setTimeout(() => this.setState({projects: {...this.state.projects, gold: {display: true, expanded: false}}}), 200);
                 setTimeout(() => this.setState({projects: {...this.state.projects, goldui: {display: true,  expanded: false}}}), 200);
                 setTimeout(() => this.setState({projects: {...this.state.projects, gct: {display: true,  expanded: false}}}), 400);
                 setTimeout(() => this.setState({projects: {...this.state.projects, gctui: {display: true,  expanded: false}}}), 600);
@@ -146,6 +152,8 @@ class Projects extends React.Component {
             liquidLabJava: { display: false, expanded: false},
             localWeather: { display: false, expanded: false},
             mediaMarquee: { display: false, expanded: false},
+            milsSetupUi: { display: false, expanded: false},
+            mobile40api: { display: false, expanded: false},
             motivationMachine: { display: false, expanded: false},
             remindByPi: { display: false, expanded: false},
             scoreboard: {display: false, expanded: false},
@@ -185,14 +193,16 @@ class Projects extends React.Component {
 
         //Set filter lists for each project
         let projectsToRender = {
+            milsSetupUi: ['team', 'professional', 'react', 'graphql'],
+            mobile40api: ['team', 'professional', 'csharp', 'graphql'],
             gold: ['team', 'professional', 'java', 'spring'],
             goldui: ['team', 'professional', 'java', 'javascript'],
             gct: ['team', 'professional', 'java', 'spring'],
             gctui: ['team', 'professional', 'react'],
             liquidLabReact: ['solo', 'recreational', 'react', 'openSource'],
             liquidLabJava: ['solo', 'recreational', 'java', 'javafx', 'openSource'],
-            scoreboard: ['solo', 'recreational', 'java', 'javafx', 'openSource'],
-            scoreboardConfig: ['solo', 'recreational', 'android', 'java', 'openSource'],
+            scoreboard: ['solo', 'freelance', 'java', 'javafx', 'openSource'],
+            scoreboardConfig: ['solo', 'freelance', 'android', 'java', 'openSource'],
             hikersWatch: ['solo', 'recreational', 'java', 'android', 'openSource'],
             acidRain: ['solo', 'recreational', 'android', 'java', 'libgdx', 'openSource'],
             mediaMarquee: ['solo', 'recreational', 'python', 'openSource'],
@@ -231,6 +241,22 @@ class Projects extends React.Component {
         return(
             <section className={classes.Main}>
                 <section className={classes.ProjectDiv}>
+                    {Object.keys(projectsToRender).indexOf('milsSetupUi') >= 0 ? <BottomProject
+                        pose={projects.milsSetupUi.display ?  "visible" : "hidden" }
+                        className={classes.Project}>
+                        {projects.milsSetupUi.expanded ? <section onClick={() => this.exitFullProject('milsSetupUi')} className={classes.Backdrop}>
+                            <MilsSetupUi closing={closing} exit={this.exitFullProject} /></section> : null}
+                        <img className={classes.Project} src={milsSetupUiLogo} alt={"MILS Setup UI"} />
+                        <HoveredLogo projName="milsSetupUi" title={"MILS Setup (UI)"} tech={["React", "Redux", "GraphQL"]} clicked={this.displayFullProject} />
+                    </BottomProject> : null}
+                    {Object.keys(projectsToRender).indexOf('mobile40api') >= 0 ? <BottomProject
+                        pose={projects.mobile40api.display ?  "visible" : "hidden" }
+                        className={classes.Project}>
+                        {projects.mobile40api.expanded ? <section onClick={() => this.exitFullProject('mobile40api')} className={classes.Backdrop}>
+                            <Mobile40Api closing={closing} exit={this.exitFullProject} /></section> : null}
+                        <img className={classes.Project} src={mobile40apiLogo} alt={"Mobile 4.0 API"} />
+                        <HoveredLogo projName="mobile40api" title={"Mobile 4.0 API"} tech={["GraphQL", "C#"]} clicked={this.displayFullProject} />
+                    </BottomProject> : null}
                     {Object.keys(projectsToRender).indexOf('gold') >= 0 ? <BottomProject
                         pose={projects.gold.display ?  "visible" : "hidden" }
                         className={classes.Project}>
