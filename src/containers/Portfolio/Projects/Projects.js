@@ -31,9 +31,11 @@ import remindByPiLogo from '../../../assets/portfolio/logos/remindByPiLogo.png';
 import mediaMarqueeLogo from '../../../assets/portfolio/logos/mediaMarqueeLogo.jpg';
 import milsSetupUiLogo from '../../../assets/portfolio/logos/milsSetupUi.jpg';
 import mobile40apiLogo from '../../../assets/portfolio/logos/mobile40api.jpg';
+import museEventsLogo from '../../../assets/portfolio/logos/museevents.jpg';
 import HoveredLogo from "../../../components/Projects/HoveredLogo/HoveredLogo";
 import MilsSetupUi from "../../../components/Projects/Project/MilsSetupUi";
 import Mobile40Api from "../../../components/Projects/Project/Mobile40Api";
+import MuseEvents from "../../../components/Projects/Project/MuseEvents";
 import GoldESP from "../../../components/Projects/Project/GoldESP";
 import GCT from "../../../components/Projects/Project/GCT";
 import AcidRain from "../../../components/Projects/Project/AcidRain";
@@ -90,7 +92,8 @@ class Projects extends React.Component {
     componentDidUpdate() {
         if (this.props.scrollPercent > SHOW_PORTFOLIO_HEIGHT) {
             if (!this.state.populated) {
-                this.setState({ populated: true, projects: {...this.state.projects, milsSetupUi: {display: true, expanded: false}}});
+                this.setState({ populated: true, projects: {...this.state.projects, museEvents: {display: true, expanded: false}}});
+                setTimeout(() => this.setState({projects: {...this.state.projects, milsSetupUi: {display: true, expanded: false}}}), 200);
                 setTimeout(() => this.setState({projects: {...this.state.projects, mobile40api: {display: true, expanded: false}}}), 200);
                 setTimeout(() => this.setState({projects: {...this.state.projects, gold: {display: true, expanded: false}}}), 200);
                 setTimeout(() => this.setState({projects: {...this.state.projects, goldui: {display: true,  expanded: false}}}), 200);
@@ -155,6 +158,7 @@ class Projects extends React.Component {
             milsSetupUi: { display: false, expanded: false},
             mobile40api: { display: false, expanded: false},
             motivationMachine: { display: false, expanded: false},
+            museEvents: { display: false, expanded: false},
             remindByPi: { display: false, expanded: false},
             scoreboard: {display: false, expanded: false},
             scoreboardConfig: {display: false, expanded: false},
@@ -193,6 +197,7 @@ class Projects extends React.Component {
 
         //Set filter lists for each project
         let projectsToRender = {
+            museEvents: ['solo', 'freelance', 'react'],
             milsSetupUi: ['team', 'professional', 'react', 'graphql'],
             mobile40api: ['team', 'professional', 'csharp', 'graphql'],
             gold: ['team', 'professional', 'java', 'spring'],
@@ -241,6 +246,14 @@ class Projects extends React.Component {
         return(
             <section className={classes.Main}>
                 <section className={classes.ProjectDiv}>
+                    {Object.keys(projectsToRender).indexOf('museEvents') >= 0 ? <BottomProject
+                        pose={projects.museEvents.display ?  "visible" : "hidden" }
+                        className={classes.Project}>
+                        {projects.museEvents.expanded ? <section onClick={() => this.exitFullProject('museEvents')} className={classes.Backdrop}>
+                            <MuseEvents closing={closing} exit={this.exitFullProject} /></section> : null}
+                        <img className={classes.Project} src={museEventsLogo} alt={"Muse Events"} />
+                        <HoveredLogo projName="museEvents" title={"Muse Events"} tech={["React"]} clicked={this.displayFullProject} />
+                    </BottomProject> : null}
                     {Object.keys(projectsToRender).indexOf('milsSetupUi') >= 0 ? <BottomProject
                         pose={projects.milsSetupUi.display ?  "visible" : "hidden" }
                         className={classes.Project}>

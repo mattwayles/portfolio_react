@@ -132,7 +132,6 @@ class Main extends React.Component {
                             pose={description.line4 ? 'descVisible' : 'descHidden'}
                             className={classes.Description}>
                             <em>✓&emsp;Available for
-                                <span className={classes.Bold}> Employment</span>,
                                 <span className={classes.Bold}> Freelance</span> projects and
                                 <span className={classes.Bold}> Consulting</span></em>
                         </DescriptionLine>
